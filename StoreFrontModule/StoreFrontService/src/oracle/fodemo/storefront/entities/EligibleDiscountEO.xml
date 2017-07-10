@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EligibleDiscountEO"
+  DBObjectType="table"
+  DBObjectName="ELIGIBLE_DISCOUNTS"
+  AliasName="EligibleDiscountEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  Version="11.1.1.48.80">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="MembershipId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="MEMBERSHIP_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ELIGIBLE_DISCOUNTS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="MembershipId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DiscountId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="DISCOUNT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ELIGIBLE_DISCOUNTS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DiscountId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ValidFromDate"
+    ColumnName="VALID_FROM_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="ELIGIBLE_DISCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ValidFromDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ValidToDate"
+    ColumnName="VALID_TO_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="ELIGIBLE_DISCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ValidToDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ELIGIBLE_DISCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="ELIGIBLE_DISCOUNTS"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ELIGIBLE_DISCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="ELIGIBLE_DISCOUNTS"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ELIGIBLE_DISCOUNTS"
+    ChangeIndicator="true"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="DiscountBase"
+    Association="oracle.fodemo.storefront.entities.associations.EligibleDiscountsFk1Assoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.EligibleDiscountsFk1Assoc.DiscountBase"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.EligibleDiscountsFk1Assoc.EligibleDiscount"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="MembershipBase"
+    Association="oracle.fodemo.storefront.entities.associations.EligibleDiscountsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.EligibleDiscountsFkAssoc.MembershipBase"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.EligibleDiscountsFkAssoc.EligibleDiscount"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="EligibleDiscountsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ELIGIBLE_DISCOUNTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.DiscountId"/>
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.MembershipId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055241">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055241"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"MEMBERSHIP_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.MembershipId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055242">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055242"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"DISCOUNT_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.DiscountId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055243">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055243"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055244">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055244"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055245">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055245"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055246">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055246"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055247">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055247"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EligibleDiscountsFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ELIGIBLE_DISCOUNTS_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="MEMBERSHIPS_BASE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.MembershipId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EligibleDiscountsFk1">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ELIGIBLE_DISCOUNTS_FK1"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="DISCOUNTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.EligibleDiscountEO.DiscountId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.EligibleDiscountMsgBundle"/>
+  </ResourceBundle>
+</Entity>

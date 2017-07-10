@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.34" id="account_reviewCustomerInfoPageDef"
+                Package="oracle.fodemo.storefront.pageDefs">
+  <parameters/>
+  <executables>
+    <page path="oracle.fodemo.storefront.pageDefs.templates_StoreFrontTemplatePageDef"
+          id="pageTemplateBinding"/>
+    <iterator Binds="CustomerRegistration" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="CustomerRegistrationIterator"/>
+    <iterator id="SelectedCategoriesShuttleListIterator"
+              Binds="SelectedCategoriesShuttleList" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"/>
+    <iterator Binds="CustomerAddress" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="CustomerAddressIterator"/>
+    <iterator Binds="CustomerPaymentOption" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="CustomerPaymentOptionIterator"/>
+    <invokeAction Binds="setHelpId" id="invokeSetHelpId" Refresh="ifNeeded"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomerAddressIterator" id="CustomerAddress">
+      <nodeDefinition DefName="oracle.fodemo.storefront.account.queries.CustomerAddressVO"
+                      Name="CustomerAddress.0">
+        <AttrNames>
+          <Item Value="AddressId"/>
+          <Item Value="Address1"/>
+          <Item Value="City"/>
+          <Item Value="PostalCode"/>
+          <Item Value="StateProvince"/>
+          <Item Value="AddressLabel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CustomerAddressIterator" id="AddressId">
+      <AttrNames>
+        <Item Value="AddressId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="AddressLabel">
+      <AttrNames>
+        <Item Value="AddressLabel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="PrincipalName">
+      <AttrNames>
+        <Item Value="PrincipalName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="ProvisionedFlag">
+      <AttrNames>
+        <Item Value="ProvisionedFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="PrimaryAddressId">
+      <AttrNames>
+        <Item Value="PrimaryAddressId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="RegisteredDate">
+      <AttrNames>
+        <Item Value="RegisteredDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="MembershipId">
+      <AttrNames>
+        <Item Value="MembershipId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="ConfirmedEmail">
+      <AttrNames>
+        <Item Value="ConfirmedEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="PhoneNumber">
+      <AttrNames>
+        <Item Value="PhoneNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="MobilePhoneNumber">
+      <AttrNames>
+        <Item Value="MobilePhoneNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="CreditLimit">
+      <AttrNames>
+        <Item Value="CreditLimit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="DateOfBirth">
+      <AttrNames>
+        <Item Value="DateOfBirth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="ChildrenUnder18">
+      <AttrNames>
+        <Item Value="ChildrenUnder18"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="ApproximateIncome">
+      <AttrNames>
+        <Item Value="ApproximateIncome"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="ContactableFlag">
+      <AttrNames>
+        <Item Value="ContactableFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="ContactByAffilliatesFlag">
+      <AttrNames>
+        <Item Value="ContactByAffilliatesFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="ObjectVersionId">
+      <AttrNames>
+        <Item Value="ObjectVersionId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="ContactableCheckBox">
+      <AttrNames>
+        <Item Value="ContactableCheckBox"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerRegistrationIterator"
+                     id="ContactByAffiliatesCheckBox">
+      <AttrNames>
+        <Item Value="ContactByAffiliatesCheckBox"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CustomerRegistrationIterator" id="Title" Uses="TitleLOV"
+          StaticList="false"/>
+    <list IterBinding="CustomerRegistrationIterator" id="PersonTypeCode"
+          Uses="PersonTypeCodeLOV" StaticList="false"/>
+    <list IterBinding="CustomerRegistrationIterator" id="Gender"
+          Uses="GenderLOV" StaticList="false"/>
+    <list IterBinding="CustomerRegistrationIterator" id="MaritalStatusCode"
+          Uses="MaritalStatusCodeLOV" StaticList="false"/>
+    <list IterBinding="CustomerRegistrationIterator" id="ContactMethodCode"
+          Uses="ContactMethodCodeLOV" StaticList="false"/>
+    <methodAction IterBinding="CustomerAddressIterator"
+                  id="discardAddressChanges" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="refreshRemoveNewCurrentRow"
+                  IsViewObjectMethod="true"
+                  DataControl="StoreServiceAMDataControl"
+                  InstanceName="StoreServiceAMDataControl.CustomerAddress"/>
+    <tree IterBinding="CustomerPaymentOptionIterator"
+          id="CustomerPaymentOption">
+      <nodeDefinition DefName="oracle.fodemo.storefront.account.queries.CustomerPaymentOptionVO"
+                      Name="CustomerPaymentOption.0">
+        <AttrNames>
+          <Item Value="CustomerId"/>
+          <Item Value="PaymentTypeCode"/>
+          <Item Value="BillingAddressId"/>
+          <Item Value="AccountNumber"/>
+          <Item Value="CardTypeCode"/>
+          <Item Value="ExpireDate"/>
+          <Item Value="CheckDigits"/>
+          <Item Value="RoutingIdentifier"/>
+          <Item Value="InstitutionName"/>
+          <Item Value="ValidFromDate"/>
+          <Item Value="ValidToDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="setHelpId"
+                  InstanceName="LookupServiceAMDataControl.dataProvider"
+                  DataControl="LookupServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="setHelpId" IsViewObjectMethod="false"
+                  ReturnName="LookupServiceAMDataControl.methodResults.setHelpId_LookupServiceAMDataControl_dataProvider_setHelpId_result">
+      <NamedData NDName="usage" NDValue="CONFIRM_REGISTRATION"
+                 NDType="java.lang.String"/>
+      <events xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+        <event name="queueHelpTopic"/>
+      </events>
+    </methodAction>
+  </bindings>
+</pageDefinition>

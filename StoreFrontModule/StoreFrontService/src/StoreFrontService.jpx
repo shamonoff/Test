@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+
+<JboProject
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="StoreFrontService"
+   Version="11.1.1.55.36"
+   SeparateXMLFiles="true"
+   PackageName="">
+   <DesignTime>
+      <Attr Name="_jprName" Value="../StoreFrontService.jpr"/>
+      <Attr Name="_jbo.SQLBuilder" Value="ORACLE"/>
+      <Attr Name="_domainNames0"
+         Value="oracle.fodemo.storefront.entities.formatters.UppercaseOracleStyleDate"/>
+      <Attr Name="_appModuleNames1"
+         Value="oracle.fodemo.storefront.store.service.StoreServiceAM"/>
+      <Attr Name="_appModuleNames0"
+         Value="oracle.fodemo.storefront.lookups.LookupServiceAM"/>
+      <Attr Name="_jbo.TypeMapEntries" Value="Java"/>
+      <Attr Name="_NamedConnection" Value="FOD"/>
+   </DesignTime>
+   <Containee
+      Name="links"
+      PackageName="oracle.fodemo.storefront.account.queries.links"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VL" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="queries"
+      PackageName="oracle.fodemo.storefront.account.queries"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="associations"
+      PackageName="oracle.fodemo.storefront.entities.associations"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_AS" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="entities"
+      PackageName="oracle.fodemo.storefront.entities"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_EO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="formatters"
+      PackageName="oracle.fodemo.storefront.entities.formatters"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_DO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="lookups"
+      PackageName="oracle.fodemo.storefront.lookups"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+         <Attr Name="_AM" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="links"
+      PackageName="oracle.fodemo.storefront.store.queries.links"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VL" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="queries"
+      PackageName="oracle.fodemo.storefront.store.queries"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="service"
+      PackageName="oracle.fodemo.storefront.store.service"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_AM" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <AppModuleUsage
+      Name="SharedLookupService"
+      FullName="oracle.fodemo.storefront.lookups.LookupServiceAM"
+      ConfigurationName="oracle.fodemo.storefront.lookups.LookupServiceAMShared"
+      SharedScope="2"/>
+   <BusLogicUnits>
+      <BusLogicUnit
+         FullName="oracle.fodemo.storefront.entities.PersonEO_PersonTypeCodeGroup_SUPP"
+         Name="oracle.fodemo.storefront.entities.PersonEO_PersonTypeCodeGroup_SUPP"/>
+      <BusLogicUnit
+         FullName="oracle.fodemo.storefront.entities.PersonEO_PersonTypeCodeGroup_STAFF"
+         Name="oracle.fodemo.storefront.entities.PersonEO_PersonTypeCodeGroup_STAFF"/>
+      <BusLogicUnit
+         FullName="oracle.fodemo.storefront.entities.PersonEO_PersonTypeCodeGroup_CUST"
+         Name="oracle.fodemo.storefront.entities.PersonEO_PersonTypeCodeGroup_CUST"/>
+   </BusLogicUnits>
+</JboProject>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.7"
+          id="Supplier" Package="oracle.fodemo.supplier.model"
+          BeanClass="oracle.fodemo.supplier.model.Supplier" isJavaBased="true">
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="creationDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="email" Type="java.lang.String" IsNotNull="true"
+             Precision="25">
+    <RegExpValidationBean xmlns="http://xmlns.oracle.com/adfm/validation"
+                          OnAttribute="email"
+                          ResId="oracle.fodemo.supplier.model.Supplier.email_Rule_0"
+                          Inverse="false" Severity="Error" Name="email_Rule_0"
+                          Pattern="[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}"
+                          Flags="CaseInsensitive"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Supplier.email_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Supplier.email_TOOLTIP"/>
+        <DISPLAYWIDTH Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="lastUpdatedBy" Type="java.lang.String"/>
+  <Attribute Name="lastUpdateDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="objectVersionId" Type="java.lang.Long"/>
+  <Attribute Name="phoneNumber" Type="java.lang.String" IsNotNull="true"
+             Precision="20">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Supplier.phoneNumber_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Supplier.phoneNumber_TOOLTIP"/>
+        <DISPLAYWIDTH Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="supplierId" PrimaryKey="true" Type="java.lang.Long">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Supplier.supplierId_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Supplier.supplierId_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="supplierName" Type="java.lang.String" IsNotNull="true"
+             Precision="60">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Supplier.supplierName_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Supplier.supplierName_LABEL"/>
+        <DISPLAYWIDTH Value="60"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="supplierStatus" Type="java.lang.String" Precision="30"
+             IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Supplier.supplierStatus_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Supplier.supplierStatus_TOOLTIP"/>
+        <DISPLAYWIDTH Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="uiSkin" Type="java.lang.String"/>
+  <AccessorAttribute id="personList" IsCollection="true"
+                     RemoveMethod="removePerson" AddMethod="addPerson"
+                     BeanClass="oracle.fodemo.supplier.model.Person"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removePerson"/>
+      <Property Name="AddMethod" Value="addPerson"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="productList" IsCollection="true"
+                     RemoveMethod="removeProduct" AddMethod="addProduct"
+                     BeanClass="oracle.fodemo.supplier.model.Product"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeProduct"/>
+      <Property Name="AddMethod" Value="addProduct"/>
+    </Properties>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Person"
+                  BeanClass="oracle.fodemo.supplier.model.Person" id="addPerson"
+                  ReturnNodeName="Person">
+    <ParameterInfo id="person" Type="oracle.fodemo.supplier.model.Person"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Person"
+                  BeanClass="oracle.fodemo.supplier.model.Person"
+                  id="removePerson" ReturnNodeName="Person">
+    <ParameterInfo id="person" Type="oracle.fodemo.supplier.model.Person"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Product"
+                  BeanClass="oracle.fodemo.supplier.model.Product"
+                  id="addProduct" ReturnNodeName="Product">
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Product"
+                  BeanClass="oracle.fodemo.supplier.model.Product"
+                  id="removeProduct" ReturnNodeName="Product">
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.Supplier"
+                     BeanClass="oracle.fodemo.supplier.model.Supplier"
+                     id="Supplier">
+    <ParameterInfo id="createdBy" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="creationDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="email" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="lastUpdateDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdatedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="objectVersionId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="phoneNumber" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="supplierId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="supplierName" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="supplierStatus" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="uiSkin" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.Supplier"
+                     BeanClass="oracle.fodemo.supplier.model.Supplier"
+                     id="Supplier"/>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="oracle.fodemo.supplier.model.ModelBundle"/>
+  </ResourceBundle>
+</JavaBean>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="Cp1252" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+  <persistence-unit name="Model">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>java:/app/jdbc/jdbc/fodDS</jta-data-source>
+    <class>oracle.fodemo.supplier.model.Addresses</class>
+    <class>oracle.fodemo.supplier.model.AddressUsage</class>
+    <class>oracle.fodemo.supplier.model.CountryCode</class>
+    <class>oracle.fodemo.supplier.model.Person</class>
+    <class>oracle.fodemo.supplier.model.Product</class>
+    <class>oracle.fodemo.supplier.model.ProductCategory</class>
+    <class>oracle.fodemo.supplier.model.ProductImage</class>
+    <class>oracle.fodemo.supplier.model.ProductTranslation</class>
+    <class>oracle.fodemo.supplier.model.Supplier</class>
+    <class>oracle.fodemo.supplier.model.WarehouseStockLevel</class>
+    <class>oracle.fodemo.supplier.model.LookupCode</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+      <property name="javax.persistence.jtaDataSource"
+                value="java:/app/jdbc/jdbc/fodDS"/>
+    </properties>
+  </persistence-unit>
+</persistence>

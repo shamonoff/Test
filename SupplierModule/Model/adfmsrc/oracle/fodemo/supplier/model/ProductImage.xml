@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.7"
+          id="ProductImage" Package="oracle.fodemo.supplier.model"
+          BeanClass="oracle.fodemo.supplier.model.ProductImage"
+          isJavaBased="true">
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="creationDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="defaultViewFlag" Type="java.lang.String"/>
+  <Attribute Name="lastUpdatedBy" Type="java.lang.String"/>
+  <Attribute Name="lastUpdateDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="objectVersionId" Type="java.lang.Long"/>
+  <Attribute Name="productImageId" PrimaryKey="true" Type="java.lang.Long"/>
+  <AccessorAttribute id="image" IsCollection="true" Type="byte[]"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="byte"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="product" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Product"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="productImage" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="productImageList" IsCollection="true"
+                     RemoveMethod="removeProductImage"
+                     AddMethod="addProductImage"
+                     BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeProductImage"/>
+      <Property Name="AddMethod" Value="addProductImage"/>
+    </Properties>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductImage"
+                  BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                  id="addProductImage" ReturnNodeName="ProductImage">
+    <ParameterInfo id="productImage"
+                   Type="oracle.fodemo.supplier.model.ProductImage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductImage"
+                  BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                  id="removeProductImage" ReturnNodeName="ProductImage">
+    <ParameterInfo id="productImage"
+                   Type="oracle.fodemo.supplier.model.ProductImage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.ProductImage"
+                     BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                     id="ProductImage">
+    <ParameterInfo id="createdBy" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="creationDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="defaultViewFlag" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="productImage"
+                   Type="oracle.fodemo.supplier.model.ProductImage"
+                   isStructured="true"/>
+    <ParameterInfo id="lastUpdateDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdatedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="objectVersionId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+    <ParameterInfo id="productImageId" Type="java.lang.Long"
+                   isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.ProductImage"
+                     BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                     id="ProductImage"/>
+</JavaBean>

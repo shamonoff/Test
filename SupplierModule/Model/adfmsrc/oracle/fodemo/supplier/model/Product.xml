@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.55"
+          id="Product" Package="oracle.fodemo.supplier.model"
+          BeanClass="oracle.fodemo.supplier.model.Product" isJavaBased="true">
+  <Attribute Name="attribute1" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute10" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute11" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute12" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute13" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute14" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute15" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute2" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute3" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute4" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute5" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute6" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute7" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute8" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attribute9" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="attributeCategory" Type="java.lang.String"
+             IsQueriable="false"/>
+  <Attribute Name="costPrice" Type="java.lang.Double" IsQueriable="false"
+             IsNotNull="true" Precision="8" Scale="2">
+    <CompareValidationBean xmlns="http://xmlns.oracle.com/adfm/validation"
+                           OnAttribute="costPrice"
+                           ResId="oracle.fodemo.supplier.model.Product.costPrice_Rule_0"
+                           Inverse="false" Severity="Error"
+                           Name="costPrice_Rule_0" OperandType="LITERAL"
+                           CompareValue="-1" CompareType="GREATERTHAN"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Product.costPrice_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Product.costPrice_TOOLTIP"/>
+        <DISPLAYWIDTH Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="createdBy" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="creationDate" Type="java.sql.Timestamp" IsQueriable="false"/>
+  <Attribute Name="externalUrl" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="lastUpdatedBy" Type="java.lang.String" IsQueriable="false"/>
+  <Attribute Name="lastUpdateDate" Type="java.sql.Timestamp"
+             IsQueriable="false"/>
+  <Attribute Name="listPrice" Type="java.lang.Double" IsQueriable="false"
+             IsNotNull="true" Precision="8" Scale="2">
+    <CompareValidationBean xmlns="http://xmlns.oracle.com/adfm/validation"
+                           OnAttribute="listPrice"
+                           ResId="oracle.fodemo.supplier.model.Product.listPrice_Rule_0"
+                           Inverse="false" Severity="Error"
+                           Name="listPrice_Rule_0" OperandType="LITERAL"
+                           CompareValue="-1" CompareType="GREATERTHAN"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Product.listPrice_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Product.listPrice_TOOLTIP"/>
+        <DISPLAYWIDTH Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="minPrice" Type="java.lang.Double" IsQueriable="false"
+             IsNotNull="true" Precision="8" Scale="2">
+    <CompareValidationBean xmlns="http://xmlns.oracle.com/adfm/validation"
+                           OnAttribute="minPrice"
+                           ResId="oracle.fodemo.supplier.model.Product.minPrice_Rule_0"
+                           Inverse="false" Severity="Error"
+                           Name="minPrice_Rule_0" OperandType="LITERAL"
+                           CompareValue="-1" CompareType="GREATERTHAN"/>
+    <CompareValidationBean xmlns="http://xmlns.oracle.com/adfm/validation"
+                           OnAttribute="minPrice"
+                           ResId="oracle.fodemo.supplier.model.Product.minPrice_Rule_2"
+                           Inverse="true" Severity="Warning"
+                           Name="minPrice_Rule_1" OperandType="LITERAL"
+                           CompareValue="0" CompareType="EQUALTO"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Product.minPrice_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Product.minPrice_TOOLTIP"/>
+        <DISPLAYWIDTH Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="objectVersionId" Type="java.lang.Long" IsQueriable="false"/>
+  <Attribute Name="productId" PrimaryKey="true" Type="java.lang.Long"
+             IsNotNull="true" Precision="15" IsUpdateable="0">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Product.productId_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Product.productId_TOOLTIP"/>
+        <DISPLAYWIDTH Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="productName" Type="java.lang.String" IsNotNull="true"
+             Precision="50">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Product.productName_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Product.productName_TOOLTIP"/>
+        <DISPLAYWIDTH Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="productStatus" Type="java.lang.String" IsNotNull="true"
+             Precision="30">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Product.productStatus_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Product.productStatus_TOOLTIP"/>
+        <DISPLAYWIDTH Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="shippingClassCode" Type="java.lang.String" Precision="30">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Product.shippingClassCode_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Product.shippingClassCode_TOOLTIP"/>
+        <DISPLAYWIDTH Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="warrantyPeriodMonths" Type="java.lang.Long"
+             IsQueriable="false">
+    <RangeValidationBean xmlns="http://xmlns.oracle.com/adfm/validation"
+                         OnAttribute="warrantyPeriodMonths"
+                         ResId="oracle.fodemo.supplier.model.Product.warrantyPeriodMonths_Rule_0"
+                         Inverse="false" Severity="Error"
+                         Name="warrantyPeriodMonths_Rule_0"
+                         OperandType="LITERAL" MinValue="0" MaxValue="60"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Product.warrantyPeriodMonths_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Product.warrantyPeriodMonths_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute id="productCategory" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="supplier" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Supplier"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="productImageList" IsCollection="true"
+                     RemoveMethod="removeProductImage"
+                     AddMethod="addProductImage"
+                     BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeProductImage"/>
+      <Property Name="AddMethod" Value="addProductImage"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="productCategoryList" IsCollection="true"
+                     RemoveMethod="removeProductCategory"
+                     AddMethod="addProductCategory"
+                     BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeProductCategory"/>
+      <Property Name="AddMethod" Value="addProductCategory"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="productTranslationList" IsCollection="true"
+                     RemoveMethod="removeProductTranslation"
+                     AddMethod="addProductTranslation"
+                     BeanClass="oracle.fodemo.supplier.model.ProductTranslation"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeProductTranslation"/>
+      <Property Name="AddMethod" Value="addProductTranslation"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="warehouseStockLevelList" IsCollection="true"
+                     RemoveMethod="removeWarehouseStockLevel"
+                     AddMethod="addWarehouseStockLevel"
+                     BeanClass="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeWarehouseStockLevel"/>
+      <Property Name="AddMethod" Value="addWarehouseStockLevel"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="orderItemList" IsCollection="true"
+                     RemoveMethod="removeOrderItem" AddMethod="addOrderItem"
+                     BeanClass="oracle.fodemo.supplier.model.OrderItem"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeOrderItem"/>
+      <Property Name="AddMethod" Value="addOrderItem"/>
+    </Properties>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductImage"
+                  BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                  id="addProductImage" ReturnNodeName="ProductImage">
+    <ParameterInfo id="productImage"
+                   Type="oracle.fodemo.supplier.model.ProductImage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductImage"
+                  BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                  id="removeProductImage" ReturnNodeName="ProductImage">
+    <ParameterInfo id="productImage"
+                   Type="oracle.fodemo.supplier.model.ProductImage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductCategory"
+                  BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                  id="addProductCategory" ReturnNodeName="ProductCategory">
+    <ParameterInfo id="productCategory"
+                   Type="oracle.fodemo.supplier.model.ProductCategory"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductCategory"
+                  BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                  id="removeProductCategory" ReturnNodeName="ProductCategory">
+    <ParameterInfo id="productCategory"
+                   Type="oracle.fodemo.supplier.model.ProductCategory"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductTranslation"
+                  BeanClass="oracle.fodemo.supplier.model.ProductTranslation"
+                  id="addProductTranslation"
+                  ReturnNodeName="ProductTranslation">
+    <ParameterInfo id="productTranslation"
+                   Type="oracle.fodemo.supplier.model.ProductTranslation"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductTranslation"
+                  BeanClass="oracle.fodemo.supplier.model.ProductTranslation"
+                  id="removeProductTranslation"
+                  ReturnNodeName="ProductTranslation">
+    <ParameterInfo id="productTranslation"
+                   Type="oracle.fodemo.supplier.model.ProductTranslation"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                  BeanClass="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                  id="addWarehouseStockLevel"
+                  ReturnNodeName="WarehouseStockLevel">
+    <ParameterInfo id="warehouseStockLevel"
+                   Type="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                  BeanClass="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                  id="removeWarehouseStockLevel"
+                  ReturnNodeName="WarehouseStockLevel">
+    <ParameterInfo id="warehouseStockLevel"
+                   Type="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.OrderItem"
+                  BeanClass="oracle.fodemo.supplier.model.OrderItem"
+                  id="addOrderItem" ReturnNodeName="OrderItem">
+    <ParameterInfo id="orderItem" Type="oracle.fodemo.supplier.model.OrderItem"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.OrderItem"
+                  BeanClass="oracle.fodemo.supplier.model.OrderItem"
+                  id="removeOrderItem" ReturnNodeName="OrderItem">
+    <ParameterInfo id="orderItem" Type="oracle.fodemo.supplier.model.OrderItem"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="validateProduct"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.Product"
+                     BeanClass="oracle.fodemo.supplier.model.Product"
+                     id="Product">
+    <ParameterInfo id="attribute1" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute10" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute11" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute12" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute13" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute14" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute15" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute2" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute3" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute4" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute5" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute6" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute7" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute8" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attribute9" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="attributeCategory" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="productCategory"
+                   Type="oracle.fodemo.supplier.model.ProductCategory"
+                   isStructured="true"/>
+    <ParameterInfo id="costPrice" Type="java.lang.Double" isStructured="false"/>
+    <ParameterInfo id="createdBy" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="creationDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="externalUrl" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdateDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdatedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="listPrice" Type="java.lang.Double" isStructured="false"/>
+    <ParameterInfo id="minPrice" Type="java.lang.Double" isStructured="false"/>
+    <ParameterInfo id="objectVersionId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="productId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="productName" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="productStatus" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="shippingClassCode" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="supplier" Type="oracle.fodemo.supplier.model.Supplier"
+                   isStructured="true"/>
+    <ParameterInfo id="warrantyPeriodMonths" Type="java.lang.Long"
+                   isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.Product"
+                     BeanClass="oracle.fodemo.supplier.model.Product"
+                     id="Product"/>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="oracle.fodemo.supplier.model.ModelBundle"/>
+  </ResourceBundle>
+</JavaBean>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ShippingOptionTranslationEO"
+  DBObjectType="table"
+  DBObjectName="SHIPPING_OPTION_TRANSLATIONS"
+  AliasName="ShippingOptionTranslationEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  Version="11.1.1.48.80">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="ShippingTranslationsId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="SHIPPING_TRANSLATIONS_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SHIPPING_OPTION_TRANSLATIONS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ShippingTranslationsId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ShippingOptionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="SHIPPING_OPTION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SHIPPING_OPTION_TRANSLATIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ShippingOptionId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ShippingMethod"
+    IsNotNull="true"
+    Precision="100"
+    ColumnName="SHIPPING_METHOD"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SHIPPING_OPTION_TRANSLATIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ShippingMethod_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Language"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="LANGUAGE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SHIPPING_OPTION_TRANSLATIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Language_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="SourceLang"
+    IsNotNull="true"
+    Precision="4000"
+    ColumnName="SOURCE_LANG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SHIPPING_OPTION_TRANSLATIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SourceLang_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SHIPPING_OPTION_TRANSLATIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="SHIPPING_OPTION_TRANSLATIONS"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SHIPPING_OPTION_TRANSLATIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="SHIPPING_OPTION_TRANSLATIONS"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SHIPPING_OPTION_TRANSLATIONS"
+    ChangeIndicator="true"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="ShippingOptionBase"
+    Association="oracle.fodemo.storefront.entities.associations.ShippingOptionTranslationFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ShippingOptionTranslationFkAssoc.ShippingOptionBase"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.ShippingOptionTranslationFkAssoc.ShippingOptionTranslation"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ShippingOptionTranslatiPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SHIPPING_OPTION_TRANSLATI_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.ShippingTranslationsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055333">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055333"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition"
+        Value='"SHIPPING_TRANSLATIONS_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.ShippingTranslationsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055334">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055334"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SHIPPING_OPTION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.ShippingOptionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055335">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055335"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SHIPPING_METHOD" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.ShippingMethod"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055336">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055336"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LANGUAGE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.Language"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055337">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055337"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SOURCE_LANG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.SourceLang"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055338">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055338"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055339">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055339"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055340">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055340"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055341">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055341"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055342">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055342"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ShippingOptionTranslationFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SHIPPING_OPTION_TRANSLATION_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="SHIPPING_OPTIONS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO.ShippingOptionId"/>
+    </AttrArray>
+  </Key>
+  <Data>
+    <Property
+      Name="ID"
+      Value="a7b2f366-0116-1000-807a-0a000a32f9cb::::EntityObject"/>
+  </Data>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.ShippingOptionTranslationEOMsgBundle"/>
+  </ResourceBundle>
+</Entity>

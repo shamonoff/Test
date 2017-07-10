@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['oracle.fodemo.supplier.view.ViewControllerBundle']}"/>
+  <af:panelBorderLayout id="pbl1">
+    <f:facet name="top">
+      <af:train var="node"
+                shortDesc="#{viewcontrollerBundle['supplierinfo.step3.title']}"
+                id="train"
+                value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}">
+        <f:facet name="nodeStamp">
+          <af:commandNavigationItem text="#{node.textAndAccessKey}"
+                                    visited="#{node.visited}"
+                                    action="#{node.action}" disabled="true"
+                                    immediate="#{node.immediate}"
+                                    id="commandNavigationItem1"/>
+        </f:facet>
+      </af:train>
+    </f:facet>
+    <f:facet name="innerTop">
+      <af:panelHeader text="#{viewcontrollerBundle['addressInfo.header']}"
+                      id="ph1">
+        <af:messages id="m1"/>
+        <af:panelFormLayout id="pfl1">
+          <af:inputText value="#{bindings.address1.inputValue}"
+                        label="#{bindings.address1.hints.label}"
+                        required="#{bindings.address1.hints.mandatory}"
+                        showRequired="#{bindings.address1.hints.mandatory}"
+                        columns="#{bindings.address1.hints.displayWidth}"
+                        maximumLength="#{bindings.address1.hints.precision}"
+                        shortDesc="#{bindings.address1.hints.tooltip}" id="it6">
+            <f:validator binding="#{bindings.address1.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.address2.inputValue}"
+                        label="#{bindings.address2.hints.label}"
+                        required="#{bindings.address2.hints.mandatory}"
+                        showRequired="#{bindings.address2.hints.mandatory}"
+                        columns="#{bindings.address2.hints.displayWidth}"
+                        maximumLength="#{bindings.address2.hints.precision}"
+                        shortDesc="#{bindings.address2.hints.tooltip}" id="it2">
+            <f:validator binding="#{bindings.address2.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.city.inputValue}"
+                        label="#{bindings.city.hints.label}"
+                        required="#{bindings.city.hints.mandatory}"
+                        showRequired="#{bindings.city.hints.mandatory}"
+                        columns="#{bindings.city.hints.displayWidth}"
+                        maximumLength="#{bindings.city.hints.precision}"
+                        shortDesc="#{bindings.city.hints.tooltip}" id="it3">
+            <f:validator binding="#{bindings.city.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.postalCode.inputValue}"
+                        label="#{bindings.postalCode.hints.label}"
+                        required="#{bindings.postalCode.hints.mandatory}"
+                        showRequired="#{bindings.postalCode.hints.mandatory}"
+                        columns="#{bindings.postalCode.hints.displayWidth}"
+                        maximumLength="#{bindings.postalCode.hints.precision}"
+                        shortDesc="#{bindings.postalCode.hints.tooltip}"
+                        id="it5">
+            <f:validator binding="#{bindings.postalCode.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.stateProvince.inputValue}"
+                        label="#{bindings.stateProvince.hints.label}"
+                        required="#{bindings.stateProvince.hints.mandatory}"
+                        showRequired="#{bindings.stateProvince.hints.mandatory}"
+                        columns="#{bindings.stateProvince.hints.displayWidth}"
+                        maximumLength="#{bindings.stateProvince.hints.precision}"
+                        shortDesc="#{bindings.stateProvince.hints.tooltip}"
+                        id="it1">
+            <f:validator binding="#{bindings.stateProvince.validator}"/>
+          </af:inputText>
+          <af:selectOneChoice value="#{bindings.countryId.inputValue}"
+                              label="#{bindings.countryId.hints.label}"
+                              required="#{bindings.countryId.hints.mandatory}"
+                              shortDesc="#{bindings.countryId.hints.tooltip}"
+                              id="soc1" showRequired="true"
+                              valuePassThru="true">
+            <f:selectItems value="#{bindings.countryCodeFindAll.items}"
+                           id="si1"/>
+            <af:forEach items="#{bindings.countryCodeFindAll.iteratorBinding.allRowsInRange}"
+                        var="li">
+              <af:selectItem id="si" label="#{li.dataProvider.countryName}"
+                             value="#{li.dataProvider.isoCountryCode}"/>
+            </af:forEach>
+          </af:selectOneChoice>
+          <f:facet name="footer">
+            <af:group id="g1">
+              <af:panelGroupLayout id="pgl2" layout="horizontal">
+                <af:commandButton text="#{viewcontrollerBundle['global.button.Cancel']}"
+                                  id="cb5" action="exitRegistration"
+                                  immediate="true" icon="/images/undo.png"/>
+                <af:spacer width="5" height="10" id="s1"/>
+                <af:commandButton text="#{viewcontrollerBundle['global.button.Save']}"
+                                  id="cb6"
+                                  action="#{pageFlowScope.SupplierRegistrationBean.saveSupplier}"
+                                  icon="/images/filesave.png">
+                  <af:setPropertyListener from="#{bindings.addressesIterator.currentRow.dataProvider}"
+                                          to="#{pageFlowScope.SupplierRegistrationBean.address}"
+                                          type="action"/>
+                </af:commandButton>
+              </af:panelGroupLayout>
+            </af:group>
+          </f:facet>
+        </af:panelFormLayout>
+      </af:panelHeader>
+    </f:facet>
+  </af:panelBorderLayout>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:SupplierRegistrationBean-->
+</jsp:root>

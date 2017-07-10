@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="myorders-task-flow">
+    <default-activity>executeMyOrdersForCustomerVO</default-activity>
+    <view id="myOrders">
+      <page>/myOrders.jspx</page>
+    </view>
+    <method-call id="executeMyOrdersForCustomerVO">
+      <method>#{bindings.executeMyOrdersForCustomerVO.execute}</method>
+      <outcome>
+        <fixed-outcome>executeMyOrdersForCustomerVO</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="checkout-task-flow">
+      <task-flow-reference>
+        <document id="__2">/WEB-INF/checkout-task-flow.xml</document>
+        <id id="__1">checkout-task-flow</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <url-view id="register">
+      <url id="__8">#{myOrdersBean.registerNav}</url>
+    </url-view>
+    <url-view id="profile">
+      <url id="__15">#{myOrdersBean.profileNav}</url>
+    </url-view>
+    <url-view id="home">
+      <url id="__19">#{myOrdersBean.homeNav}</url>
+    </url-view>
+    <control-flow-rule>
+      <from-activity-id>executeMyOrdersForCustomerVO</from-activity-id>
+      <control-flow-case>
+        <from-outcome>executeMyOrdersForCustomerVO</from-outcome>
+        <to-activity-id>myOrders</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id id="__6">myOrders</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome id="__7">checkout</from-outcome>
+        <to-activity-id id="__3">checkout-task-flow</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome id="__11">goRegister</from-outcome>
+        <to-activity-id id="__9">register</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome id="__14">goProfile</from-outcome>
+        <to-activity-id id="__12">profile</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome id="__18">home</from-outcome>
+        <to-activity-id id="__16">home</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

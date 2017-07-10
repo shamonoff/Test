@@ -1,0 +1,1246 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <name>PRODUCT_CATEGORIES_BASE</name>
+    <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+    <schemaName>FOD</schemaName>
+    <type>TABLE</type>
+  </ID>
+  <name>PRODUCT_CATEGORIES_BASE</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80c8-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CATEGORY_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2e4f4dee-a38c-412d-a040-3d85f10cc11e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80c8-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CATEGORY_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Unique Id for the category</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CATEGORY_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PARENT_CATEGORY_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80c9-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>PARENT_CATEGORY_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4ad7785c-883d-4865-a683-7c600ed1311d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PARENT_CATEGORY_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80c9-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PARENT_CATEGORY_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">The parent of this category in the hierachy</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PARENT_CATEGORY_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_LOCKED_FLAG</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80ca-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CATEGORY_LOCKED_FLAG</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2112fcda-7fa9-4516-ae23-f326ce24c68f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_LOCKED_FLAG</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80ca-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CATEGORY_LOCKED_FLAG</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <default class="java.lang.String">&apos;N&apos;</default>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Boolean fag to define if new products may be assigned to this category or not </value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CATEGORY_LOCKED_FLAG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>REPRESENTATIVE_PRODUCT_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80cb-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>REPRESENTATIVE_PRODUCT_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">115a5560-c49c-4398-a844-1b5a6f94d9df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>REPRESENTATIVE_PRODUCT_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80cb-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>REPRESENTATIVE_PRODUCT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Links to a product which will be used to provide the sample image to illustrate the whole category.</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REPRESENTATIVE_PRODUCT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CREATED_BY</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80cc-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CREATED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4b462f86-35e1-455c-a305-73f28d26b620</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CREATED_BY</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80cc-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">60</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CREATION_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80cd-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CREATION_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7c58fb0f-d197-486b-80f1-f1e1a0002901</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CREATION_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80cd-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATION_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATION_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LAST_UPDATED_BY</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80ce-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>LAST_UPDATED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">06922bf2-166f-4b7d-b75d-97fcea12a768</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>LAST_UPDATED_BY</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80ce-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">60</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LAST_UPDATE_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80cf-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>LAST_UPDATE_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7b42a9c6-3ce6-47ca-b9be-66e9bdbd1e29</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>LAST_UPDATE_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80cf-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATE_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATE_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>OBJECT_VERSION_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80d0-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>OBJECT_VERSION_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c385f1ab-6d8e-43ad-ba6a-9972e0c1ef5b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OBJECT_VERSION_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80d0-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OBJECT_VERSION_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OBJECT_VERSION_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.CheckConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80d3-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+      <checkConditionFragment class="oracle.javatools.db.sql.WhereObject">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d557a807-154f-4bd9-8780-684e9bc5ebe3</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80d3-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>CONSTRAINT</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>WHERE</type>
+        </ID>
+        <arguments>
+          <argument class="oracle.javatools.db.sql.SetOperation">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">87a50f93-82a5-4315-a3bd-c747c178a217</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+                <identifier class="java.lang.String">b63b5802-0112-1000-80d3-8223672bff0d</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>CONSTRAINT</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">a5785f11-c5bc-43be-83d7-99b92c02aacf</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-80d3-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>PRODUCT_CATEGORIES_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>CATEGORY_LOCKED_FLAG</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-80ca-8223672bff0d</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>PRODUCT_CATEGORIES_BASE</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+                    <schemaName>FOD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>PRODUCT_CATEGORIES_BASE</name>
+                              <identifier class="java.math.BigDecimal">20868</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+                <qualified>false</qualified>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">9a8682da-cac0-4fbf-be46-abfc4996719c</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-80d3-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>PRODUCT_CATEGORIES_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;Y&apos;</SQLText>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>PRODUCT_CATEGORIES_BASE</name>
+                              <identifier class="java.math.BigDecimal">20868</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">b3a7354f-0f55-48f1-8b3f-64ec0a6dc129</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-80d3-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>PRODUCT_CATEGORIES_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;N&apos;</SQLText>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>PRODUCT_CATEGORIES_BASE</name>
+                              <identifier class="java.math.BigDecimal">20868</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+              </argument>
+            </arguments>
+            <operator>705</operator>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>PRODUCT_CATEGORIES_BASE</name>
+                        <identifier class="java.math.BigDecimal">20868</identifier>
+                        <schemaName>FOD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <subType>CheckConstraint</subType>
+                      <type>CONSTRAINT</type>
+                    </parent>
+                    <type>WHERE</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+          </argument>
+        </arguments>
+        <operator>372</operator>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <subType>CheckConstraint</subType>
+                <type>CONSTRAINT</type>
+              </parent>
+              <type>WHERE</type>
+            </value>
+          </entry>
+        </properties>
+      </checkConditionFragment>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PRODUCT_CATEGORIES_LOCKED_CHK</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>CheckConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PRODUCT_CATEGORIES_FK</name>
+        <identifier class="java.lang.String">1c5d07f2-edb9-4eb0-b6c2-f8140e38a09f</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>PRODUCT_CATEGORIES_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PARENT_CATEGORY_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c9-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES_BASE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PRODUCT_CATEGORIES_FK</name>
+            <childObjectNames>
+              <childObjectName>PARENT_CATEGORY_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PRODUCT_TAGS_PK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80d2-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>REPRESENTATIVE_PRODUCT_FK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80d1-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>REPRESENTATIVE_PRODUCT_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>REPRESENTATIVE_PRODUCT_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80cb-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES_BASE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REPRESENTATIVE_PRODUCT_FK</name>
+            <childObjectNames>
+              <childObjectName>REPRESENTATIVE_PRODUCT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+        <identifier class="java.lang.String">b63b5812-0112-1000-817f-8223672bff0d</identifier>
+        <parent class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+          <identifier class="java.lang.String">b63b5812-0112-1000-815f-8223672bff0d</identifier>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PRODUCT_TAGS_PK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80d2-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>PRODUCT_TAGS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c8-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES_BASE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PRODUCT_TAGS_PK</name>
+            <childObjectNames>
+              <childObjectName>CATEGORY_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.math.BigDecimal">20868</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">The classification hierachy for a particular product. Categories can be nested and then a product is assigned to a particular category.  The actual names and descriptions for the categories are held in the separate CATEGORY_TRANSLATIONS table.</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">FOD</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>PRODUCT_CATEGORIES_BASE</name>
+        <identifier class="java.math.BigDecimal">20868</identifier>
+        <schemaName>FOD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">cabad600-5144-40ca-be2f-62f03a8d2f3f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES_BASE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>OracleStorageProperties</type>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <maxtrans>255</maxtrans>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PRODUCT_CATEGORIES_BASE</name>
+                <identifier class="java.math.BigDecimal">20868</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespace>USERS</tablespace>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+      <value class="java.lang.Long">1233768291000</value>
+    </entry>
+  </properties>
+  <schema>
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>FOD</name>
+      <identifier class="java.lang.String">b628cc3c-0112-1000-8006-8223672b1417</identifier>
+      <type>SCHEMA</type>
+    </ID>
+    <name>FOD</name>
+  </schema>
+</table>

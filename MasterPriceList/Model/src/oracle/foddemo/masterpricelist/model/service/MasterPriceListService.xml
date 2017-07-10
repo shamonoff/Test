@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MasterPriceListService"
+  Version="11.1.1.54.30"
+  ComponentClass="oracle.foddemo.masterpricelist.model.service.MasterPriceListServiceImpl"
+  ClearCacheOnRollback="true"
+  ComponentInterface="oracle.foddemo.masterpricelist.model.service.common.MasterPriceListService"
+  ClientProxyName="oracle.foddemo.masterpricelist.model.service.client.MasterPriceListServiceClient">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="ProductSuppliers"
+    ViewObjectName="oracle.foddemo.masterpricelist.model.queries.SuppliersVO"/>
+  <ViewUsage
+    Name="ProductCategories"
+    ViewObjectName="oracle.foddemo.masterpricelist.model.queries.CategoriesVO"/>
+  <ViewUsage
+    Name="ProductList"
+    ViewObjectName="oracle.foddemo.masterpricelist.model.queries.ProductsVO"/>
+  <ViewUsage
+    Name="ProductTranslationsList"
+    ViewObjectName="oracle.foddemo.masterpricelist.model.queries.ProductTranslationListVO"/>
+  <ViewUsage
+    Name="ProductSalesByMonth"
+    ViewObjectName="oracle.foddemo.masterpricelist.model.queries.ProductSalesByMonth"/>
+  <ViewUsage
+    Name="AvailableLanguagesLOV"
+    ViewObjectName="oracle.foddemo.masterpricelist.model.queries.AvailableLanguagesLOV"/>
+  <ViewUsage
+    Name="ProductStatusLOV"
+    ViewObjectName="oracle.foddemo.masterpricelist.model.queries.ProductStatusLOV"/>
+  <ViewUsage
+    Name="TopLevelCategories"
+    ViewObjectName="oracle.foddemo.masterpricelist.model.queries.ParentCategoriesVO"/>
+  <ViewUsage
+    Name="ActiveDiscounts"
+    ViewObjectName="oracle.foddemo.masterpricelist.model.queries.ActiveDiscountsVO"/>
+  <ViewLinkUsage
+    Name="ProductTranslationsLink1"
+    Version="11.1.1.54.30"
+    ViewLinkObjectName="oracle.foddemo.masterpricelist.model.queries.viewlinks.ProductTranslationsLink"
+    SrcViewUsageName="oracle.foddemo.masterpricelist.model.service.MasterPriceListService.ProductList"
+    DstViewUsageName="oracle.foddemo.masterpricelist.model.service.MasterPriceListService.ProductTranslationsList"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ProductToSalesByMonth1"
+    Version="11.1.1.54.30"
+    ViewLinkObjectName="oracle.foddemo.masterpricelist.model.queries.viewlinks.ProductToSalesByMonth"
+    SrcViewUsageName="oracle.foddemo.masterpricelist.model.service.MasterPriceListService.ProductList"
+    DstViewUsageName="oracle.foddemo.masterpricelist.model.service.MasterPriceListService.ProductSalesByMonth"
+    Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="getConnectedUser">
+      <Return
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

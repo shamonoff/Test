@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductTranslationsFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_version" Value="11.1.1.44.46"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="ProductBase"
+    Cardinality="1"
+    Source="true"
+    Owner="oracle.fodemo.storefront.entities.ProductBaseEO">
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.ProductBaseEO.ProductId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_foreignKey"
+        Value="oracle.fodemo.storefront.entities.ProductBaseEO.ProductsPk"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ProductBase"/>
+      <Attr Name="_aggregation" Value="0"/>
+    </DesignTime>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="ProductTranslation"
+    Cardinality="-1"
+    Owner="oracle.fodemo.storefront.entities.ProductTranslationEO">
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductTranslationEO.ProductId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_foreignKey"
+        Value="oracle.fodemo.storefront.entities.ProductTranslationEO.ProductTranslationsFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ProductTranslation"/>
+      <Attr Name="_aggregation" Value="0"/>
+    </DesignTime>
+  </AssociationEnd>
+</Association>

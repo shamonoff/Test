@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AvailableLanguageEO"
+  DBObjectType="table"
+  DBObjectName="AVAILABLE_LANGUAGES"
+  AliasName="AvailableLanguageEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  Version="11.1.1.48.80">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="DefaultFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="DEFAULT_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="AVAILABLE_LANGUAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DefaultFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="AVAILABLE_LANGUAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="AVAILABLE_LANGUAGES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="AVAILABLE_LANGUAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Language"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="LANGUAGE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="AVAILABLE_LANGUAGES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Language_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="AVAILABLE_LANGUAGES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="AVAILABLE_LANGUAGES"
+    ChangeIndicator="true"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="AvailableLanguagesDefltChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="AVAILABLE_LANGUAGES_DEFLT_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value="DEFAULT_FLAG in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AvailableLanguageEO.DefaultFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AvailableLanguagesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="AVAILABLE_LANGUAGES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AvailableLanguageEO.Language"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055284">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055284"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LANGUAGE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AvailableLanguageEO.Language"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055285">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055285"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"DEFAULT_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AvailableLanguageEO.DefaultFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055286">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055286"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AvailableLanguageEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055287">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055287"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AvailableLanguageEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055288">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055288"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AvailableLanguageEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055289">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055289"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AvailableLanguageEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055290">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055290"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AvailableLanguageEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.AvailableLanguageEOMsgBundle"/>
+  </ResourceBundle>
+</Entity>

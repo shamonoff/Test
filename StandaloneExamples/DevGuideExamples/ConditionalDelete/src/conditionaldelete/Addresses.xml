@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Addresses"
+  Version="11.1.1.53.76"
+  DBObjectType="table"
+  DBObjectName="ADDRESSES"
+  AliasName="Addresses"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="conditionaldelete.AddressesImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Delete|Access"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="AddressId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="ADDRESS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADDRESSES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Address1"
+    IsNotNull="true"
+    Precision="40"
+    ColumnName="ADDRESS1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Address2"
+    Precision="40"
+    ColumnName="ADDRESS2"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="City"
+    IsNotNull="true"
+    Precision="40"
+    ColumnName="CITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PostalCode"
+    Precision="12"
+    ColumnName="POSTAL_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StateProvince"
+    IsNotNull="true"
+    Precision="40"
+    ColumnName="STATE_PROVINCE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CountryId"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="COUNTRY_ID"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="ADDRESSES"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Longitude"
+    ColumnName="LONGITUDE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADDRESSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Latitude"
+    ColumnName="LATITUDE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADDRESSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESSES"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ADDRESSES"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESSES"
+    HistoryColumn="UserHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ADDRESSES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADDRESSES"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="AddressesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ADDRESSES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.AddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008261">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008261"/>
+      <Attr Name="_checkCondition" Value='"ADDRESS_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.AddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008262">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008262"/>
+      <Attr Name="_checkCondition" Value='"ADDRESS1" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.Address1"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008263">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008263"/>
+      <Attr Name="_checkCondition" Value='"CITY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.City"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008264">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008264"/>
+      <Attr Name="_checkCondition" Value='"STATE_PROVINCE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.StateProvince"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008265">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008265"/>
+      <Attr Name="_checkCondition" Value='"COUNTRY_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.CountryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008266">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008266"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008267">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008267"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008268">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008268"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008269">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008269"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008270">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008270"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="conditionaldelete.Addresses.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+</Entity>

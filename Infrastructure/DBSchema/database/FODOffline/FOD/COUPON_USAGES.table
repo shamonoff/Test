@@ -1,0 +1,1045 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <name>COUPON_USAGES</name>
+    <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+    <schemaName>FOD</schemaName>
+    <type>TABLE</type>
+  </ID>
+  <name>COUPON_USAGES</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CUSTOMER_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-802d-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CUSTOMER_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">836821b5-3eff-4128-a381-0b7477e44160</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CUSTOMER_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-802d-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUSTOMER_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COUPON_USAGES</name>
+                  <identifier class="java.math.BigDecimal">20876</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Link to the customer using the coupon (discount)</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DISCOUNT_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-802e-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>DISCOUNT_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">019970ca-7298-4e9f-b4ef-698de2188f0f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>DISCOUNT_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-802e-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DISCOUNT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COUPON_USAGES</name>
+                  <identifier class="java.math.BigDecimal">20876</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Link to the discount being applied </value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DISCOUNT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>APPLIED_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-802f-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>APPLIED_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2538c9a1-71ca-4f69-90a4-c4e96778b226</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>APPLIED_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-802f-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>APPLIED_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COUPON_USAGES</name>
+                  <identifier class="java.math.BigDecimal">20876</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">When was the discount used</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>APPLIED_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ORDER_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8030-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>ORDER_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8329be16-5e52-4ac0-a1ad-718ed387f87f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ORDER_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8030-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ORDER_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COUPON_USAGES</name>
+                  <identifier class="java.math.BigDecimal">20876</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">The order for which this discount was used.</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ORDER_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CREATED_BY</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8031-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CREATED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0e248e6a-b99b-4f95-b587-7ec67a53a77e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CREATED_BY</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8031-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">60</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COUPON_USAGES</name>
+                  <identifier class="java.math.BigDecimal">20876</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CREATION_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8032-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CREATION_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">647f2558-afd7-47ad-9bee-bbc6762a5057</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CREATION_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8032-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATION_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COUPON_USAGES</name>
+                  <identifier class="java.math.BigDecimal">20876</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATION_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LAST_UPDATED_BY</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8033-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>LAST_UPDATED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7ac2d9ba-0461-42fc-b44b-d219a3067cad</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>LAST_UPDATED_BY</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8033-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">60</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COUPON_USAGES</name>
+                  <identifier class="java.math.BigDecimal">20876</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LAST_UPDATE_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8034-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>LAST_UPDATE_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fd98465d-65d9-4a11-bad9-f87751b7b60b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>LAST_UPDATE_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8034-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATE_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COUPON_USAGES</name>
+                  <identifier class="java.math.BigDecimal">20876</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATE_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>OBJECT_VERSION_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8035-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>OBJECT_VERSION_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">33754643-8799-43d7-bc59-e4bcdf0202c9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OBJECT_VERSION_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8035-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OBJECT_VERSION_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COUPON_USAGES</name>
+                  <identifier class="java.math.BigDecimal">20876</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OBJECT_VERSION_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COUPON_USAGES_DISCOUNTS_FK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8039-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>COUPON_USAGES_DISCOUNTS_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNT_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802e-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COUPON_USAGES</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COUPON_USAGES_DISCOUNTS_FK</name>
+            <childObjectNames>
+              <childObjectName>DISCOUNT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+        <identifier class="java.lang.String">b63b5802-0112-1000-8057-8223672bff0d</identifier>
+        <parent class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COUPON_USAGES_ORDERS_FK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8038-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>COUPON_USAGES_ORDERS_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ORDER_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8030-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COUPON_USAGES</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COUPON_USAGES_ORDERS_FK</name>
+            <childObjectNames>
+              <childObjectName>ORDER_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+        <identifier class="java.lang.String">b63b5802-0112-1000-8117-8223672bff0d</identifier>
+        <parent class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+          <identifier class="java.lang.String">b63b5802-0112-1000-80fb-8223672bff0d</identifier>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COUPON_USAGES_PERSONS_FK</name>
+        <identifier class="java.lang.String">bb49d561-6d8f-48fa-8e6d-68ea5e023977</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>COUPON_USAGES_PERSONS_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802d-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COUPON_USAGES</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COUPON_USAGES_PERSONS_FK</name>
+            <childObjectNames>
+              <childObjectName>CUSTOMER_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PERSONS_PK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-808d-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PERSONS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-806c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COUPON_USAGES_PK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8036-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUPON_USAGES</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>COUPON_USAGES_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802d-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COUPON_USAGES</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNT_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-802e-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COUPON_USAGES</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COUPON_USAGES_PK</name>
+            <childObjectNames>
+              <childObjectName>CUSTOMER_ID</childObjectName>
+              <childObjectName>DISCOUNT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COUPON_USAGES</name>
+              <identifier class="java.math.BigDecimal">20876</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">Associates the use of One-time discounts (coupons) with a particular customer.  When the customer attempts to apply a coupon to a transaction, this table will be checked to see if they have already used this coupon.</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">FOD</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>COUPON_USAGES</name>
+        <identifier class="java.math.BigDecimal">20876</identifier>
+        <schemaName>FOD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fd4e2755-1ebe-46c7-98fd-36bb3e81208f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COUPON_USAGES</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-802c-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>OracleStorageProperties</type>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <maxtrans>255</maxtrans>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>COUPON_USAGES</name>
+                <identifier class="java.math.BigDecimal">20876</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespace>USERS</tablespace>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+      <value class="java.lang.Long">1233768290000</value>
+    </entry>
+  </properties>
+  <schema>
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>FOD</name>
+      <identifier class="java.lang.String">b628cc3c-0112-1000-8006-8223672b1417</identifier>
+      <type>SCHEMA</type>
+    </ID>
+    <name>FOD</name>
+  </schema>
+</table>

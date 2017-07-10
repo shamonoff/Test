@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.10" id="helpPageDef" Package="account">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+    <variable Type="java.lang.String" Name="findHelpTextById_return"
+                IsQueriable="false"
+                DefaultValue="#{bindings.findHelpTextById.result}"/> 
+    </variableIterator>
+  </executables>
+  <bindings>
+   <methodAction id="findHelpTextById"
+                  Action="invokeMethod" MethodName="findHelpTextById"
+                  IsViewObjectMethod="false"
+                  DataControl="LookupServiceAMDataControl"
+                  InstanceName="LookupServiceAMDataControl.dataProvider"
+                  ReturnName="LookupServiceAMDataControl.methodResults.findHelpTextById_LookupServiceAMDataControl_dataProvider_findHelpTextById_result">
+      <NamedData NDName="helpTopicId" NDValue="" NDType="java.lang.Long"/>
+    </methodAction> 
+ <attributeValues IterBinding="variables" id="return">
+      <AttrNames>
+        <Item Value="findHelpTextById_return"/>
+      </AttrNames>
+    </attributeValues> 
+  </bindings>
+</pageDefinition>

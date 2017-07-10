@@ -1,0 +1,844 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document title="#{res['global.shopping.title']}" id="d1">
+      <af:resource type="javascript" source="../js/rcf_utils.js" />
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:popup id="shoppingCartPopup">
+          <af:dialog id="shoppingCartDialog" modal="true"
+                     titleIconSource="/images/cart.gif"
+                     title="#{res['global.cart.header']}" type="ok"
+                     inlineStyle="width:550px;height:500px;">
+            <af:panelStretchLayout bottomHeight="20" id="psl1">
+              <f:facet name="center">
+                  <af:panelStretchLayout topHeight="20" id="psl2">
+                    <f:facet name="center">
+                      <af:panelHeader text="#{res['global.cart.items']}"
+                                      id="ph1">
+                        <af:table id="cartTab"
+                                  value="#{bindings.MyShoppingCart.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.MyShoppingCart.rangeSize}"
+                                  fetchSize="#{bindings.MyShoppingCart.rangeSize}"
+                                  first="#{bindings.MyShoppingCart.rangeStart}"
+                                  emptyText="#{bindings.MyShoppingCart.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                                  partialTriggers="::removeFromCart ::removeAll"
+                                  inlineStyle="height:200px"
+                                  rowSelection="single"
+                                  verticalGridVisible="false"
+                                  varStatus="rowStat"
+                                  selectionListener="#{bindings.MyShoppingCart.collectionModel.makeCurrent}"
+                                  width="500" columnStretching="last"
+                                  rowBandingInterval="0" displayRow="selected"
+                                  binding="#{shoppingCartBean.table}">
+                          <af:column id="c1">
+                            <af:panelGroupLayout layout="horizontal"
+                                                 halign="center"
+                                                 valign="middle" id="pgl1">
+                              <af:image source="/imageservlet?thumbnail=#{row.ProductId}"
+                                        id="i1"/>
+                            </af:panelGroupLayout>
+                          </af:column>
+                          <af:column noWrap="false" width="200" id="c2">
+                            <af:showDetail inlineStyle="text-align:justify"
+                                           disclosedText="#{row.ProductName}"
+                                           undisclosedText="#{row.ProductName}"
+                                           disclosed="true" id="sd1">
+                              <af:panelLabelAndMessage label="#{res['global.cart.price']}:"
+                                                       id="plam1">
+                                <af:outputText inlineStyle="font-weight:bold;color:#96171a;"
+                                               value="#{row.ListPrice}"
+                                               id="ot1"/>
+                              </af:panelLabelAndMessage>
+                            </af:showDetail>
+                          </af:column>
+                          <af:column width="150" id="c3">
+                            <af:panelFormLayout id="pfl3">
+                              <af:panelLabelAndMessage label="#{res['global.cart.quantity']}:"
+                                                       id="plam2">
+                                <af:inputNumberSpinbox autoSubmit="true"
+                                                       id="quantity" columns="3"
+                                                       value="#{row.Quantity}"
+                                                       valueChangeListener="#{shoppingCartBean.quanityValueChangeListener}"
+                                                       readOnly="#{row != shoppingCartBean.selectedRow}"
+                                                       minimum="1">
+                                  <f:validator binding="#{row.bindings.Quantity.validator}"/>
+                                  <af:convertNumber groupingUsed="false"
+                                                    pattern="#{bindings.MyShoppingCart.hints.Quantity.format}"/>
+                                </af:inputNumberSpinbox>                              
+                                </af:panelLabelAndMessage>
+                            </af:panelFormLayout>
+                          </af:column>
+                        </af:table>
+                      </af:panelHeader>
+                    </f:facet>
+                    <f:facet name="bottom">
+                      <af:panelGroupLayout layout="horizontal" halign="right"
+                                           id="pgl2">
+                        <af:outputText inlineStyle="font-weight:bold;white-space:nowrap;"
+                                       value="#{res['global.cart.subtotal']}="
+                                       id="ot2"/>
+                        <af:spacer width="5px" id="s1"/>
+                        <af:outputText id="estimatedTotalInPopup"
+                                       inlineStyle="color:#96171a;font-weight:bold;"
+                                       partialTriggers="cartTab:quantity removeFromCart removeAll"
+                                       value="#{bindings.LineItemsSubtotal}"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="top">
+                      <af:panelGroupLayout layout="horizontal" halign="right"
+                                           id="pgl3">
+                        <af:commandButton id="removeFromCart"
+                                          text="#{res['global.cart.remove']}"
+                                          partialSubmit="true"
+                                          actionListener="#{shoppingCartBean.removeItemFromShoppingCart}"
+                                          disabled="#{shoppingCartBean.noRowIsSelected}"
+                                          partialTriggers="cartTab"/>
+                        <af:commandButton id="removeAll"
+                                          text="#{res['global.cart.removeall']}"
+                                          partialTriggers="cartTab"
+                                          partialSubmit="true"
+                                          actionListener="#{shoppingCartBean.removeAllItems}"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelStretchLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </af:dialog>
+        </af:popup>
+        <af:pageTemplate id="ptemp"
+                         viewId="/templates/StoreFrontTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}">
+          <f:facet name="center">
+            <af:group id="g1">
+              <af:panelStretchLayout rendered="#{bindings.MyShoppingCart.collectionModel.rowCount ne  0}"
+                                     id="psl3">
+                <f:facet name="center">
+                  <af:panelGroupLayout layout="scroll"
+                                       inlineStyle="width:100%;" id="pgl4">
+                    <af:panelBox text="#{res['order.shippingdetails']}"
+                                 id="pb1">
+                      <af:panelGroupLayout layout="vertical" id="pgl5">
+                        <af:spacer width="10" height="10" id="s2"/>
+                        <af:panelBox text="#{res['order.custinfo.header']}"
+                                     id="pb2">
+                          <trh:tableLayout width="100%">
+                            <trh:rowLayout valign="top">
+                              <trh:cellFormat>
+                                <af:panelHeader text="#{res['order.generalinfo.header']}"
+                                                id="ph2">
+                                  <af:panelFormLayout id="pfl4">
+                                    <af:inputText value="#{bindings.FirstName.inputValue} #{bindings.LastName.inputValue}"
+                                                  label="#{res['order.custinfo.name']}"
+                                                  id="it1"/>
+                                    <af:panelLabelAndMessage label="#{bindings.RegisteredDate.label}"
+                                                             id="plam3">
+                                      <af:outputText value="#{bindings.RegisteredDate.inputValue}"
+                                                     id="ot3">
+                                        <af:convertDateTime pattern="#{bindings.RegisteredDate.format}"/>
+                                      </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Email.label}"
+                                                             id="plam4">
+                                      <af:outputText value="#{bindings.Email.inputValue}"
+                                                     id="ot4"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.MobilePhoneNumber.label}"
+                                                             id="plam5">
+                                      <af:outputText value="#{bindings.MobilePhoneNumber.inputValue}"
+                                                     id="ot5"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.PhoneNumber.inputValue}"
+                                                             id="plam6">
+                                      <af:outputText value="#{bindings.PhoneNumber.inputValue}"
+                                                     id="ot6"/>
+                                    </af:panelLabelAndMessage>
+                                  </af:panelFormLayout>
+                                </af:panelHeader>
+                              </trh:cellFormat>
+                              <trh:cellFormat>
+                                <af:panelHeader text="#{res['order.address.header']}"
+                                                id="ph3">
+                                  <af:panelFormLayout id="pfl5">
+                                    <af:inputText value="#{bindings.Address1.inputValue}"
+                                                  label="#{bindings.Address1.label}"
+                                                  required="#{bindings.Address1.mandatory}"
+                                                  columns="#{bindings.Address1.displayWidth}"
+                                                  id="it8">
+                                      <f:validator binding="#{bindings.Address1.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.Address2.inputValue}"
+                                                  required="#{bindings.Address2.mandatory}"
+                                                  columns="#{bindings.Address2.displayWidth}"
+                                                  rendered="#{bindings.Address2.inputValue ne null}"
+                                                  id="it10">
+                                      <f:validator binding="#{bindings.Address2.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.City.inputValue}"
+                                                  label="#{bindings.City.label}"
+                                                  required="#{bindings.City.mandatory}"
+                                                  columns="#{bindings.City.displayWidth}"
+                                                  id="it11">
+                                      <f:validator binding="#{bindings.City.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.PostalCode.inputValue}"
+                                                  label="#{bindings.PostalCode.label}"
+                                                  required="#{bindings.PostalCode.mandatory}"
+                                                  columns="#{bindings.PostalCode.displayWidth}"
+                                                  id="it12">
+                                      <f:validator binding="#{bindings.PostalCode.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.StateProvince.inputValue}"
+                                                  label="#{bindings.StateProvince.label}"
+                                                  required="#{bindings.StateProvince.mandatory}"
+                                                  columns="#{bindings.StateProvince.displayWidth}"
+                                                  id="it15">
+                                      <f:validator binding="#{bindings.StateProvince.validator}"/>
+                                    </af:inputText>
+                                   <af:inputText value="#{bindings.CountryId.inputValue}"
+                                                  label="#{bindings.CountryId.label}"
+                                                  required="#{bindings.CountryId.mandatory}"
+                                                  columns="#{bindings.CountryId.displayWidth}"
+                                                 id="it17">
+                                      <f:validator binding="#{bindings.CountryId.validator}"/>
+                                    </af:inputText> 
+                                  </af:panelFormLayout>
+                                </af:panelHeader>
+                              </trh:cellFormat>
+                            </trh:rowLayout>
+                          </trh:tableLayout>
+                        </af:panelBox>
+                        <af:spacer width="10" height="10" id="s3"/>
+                        <af:panelBox text="#{res['order.orderinfo']} - ##{bindings.OrderId.inputValue}"
+                                     id="pb3">
+                          <trh:tableLayout width="100%">
+                            <trh:rowLayout valign="top">
+                              <trh:cellFormat>
+                                <af:panelHeader text="#{res['order.shippinginfo']}"
+                                                id="ph4">
+                                 <af:popup id="addAddressPopup">
+                                    <af:dialog type="none" id="d2"> 
+                                      <f:facet name="buttonBar">
+                                        <af:panelGroupLayout id="pg16">
+                                          <af:commandButton text="#{res['global.button.OK']}"
+                                                           actionListener="#{orderPageBean.confirmAddAddressUsagesActionListener}"
+                                                            id="cb1">
+
+                                          </af:commandButton>
+                                           <af:commandButton immediate="true"
+                                                            text="#{res['global.button.Cancel']}"
+                                                            actionListener="#{orderPageBean.cancelAddAddressUsagesActionListener}"
+                                                             id="cb2"> 
+                                          </af:commandButton> 
+                                        </af:panelGroupLayout>
+                                      </f:facet>
+                                      <af:panelFormLayout id="pfl2">
+                                        <af:inputText value="#{bindings.Address12.inputValue}"
+                                                      label="#{bindings.Address12.hints.label}"
+                                                      required="#{bindings.Address12.hints.mandatory}"
+                                                      columns="#{bindings.Address12.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Address12.hints.precision}"
+                                                      shortDesc="#{bindings.Address12.hints.tooltip}"
+                                                      id="it16">
+                                          <f:validator binding="#{bindings.Address12.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Address22.inputValue}"
+                                                      label="#{bindings.Address22.hints.label}"
+                                                      required="#{bindings.Address22.hints.mandatory}"
+                                                      columns="#{bindings.Address22.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Address22.hints.precision}"
+                                                      shortDesc="#{bindings.Address22.hints.tooltip}"
+                                                      id="it13">
+                                          <f:validator binding="#{bindings.Address22.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.City2.inputValue}"
+                                                      label="#{bindings.City2.hints.label}"
+                                                      required="#{bindings.City2.hints.mandatory}"
+                                                      columns="#{bindings.City2.hints.displayWidth}"
+                                                      maximumLength="#{bindings.City2.hints.precision}"
+                                                      shortDesc="#{bindings.City2.hints.tooltip}"
+                                                      id="it6">
+                                          <f:validator binding="#{bindings.City2.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.StateProvince2.inputValue}"
+                                                      label="#{bindings.StateProvince2.hints.label}"
+                                                      required="#{bindings.StateProvince2.hints.mandatory}"
+                                                      columns="#{bindings.StateProvince2.hints.displayWidth}"
+                                                      maximumLength="#{bindings.StateProvince2.hints.precision}"
+                                                      shortDesc="#{bindings.StateProvince2.hints.tooltip}"
+                                                      id="it9">
+                                          <f:validator binding="#{bindings.StateProvince2.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.PostalCode2.inputValue}"
+                                                      label="#{bindings.PostalCode2.hints.label}"
+                                                      required="#{bindings.PostalCode2.hints.mandatory}"
+                                                      columns="#{bindings.PostalCode2.hints.displayWidth}"
+                                                      maximumLength="#{bindings.PostalCode2.hints.precision}"
+                                                      shortDesc="#{bindings.PostalCode2.hints.tooltip}"
+                                                      id="it14">
+                                          <f:validator binding="#{bindings.PostalCode2.validator}"/>
+                                        </af:inputText>
+                                        <af:selectOneChoice value="#{bindings.CountryId2.inputValue}"
+                                                            label="#{bindings.CountryId2.label}"
+                                                            required="#{bindings.CountryId2.hints.mandatory}"
+                                                            shortDesc="#{bindings.CountryId2.hints.tooltip}"
+                                                            id="soc1">
+                                          <f:selectItems value="#{bindings.CountryId2.items}"
+                                                         id="si1"/>
+                                        </af:selectOneChoice>
+                                      </af:panelFormLayout>
+                                    </af:dialog>
+                                  </af:popup> 
+                                  <af:popup id="editAddressPopup"
+                                            contentDelivery="lazyUncached">
+                                    <af:dialog id="editdialog" type="cancel">
+                                      <f:facet name="buttonBar">
+                                        <af:panelGroupLayout id="pg17">
+                                          <af:commandButton text="#{res['global.button.OK']}"
+                                                            actionListener="#{orderPageBean.confirmEditAddressUsagesActionListener}"
+                                                            id="cb3">
+                                          </af:commandButton>
+                                        </af:panelGroupLayout>
+                                      </f:facet>
+                                      <af:panelFormLayout id="pfl1">
+                                        <af:inputText value="#{bindings.Address11.inputValue}"
+                                                      label="#{bindings.Address11.hints.label}"
+                                                      required="#{bindings.Address11.hints.mandatory}"
+                                                      columns="#{bindings.Address11.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Address11.hints.precision}"
+                                                      shortDesc="#{bindings.Address11.hints.tooltip}"
+                                                      id="it4">
+                                          <f:validator binding="#{bindings.Address11.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Address21.inputValue}"
+                                                      label="#{bindings.Address21.hints.label}"
+                                                      required="#{bindings.Address21.hints.mandatory}"
+                                                      columns="#{bindings.Address21.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Address21.hints.precision}"
+                                                      shortDesc="#{bindings.Address21.hints.tooltip}"
+                                                      id="it3">
+                                          <f:validator binding="#{bindings.Address21.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.City1.inputValue}"
+                                                      label="#{bindings.City1.hints.label}"
+                                                      required="#{bindings.City1.hints.mandatory}"
+                                                      columns="#{bindings.City1.hints.displayWidth}"
+                                                      maximumLength="#{bindings.City1.hints.precision}"
+                                                      shortDesc="#{bindings.City1.hints.tooltip}"
+                                                      id="it7">
+                                          <f:validator binding="#{bindings.City1.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.PostalCode1.inputValue}"
+                                                      label="#{bindings.PostalCode1.hints.label}"
+                                                      required="#{bindings.PostalCode1.hints.mandatory}"
+                                                      columns="#{bindings.PostalCode1.hints.displayWidth}"
+                                                      maximumLength="#{bindings.PostalCode1.hints.precision}"
+                                                      shortDesc="#{bindings.PostalCode1.hints.tooltip}"
+                                                      id="it2">
+                                          <f:validator binding="#{bindings.PostalCode1.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.StateProvince1.inputValue}"
+                                                      label="#{bindings.StateProvince1.hints.label}"
+                                                      required="#{bindings.StateProvince1.hints.mandatory}"
+                                                      columns="#{bindings.StateProvince1.hints.displayWidth}"
+                                                      maximumLength="#{bindings.StateProvince1.hints.precision}"
+                                                      shortDesc="#{bindings.StateProvince1.hints.tooltip}"
+                                                      id="it5">
+                                          <f:validator binding="#{bindings.StateProvince1.validator}"/>
+                                        </af:inputText>
+                                        <af:selectOneChoice value="#{bindings.CountryId1.inputValue}"
+                                                            label="#{bindings.CountryId1.label}"
+                                                            required="#{bindings.CountryId1.hints.mandatory}"
+                                                            shortDesc="#{bindings.CountryId1.hints.tooltip}"
+                                                            id="soc2">
+                                          <f:selectItems value="#{bindings.CountryId1.items}"
+                                                         id="si2"/>
+                                        </af:selectOneChoice>
+                                      </af:panelFormLayout>
+                                    </af:dialog>
+                                  </af:popup>
+                                  <af:panelFormLayout id="pfl6">
+                                    <af:inputText value="#{bindings.ShipToName.inputValue}"
+                                                  label="#{bindings.ShipToName.hints.label}"
+                                                  required="#{bindings.ShipToName.hints.mandatory}"
+                                                  columns="#{30}"
+                                                  maximumLength="#{bindings.ShipToName.hints.precision}"
+                                                  id="it18">
+                                      <f:validator binding="#{bindings.ShipToName.validator}"/>
+                                    </af:inputText>
+                                    <af:panelLabelAndMessage label="#{bindings.ShipToAddressId.label}"
+                                                             id="plam7">
+                                      <af:panelGroupLayout layout="horizontal"
+                                                           halign="left"
+                                                           id="pgl6">
+                                        <af:selectOneChoice value="#{bindings.ShipToAddressId.inputValue}"
+                                                            shortDesc="#{bindings.ShipToAddressId.hints.tooltip}"
+                                                            partialTriggers="addAddressPopup editAddressPopup"
+                                                            id="soc3">
+                                          <f:selectItems value="#{bindings.ShipToAddressId.items}"/>
+                                        </af:selectOneChoice>
+                                        <af:commandLink actionListener="#{bindings.Create.execute}"
+                                                        partialSubmit="true"
+                                                        disabled="#{!bindings.Create.enabled}"
+                                                        id="cl1">
+                                        <af:image source="/images/new_ena.png"
+                                                    inlineStyle="border:none;"
+                                                  id="i2"/>
+                                          <af:clientAttribute name="popupId"
+                                                              value="addAddressPopup"/> 
+                                        <af:clientListener method="fod_showPopup"
+                                                             type="action"/>
+                                        </af:commandLink>
+                                        <af:commandLink id="editAddressToolbarButton"
+                                                        partialSubmit="true"
+                                                        actionListener="#{orderPageBean.editAddress}">
+                                          <af:image source="/images/update_ena.png"
+                                                    inlineStyle="border:none;"
+                                                    id="i3"/>
+                                          <af:clientAttribute name="popupId"
+                                                              value="editAddressPopup"/>
+                                          <af:clientListener method="fod_showPopup"
+                                                             type="action"/>
+                                        </af:commandLink>
+                                      </af:panelGroupLayout>
+                                    </af:panelLabelAndMessage>
+                                    <af:inputText value="#{bindings.ShipToPhoneNumber.inputValue}"
+                                                  label="#{bindings.ShipToPhoneNumber.hints.label}"
+                                                  required="#{bindings.ShipToPhoneNumber.hints.mandatory}"
+                                                  columns="#{bindings.ShipToPhoneNumber.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ShipToPhoneNumber.hints.precision}"
+                                                  id="it19">
+                                      <f:validator binding="#{bindings.ShipToPhoneNumber.validator}"/>
+                                    </af:inputText>
+                                  </af:panelFormLayout>
+                                </af:panelHeader>
+                              </trh:cellFormat>
+                              <trh:cellFormat>
+                                <af:panelHeader text="#{res['order.paymentoptions']}"
+                                                id="ph5">
+                                  <af:panelFormLayout id="pfl7">
+                                    <af:panelLabelAndMessage label="#{bindings.PaymentOptionId.label}"
+                                                             id="plam8">
+                                      <af:panelGroupLayout layout="horizontal"
+                                                           id="pgl7">
+                               <af:selectOneChoice value="#{bindings.PaymentOptionId.inputValue}"
+                                                            shortDesc="#{bindings.PaymentOptionId.hints.tooltip}"
+                                                            partialTriggers="addPaymentOptionPopup editPaymentOptionPopup"
+                                                   id="soc4">
+                                          <f:selectItems value="#{bindings.PaymentOptionId.items}"/>
+                                        </af:selectOneChoice>
+                                        <af:commandLink actionListener="#{bindings.Create1.execute}"
+                                                        partialSubmit="true"
+                                                        disabled="#{!bindings.Create1.enabled}"
+                                                        id="cl2">
+                                        <af:image source="/images/new_ena.png"
+                                                    inlineStyle="border:none;"
+                                                  id="i4"/>
+                                          <af:clientAttribute name="popupId"
+                                                              value="addPaymentOptionPopup"/> 
+                                        <af:clientListener method="fod_showPopup"
+                                                             type="action"/>
+                                        </af:commandLink>
+                                        <af:commandLink partialSubmit="true"
+                                                        actionListener="#{orderPageBean.editPaymentOption}"
+                                                        id="editPaymentOptionButton">
+                                          <af:image source="/images/update_ena.png"
+                                                    inlineStyle="border:none;"
+                                                    id="i5"/>
+                                          <af:clientAttribute name="popupId"
+                                                              value="editPaymentOptionPopup"/>
+                                          <af:clientListener method="fod_showPopup"
+                                                             type="action"/>
+                                        </af:commandLink>
+                                      </af:panelGroupLayout>
+                                    </af:panelLabelAndMessage>
+                                  </af:panelFormLayout>
+                                </af:panelHeader>
+                                <af:popup id="editPaymentOptionPopup" 
+                                            contentDelivery="lazyUncached">
+                                  <af:dialog type="cancel" id="d3">
+                                    <af:panelFormLayout id="pfl8">
+                                      <af:selectOneChoice value="#{bindings.PaymentTypeCode1.inputValue}"
+                                                          label="#{bindings.PaymentTypeCode1.label}"
+                                                          required="true"
+                                                          id="soc5">
+                                        <f:selectItems value="#{bindings.PaymentTypeCode1.items}"/>
+                                      </af:selectOneChoice>
+                                      <af:selectOneChoice value="#{bindings.BillingAddressId1.inputValue}"
+                                                          label="#{bindings.BillingAddressId1.label}"
+                                                          required="true"
+                                                          id="soc6">
+                                        <f:selectItems value="#{bindings.BillingAddressId1.items}"/>
+                                      </af:selectOneChoice>
+                                      <af:inputText value="#{bindings.AccountNumber1.inputValue}"
+                                                    label="#{bindings.AccountNumber1.label}"
+                                                    required="#{bindings.AccountNumber1.mandatory}"
+                                                    columns="#{bindings.AccountNumber1.displayWidth}"
+                                                    id="it20">
+                                        <f:validator binding="#{bindings.AccountNumber1.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.AccountNumber1.format}"/>
+                                      </af:inputText>
+                                      <af:selectOneChoice value="#{bindings.CardTypeCode1.inputValue}"
+                                                          label="#{bindings.CardTypeCode1.label}"
+                                                          id="soc7">
+                                        <f:selectItems value="#{bindings.CardTypeCode1.items}"/>
+                                      </af:selectOneChoice>
+                                      <af:inputDate value="#{bindings.ExpireDate1.inputValue}"
+                                                    label="#{bindings.ExpireDate1.label}"
+                                                    required="#{bindings.ExpireDate1.mandatory}"
+                                                    id="id1">
+                                        <f:validator binding="#{bindings.ExpireDate1.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.ExpireDate1.format}"/>
+                                      </af:inputDate>
+                                      <af:inputText value="#{bindings.CheckDigits1.inputValue}"
+                                                    label="#{bindings.CheckDigits1.label}"
+                                                    required="#{bindings.CheckDigits1.mandatory}"
+                                                    columns="#{bindings.CheckDigits1.displayWidth}"
+                                                    id="it21">
+                                        <f:validator binding="#{bindings.CheckDigits1.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.CheckDigits1.format}"/>
+                                      </af:inputText>
+                                      <af:inputText value="#{bindings.RoutingIdentifier1.inputValue}"
+                                                    label="#{bindings.RoutingIdentifier1.label}"
+                                                    required="#{bindings.RoutingIdentifier1.mandatory}"
+                                                    columns="#{bindings.RoutingIdentifier1.displayWidth}"
+                                                    id="it22">
+                                        <f:validator binding="#{bindings.RoutingIdentifier1.validator}"/>
+                                      </af:inputText>
+                                      <af:inputText value="#{bindings.InstitutionName1.inputValue}"
+                                                    label="#{bindings.InstitutionName1.label}"
+                                                    required="#{bindings.InstitutionName1.mandatory}"
+                                                    columns="#{30}" id="it23">
+                                        <f:validator binding="#{bindings.InstitutionName1.validator}"/>
+                                      </af:inputText>
+                                        <af:inputDate value="#{bindings.ValidFromDate1.inputValue}"
+                                                    label="#{bindings.ValidFromDate1.label}"
+                                                    required="#{bindings.ValidFromDate1.mandatory}"
+                                                      id="id2">
+                                        <f:validator binding="#{bindings.ValidFromDate1.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.ValidFromDate1.format}"/>
+                                      </af:inputDate>
+                                      <af:inputDate value="#{bindings.ValidToDate1.inputValue}"
+                                                    label="#{bindings.ValidToDate1.label}"
+                                                    required="#{bindings.ValidToDate1.mandatory}"
+                                                    id="id3">
+                                        <f:validator binding="#{bindings.ValidToDate1.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.ValidToDate1.format}"/>
+                                      </af:inputDate>
+                                   <af:outputFormatted value="#{res['order.paymentoptions.credit.help']}"
+                                                          id="of1"/>
+                                      <af:outputFormatted value="#{res['order.paymentoptions.dd.help']}"
+                                                          id="of2"/>
+                                     </af:panelFormLayout>
+                                    <f:facet name="buttonBar">
+                                      <h:panelGroup>
+                                        <af:commandButton text="#{res['global.button.OK']}"
+                                                          actionListener="#{orderPageBean.confirmEditPaymentOptionsActionListener}"
+                                                          id="cb4">
+                                         <af:clientAttribute name="popupId"
+                                                              value="editPaymentOptionPopup"/>
+                                          <af:clientListener method="fod_hidePopup"
+                                                             type="action"/>
+                                        </af:commandButton>
+                                      </h:panelGroup>
+                                    </f:facet>
+                                  </af:dialog>
+                                </af:popup>
+                                <af:popup id="addPaymentOptionPopup">
+                                  <af:dialog type="none" id="d4">
+                                    <af:panelFormLayout id="pfl9">
+                                      <af:selectOneChoice value="#{bindings.PaymentTypeCode.inputValue}"
+                                                          label="#{bindings.PaymentTypeCode.label}"
+                                                          required="true"
+                                                          id="soc8">
+                                        <f:selectItems value="#{bindings.PaymentTypeCode.items}"/>
+                                      </af:selectOneChoice>
+                                      <af:selectOneChoice value="#{bindings.BillingAddressId.inputValue}"
+                                                          label="#{bindings.BillingAddressId.label}"
+                                                          required="true"
+                                                          id="soc9">
+                                        <f:selectItems value="#{bindings.BillingAddressId.items}"/>
+                                      </af:selectOneChoice>
+                                      <af:inputText value="#{bindings.AccountNumber.inputValue}"
+                                                    label="#{bindings.AccountNumber.label}"
+                                                    required="#{bindings.AccountNumber.mandatory}"
+                                                    columns="#{bindings.AccountNumber.displayWidth}"
+                                                    id="it24">
+                                        <f:validator binding="#{bindings.AccountNumber.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.AccountNumber.format}"/>
+                                      </af:inputText>
+                                      <af:selectOneChoice value="#{bindings.CardTypeCode.inputValue}"
+                                                          label="#{bindings.CardTypeCode.label}"
+                                                          id="soc10">
+                                        <f:selectItems value="#{bindings.CardTypeCode.items}"/>
+                                      </af:selectOneChoice>
+                                      <af:inputDate value="#{bindings.ExpireDate.inputValue}"
+                                                    label="#{bindings.ExpireDate.label}"
+                                                    required="#{bindings.ExpireDate.mandatory}"
+                                                    id="id4">
+                                        <f:validator binding="#{bindings.ExpireDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.ExpireDate.format}"/>
+                                      </af:inputDate>
+                                      <af:inputText value="#{bindings.CheckDigits.inputValue}"
+                                                    label="#{bindings.CheckDigits.label}"
+                                                    required="#{bindings.CheckDigits.mandatory}"
+                                                    columns="#{bindings.CheckDigits.displayWidth}"
+                                                    id="it25">
+                                        <f:validator binding="#{bindings.CheckDigits.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.CheckDigits.format}"/>
+                                      </af:inputText>
+                                      <af:inputText value="#{bindings.RoutingIdentifier.inputValue}"
+                                                    label="#{bindings.RoutingIdentifier.label}"
+                                                    required="#{bindings.RoutingIdentifier.mandatory}"
+                                                    columns="#{bindings.RoutingIdentifier.displayWidth}"
+                                                    id="it26">
+                                        <f:validator binding="#{bindings.RoutingIdentifier.validator}"/>
+                                      </af:inputText>
+                                      <af:inputText value="#{bindings.InstitutionName.inputValue}"
+                                                    label="#{bindings.InstitutionName.label}"
+                                                    required="#{bindings.InstitutionName.mandatory}"
+                                                    columns="#{30}" id="it27">
+                                        <f:validator binding="#{bindings.InstitutionName.validator}"/>
+                                      </af:inputText>
+                                      <af:inputDate value="#{bindings.ValidFromDate.inputValue}"
+                                                    label="#{bindings.ValidFromDate.label}"
+                                                    required="#{bindings.ValidFromDate.mandatory}"
+                                                    id="id5">
+                                        <f:validator binding="#{bindings.ValidFromDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.ValidFromDate.format}"/>
+                                      </af:inputDate>
+                                      <af:inputDate value="#{bindings.ValidToDate.inputValue}"
+                                                    label="#{bindings.ValidToDate.label}"
+                                                    required="#{bindings.ValidToDate.mandatory}"
+                                                    id="id6">
+                                        <f:validator binding="#{bindings.ValidToDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.ValidToDate.format}"/>
+                                      </af:inputDate>
+                                      <af:outputFormatted value="#{res['order.paymentoptions.credit.help']}"
+                                                          id="of3"/>
+                                      <af:outputFormatted value="#{res['order.paymentoptions.dd.help']}"
+                                                          id="of4"/>
+                                    </af:panelFormLayout>
+                                    <f:facet name="buttonBar">
+                                      <h:panelGroup>
+                                        <af:commandButton text="#{res['global.button.OK']}"
+                                                          actionListener="#{orderPageBean.confirmAddPaymentOptionsActionListener}"
+                                                          id="cb5">
+                                        </af:commandButton>
+                                        <af:commandButton immediate="true"
+                                                          text="#{res['global.button.Cancel']}"
+                                                          actionListener="#{orderPageBean.cancelAddPaymentOptionsActionListener}"
+                                                          id="cb6"> 
+                                       </af:commandButton> 
+                                      </h:panelGroup>
+                                    </f:facet>
+                                  </af:dialog>
+                                </af:popup>
+                              </trh:cellFormat>
+                            </trh:rowLayout>
+                            <trh:rowLayout valign="top">
+                              <trh:cellFormat>
+                                <af:panelHeader text="#{res['order.shippingoptions']}"
+                                                id="ph6">
+                                  <af:panelFormLayout id="pfl10">
+                                    <af:selectOneRadio id="shippingOptionsId"
+                                                       value="#{bindings.ShippingOptionId.inputValue}"
+                                                       label="#{bindings.ShippingOptionId.label}"
+                                                       autoSubmit="true">
+                                      <f:selectItems value="#{bindings.ShippingOptionId.items}"/>
+                                    </af:selectOneRadio>
+                                  </af:panelFormLayout>
+                                </af:panelHeader>
+                              </trh:cellFormat>
+                              <trh:cellFormat>
+                                <af:panelHeader text="#{res['order.discount']}"
+                                                id="ph7">
+                                  <af:panelFormLayout id="pfl11">
+                                    <af:inputText id="couponCode"
+                                                  value="#{bindings.TypedCouponCode.inputValue}"
+                                                  label="#{bindings.TypedCouponCode.label}"
+                                                  columns="30"
+                                                  autoSubmit="true"/>
+                                  </af:panelFormLayout>
+                                </af:panelHeader>
+                              </trh:cellFormat>
+                            </trh:rowLayout>
+                          </trh:tableLayout>
+                          <af:panelHeader text="#{res['order.giftoptions']}"
+                                          inlineStyle="width:100%;" id="ph8">
+                            <af:panelFormLayout id="pfl12">
+                              <af:inputText value="#{bindings.GiftwrapMessage.inputValue}"
+                                            label="#{bindings.GiftwrapMessage.label}"
+                                            required="#{bindings.GiftwrapMessage.mandatory}"
+                                            columns="50" rows="10" id="it28">
+                                <f:validator binding="#{bindings.GiftwrapMessage.validator}"/>
+                              </af:inputText>
+                            </af:panelFormLayout>
+                          </af:panelHeader>
+                        </af:panelBox>
+                        <af:spacer width="10" height="10" id="s4"/>
+                      </af:panelGroupLayout>
+                    </af:panelBox>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+              <af:panelGroupLayout layout="horizontal" halign="center"
+                                   rendered="#{bindings.MyShoppingCart.collectionModel.rowCount eq  0}"
+                                   inlineStyle="width:100%;" valign="middle"
+                                   id="pgl8">
+                <af:panelBox text="#{res['order.cart.empty']}"
+                             inlineStyle="width:300px;margin-left:auto;margin-right:auto;"
+                             id="pb4">
+                  <af:panelGroupLayout layout="horizontal"
+                                       inlineStyle="background:#FFEBE8 none repeat scroll 0%; border:1px solid #DD3C10; margin:0pt 10px 10px; padding:10px;"
+                                       id="pgl9">
+                    <af:outputText inlineStyle="font-weight:bold;"
+                                   value="#{res['order.cart.emptymsg']}"
+                                   id="ot7"/>
+                  </af:panelGroupLayout>
+                </af:panelBox>
+              </af:panelGroupLayout>
+            </af:group>
+          </f:facet>
+          <f:facet name="header">
+            <af:navigationPane hint="buttons" id="np1">
+              <af:commandNavigationItem icon="/images/home.gif"
+                                        text="#{res['global.nav.exitandcontinue']}"
+                                        action="return" id="cni1"/>
+            </af:navigationPane>
+          </f:facet>
+          <f:facet name="end">
+            <af:panelAccordion id="pa1">
+              <af:showDetailItem text="#{res['order.summary']}" id="sdi1"
+                                 stretchChildren="first">
+                <af:panelGroupLayout id="pgl10">
+                  <af:panelBorderLayout id="pbl1">
+                    <f:facet name="bottom">
+                      <af:panelGroupLayout inlineStyle="width:100%;text-align:center;"
+                                           layout="vertical" halign="center"
+                                           valign="middle"
+                                           partialTriggers="::shoppingCartDialog ::removeFromCart ::removeAll"
+                                           id="pgl11">
+                        <af:panelFormLayout id="pfl13">
+                          <af:panelLabelAndMessage label="#{res['order.cart.details.items']}:"
+                                                   id="plam9">
+                            <af:outputText value="#{bindings.CalculatedOrderTotal.inputValue}"
+                                           id="ot8"/>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="#{res['order.cart.details.shipping']}"
+                                                   id="plam10">
+                            <af:outputText value="#{bindings.TotalShippingCost.inputValue}"
+                                           id="ot9"/>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="#{res['order.cart.details.discounts']}"
+                                                   id="plam11">
+                            <af:outputText value="#{bindings.DiscountAmount.inputValue}"
+                                           id="ot10"/>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="#{res['order.cart.details.total']}:"
+                                                   id="plam12">
+                            <af:outputText value="#{bindings.InvoiceTotal.inputValue}"
+                                           id="ot11">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.InvoiceTotal.format}"/>
+                            </af:outputText>
+                          </af:panelLabelAndMessage>
+                          <f:facet name="footer">
+                            <af:panelGroupLayout layout="vertical"
+                                                 halign="center" id="pgl12">
+                              <af:spacer height="10" id="s5"/>
+                              <af:commandButton text="#{res['order.cart.submit']}"
+                                                action="#{orderPageBean.submitOrder}"
+                                                id="cb7"
+                                                disabled="#{bindings.MyShoppingCart.estimatedRowCount &lt;= 0}"/>
+                            </af:panelGroupLayout>
+                          </f:facet>
+                        </af:panelFormLayout>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="innerTop">
+                      <af:panelGroupLayout layout="vertical" id="pgl13">
+                        <af:separator id="s6"/>
+                        <af:dropTarget actions="COPY"
+                                       dropListener="#{shoppingCartBean.handlePkDrop}">
+                          <af:dataFlavor flavorClass="java.lang.String"/>
+                        </af:dropTarget>
+                        <af:table id="sumtab"
+                                  partialTriggers=":::removeFromCart :::removeAll"
+                                  width="100%"
+                                  rows="#{bindings.MyShoppingCart.rangeSize}"
+                                  fetchSize="#{bindings.MyShoppingCart.rangeSize}"
+                                  first="#{bindings.MyShoppingCart.rangeStart}"
+                                  emptyText="#{bindings.MyShoppingCart.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                                  value="#{bindings.MyShoppingCart.collectionModel}"
+                                  var="row" columnStretching="column:c4"
+                                  contentDelivery="lazy">
+                          <af:column id="c4">
+                            <trh:tableLayout>
+                              <trh:rowLayout>
+                                <trh:cellFormat inlineStyle="padding-left:5px;"
+                                                halign="left" valign="top">
+                                  <af:outputText noWrap="true"
+                                                 inlineStyle="font-weight:bold;color:#36648B;"
+                                                 value="#{row.ProductName}"
+                                                 id="ot12"/>
+                                </trh:cellFormat>
+                              </trh:rowLayout>
+                              <trh:rowLayout>
+                                <trh:cellFormat inlineStyle="padding-left:10px;"
+                                                halign="left" valign="top">
+                                  <af:outputText inlineStyle="font-weight:bold;"
+                                                 value="#{row.CategoryName}"
+                                                 id="ot13"/>
+                                </trh:cellFormat>
+                              </trh:rowLayout>
+                              <trh:rowLayout>
+                                <trh:cellFormat inlineStyle="padding-left:10px;"
+                                                halign="left" valign="top">
+                                  <af:panelGroupLayout layout="horizontal"
+                                                       halign="left" id="pgl14">
+                                    <af:outputText inlineStyle="font-weight:bold;color:#96171a;"
+                                                   value="#{row.ListPrice}"
+                                                   id="ot14"/>
+                                    <af:spacer width="5px" id="s7"/>
+                                    <af:outputText value="-#{res['global.cart.inlinequantity']}: #{row.Quantity}"
+                                                   id="ot15"/>
+                                  </af:panelGroupLayout>
+                                </trh:cellFormat>
+                              </trh:rowLayout>
+                            </trh:tableLayout>
+                          </af:column>
+                        </af:table>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="top">
+                      <af:panelGroupLayout layout="horizontal" halign="center"
+                                           id="pgl15">
+                        <af:commandLink partialSubmit="true"
+                                        inlineStyle="border:none;" id="cl3">
+                          <af:image source="/images/cart.gif"
+                                    inlineStyle="border:none" id="i6"/>
+                          <af:showPopupBehavior popupId="::shoppingCartPopup"/>
+                        </af:commandLink>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelBorderLayout>
+                </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelAccordion>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

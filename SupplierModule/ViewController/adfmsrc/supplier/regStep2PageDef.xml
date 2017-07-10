@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.55" id="regStep2PageDef" Package="supplier">
+  <parameters/>
+  <executables>
+    <iterator Binds="root" RangeSize="25" DataControl="SupplierFacadeLocal"
+              id="SupplierFacadeLocalIterator"/>
+    <accessorIterator MasterBinding="SupplierFacadeLocalIterator" Binds="person"
+                      RangeSize="25" DataControl="SupplierFacadeLocal"
+                      BeanClass="oracle.fodemo.supplier.model.Person"
+                      id="personIterator" Refresh="ifNeeded"
+                      CacheResults="false"/>
+    <methodIterator Binds="getMaritalLookupCodeFindCodesByType.result"
+                    DataControl="GenericServiceFacadeLocal" RangeSize="25"
+                    BeanClass="oracle.fodemo.supplier.model.LookupCode"
+                    id="getMaritalLookupCodeFindCodesByTypeIterator"/>
+    <methodIterator Binds="getTitleLookupCodeFindCodesByType.result"
+                    DataControl="GenericServiceFacadeLocal" RangeSize="25"
+                    BeanClass="oracle.fodemo.supplier.model.LookupCode"
+                    id="getTitleLookupCodeFindCodesByTypeIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="personIterator" id="title">
+      <AttrNames>
+        <Item Value="title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="personIterator" id="principalName">
+      <AttrNames>
+        <Item Value="principalName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="personIterator" id="firstName">
+      <AttrNames>
+        <Item Value="firstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="personIterator" id="lastName">
+      <AttrNames>
+        <Item Value="lastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="personIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="personIterator" id="confirmedEmail">
+      <AttrNames>
+        <Item Value="confirmedEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="personIterator" id="dateOfBirth">
+      <AttrNames>
+        <Item Value="dateOfBirth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="personIterator" id="gender">
+      <AttrNames>
+        <Item Value="gender"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="personIterator" id="maritalStatusCode">
+      <AttrNames>
+        <Item Value="maritalStatusCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="personIterator" id="phoneNumber">
+      <AttrNames>
+        <Item Value="phoneNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="getMaritalLookupCodeFindCodesByType"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getLookupCodeFindCodesByType"
+                  IsViewObjectMethod="false"
+                  DataControl="GenericServiceFacadeLocal"
+                  InstanceName="GenericServiceFacadeLocal.dataProvider"
+                  ReturnName="GenericServiceFacadeLocal.methodResults.getLookupCodeFindCodesByType_GenericServiceFacadeLocal_dataProvider_getLookupCodeFindCodesByType_result">
+      <NamedData NDName="language" NDValue="EL" NDType="java.lang.String"/>
+      <NamedData NDName="lookupType" NDValue="MARITAL_STATUS_CODE"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="getTitleLookupCodeFindCodesByType"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getLookupCodeFindCodesByType"
+                  IsViewObjectMethod="false"
+                  DataControl="GenericServiceFacadeLocal"
+                  InstanceName="GenericServiceFacadeLocal.dataProvider"
+                  ReturnName="GenericServiceFacadeLocal.methodResults.getLookupCodeFindCodesByType_GenericServiceFacadeLocal_dataProvider_getLookupCodeFindCodesByType_result">
+      <NamedData NDName="language" NDValue="EL" NDType="java.lang.String"/>
+      <NamedData NDName="lookupType" NDValue="PERSON_TITLE_CODE"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <list IterBinding="getMaritalLookupCodeFindCodesByTypeIterator"
+          ListOperMode="navigation"
+          ListIter="getMaritalLookupCodeFindCodesByTypeIterator"
+          id="MaritalLookupCode" DTSupportsMRU="true"></list>
+    <list IterBinding="getTitleLookupCodeFindCodesByTypeIterator"
+          ListOperMode="navigation"
+          ListIter="getTitleLookupCodeFindCodesByTypeIterator"
+          id="TitleLookupCode" DTSupportsMRU="true"></list>
+  </bindings>
+</pageDefinition>

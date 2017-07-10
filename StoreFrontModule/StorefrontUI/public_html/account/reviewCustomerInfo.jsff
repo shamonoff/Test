@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBorderLayout id="pbl1">
+    <f:facet name="top">
+        <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                  id="t1"/>
+     
+    </f:facet>
+    <af:panelGroupLayout layout="vertical"
+                         inlineStyle="width:100%; height:100%;" id="pgl1">
+      <af:panelHeader text="#{res['reviewcust.basicinfo.header']}" icon="/images/user.png"
+                      id="ph1">
+        <f:facet name="toolbar">
+          <af:toolbar id="t2">
+              <af:commandToolbarButton text="#{res['reviewcust.basicinfo.edit']}"
+                                       id="reviewEditBasicInfoButton"
+                                       immediate="true"
+                                       icon="/images/update_ena.png"
+                                       action="goBasicInfo"/>
+          </af:toolbar>
+        </f:facet>
+        <af:panelFormLayout maxColumns="2" inlineStyle="height:231px;" rows="6"
+                            labelAlignment="start" id="pfl1">
+          <af:inputText value="#{bindings.PrincipalName.inputValue}"
+                        label="#{bindings.PrincipalName.hints.label}"
+                        required="#{bindings.PrincipalName.hints.mandatory}"
+                        disabled="true" columns="30"
+                        maximumLength="#{bindings.PrincipalName.hints.precision}"
+                        id="it1">
+            <f:validator binding="#{bindings.PrincipalName.validator}"/>
+          </af:inputText>
+          <af:selectOneChoice value="#{bindings.Title.inputValue}"
+                              disabled="true" label="#{bindings.Title.label}"
+                              id="soc1">
+            <f:selectItems value="#{bindings.Title.items}"/>
+          </af:selectOneChoice>
+          <af:inputText value="#{bindings.FirstName.inputValue}"
+                        label="#{bindings.FirstName.hints.label}"
+                        disabled="true"
+                        required="#{bindings.FirstName.hints.mandatory}"
+                        columns="30"
+                        maximumLength="#{bindings.FirstName.hints.precision}"
+                        id="it2">
+            <f:validator binding="#{bindings.FirstName.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.LastName.inputValue}"
+                        label="#{bindings.LastName.hints.label}" disabled="true"
+                        required="#{bindings.LastName.hints.mandatory}"
+                        columns="30"
+                        maximumLength="#{bindings.LastName.hints.precision}"
+                        id="it3">
+            <f:validator binding="#{bindings.LastName.validator}"/>
+          </af:inputText>
+          <af:selectOneChoice value="#{bindings.PersonTypeCode.inputValue}"
+                              label="#{bindings.PersonTypeCode.label}"
+                              disabled="true" id="soc2">
+            <f:selectItems value="#{bindings.PersonTypeCode.items}"/>
+          </af:selectOneChoice>
+          <af:inputText value="#{bindings.Email.inputValue}"
+                        label="#{bindings.Email.hints.label}"
+                        required="#{bindings.Email.hints.mandatory}"
+                        columns="#{bindings.Email.hints.displayWidth}"
+                        disabled="true"
+                        maximumLength="#{bindings.Email.hints.precision}"
+                        id="it4">
+            <f:validator binding="#{bindings.Email.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.ConfirmedEmail.inputValue}"
+                        label="#{bindings.ConfirmedEmail.hints.label}"
+                        required="#{bindings.ConfirmedEmail.hints.mandatory}"
+                        columns="#{bindings.ConfirmedEmail.hints.displayWidth}"
+                        disabled="true"
+                        maximumLength="#{bindings.ConfirmedEmail.hints.precision}"
+                        id="it5">
+            <f:validator binding="#{bindings.ConfirmedEmail.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.PhoneNumber.inputValue}"
+                        label="#{bindings.PhoneNumber.hints.label}"
+                        required="#{bindings.PhoneNumber.hints.mandatory}"
+                        columns="#{bindings.PhoneNumber.hints.displayWidth}"
+                        disabled="true"
+                        maximumLength="#{bindings.PhoneNumber.hints.precision}"
+                        id="it6">
+            <f:validator binding="#{bindings.PhoneNumber.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.MobilePhoneNumber.inputValue}"
+                        label="#{bindings.MobilePhoneNumber.hints.label}"
+                        required="#{bindings.MobilePhoneNumber.hints.mandatory}"
+                        columns="#{bindings.MobilePhoneNumber.hints.displayWidth}"
+                        disabled="true"
+                        maximumLength="#{bindings.MobilePhoneNumber.hints.precision}"
+                        id="it7">
+            <f:validator binding="#{bindings.MobilePhoneNumber.validator}"/>
+          </af:inputText>
+          <af:selectOneChoice value="#{bindings.Gender.inputValue}"
+                              disabled="true" label="#{bindings.Gender.label}"
+                              id="soc3">
+            <f:selectItems value="#{bindings.Gender.items}"/>
+          </af:selectOneChoice>
+          <af:selectOneChoice value="#{bindings.ContactMethodCode.inputValue}"
+                              disabled="true"
+                              label="#{bindings.ContactMethodCode.label}"
+                              id="soc4">
+            <f:selectItems value="#{bindings.ContactMethodCode.items}"/>
+          </af:selectOneChoice>
+          <af:selectOneChoice value="#{bindings.MaritalStatusCode.inputValue}"
+                              disabled="true"
+                              label="#{bindings.MaritalStatusCode.label}"
+                              id="soc5">
+            <f:selectItems value="#{bindings.MaritalStatusCode.items}"/>
+          </af:selectOneChoice>
+          <af:inputDate value="#{bindings.DateOfBirth.inputValue}"
+                        label="#{bindings.DateOfBirth.hints.label}"
+                        required="#{bindings.DateOfBirth.hints.mandatory}"
+                        disabled="true" id="id1">
+            <f:validator binding="#{bindings.DateOfBirth.validator}"/>
+            <af:convertDateTime pattern="#{bindings.DateOfBirth.format}"/>
+          </af:inputDate>
+          <af:inputText value="#{bindings.ApproximateIncome.inputValue}"
+                        label="#{bindings.ApproximateIncome.hints.label}"
+                        required="#{bindings.ApproximateIncome.hints.mandatory}"
+                        disabled="true"
+                        columns="#{bindings.ApproximateIncome.hints.displayWidth}"
+                        maximumLength="#{bindings.ApproximateIncome.hints.precision}"
+                        id="it8">
+            <f:validator binding="#{bindings.ApproximateIncome.validator}"/>
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.ApproximateIncome.format}"/>
+          </af:inputText>
+        </af:panelFormLayout>
+      </af:panelHeader>
+      <af:panelHeader text="#{res['reviewcust.address.header']}" icon="/images/envelope.png"
+                      id="ph2">
+        <f:facet name="toolbar">
+          <af:toolbar id="t3">
+              <af:commandToolbarButton text="#{res['reviewcust.address.edit']}"
+                                       id="reviewEditAddressesButton"
+                                       immediate="true"
+                                       icon="/images/update_ena.png"
+                                       action="goDefineAddresses"/>
+          </af:toolbar>
+        </f:facet>
+        <af:table value="#{bindings.CustomerAddress.collectionModel}"
+                    var="row" rows="#{bindings.CustomerAddress.rangeSize}"
+                    first="#{bindings.CustomerAddress.rangeStart}"
+                    emptyText="#{bindings.CustomerAddress.viewable ? '' : 'Access Denied.'}"
+                    fetchSize="#{bindings.CustomerAddress.rangeSize}"
+                    selectedRowKeys="#{bindings.CustomerAddress.collectionModel.selectedRow}"
+                    rowSelection="none"                   
+                    columnStretching="last" id="addTab"
+                    inlineStyle="width:100%; height:100px;">            
+            <af:column sortProperty="AddressLabel" id="c1">
+              <af:outputText value="#{row.AddressLabel}" id="ot1"/>
+            </af:column>
+          </af:table>
+      </af:panelHeader>
+      <af:spacer width="10" height="10" id="s1"/>
+      <af:panelHeader text="#{res['reviewcust.paymentoption.header']}" icon="/images/bookmark.png"
+                      id="ph3">
+        <f:facet name="toolbar">
+          <af:toolbar id="t4">
+              <af:commandToolbarButton text="#{res['reviewcust.paymentoption.edit']}"
+                                       id="commandToolbarButton2"
+                                       immediate="true"
+                                       icon="/images/update_ena.png"
+                                       action="goPaymentOptions"/>
+          </af:toolbar>
+        </f:facet>
+        <af:table value="#{bindings.CustomerPaymentOption.collectionModel}"
+                  var="row" rows="#{bindings.CustomerPaymentOption.rangeSize}"
+                  emptyText="#{bindings.CustomerPaymentOption.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.CustomerPaymentOption.rangeSize}"
+                  inlineStyle="width:80%; height:120px;" columnStretching="last"
+                  id="t5">
+          <af:column sortProperty="PaymentTypeCode" sortable="false"
+                     headerText="#{bindings.CustomerPaymentOption.hints.PaymentTypeCode.label}"
+                     id="c2">
+            <af:outputText value="#{row.PaymentTypeCode}" id="ot2"/>
+          </af:column>
+          <af:column sortProperty="CardTypeCode" sortable="false"
+                     headerText="#{bindings.CustomerPaymentOption.hints.CardTypeCode.label}"
+                     id="c3">
+            <af:outputText value="#{row.CardTypeCode}" id="ot3"/>
+          </af:column>
+          <af:column sortProperty="ExpireDate" sortable="false"
+                     headerText="#{bindings.CustomerPaymentOption.hints.ExpireDate.label}"
+                     id="c4">
+            <af:outputText value="#{row.ExpireDate}" id="ot4">
+              <af:convertDateTime pattern="#{bindings.CustomerPaymentOption.hints.ExpireDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="RoutingIdentifier" sortable="false"
+                     headerText="#{bindings.CustomerPaymentOption.hints.RoutingIdentifier.label}"
+                     id="c5">
+            <af:outputText value="#{row.RoutingIdentifier}" id="ot5"/>
+          </af:column>
+          <af:column sortProperty="InstitutionName" sortable="false"
+                     headerText="#{bindings.CustomerPaymentOption.hints.InstitutionName.label}"
+                     id="c6">
+            <af:outputText value="#{row.InstitutionName}" id="ot6"/>
+          </af:column>
+          <af:column sortProperty="ValidFromDate" sortable="false"
+                     headerText="#{bindings.CustomerPaymentOption.hints.ValidFromDate.label}"
+                     id="c7">
+            <af:outputText value="#{row.ValidFromDate}" id="ot7">
+              <af:convertDateTime pattern="#{bindings.CustomerPaymentOption.hints.ValidFromDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="ValidToDate" sortable="false"
+                     headerText="#{bindings.CustomerPaymentOption.hints.ValidToDate.label}"
+                     id="c8">
+            <af:outputText value="#{row.ValidToDate}" id="ot8">
+              <af:convertDateTime pattern="#{bindings.CustomerPaymentOption.hints.ValidToDate.format}"/>
+            </af:outputText>
+          </af:column>
+        </af:table>
+      </af:panelHeader>
+    </af:panelGroupLayout>
+    <f:facet name="innerTop">
+      <af:panelHeader text="#{res['reviewcust.confirm.header']}" inlineStyle="width:100%;"
+                      id="ph4">
+        <f:facet name="toolbar">
+          <af:group id="g4">
+            <af:commandButton text="#{res['global.button.Cancel']}"
+                              action="exitRegistration" id="cb1"/>
+            <af:spacer width="10" height="10" id="s2"/>
+            <af:commandButton text="#{res['global.button.Back']}"
+                              action="#{controllerContext.currentViewPort.taskFlowContext.trainModel.getPrevious}"
+                              id="cb2"/>
+            <af:commandButton text="#{res['reviewcust.confirm.register']}" action="commitData"
+                              inlineStyle="font-weight:bold;" id="cb3"/>
+          </af:group>
+        </f:facet>
+      </af:panelHeader>
+    </f:facet>
+  </af:panelBorderLayout>
+</jsp:root>

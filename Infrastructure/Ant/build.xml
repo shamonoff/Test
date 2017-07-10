@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!-- Master Ant Buildfile for Fusion Order Demo -->
+<!-- $Id: build.xml 872 2007-02-28 20:14:00Z lmunsing $ -->
+<project default="buildAll">
+  <property file="build.properties"/>
+  <property name="build.output.dir" value="Output"/>
+  <property name="archive.work.dir" value="${temp.dir}/FODPackage"/>
+  <property name="buildNumber" value="${local.buildNumber}"/>
+  <property name="jdev.ant.port" value="2249"/>
+  <property name="ant.home" value="${jdeveloper.home}/ant"/>
+ <!-- <property name="java.security.policy" value="java.policy"/> -->
+
+  <!-- Top level build targets -->
+
+  <target name="buildAll"
+          description="Master build target"
+          depends="setProperties, createDatabase">
+  </target>
+
+  <target name="dropAll"
+          description="Master target used to drop demo"
+          depends="setProperties">
+  <ant antfile="build.xml" dir="../DBSchema"
+         target="dropSchema" />
+  </target>
+  
+  <target name="packageRelease"
+          description="A task that just ensures that we have a zip file of the source no actual building is done"
+          depends="createSrcZip"></target>
+<target name="refreshSchema"
+          description="Used to re-create the database schema - see build.poperties for info on username, connect info etc."
+          depends="setProperties, createDatabase">
+  </target>
+   <!-- Called targets. These should not be called individually-->
+  <target name="init">
+    <javac destdir="classes" source="1.5" target="1.5"
+           deprecation="false" optimize="true" failonerror="true">
+      <src path="src/masterbuildscript"/>
+    </javac>
+  </target>
+  
+  <target name="setProperties" depends="init">
+    <input message="Enter password for the database system user:"
+           addproperty="db.adminUser.password">
+      <handler classpath="classes" classname="masterbuildscript.FODInputHandler"/>
+    </input>
+  </target>
+  
+  <target name="createDatabase">
+    <ant antfile="build.xml" dir="../DBSchema"
+         target="createDatabase" inheritrefs="true"/>
+  </target>
+  
+    
+  
+  <target name="invokeBuildAll">
+    <ant antfile="build.xml" dir="src/admin" target="buildAll"/>
+    <delete>
+      <fileset dir="../buildOutput" includes="**/*.zip"/>
+    </delete>
+    <copy todir="../buildOutput">
+      <fileset dir="src/admin/output"/>
+    </copy>
+    <copy todir="../buildOutput">
+      <fileset dir="src/packaging/JDeveloperExtension/output"/>
+    </copy>
+  </target>
+  <target name="createSrcZip">
+    <mkdir dir="${build.output.dir}"/>
+    <delete dir="${archive.work.dir}"/>
+    <copy todir="${archive.work.dir}" includeemptydirs="true">
+      <fileset dir="../..">
+        <exclude name="**/classes/*"/>
+        <!-- <exclude name="**/*.ear"/> -->
+        <exclude name="**/*.war"/>
+        <exclude name="**/*.zip"/>
+        <exclude name="**/Thumbs.db"/>
+      </fileset>
+    </copy>
+    <zip basedir="${archive.work.dir}"
+         destfile="${build.output.dir}/${archive.src.zip}.${buildNumber}.zip"/>
+  </target>        
+</project>

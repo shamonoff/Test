@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="price-editing-flow">
+    <default-activity>userTypeCheck</default-activity>
+    <task-flow-reentry>
+      <reentry-not-allowed/>
+    </task-flow-reentry>
+    <input-parameter-definition>
+      <name>uiState</name>
+      <value>#{pageFlowScope.priceEditingController.uiCookie}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <managed-bean>
+      <managed-bean-name>priceListSummaryBacking</managed-bean-name>
+      <managed-bean-class>oracle.foddemo.masterpricelist.backing.PriceListSummaryBB</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name>flowUIFlags</managed-bean-name>
+      <managed-bean-class>java.util.HashMap</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name>priceEditingController</managed-bean-name>
+      <managed-bean-class>oracle.foddemo.masterpricelist.controller.PriceEditingController</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <initializer>#{pageFlowScope.priceEditingController.initialize}</initializer>
+    <view id="editPriceList">
+      <page>/secured/PriceListSummary.jspx</page>
+    </view>
+    <router id="userTypeCheck">
+      <case>
+        <expression>#{pageFlowScope.priceEditingController.admin}</expression>
+        <outcome>admin</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.priceEditingController.manager}</expression>
+        <outcome>manager</outcome>
+      </case>
+      <default-outcome>forbidden</default-outcome>
+    </router>
+    <view id="noAccess">
+      <page>/secured/Information.jspx</page>
+      <input-page-parameter>
+        <from-value>#{res['infoUsage.reducedAccess.messageHeader']}</from-value>
+        <to-value>#{pageFlowScope.infoPageHeaderText}</to-value>
+      </input-page-parameter>
+      <input-page-parameter>
+        <from-value>#{res['infoUsage.reducedAccess.messageHeader']}</from-value>
+        <to-value>#{pageFlowScope.infoPageMsg}</to-value>
+      </input-page-parameter>
+    </view>
+    <view id="reducedAccess">
+      <page>/secured/Information.jspx</page>
+      <input-page-parameter>
+        <from-value>#{res['infoUsage.reducedAccess.messageHeader']}</from-value>
+        <to-value>#{pageFlowScope.infoPageHeaderText}</to-value>
+      </input-page-parameter>
+      <input-page-parameter>
+        <from-value>#{res['infoUsage.reducedAccess.messageHeader']}</from-value>
+        <to-value>#{pageFlowScope.infoPageMsg}</to-value>
+      </input-page-parameter>
+      <input-page-parameter>
+        <from-value>info</from-value>
+        <to-value>#{pageFlowScope.infoPageType}</to-value>
+      </input-page-parameter>
+    </view>
+    <task-flow-return id="end">
+      <outcome>
+        <name>priceEditsComplete</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule>
+      <from-activity-id>userTypeCheck</from-activity-id>
+      <control-flow-case>
+        <from-outcome>admin</from-outcome>
+        <to-activity-id>editPriceList</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>manager</from-outcome>
+        <to-activity-id>reducedAccess</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>forbidden</from-outcome>
+        <to-activity-id>noAccess</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>reducedAccess</from-activity-id>
+      <control-flow-case>
+        <from-outcome>continue</from-outcome>
+        <to-activity-id>editPriceList</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>noAccess</from-activity-id>
+      <control-flow-case>
+        <from-outcome>continue</from-outcome>
+        <to-activity-id>end</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>logout</from-outcome>
+        <to-activity-id>end</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <visibility id="__1">
+      <url-invoke-allowed/>
+    </visibility>
+  </task-flow-definition>
+</adfc-config>

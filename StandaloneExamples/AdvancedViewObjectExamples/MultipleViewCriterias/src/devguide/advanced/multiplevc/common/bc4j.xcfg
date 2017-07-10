@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="devguide.advanced.multiplevc.AppModule">
+      <AppModuleConfig name="AppModuleLocal"
+                       ApplicationName="devguide.advanced.multiplevc.AppModule"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.multiplevc.MultipleViewCriterias">
+         <Security AppModuleJndiName="devguide.advanced.multiplevc.AppModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleShared"
+                       ApplicationName="devguide.advanced.multiplevc.AppModule"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.multiplevc.MultipleViewCriterias">
+         <AM-Pooling jbo.ampool.maxpoolsize="1"
+                     jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="devguide.advanced.multiplevc.AppModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

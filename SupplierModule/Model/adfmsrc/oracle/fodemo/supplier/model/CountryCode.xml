@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.7"
+          id="CountryCode" Package="oracle.fodemo.supplier.model"
+          BeanClass="oracle.fodemo.supplier.model.CountryCode"
+          isJavaBased="true">
+  <Attribute Name="countryName" Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.CountryCode.countryName_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.CountryCode.countryName_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="creationDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="isoCountryCode" PrimaryKey="true" Type="java.lang.String"/>
+  <Attribute Name="language" PrimaryKey="true" Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.CountryCode.language_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.CountryCode.language_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="lastUpdatedBy" Type="java.lang.String"/>
+  <Attribute Name="lastUpdateDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="objectVersionId" Type="java.lang.Long"/>
+  <Attribute Name="sourceLang" Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.CountryCode.sourceLang_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.CountryCode.sourceLang_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.CountryCode"
+                     BeanClass="oracle.fodemo.supplier.model.CountryCode"
+                     id="CountryCode">
+    <ParameterInfo id="countryName" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="createdBy" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="creationDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="isoCountryCode" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="language" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="lastUpdateDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdatedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="objectVersionId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="sourceLang" Type="java.lang.String"
+                   isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.CountryCode"
+                     BeanClass="oracle.fodemo.supplier.model.CountryCode"
+                     id="CountryCode"/>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="oracle.fodemo.supplier.model.ModelBundle"/>
+  </ResourceBundle>
+</JavaBean>

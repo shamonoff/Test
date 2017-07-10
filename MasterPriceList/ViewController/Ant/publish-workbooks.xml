@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!--
+  This is a sample ANT script to demonstrate the invocation
+  of the ADFdi command line workbook publishing tool. It creates
+  published (runtime) workbooks under a specified destination
+  directory from source (designtime) workbooks under a specified
+  published directory.
+  For more information please read chapeter 14.3 Publishing Your
+  Integrated Excel Workbook of the developers guide
+-->
+<project name="publish-adfdi-workbooks" default="publish-workbooks">
+  <target name="publish-workbooks" depends="check-for-windows">
+    
+    <!-- set some properties to drive to invocation of the tool -->
+    <property name="publishtool.home"
+              location="${oracle.home}/adfdi/bin/excel/tools/publish/"/>
+    <property name="app.home" location="../../"/>
+    <property name="sourceWorkbooksDirectory"
+              location="${app.home}/ViewController/src/oracle/foddemo/masterpricelist/excel/"/>
+    <property name="publishedWorkbooksDirectory"
+              location="${app.home}/ViewController/public_html/excel/published"/>
+    <!-- invoke the tool -->
+    <!-- The force="true" ensures workbooks to be published each time. Remove
+    it to publish only "changed" workbooks when the target runs -->
+    <apply executable="${publishtool.home}/publish-workbook.exe"
+           dest="${publishedWorkbooksDirectory}" parallel="false" force="true"
+           failonerror="true">
+      <arg value="-w"/>
+      <srcfile/>
+      <arg value="-o"/>
+      <targetfile/>
+      <fileset dir="${sourceWorkbooksDirectory}" includes="*.xlsx"/>
+      <!-- Appends the ".published" to the name of the source workbook
+      to create the name of the destination workbook. It mapper can be 
+      changed as needed -->
+      <mapper type="glob" from="*-DT.xlsx" to="*.xlsx"/>
+    </apply>
+  </target>
+  
+  
+  <!-- Ensures that the operating system is Windows based. -->
+  <target name="check-for-windows">
+    <condition property="isWindowsOS">
+      <and>
+        <os family="windows"/>
+      </and>
+    </condition>
+    <fail message="Cannot proceed with workbook publishing on a non-windows machine"
+          unless="isWindowsOS"/>
+  </target>
+</project>

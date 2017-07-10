@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AvailableLanguagesLOV"
+  Version="11.1.1.52.93"
+  SelectList="AvailableLanguagesEO.LANGUAGE, 
+       AvailableLanguagesEO.DEFAULT_FLAG"
+  FromList="AVAILABLE_LANGUAGES AvailableLanguagesEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  OrderBy="AvailableLanguagesEO.DEFAULT_FLAG">
+  <EntityUsage
+    Name="AvailableLanguagesEO"
+    Entity="oracle.foddemo.masterpricelist.model.entities.AvailableLanguagesEO"
+    ReadOnly="true"
+    DeleteParticipant="false"/>
+  <ViewAttribute
+    Name="Language"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Language"
+    EntityUsage="AvailableLanguagesEO"
+    AliasName="LANGUAGE"
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oracle.foddemo.masterpricelist.model.queries.AvailableLanguagesLOV.Language_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DefaultFlag"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DefaultFlag"
+    EntityUsage="AvailableLanguagesEO"
+    AliasName="DEFAULT_FLAG"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.foddemo.masterpricelist.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

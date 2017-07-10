@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ShippingOptionBaseEO"
+  DBObjectType="table"
+  DBObjectName="SHIPPING_OPTIONS_BASE"
+  AliasName="ShippingOptionBaseEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  Version="11.1.1.48.80">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="ShippingOptionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="SHIPPING_OPTION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SHIPPING_OPTIONS_BASE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ShippingOptionId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CountryCode"
+    Precision="2"
+    ColumnName="COUNTRY_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SHIPPING_OPTIONS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CountryCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CostPerClass1Item"
+    IsNotNull="true"
+    Precision="8"
+    Scale="2"
+    ColumnName="COST_PER_CLASS1_ITEM"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SHIPPING_OPTIONS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CostPerClass1Item_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CostPerClass2Item"
+    IsNotNull="true"
+    Precision="8"
+    Scale="2"
+    ColumnName="COST_PER_CLASS2_ITEM"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SHIPPING_OPTIONS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CostPerClass2Item_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CostPerClass3Item"
+    IsNotNull="true"
+    Precision="8"
+    Scale="2"
+    ColumnName="COST_PER_CLASS3_ITEM"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SHIPPING_OPTIONS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CostPerClass3Item_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="FreeShippingAllowedFlag"
+    Precision="1"
+    ColumnName="FREE_SHIPPING_ALLOWED_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SHIPPING_OPTIONS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="FreeShippingAllowedFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SHIPPING_OPTIONS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="SHIPPING_OPTIONS_BASE"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SHIPPING_OPTIONS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="SHIPPING_OPTIONS_BASE"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SHIPPING_OPTIONS_BASE"
+    ChangeIndicator="true"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Order"
+    Association="oracle.fodemo.storefront.entities.associations.OrdersShippingOptionsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.OrdersShippingOptionsFkAssoc.Order"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.OrdersShippingOptionsFkAssoc.ShippingOptionBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ShippingOptionTranslation"
+    Association="oracle.fodemo.storefront.entities.associations.ShippingOptionTranslationFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ShippingOptionTranslationFkAssoc.ShippingOptionTranslation"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.ShippingOptionTranslationFkAssoc.ShippingOptionBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ShippingOptionsFreeChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SHIPPING_OPTIONS_FREE_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition"
+        Value="FREE_SHIPPING_ALLOWED_FLAG  in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.FreeShippingAllowedFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ShippingOptionsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SHIPPING_OPTIONS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.ShippingOptionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055308">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055308"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SHIPPING_OPTION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.ShippingOptionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055309">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055309"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"COST_PER_CLASS1_ITEM" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.CostPerClass1Item"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055310">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055310"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"COST_PER_CLASS2_ITEM" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.CostPerClass2Item"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055311">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055311"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"COST_PER_CLASS3_ITEM" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.CostPerClass3Item"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055312">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055312"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055313">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055313"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055314">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055314"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055315">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055315"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055316">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055316"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ShippingOptionBaseEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.ShippingOptionBaseEOMsgBundle"/>
+  </ResourceBundle>
+</Entity>

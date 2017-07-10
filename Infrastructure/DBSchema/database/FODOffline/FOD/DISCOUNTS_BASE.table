@@ -1,0 +1,1890 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <name>DISCOUNTS_BASE</name>
+    <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+    <schemaName>FOD</schemaName>
+    <type>TABLE</type>
+  </ID>
+  <name>DISCOUNTS_BASE</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DISCOUNT_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8048-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>DISCOUNT_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">25013ba8-9b3a-4719-90e5-e4f8f78a163b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>DISCOUNT_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8048-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DISCOUNT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Unique identifier for the discount</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DISCOUNT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DISCOUNT_TYPE_CODE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8049-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>DISCOUNT_TYPE_CODE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">019e1464-bf0f-4810-bc24-bce2de532b71</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>DISCOUNT_TYPE_CODE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8049-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DISCOUNT_TYPE_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Type of discount referencing a lookup to the LOOKUP_TYPES table, domain DISCOUNT_TYPE_CODE</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DISCOUNT_TYPE_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DISCOUNT_AMOUNT</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-804a-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>DISCOUNT_AMOUNT</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f502a093-3f0c-4edd-b56f-e48df785c007</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>DISCOUNT_AMOUNT</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-804a-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DISCOUNT_AMOUNT</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">The value of the discount either as a dollar amount or as a percentage (see APPLY_AS_PERCENTAGE_FLAG) </value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DISCOUNT_AMOUNT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>APPLY_AS_PERCENTAGE_FLAG</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-804b-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>APPLY_AS_PERCENTAGE_FLAG</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">cb982e10-c095-4e06-9031-4fb5c3da1dbd</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>APPLY_AS_PERCENTAGE_FLAG</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-804b-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>APPLY_AS_PERCENTAGE_FLAG</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <default class="java.lang.String">&apos;N&apos;</default>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Boolean flag (Y/N) to define if the DISCOUNT_AMOUNT is a percentage or an absolute value</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>APPLY_AS_PERCENTAGE_FLAG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>EASY_CODE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-804c-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>EASY_CODE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d4a0a18d-bf42-4015-ba79-2055f3527b58</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>EASY_CODE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-804c-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>EASY_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Short Code for use in marketing promos and email shots</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EASY_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ADD_FREE_SHIPPING_FLAG</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-804d-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>ADD_FREE_SHIPPING_FLAG</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">eb9fc5bb-3368-43be-8197-d5a4bc4aea69</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ADD_FREE_SHIPPING_FLAG</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-804d-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ADD_FREE_SHIPPING_FLAG</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <default class="java.lang.String">&apos;N&apos;</default>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Boolean Y/N: deduct shipping cost when this flag set to Y</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ADD_FREE_SHIPPING_FLAG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ONETIME_DISCOUNT_FLAG</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-804e-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>ONETIME_DISCOUNT_FLAG</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0a67efd6-734f-4da1-8af0-2af380f60f76</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ONETIME_DISCOUNT_FLAG</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-804e-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ONETIME_DISCOUNT_FLAG</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <default class="java.lang.String">&apos;Y&apos;</default>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Boolean Y/N value. Can this discount only be applied once per customer?</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ONETIME_DISCOUNT_FLAG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CREATED_BY</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-804f-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CREATED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fb379467-7e5b-4454-9d40-59eb7cdad6d9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CREATED_BY</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-804f-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">60</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CREATION_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8050-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CREATION_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">31dbe7f8-bee2-4a70-ac74-879c143e8255</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CREATION_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8050-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATION_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATION_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LAST_UPDATED_BY</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8051-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>LAST_UPDATED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5e560754-562d-4afc-bc3a-44cd20447726</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>LAST_UPDATED_BY</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8051-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">60</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LAST_UPDATE_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8052-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>LAST_UPDATE_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5ab335c8-0ed2-4ab6-879b-da283ed044c2</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>LAST_UPDATE_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8052-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATE_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATE_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>OBJECT_VERSION_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8053-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>OBJECT_VERSION_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7c8795f4-6a16-415e-afff-8e4005c8e296</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OBJECT_VERSION_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8053-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OBJECT_VERSION_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OBJECT_VERSION_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.CheckConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8055-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+      <checkConditionFragment class="oracle.javatools.db.sql.WhereObject">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f00ea4ee-ce3d-46f6-b459-7f448ac97f5a</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8055-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>CONSTRAINT</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>WHERE</type>
+        </ID>
+        <arguments>
+          <argument class="oracle.javatools.db.sql.SetOperation">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">74315f30-1f30-4483-808e-262cae24562f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+                <identifier class="java.lang.String">b63b5802-0112-1000-8055-8223672bff0d</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>CONSTRAINT</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">242c710c-fb2a-4623-8e45-689b957434c3</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8055-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>DISCOUNTS_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>ADD_FREE_SHIPPING_FLAG</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-804d-8223672bff0d</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNTS_BASE</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                    <schemaName>FOD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>DISCOUNTS_BASE</name>
+                              <identifier class="java.math.BigDecimal">20869</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+                <qualified>false</qualified>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">c04f26e4-a808-414c-a26f-588bf74e412e</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8055-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>DISCOUNTS_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;Y&apos;</SQLText>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>DISCOUNTS_BASE</name>
+                              <identifier class="java.math.BigDecimal">20869</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">047a0c97-1a65-48ad-942c-37e96e6d428d</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8055-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>DISCOUNTS_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;N&apos;</SQLText>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>DISCOUNTS_BASE</name>
+                              <identifier class="java.math.BigDecimal">20869</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+              </argument>
+            </arguments>
+            <operator>705</operator>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>DISCOUNTS_BASE</name>
+                        <identifier class="java.math.BigDecimal">20869</identifier>
+                        <schemaName>FOD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <subType>CheckConstraint</subType>
+                      <type>CONSTRAINT</type>
+                    </parent>
+                    <type>WHERE</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+          </argument>
+        </arguments>
+        <operator>372</operator>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <subType>CheckConstraint</subType>
+                <type>CONSTRAINT</type>
+              </parent>
+              <type>WHERE</type>
+            </value>
+          </entry>
+        </properties>
+      </checkConditionFragment>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DISCOUNTS_FREE_SHIPPING_CHK</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>CheckConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+    <constraint class="oracle.javatools.db.CheckConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DISCOUNTS_ONETIME_CHK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8056-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>DISCOUNTS_ONETIME_CHK</name>
+      <checkConditionFragment class="oracle.javatools.db.sql.WhereObject">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">793dad33-501b-4811-a1df-b8490d07ef75</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>DISCOUNTS_ONETIME_CHK</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8056-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>CONSTRAINT</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>WHERE</type>
+        </ID>
+        <arguments>
+          <argument class="oracle.javatools.db.sql.SetOperation">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">9a82b52a-aa15-41ce-bb9a-cb4184c87e26</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>DISCOUNTS_ONETIME_CHK</name>
+                <identifier class="java.lang.String">b63b5802-0112-1000-8056-8223672bff0d</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>CONSTRAINT</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">c7175369-fc06-48a9-8cde-835a27097afa</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNTS_ONETIME_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8056-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>DISCOUNTS_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>ONETIME_DISCOUNT_FLAG</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-804e-8223672bff0d</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNTS_BASE</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                    <schemaName>FOD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>DISCOUNTS_ONETIME_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>DISCOUNTS_BASE</name>
+                              <identifier class="java.math.BigDecimal">20869</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+                <qualified>false</qualified>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">56df75f0-bf25-450e-98d3-75ddbe438404</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNTS_ONETIME_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8056-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>DISCOUNTS_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;Y&apos;</SQLText>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>DISCOUNTS_ONETIME_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>DISCOUNTS_BASE</name>
+                              <identifier class="java.math.BigDecimal">20869</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">4e433eff-2cb6-4755-ad6c-c681b7530d4f</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNTS_ONETIME_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8056-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>DISCOUNTS_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;N&apos;</SQLText>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>DISCOUNTS_ONETIME_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>DISCOUNTS_BASE</name>
+                              <identifier class="java.math.BigDecimal">20869</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+              </argument>
+            </arguments>
+            <operator>705</operator>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>DISCOUNTS_ONETIME_CHK</name>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>DISCOUNTS_BASE</name>
+                        <identifier class="java.math.BigDecimal">20869</identifier>
+                        <schemaName>FOD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <subType>CheckConstraint</subType>
+                      <type>CONSTRAINT</type>
+                    </parent>
+                    <type>WHERE</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+          </argument>
+        </arguments>
+        <operator>372</operator>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DISCOUNTS_ONETIME_CHK</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <subType>CheckConstraint</subType>
+                <type>CONSTRAINT</type>
+              </parent>
+              <type>WHERE</type>
+            </value>
+          </entry>
+        </properties>
+      </checkConditionFragment>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DISCOUNTS_ONETIME_CHK</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>CheckConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+    <constraint class="oracle.javatools.db.CheckConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8054-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+      <checkConditionFragment class="oracle.javatools.db.sql.WhereObject">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">50be8638-b6b2-485e-950e-90c585d1b4d8</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8054-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>CONSTRAINT</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>WHERE</type>
+        </ID>
+        <arguments>
+          <argument class="oracle.javatools.db.sql.SetOperation">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">2ae37ed1-301c-4667-99e0-97f42c2bbbd1</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+                <identifier class="java.lang.String">b63b5802-0112-1000-8054-8223672bff0d</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>CONSTRAINT</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">10ca6e4d-b001-4a45-b0f4-1b66df923b6d</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8054-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>DISCOUNTS_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>APPLY_AS_PERCENTAGE_FLAG</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-804b-8223672bff0d</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNTS_BASE</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                    <schemaName>FOD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>DISCOUNTS_BASE</name>
+                              <identifier class="java.math.BigDecimal">20869</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+                <qualified>false</qualified>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">1543d344-8a01-4c1a-bbd6-d0d3ad6774d9</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8054-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>DISCOUNTS_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;Y&apos;</SQLText>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>DISCOUNTS_BASE</name>
+                              <identifier class="java.math.BigDecimal">20869</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">83c20749-c3cb-4837-9458-cec18c4d6c3f</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+                    <identifier class="java.lang.String">b63b5802-0112-1000-8054-8223672bff0d</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>DISCOUNTS_BASE</name>
+                      <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>CONSTRAINT</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;N&apos;</SQLText>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>DISCOUNTS_BASE</name>
+                              <identifier class="java.math.BigDecimal">20869</identifier>
+                              <schemaName>FOD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+              </argument>
+            </arguments>
+            <operator>705</operator>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>DISCOUNTS_BASE</name>
+                        <identifier class="java.math.BigDecimal">20869</identifier>
+                        <schemaName>FOD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <subType>CheckConstraint</subType>
+                      <type>CONSTRAINT</type>
+                    </parent>
+                    <type>WHERE</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+          </argument>
+        </arguments>
+        <operator>372</operator>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>DISCOUNTS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20869</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <subType>CheckConstraint</subType>
+                <type>CONSTRAINT</type>
+              </parent>
+              <type>WHERE</type>
+            </value>
+          </entry>
+        </properties>
+      </checkConditionFragment>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DISCOUNT_AS_PERCENTAGE_CHK</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>CheckConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DISCOUNTS_PK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8057-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNTS_BASE</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>DISCOUNTS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>DISCOUNT_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8048-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>DISCOUNTS_BASE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DISCOUNTS_PK</name>
+            <childObjectNames>
+              <childObjectName>DISCOUNT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>DISCOUNTS_BASE</name>
+              <identifier class="java.math.BigDecimal">20869</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">DISCOUNTS provides modifiers to an order. A particular order may have up to two discounts applied. The base discount resulting from customer membership  enrollment and a coupon discount for one-time savings</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">FOD</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>DISCOUNTS_BASE</name>
+        <identifier class="java.math.BigDecimal">20869</identifier>
+        <schemaName>FOD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8cb5bcb5-223c-4673-bb9c-cb02c1f645bc</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>DISCOUNTS_BASE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8047-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>OracleStorageProperties</type>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <maxtrans>255</maxtrans>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DISCOUNTS_BASE</name>
+                <identifier class="java.math.BigDecimal">20869</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespace>USERS</tablespace>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+      <value class="java.lang.Long">1233768291000</value>
+    </entry>
+  </properties>
+  <schema>
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>FOD</name>
+      <identifier class="java.lang.String">b628cc3c-0112-1000-8006-8223672b1417</identifier>
+      <type>SCHEMA</type>
+    </ID>
+    <name>FOD</name>
+  </schema>
+</table>

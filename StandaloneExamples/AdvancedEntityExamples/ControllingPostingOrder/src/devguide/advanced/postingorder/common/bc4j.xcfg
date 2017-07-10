@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="devguide.advanced.postingorder.PostModule">
+      <AppModuleConfig name="PostModuleLocal"
+                       ApplicationName="devguide.advanced.postingorder.PostModule"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.postingorder.ControllingPostingOrder">
+         <Security AppModuleJndiName="devguide.advanced.postingorder.PostModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="PostModuleShared"
+                       ApplicationName="devguide.advanced.postingorder.PostModule"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.postingorder.ControllingPostingOrder">
+         <AM-Pooling jbo.ampool.maxpoolsize="1"
+                     jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="devguide.advanced.postingorder.PostModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

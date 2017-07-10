@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DiscountTranslationsFkAssoc"
+  Version="11.1.1.51.54">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="DiscountsBase"
+    Cardinality="1"
+    Source="true"
+    Owner="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO">
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.DiscountId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="DiscountsBase"/>
+      <Attr Name="_foreignKey"
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.DiscountsPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="DiscountTranslations"
+    Cardinality="-1"
+    Owner="oracle.foddemo.masterpricelist.model.entities.DiscountTranslationsEO">
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountTranslationsEO.DiscountId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="DiscountTranslations"/>
+      <Attr Name="_foreignKey"
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountTranslationsEO.DiscountTranslationsFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+</Association>

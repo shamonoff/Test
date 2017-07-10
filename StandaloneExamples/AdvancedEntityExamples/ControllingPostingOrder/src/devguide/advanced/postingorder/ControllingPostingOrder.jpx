@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<!---->
+
+<JboProject
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="ControllingPostingOrder"
+   SeparateXMLFiles="true"
+   PackageName="devguide.advanced.postingorder"
+   Version="11.1.1.51.56">
+   <DesignTime>
+      <Attr Name="_appModuleNames0" Value="devguide.advanced.postingorder.PostModule" />
+      <Attr Name="_jprName" Value="../../../../ControllingPostingOrder.jpr" />
+      <Attr Name="_NamedConnection" Value="FOD" />
+   </DesignTime>
+   <Containee
+      Name="postingorder"
+      FullName="devguide.advanced.postingorder.postingorder"
+      ObjectType="JboPackage" >
+      <DesignTime>
+         <Attr Name="_EO" Value="true"/>
+         <Attr Name="_AS" Value="true"/>
+         <Attr Name="_AM" Value="true"/>
+      </DesignTime>
+   </Containee>
+</JboProject>

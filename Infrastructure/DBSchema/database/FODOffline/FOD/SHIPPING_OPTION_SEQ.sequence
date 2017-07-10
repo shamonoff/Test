@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<sequence xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <name>SHIPPING_OPTION_SEQ</name>
+    <identifier class="java.lang.String">bef83625-0112-1000-8013-8223672bf359</identifier>
+    <schemaName>FOD</schemaName>
+    <type>SEQUENCE</type>
+  </ID>
+  <name>SHIPPING_OPTION_SEQ</name>
+  <cacheFlag>true</cacheFlag>
+  <cacheSize>20</cacheSize>
+  <cycleFlag>false</cycleFlag>
+  <incrementBy>1</incrementBy>
+  <lastNumber>5</lastNumber>
+  <maxValue>999999999999999999999999999</maxValue>
+  <minValue>1</minValue>
+  <orderFlag>false</orderFlag>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">FOD</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>SHIPPING_OPTION_SEQ</name>
+        <identifier class="java.math.BigDecimal">20934</identifier>
+        <schemaName>FOD</schemaName>
+        <type>SEQUENCE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+      <value class="java.lang.Long">1233768290000</value>
+    </entry>
+  </properties>
+  <schema>
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>FOD</name>
+      <identifier class="java.lang.String">b628cc3c-0112-1000-8006-8223672b1417</identifier>
+      <type>SCHEMA</type>
+    </ID>
+    <name>FOD</name>
+  </schema>
+</sequence>

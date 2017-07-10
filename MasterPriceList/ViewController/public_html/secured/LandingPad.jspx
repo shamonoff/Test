@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+     <af:document title="#{res['login.pageTitle']}" id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelLabelAndMessage label="#{bindings.return.hints.label}"
+                                 id="plam1">
+          <af:outputText value="#{bindings.return.inputValue}" id="ot4"/>
+        </af:panelLabelAndMessage>
+        <af:outputText value="This page does nothing" id="ot1"/>
+        <af:outputText value="#{cookie.jsessionid}" id="ot2"/>
+        <af:outputText value="#{cookie.fod_mpl_user.value}" id="ot3"/>     
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

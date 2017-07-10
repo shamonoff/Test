@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductsProductCategoriesFkAssoc"
+  Version="11.1.1.51.54">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="ProductCategoriesBase1"
+    Cardinality="1"
+    Source="true"
+    Owner="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO">
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.CategoryId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="ProductCategoriesBase1"/>
+      <Attr Name="_foreignKey"
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.ProductTagsPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="ProductsBase1"
+    Cardinality="-1"
+    Owner="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO">
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.CategoryId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="ProductsBase1"/>
+      <Attr Name="_foreignKey"
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.ProductsProductCategoriesFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="employee-registration-task-flow">
+    <display-name></display-name>
+    <default-activity>userRegistrationCreate</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+ <!--   <input-parameter-definition>
+      <name>userType</name>
+      <value>#{pageFlowScope.userType}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>-->
+    <input-parameter-definition>
+      <name>param_userType</name>
+      <value>#{pageFlowScope.userType}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <exception-handler>errorPage</exception-handler>
+    <view id="basicEmployeeInfo">
+      <display-name>Basic Information</display-name>
+      <page>/account/basicEmployeeInfo.jsff</page>
+      <train-stop>
+        <display-name>Basic Information</display-name>
+      </train-stop>
+    </view>
+    <view id="reviewEmployeeInfo">
+      <display-name>Review</display-name>
+      <page>/account/reviewEmployeeInfo.jsff</page>
+      <train-stop>
+        <display-name>Review</display-name>
+      </train-stop>
+    </view>
+        <view id="errorPage">
+      <page>/account/errorPage.jsff</page>
+    </view>
+    <task-flow-return id="commitReturn">
+      <outcome>
+        <name>globalHome</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="rollbackReturn">
+      <outcome>
+        <name>cancelCreateEmp</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <method-call id="userRegistrationCreate">
+      <method>#{bindings.userRegistrationCreate.execute}</method>
+      <outcome>
+        <fixed-outcome>editBasicInfo</fixed-outcome>
+      </outcome>
+    </method-call>
+    <train/>
+    <control-flow-rule>
+      <from-activity-id>errorPage</from-activity-id>
+      <control-flow-case>
+        <from-outcome>goReview</from-outcome>
+        <to-activity-id>reviewEmployeeInfo</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>userRegistrationCreate</from-activity-id>
+      <control-flow-case>
+        <from-outcome>editBasicInfo</from-outcome>
+        <to-activity-id>basicEmployeeInfo</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>reviewEmployeeInfo</from-activity-id>
+      <control-flow-case>
+        <from-outcome>commitData</from-outcome>
+        <to-activity-id>commitReturn</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>goBack</from-outcome>
+        <to-activity-id>basicEmployeeInfo</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>cancelRegistration</from-outcome>
+        <to-activity-id>rollbackReturn</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>basicEmployeeInfo</from-activity-id>
+      <control-flow-case>
+        <from-outcome>next</from-outcome>
+        <to-activity-id>reviewEmployeeInfo</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <critical/>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,911 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <name>WAREHOUSE_STOCK_LEVELS</name>
+    <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+    <schemaName>FOD</schemaName>
+    <type>TABLE</type>
+  </ID>
+  <name>WAREHOUSE_STOCK_LEVELS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PRODUCT_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-809e-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>PRODUCT_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9dccb83a-f8bd-48bf-9185-4a644ba9d319</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-809e-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PRODUCT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>WAREHOUSE_STOCK_LEVELS</name>
+                  <identifier class="java.math.BigDecimal">20866</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Link to the product table</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PRODUCT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>WAREHOUSE_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-809f-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>WAREHOUSE_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f6cf3d5a-d23c-4c8e-b982-bf914b308762</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>WAREHOUSE_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-809f-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>WAREHOUSE_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>WAREHOUSE_STOCK_LEVELS</name>
+                  <identifier class="java.math.BigDecimal">20866</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">The warehouse in question </value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>WAREHOUSE_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>QUANTITY_ON_HAND</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80a0-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>QUANTITY_ON_HAND</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">aa15c9cc-a2f7-466a-946c-7c51668de52f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>QUANTITY_ON_HAND</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80a0-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">8</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>QUANTITY_ON_HAND</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>WAREHOUSE_STOCK_LEVELS</name>
+                  <identifier class="java.math.BigDecimal">20866</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">The stock level of this product</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>QUANTITY_ON_HAND</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CREATED_BY</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80a1-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CREATED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d2c483eb-ba4b-43d6-9f77-7e519773932b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CREATED_BY</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80a1-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">60</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>WAREHOUSE_STOCK_LEVELS</name>
+                  <identifier class="java.math.BigDecimal">20866</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CREATION_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80a2-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CREATION_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2d5f4160-a6cf-4ac3-b685-a1f237fffd34</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CREATION_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80a2-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATION_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>WAREHOUSE_STOCK_LEVELS</name>
+                  <identifier class="java.math.BigDecimal">20866</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATION_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LAST_UPDATED_BY</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80a3-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>LAST_UPDATED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9bd2a63f-c111-41e0-9a36-382c25601c84</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>LAST_UPDATED_BY</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80a3-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">60</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>WAREHOUSE_STOCK_LEVELS</name>
+                  <identifier class="java.math.BigDecimal">20866</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LAST_UPDATE_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80a4-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>LAST_UPDATE_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">89bd0dec-c533-4391-ab4b-8d20e00069e8</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>LAST_UPDATE_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80a4-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATE_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>WAREHOUSE_STOCK_LEVELS</name>
+                  <identifier class="java.math.BigDecimal">20866</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATE_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>OBJECT_VERSION_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80a5-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>OBJECT_VERSION_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">89e1e7e2-9c53-4f83-979d-917b1637ac26</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OBJECT_VERSION_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80a5-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OBJECT_VERSION_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>WAREHOUSE_STOCK_LEVELS</name>
+                  <identifier class="java.math.BigDecimal">20866</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OBJECT_VERSION_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>WAREHOUSE_STOCK_LEVELS_FK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80a7-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>WAREHOUSE_STOCK_LEVELS_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809f-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>WAREHOUSE_STOCK_LEVELS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>WAREHOUSE_STOCK_LEVELS_FK</name>
+            <childObjectNames>
+              <childObjectName>WAREHOUSE_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+        <identifier class="java.lang.String">b63b5802-0112-1000-80de-8223672bff0d</identifier>
+        <parent class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+          <identifier class="java.lang.String">b63b5802-0112-1000-80d5-8223672bff0d</identifier>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>WAREHOUSE_STOCK_LEVELS_FK1</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80a6-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>WAREHOUSE_STOCK_LEVELS_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809e-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>WAREHOUSE_STOCK_LEVELS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>WAREHOUSE_STOCK_LEVELS_FK1</name>
+            <childObjectNames>
+              <childObjectName>PRODUCT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+        <identifier class="java.lang.String">b63b5812-0112-1000-817f-8223672bff0d</identifier>
+        <parent class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+          <identifier class="java.lang.String">b63b5812-0112-1000-815f-8223672bff0d</identifier>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>WAREHOUSE_STOCK_LEVELS_PK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-80a8-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_STOCK_LEVELS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>WAREHOUSE_STOCK_LEVELS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809e-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>WAREHOUSE_STOCK_LEVELS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>WAREHOUSE_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-809f-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>WAREHOUSE_STOCK_LEVELS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>WAREHOUSE_STOCK_LEVELS_PK</name>
+            <childObjectNames>
+              <childObjectName>PRODUCT_ID</childObjectName>
+              <childObjectName>WAREHOUSE_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>WAREHOUSE_STOCK_LEVELS</name>
+              <identifier class="java.math.BigDecimal">20866</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">Holds information about the stock levels for a particular product in each warehouse.</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">FOD</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>WAREHOUSE_STOCK_LEVELS</name>
+        <identifier class="java.math.BigDecimal">20866</identifier>
+        <schemaName>FOD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0216615a-18ee-49e4-a8cd-155bd55e0d15</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>WAREHOUSE_STOCK_LEVELS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-809d-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>OracleStorageProperties</type>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <maxtrans>255</maxtrans>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>WAREHOUSE_STOCK_LEVELS</name>
+                <identifier class="java.math.BigDecimal">20866</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespace>USERS</tablespace>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+      <value class="java.lang.Long">1233768290000</value>
+    </entry>
+  </properties>
+  <schema>
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>FOD</name>
+      <identifier class="java.lang.String">b628cc3c-0112-1000-8006-8223672b1417</identifier>
+      <type>SCHEMA</type>
+    </ID>
+    <name>FOD</name>
+  </schema>
+</table>

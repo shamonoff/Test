@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AvailableLanguagesEO"
+  Version="11.1.1.51.54"
+  DBObjectType="table"
+  DBObjectName="AVAILABLE_LANGUAGES"
+  AliasName="AvailableLanguagesEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Language"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="LANGUAGE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="AVAILABLE_LANGUAGES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DefaultFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="DEFAULT_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="AVAILABLE_LANGUAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="AVAILABLE_LANGUAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="AVAILABLE_LANGUAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="AVAILABLE_LANGUAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="AVAILABLE_LANGUAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="AVAILABLE_LANGUAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="AvailableLanguagesDefltChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="AVAILABLE_LANGUAGES_DEFLT_CHK"/>
+      <Attr Name="_checkCondition" Value="DEFAULT_FLAG in ('Y','N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.AvailableLanguagesEO.DefaultFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AvailableLanguagesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="AVAILABLE_LANGUAGES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.AvailableLanguagesEO.Language"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010819">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010819"/>
+      <Attr Name="_checkCondition" Value='"LANGUAGE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.AvailableLanguagesEO.Language"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010820">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010820"/>
+      <Attr Name="_checkCondition" Value='"DEFAULT_FLAG" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.AvailableLanguagesEO.DefaultFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010821">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010821"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.AvailableLanguagesEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010822">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010822"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.AvailableLanguagesEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010823">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010823"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.AvailableLanguagesEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010824">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010824"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.AvailableLanguagesEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010825">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010825"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.AvailableLanguagesEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+</Entity>

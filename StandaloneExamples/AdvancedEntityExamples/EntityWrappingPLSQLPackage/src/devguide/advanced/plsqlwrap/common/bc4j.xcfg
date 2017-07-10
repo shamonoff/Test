@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="devguide.advanced.plsqlwrap.ProductsModule">
+      <AppModuleConfig name="ProductsModuleLocal"
+                       ApplicationName="devguide.advanced.plsqlwrap.ProductsModule"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.plsqlwrap.EntityWrappingPLSQLPackage">
+         <Security AppModuleJndiName="devguide.advanced.plsqlwrap.ProductsModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="ProductsModuleShared"
+                       ApplicationName="devguide.advanced.plsqlwrap.ProductsModule"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.plsqlwrap.EntityWrappingPLSQLPackage">
+         <AM-Pooling jbo.ampool.maxpoolsize="1"
+                     jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="devguide.advanced.plsqlwrap.ProductsModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

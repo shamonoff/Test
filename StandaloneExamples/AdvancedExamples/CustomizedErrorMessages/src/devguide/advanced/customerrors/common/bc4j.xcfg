@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="devguide.advanced.customerrors.ProductModule"
+                       default="ProductModuleLocal">
+      <AppModuleConfig name="ProductModuleLocal"
+                       ApplicationName="devguide.advanced.customerrors.ProductModule"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.customerrors.CustomizedErrorMessages">
+         <Security AppModuleJndiName="devguide.advanced.customerrors.ProductModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="ProductModuleShared"
+                       ApplicationName="devguide.advanced.customerrors.ProductModule"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.customerrors.CustomizedErrorMessages">
+         <AM-Pooling jbo.ampool.maxpoolsize="1"
+                     jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="devguide.advanced.customerrors.ProductModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="ProductModuleCustomizedError"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.customerrors.CustomizedErrorMessages"
+                       TransactionFactory="devguide.advanced.customerrors.CustomDatabaseTransactionFactory"
+                       ApplicationName="devguide.advanced.customerrors.ProductModule">
+         <Security AppModuleJndiName="devguide.advanced.customerrors.ProductModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

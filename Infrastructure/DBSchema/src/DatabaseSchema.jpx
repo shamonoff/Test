@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+
+<JboProject
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="DatabaseSchema"
+   Version="11.1.2.57.25"
+   SeparateXMLFiles="true"
+   PackageName="" >
+   <DesignTime>
+      <Attr Name="_jprName" Value="../DatabaseSchema.jpr" />
+      <Attr Name="_appModuleNames0" Value="oracle.fodemo.share.imageloader.service.ImageLoaderServiceAM" />
+   </DesignTime>
+   <Containee
+      Name="entities"
+      ObjectType="JboPackage"
+      PackageName="oracle.fodemo.share.imageloader.entities" >
+   </Containee>
+   <Containee
+      Name="queries"
+      ObjectType="JboPackage"
+      PackageName="oracle.fodemo.share.imageloader.queries" >
+   </Containee>
+   <Containee
+      Name="service"
+      ObjectType="JboPackage"
+      PackageName="oracle.fodemo.share.imageloader.service" >
+   </Containee>
+</JboProject>

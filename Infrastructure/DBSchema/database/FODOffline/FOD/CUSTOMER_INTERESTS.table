@@ -1,0 +1,954 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <name>CUSTOMER_INTERESTS</name>
+    <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+    <schemaName>FOD</schemaName>
+    <type>TABLE</type>
+  </ID>
+  <name>CUSTOMER_INTERESTS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CUSTOMER_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-812a-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CUSTOMER_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">88264888-083f-4e36-b5a4-4a2eee00f48e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CUSTOMER_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-812a-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUSTOMER_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CUSTOMER_INTERESTS</name>
+                  <identifier class="java.math.BigDecimal">20881</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Unique Id for the customer</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CUSTOMER_INTERESTS_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-812b-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CUSTOMER_INTERESTS_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e94ddc59-f116-482c-b7a7-67d92eda8cbe</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CUSTOMER_INTERESTS_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-812b-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUSTOMER_INTERESTS_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CUSTOMER_INTERESTS</name>
+                  <identifier class="java.math.BigDecimal">20881</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_INTERESTS_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-812c-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CATEGORY_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d823538b-1da9-49f4-968b-480830eaccc1</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-812c-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CATEGORY_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CUSTOMER_INTERESTS</name>
+                  <identifier class="java.math.BigDecimal">20881</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">The Id iof the category that they are interested in </value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CATEGORY_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CREATED_BY</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-812d-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CREATED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3c215a71-a5a8-44cf-bafe-8799678fb57b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CREATED_BY</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-812d-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">60</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CUSTOMER_INTERESTS</name>
+                  <identifier class="java.math.BigDecimal">20881</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CREATION_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-812e-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>CREATION_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d9e83c16-646a-4204-bec5-2a8e39e967d1</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CREATION_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-812e-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATION_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CUSTOMER_INTERESTS</name>
+                  <identifier class="java.math.BigDecimal">20881</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATION_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LAST_UPDATED_BY</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-812f-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>LAST_UPDATED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">44b46f6b-a0ff-47f5-8972-0d10c6f602cc</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>LAST_UPDATED_BY</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-812f-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">60</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CUSTOMER_INTERESTS</name>
+                  <identifier class="java.math.BigDecimal">20881</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LAST_UPDATE_DATE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8130-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>LAST_UPDATE_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">340d689f-391e-4330-a6ea-49d7d2ff8495</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>LAST_UPDATE_DATE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8130-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATE_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CUSTOMER_INTERESTS</name>
+                  <identifier class="java.math.BigDecimal">20881</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATE_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>OBJECT_VERSION_ID</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8131-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>COLUMN</type>
+      </ID>
+      <name>OBJECT_VERSION_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f4a44101-9999-4d28-9bae-ae1116a06466</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OBJECT_VERSION_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8131-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OBJECT_VERSION_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CUSTOMER_INTERESTS</name>
+                  <identifier class="java.math.BigDecimal">20881</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">History column</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OBJECT_VERSION_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CUSTOMER_INTERESTS_FK1</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8134-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>CUSTOMER_INTERESTS_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-812c-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CUSTOMER_INTERESTS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_INTERESTS_FK1</name>
+            <childObjectNames>
+              <childObjectName>CATEGORY_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+        <identifier class="java.lang.String">b63b5802-0112-1000-80d2-8223672bff0d</identifier>
+        <parent class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+          <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CUSTOMER_INTERESTS_PERSON_FK1</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8135-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>CUSTOMER_INTERESTS_PERSON_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-812a-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CUSTOMER_INTERESTS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_INTERESTS_PERSON_FK1</name>
+            <childObjectNames>
+              <childObjectName>CUSTOMER_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+        <identifier class="java.lang.String">b63b5802-0112-1000-808d-8223672bff0d</identifier>
+        <parent class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+          <identifier class="java.lang.String">b63b5802-0112-1000-806c-8223672bff0d</identifier>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CUSTOMER_INTERESTS_PK</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8133-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>CUSTOMER_INTERESTS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-812b-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CUSTOMER_INTERESTS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_INTERESTS_PK</name>
+            <childObjectNames>
+              <childObjectName>CUSTOMER_INTERESTS_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+    <constraint class="oracle.javatools.db.UniqueConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CUSTOMER_CATEGORY_ID_UNIQUE</name>
+        <identifier class="java.lang.String">b63b5802-0112-1000-8132-8223672bff0d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_INTERESTS</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+          <schemaName>FOD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </ID>
+      <name>CUSTOMER_CATEGORY_ID_UNIQUE</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUSTOMER_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-812a-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CUSTOMER_INTERESTS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY_ID</name>
+          <identifier class="java.lang.String">b63b5802-0112-1000-812c-8223672bff0d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CUSTOMER_INTERESTS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_CATEGORY_ID_UNIQUE</name>
+            <childObjectNames>
+              <childObjectName>CUSTOMER_ID</childObjectName>
+              <childObjectName>CATEGORY_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>CUSTOMER_INTERESTS</name>
+              <identifier class="java.math.BigDecimal">20881</identifier>
+              <schemaName>FOD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>UniqueConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">The table is used to record the product categories that are of interest to the customer. This information is used to generate the recomendations list on the home page</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">FOD</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>CUSTOMER_INTERESTS</name>
+        <identifier class="java.math.BigDecimal">20881</identifier>
+        <schemaName>FOD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">43499abd-6289-4d7a-9826-24d9a76a2048</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CUSTOMER_INTERESTS</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8129-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>OracleStorageProperties</type>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <maxtrans>255</maxtrans>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUSTOMER_INTERESTS</name>
+                <identifier class="java.math.BigDecimal">20881</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespace>USERS</tablespace>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+      <value class="java.lang.Long">1233768291000</value>
+    </entry>
+  </properties>
+  <schema>
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>FOD</name>
+      <identifier class="java.lang.String">b628cc3c-0112-1000-8006-8223672b1417</identifier>
+      <type>SCHEMA</type>
+    </ID>
+    <name>FOD</name>
+  </schema>
+</table>

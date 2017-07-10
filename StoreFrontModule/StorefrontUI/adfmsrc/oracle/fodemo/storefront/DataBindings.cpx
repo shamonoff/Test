@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.44.61" id="DataBindings" SeparateXMLFiles="false"
+             Package="oracle.fodemo.storefront" ClientType="Generic"
+             ErrorHandlerClass="oracle.fodemo.frmwkext.FODCustomErrorHandler">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/home.jspx" usageId="homePageDef"/>
+    <page path="/templates/StoreFrontTemplate.jspx"
+          usageId="templates_StoreFrontTemplatePageDef"/>
+    <page path="/login.jspx" usageId="loginPageDef"/>
+    <page path="/myOrders.jspx" usageId="myOrdersPageDef"/>
+    <page path="/checkout/order.jspx" usageId="checkout_orderPageDef"/>
+    <page path="/checkout/orderSummary.jspx"
+          usageId="checkout_orderSummaryPageDef"/>
+    <page path="/account/basicInformation.jsff"
+          usageId="account_basicInformationPageDef"/>
+    <page path="/account/defineAddresses.jsff"
+          usageId="account_defineAddressesPageDef"/>
+    <page path="/account/updateUserInfo.jspx"
+          usageId="account_updateUserInfoPageDef"/>
+    <page path="/account/reviewCustomerInfo.jsff"
+          usageId="account_reviewCustomerInfoPageDef"/>
+    <page path="/account/paymentOptions.jsff"
+          usageId="account_paymentOptionsPageDef"/>
+    <page path="/WEB-INF/customer-registration-task-flow.xml#customer-registration-task-flow@userRegistrationCreate"
+          usageId="customer_registration_task_flow_userRegistrationCreate"/>
+    <page path="/WEB-INF/employee-registration-task-flow.xml#employee-registration-task-flow@userRegistrationCreate"
+          usageId="employee_registration_task_flow_userRegistrationCreate"/>
+    <page path="/account/basicEmployeeInfo.jsff"
+          usageId="account_basicEmployeeInfoPageDef"/>
+    <page path="/WEB-INF/customer-registration-task-flow.xml#customer-registration-task-flow@createAddress"
+          usageId="customer_registration_task_flow_CreateInsert"/>
+    <page path="/account/addressDetails.jsff"
+          usageId="account_addressDetailsPageDef"/>
+    <page path="/account/reviewEmployeeInfo.jsff"
+          usageId="account_reviewEmployeeInfoPageDef"/>
+    <page path="/WEB-INF/customer-registration-task-flow.xml#customer-registration-task-flow@createPaymentOption"
+          usageId="customer_registration_task_flow_createPaymentOption"/>
+    <page path="/account/paymentOptionDetails.jsff"
+          usageId="account_paymentOptionDetailsPageDef"/>
+    <page path="/account/register.jspx"
+          usageId="oracle_fodemo_storefront_registerPageDef"/>
+    <page path="/account/help.jsff"
+          usageId="oracle_fodemo_storefront_helpPageDef"/>
+    <page path="/logout.jspx" usageId="oracle_fodemo_storefront_logoutPageDef"/>
+    <page path="/WEB-INF/checkout-task-flow.xml#checkout-task-flow@reconcileShoppingCart"
+          usageId="oracle_fodemo_storefront_checkout_task_flow_checkout_task_flow_reconcileShoppingCartPageDef"/>
+    <page path="/WEB-INF/myorders-task-flow.xml#myorders-task-flow@executeMyOrdersForCustomerVO"
+          usageId="oracle_fodemo_storefront_myorders_task_flow_executeMyOrdersForCustomerVOPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="homePageDef"
+          path="oracle.fodemo.storefront.pageDefs.homePageDef"/>
+    <page id="templates_StoreFrontTemplatePageDef"
+          path="oracle.fodemo.storefront.pageDefs.templates_StoreFrontTemplatePageDef"/>
+    <page id="loginPageDef"
+          path="oracle.fodemo.storefront.pageDefs.loginPageDef"/>
+    <page id="myOrdersPageDef"
+          path="oracle.fodemo.storefront.pageDefs.myOrdersPageDef"/> 
+    <page id="checkout_orderPageDef"
+          path="oracle.fodemo.storefront.pageDefs.checkout_orderPageDef"/>
+    <page id="checkout_orderSummaryPageDef"
+          path="oracle.fodemo.storefront.pageDefs.checkout_orderSummaryPageDef"/>
+    <page id="templates_StoreFrontHomeTemplatePageDef"
+          path="oracle.fodemo.storefront.pageDefs.templates_StoreFrontHomeTemplatePageDef"/>
+    <page id="account_basicInformationPageDef"
+          path="oracle.fodemo.storefront.pageDefs.account_basicInformationPageDef"/>
+    <page id="account_defineAddressesPageDef"
+          path="oracle.fodemo.storefront.pageDefs.account_defineAddressesPageDef"/>
+    <page id="account_updateUserInfoPageDef"
+          path="oracle.fodemo.storefront.pageDefs.account_updateUserInfoPageDef"/>
+    <page id="account_reviewCustomerInfoPageDef"
+          path="oracle.fodemo.storefront.pageDefs.account_reviewCustomerInfoPageDef"/>
+    <page id="account_paymentOptionsPageDef"
+          path="oracle.fodemo.storefront.pageDefs.account_paymentOptionsPageDef"/>
+    <page id="customer_registration_task_flow_userRegistrationCreate"
+          path="oracle.fodemo.storefront.pageDefs.customer_registration_task_flow_userRegistrationCreate"/>
+    <page id="employee_registration_task_flow_userRegistrationCreate"
+          path="oracle.fodemo.storefront.pageDefs.employee_registration_task_flow_userRegistrationCreate"/>
+    <page id="account_basicEmployeeInfoPageDef"
+          path="oracle.fodemo.storefront.pageDefs.account_basicEmployeeInfoPageDef"/>
+    <page id="customer_registration_task_flow_CreateInsert"
+          path="oracle.fodemo.storefront.pageDefs.customer_registration_task_flow_CreateInsert"/>
+    <page id="account_addressDetailsPageDef"
+          path="oracle.fodemo.storefront.pageDefs.account_addressDetailsPageDef"/>
+    <page id="account_reviewEmployeeInfoPageDef"
+          path="oracle.fodemo.storefront.pageDefs.account_reviewEmployeeInfoPageDef"/>
+    <page id="checkout_editPaymentOptionsPageDef"
+          path="oracle.fodemo.storefront.pageDefs.checkout_editPaymentOptionsPageDef"/>
+    <page id="checkout_addPaymentOptionsPageDef"
+          path="oracle.fodemo.storefront.pageDefs.checkout_addPaymentOptionsPageDef"/>
+    <page id="checkout_addAddressPageDef"
+          path="oracle.fodemo.storefront.pageDefs.checkout_addAddressPageDef"/>
+    <page id="checkout_editAddressPageDef"
+          path="oracle.fodemo.storefront.pageDefs.checkout_editAddressPageDef"/>
+    <page id="customer_registration_task_flow_createPaymentOption"
+          path="oracle.fodemo.storefront.pageDefs.customer_registration_task_flow_createPaymentOption"/>
+    <page id="account_paymentOptionDetailsPageDef"
+          path="oracle.fodemo.storefront.pageDefs.account_paymentOptionDetailsPageDef"/>
+    <page id="oracle_fodemo_storefront_registerPageDef"
+          path="oracle.fodemo.storefront.pageDefs.registerPageDef"/>
+    <page id="oracle_fodemo_storefront_helpPageDef" path="oracle.fodemo.storefront.pageDefs.helpPageDef"/>
+    <page id="oracle_fodemo_storefront_logoutPageDef"
+          path="oracle.fodemo.storefront.pageDefs.logoutPageDef"/>
+    <page id="oracle_fodemo_storefront_checkout_task_flow_checkout_task_flow_reconcileShoppingCartPageDef"
+          path="oracle.fodemo.storefront.pageDefs.checkout_task_flow_checkout_task_flow_reconcileShoppingCartPageDef"/>
+    <page id="oracle_fodemo_storefront_myorders_task_flow_executeMyOrdersForCustomerVOPageDef"
+          path="oracle.fodemo.storefront.pageDefs.myorders_task_flow_executeMyOrdersForCustomerVOPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="StoreServiceAMDataControl"
+                     Package="oracle.fodemo.storefront.store.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="StoreServiceAMLocalWeb" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="LookupServiceAMDataControl"
+                     Package="oracle.fodemo.storefront.lookups"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="LookupServiceAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

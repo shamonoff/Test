@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductImagesVO"
+  SelectList="ProductImageEO.PRODUCT_IMAGE_ID, 
+       ProductImageEO.PRODUCT_ID, 
+       ProductImageEO.DEFAULT_VIEW_FLAG, 
+       ProductImageEO.DETAIL_IMAGE_ID, 
+       ProductImageEO.IMAGE"
+  FromList="PRODUCT_IMAGES ProductImageEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_version" Value="11.1.1.44.61"/>
+  </DesignTime>
+  <EntityUsage
+    Name="ProductImageEO"
+    Entity="oracle.fodemo.storefront.entities.ProductImageEO"
+    ReadOnly="false"
+    Reference="false"
+    DeleteParticipant="true"
+    EntireObjectTable="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <Attr Name="_queryClause" Value="false"/>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="ProductImageId"
+    IsUpdateable="true"
+    AttrLoad="Each"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProductImageId"
+    EntityUsage="ProductImageEO"
+    AliasName="PRODUCT_IMAGE_ID"/>
+  <ViewAttribute
+    Name="ProductId"
+    IsUpdateable="true"
+    AttrLoad="Each"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProductId"
+    EntityUsage="ProductImageEO"
+    AliasName="PRODUCT_ID"/>
+  <ViewAttribute
+    Name="DefaultViewFlag"
+    IsUpdateable="true"
+    AttrLoad="Each"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DefaultViewFlag"
+    EntityUsage="ProductImageEO"
+    AliasName="DEFAULT_VIEW_FLAG"/>
+  <ViewAttribute
+    Name="DetailImageId"
+    IsUpdateable="true"
+    AttrLoad="Each"
+    PrecisionRule="true"
+    EntityAttrName="DetailImageId"
+    EntityUsage="ProductImageEO"
+    AliasName="DETAIL_IMAGE_ID"/>
+  <ViewAttribute
+    Name="Image"
+    IsUpdateable="true"
+    AttrLoad="Each"
+    IsQueriable="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Image"
+    EntityUsage="ProductImageEO"
+    AliasName="IMAGE"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ProductImageId"/>
+  </AttrArray>
+</ViewObject>

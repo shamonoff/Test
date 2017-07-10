@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.55" id="regStep3PageDef" Package="supplier">
+  <parameters/>
+  <executables>
+    <iterator Binds="root" RangeSize="25" DataControl="SupplierFacadeLocal"
+              id="SupplierFacadeLocalIterator"/>
+    <accessorIterator MasterBinding="SupplierFacadeLocalIterator"
+                      Binds="addresses" RangeSize="25"
+                      DataControl="SupplierFacadeLocal"
+                      BeanClass="oracle.fodemo.supplier.model.Addresses"
+                      id="addressesIterator" Refresh="ifNeeded"
+                      CacheResults="false"/>
+    <accessorIterator MasterBinding="SupplierFacadeLocalIterator"
+                      Binds="countryCodeFindAll" RangeSize="100"
+                      DataControl="SupplierFacadeLocal"
+                      BeanClass="oracle.fodemo.supplier.model.CountryCode"
+                      id="countryCodeFindAllIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="addressesIterator" id="address1">
+      <AttrNames>
+        <Item Value="address1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="addressesIterator" id="address2">
+      <AttrNames>
+        <Item Value="address2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="addressesIterator" id="city">
+      <AttrNames>
+        <Item Value="city"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="addressesIterator" id="postalCode">
+      <AttrNames>
+        <Item Value="postalCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="addressesIterator" id="stateProvince">
+      <AttrNames>
+        <Item Value="stateProvince"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="addressesIterator" id="countryId">
+      <AttrNames>
+        <Item Value="countryId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="saveSupplierDetails" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="saveSupplierDetails"
+                  IsViewObjectMethod="false" DataControl="SupplierFacadeLocal"
+                  InstanceName="SupplierFacadeLocal.dataProvider">
+      <NamedData NDName="supplier"
+                 NDType="oracle.fodemo.supplier.model.Supplier"/>
+      <NamedData NDName="person" NDType="oracle.fodemo.supplier.model.Person"/>
+    </methodAction>
+    <list IterBinding="countryCodeFindAllIterator" ListOperMode="navigation"
+          ListIter="countryCodeFindAllIterator" id="countryCodeFindAll"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="countryName"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

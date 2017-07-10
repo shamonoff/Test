@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['oracle.fodemo.supplier.view.ViewControllerBundle']}"/>
+  <af:panelBorderLayout id="pbl1">
+    <f:facet name="bottom"/>
+    <f:facet name="top">
+      <af:train var="node"
+                shortDesc="#{viewcontrollerBundle['supplierinfo.step1.title']}"
+                id="train"
+                value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}">
+        <f:facet name="nodeStamp">
+          <af:commandNavigationItem text="#{node.textAndAccessKey}"
+                                    visited="#{node.visited}"
+                                    action="#{node.action}" disabled="true"
+                                    immediate="#{node.immediate}"
+                                    id="commandNavigationItem1"/>
+        </f:facet>
+      </af:train>
+    </f:facet>
+    <f:facet name="innerTop">
+      <af:panelHeader text="#{viewcontrollerBundle['supplierinfo.header']}"
+                      id="ph1">
+        <f:facet name="toolbar"></f:facet>
+        <af:messages id="m1"/>
+        <af:panelFormLayout id="pfl1">
+          <af:inputText value="#{bindings.supplierName.inputValue}"
+                        label="#{bindings.supplierName.hints.label}"
+                        required="#{bindings.supplierName.hints.mandatory}"
+                        columns="#{bindings.supplierName.hints.displayWidth}"
+                        maximumLength="#{bindings.supplierName.hints.precision}"
+                        shortDesc="#{bindings.supplierName.hints.tooltip}"
+                        id="it3"
+                        showRequired="#{bindings.supplierName.hints.mandatory}">
+            <f:validator binding="#{bindings.supplierName.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.phoneNumber.inputValue}"
+                        label="#{bindings.phoneNumber.hints.label}"
+                        required="#{bindings.phoneNumber.hints.mandatory}"
+                        columns="#{bindings.phoneNumber.hints.displayWidth}"
+                        maximumLength="#{bindings.phoneNumber.hints.precision}"
+                        shortDesc="#{bindings.phoneNumber.hints.tooltip}"
+                        id="it2"
+                        showRequired="#{bindings.phoneNumber.hints.mandatory}">
+            <f:validator binding="#{bindings.phoneNumber.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.email.inputValue}"
+                        label="#{bindings.email.hints.label}"
+                        required="#{bindings.email.hints.mandatory}"
+                        columns="#{bindings.email.hints.displayWidth}"
+                        maximumLength="#{bindings.email.hints.precision}"
+                        shortDesc="#{bindings.email.hints.tooltip}" id="it1"
+                        showRequired="#{bindings.email.hints.mandatory}">
+            <f:validator binding="#{bindings.email.validator}"/>
+          </af:inputText>
+          <f:facet name="footer">
+            <af:panelGroupLayout id="pgl2">
+              <af:commandButton text="#{viewcontrollerBundle['global.button.Cancel']}"
+                                id="cb5" action="exitRegistration"
+                                disabled="false" icon="/images/undo.png"
+                                immediate="true"/>
+              <af:spacer width="10" height="10" id="s1"/>
+              <af:commandButton text="#{viewcontrollerBundle['global.button.Next']}"
+                                id="cb6" action="next" icon="/images/next.gif">
+                <af:setPropertyListener from="#{bindings.supplierIterator.currentRow.dataProvider}"
+                                        to="#{pageFlowScope.SupplierRegistrationBean.supplier}"
+                                        type="action"/>
+              </af:commandButton>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelFormLayout>
+      </af:panelHeader>
+    </f:facet>
+  </af:panelBorderLayout>
+</jsp:root>

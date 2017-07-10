@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.53.5"
+                id="checkout_task_flow_checkout_task_flow_reconcileShoppingCartPageDef"
+                Package="oracle.fodemo.storefront.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <action id="reconcileShoppingCart" RequiresUpdateModel="true"
+            Action="invokeMethod" MethodName="reconcileShoppingCart"
+            IsViewObjectMethod="false" DataControl="StoreServiceAMDataControl"
+            InstanceName="StoreServiceAMDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<definitions targetNamespace="/oracle/fodemo/storefront/entities/events/edl/OrderEO" xmlns:ns0="/oracle/fodemo/storefront/entities/events/schema/OrderEO" xmlns="http://schemas.oracle.com/events/edl">
+   <schema-import namespace="/oracle/fodemo/storefront/entities/events/schema/OrderEO" location="OrderEO.xsd"/>
+   <event-definition name="NewOrderSubmitted">
+      <content element="ns0:NewOrderSubmittedInfo"/>
+   </event-definition>
+</definitions>

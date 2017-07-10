@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.7"
+          id="AddressUsage" Package="oracle.fodemo.supplier.model"
+          BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+          isJavaBased="true">
+  <Attribute Name="addressUsagesId" PrimaryKey="true" Type="java.lang.Long"/>
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="creationDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="expiredFlag" Type="java.lang.String"/>
+  <Attribute Name="lastUpdatedBy" Type="java.lang.String"/>
+  <Attribute Name="lastUpdateDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="objectVersionId" Type="java.lang.Long"/>
+  <Attribute Name="ownerTypeCode" Type="java.lang.String"/>
+  <Attribute Name="usageTypeCode" Type="java.lang.String"/>
+  <AccessorAttribute id="addresses" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Addresses"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="person" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Person"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.AddressUsage"
+                     BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                     id="AddressUsage">
+    <ParameterInfo id="addresses" Type="oracle.fodemo.supplier.model.Addresses"
+                   isStructured="true"/>
+    <ParameterInfo id="addressUsagesId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="person" Type="oracle.fodemo.supplier.model.Person"
+                   isStructured="true"/>
+    <ParameterInfo id="createdBy" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="creationDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="expiredFlag" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdateDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdatedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="objectVersionId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="ownerTypeCode" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="usageTypeCode" Type="java.lang.String"
+                   isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.AddressUsage"
+                     BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                     id="AddressUsage"/>
+</JavaBean>

@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductsBaseEO"
+  Version="11.1.1.54.30"
+  DBObjectType="table"
+  DBObjectName="PRODUCTS_BASE"
+  AliasName="ProductsBaseEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="ProductId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="PRODUCT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SupplierId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="SUPPLIER_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ParentCategoryId"
+    Precision="15"
+    Scale="0"
+    ColumnName="PARENT_CATEGORY_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.ParentCategoryId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CategoryId"
+    Precision="15"
+    Scale="0"
+    ColumnName="CATEGORY_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.CategoryId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ProductName"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="PRODUCT_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProductStatus"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="PRODUCT_STATUS"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CostPrice"
+    Precision="8"
+    Scale="2"
+    ColumnName="COST_PRICE"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ListPrice"
+    IsNotNull="true"
+    Precision="8"
+    Scale="2"
+    ColumnName="LIST_PRICE"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MinPrice"
+    IsNotNull="true"
+    Precision="8"
+    Scale="2"
+    ColumnName="MIN_PRICE"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="WarrantyPeriodMonths"
+    Precision="2"
+    Scale="0"
+    ColumnName="WARRANTY_PERIOD_MONTHS"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ShippingClassCode"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="SHIPPING_CLASS_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ExternalUrl"
+    Precision="200"
+    ColumnName="EXTERNAL_URL"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AttributeCategory"
+    Precision="30"
+    ColumnName="ATTRIBUTE_CATEGORY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute1"
+    Precision="150"
+    ColumnName="ATTRIBUTE1"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute2"
+    Precision="150"
+    ColumnName="ATTRIBUTE2"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute3"
+    Precision="150"
+    ColumnName="ATTRIBUTE3"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute4"
+    Precision="150"
+    ColumnName="ATTRIBUTE4"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute5"
+    Precision="150"
+    ColumnName="ATTRIBUTE5"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute6"
+    Precision="150"
+    ColumnName="ATTRIBUTE6"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute7"
+    Precision="150"
+    ColumnName="ATTRIBUTE7"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute8"
+    Precision="150"
+    ColumnName="ATTRIBUTE8"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute9"
+    Precision="150"
+    ColumnName="ATTRIBUTE9"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute10"
+    Precision="150"
+    ColumnName="ATTRIBUTE10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute11"
+    Precision="150"
+    ColumnName="ATTRIBUTE11"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute12"
+    Precision="150"
+    ColumnName="ATTRIBUTE12"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute13"
+    Precision="150"
+    ColumnName="ATTRIBUTE13"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute14"
+    Precision="150"
+    ColumnName="ATTRIBUTE14"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute15"
+    Precision="150"
+    ColumnName="ATTRIBUTE15"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE"
+    HistoryColumn="VersionHistory"
+    ChangeIndicator="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="ProductImages"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.ProductImagesProductsFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductImagesProductsFkAssoc.ProductImages"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductImagesProductsFkAssoc.ProductsBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ProductTranslations"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.ProductTranslationsFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductTranslationsFkAssoc.ProductTranslations"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductTranslationsFkAssoc.ProductsBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ProductCategoriesBase"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.RepresentativeProductFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.RepresentativeProductFkAssoc.ProductCategoriesBase"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.RepresentativeProductFkAssoc.ProductsBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Suppliers"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.ProductsSuppliersFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductsSuppliersFkAssoc.Suppliers"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductsSuppliersFkAssoc.ProductsBase"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProductCategoriesBase1"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.ProductsProductCategoriesFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductsProductCategoriesFkAssoc.ProductCategoriesBase1"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductsProductCategoriesFkAssoc.ProductsBase1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ProductsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.ProductId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010722">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010722"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.ProductId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010723">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010723"/>
+      <Attr Name="_checkCondition" Value='"SUPPLIER_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.SupplierId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010724">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010724"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.ProductName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010725">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010725"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_STATUS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.ProductStatus"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010726">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010726"/>
+      <Attr Name="_checkCondition" Value='"LIST_PRICE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.ListPrice"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010727">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010727"/>
+      <Attr Name="_checkCondition" Value='"MIN_PRICE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.MinPrice"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010728">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010728"/>
+      <Attr Name="_checkCondition" Value='"SHIPPING_CLASS_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.ShippingClassCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010729">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010729"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010730">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010730"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010731">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010731"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010732">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010732"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010733">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010733"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductsProductCategoriesFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRODUCT_TAGS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_PRODUCT_CATEGORIES_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.CategoryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductsSuppliersFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SUPPLIERS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_SUPPLIERS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductsBaseEO.SupplierId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.foddemo.masterpricelist.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.9" id="excelAdvSearchPageDef"
+                Package="oracle.foddemo.masterpricelist.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="MasterPriceListServiceDataControl"
+                     Binds="searchTerm"
+                     Name="executeAdvancedProductQuery_searchTerm"
+                     IsQueriable="false"/>
+      <variableUsage DataControl="MasterPriceListServiceDataControl"
+                     Binds="categoryId"
+                     Name="executeAdvancedProductQuery_categoryId"
+                     IsQueriable="false"/>
+      <variableUsage DataControl="MasterPriceListServiceDataControl"
+                     Binds="includeDiscontinued"
+                     Name="executeAdvancedProductQuery_includeDiscontinued"
+                     IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="ProductCategories" RangeSize="-1"
+              DataControl="MasterPriceListServiceDataControl"
+              id="ProductCategoriesIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="executeAdvancedProductQuery" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="executeAdvancedProductQuery"
+                  IsViewObjectMethod="true"
+                  DataControl="MasterPriceListServiceDataControl"
+                  InstanceName="MasterPriceListServiceDataControl.ProductList">
+      <NamedData NDName="searchTerm" NDType="java.lang.String"
+                 NDValue="${bindings.executeAdvancedProductQuery_searchTerm}"/>
+      <NamedData NDName="categoryId" NDType="java.lang.String"
+                 NDValue="${bindings.executeAdvancedProductQuery_categoryId}"/>
+      <NamedData NDName="includeDiscontinued" NDType="java.lang.Boolean"
+                 NDValue="${bindings.executeAdvancedProductQuery_includeDiscontinued}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="searchTerm">
+      <AttrNames>
+        <Item Value="executeAdvancedProductQuery_searchTerm"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="variables" id="categoryIdList" DTSupportsMRU="false"
+          StaticList="false" ListIter="ProductCategoriesIterator"
+          NullValueFlag="start" NullValueId="categoryIdList_null">
+      <AttrNames>
+        <Item Value="executeAdvancedProductQuery_categoryId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="CategoryId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="CategoryName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <button IterBinding="variables" id="includeDiscontinued"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="executeAdvancedProductQuery_includeDiscontinued"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <attributeValues IterBinding="variables" id="categoryId">
+      <AttrNames>
+        <Item Value="executeAdvancedProductQuery_categoryId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="oracle.foddemo.masterpricelist.resources.UIResources"/>
+  </ResourceBundle>
+</pageDefinition>

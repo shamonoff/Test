@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductImageEO"
+  DBObjectType="table"
+  DBObjectName="PRODUCT_IMAGES"
+  AliasName="ProductImageEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  Version="11.1.1.48.80">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="ProductImageId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="PRODUCT_IMAGE_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_IMAGES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ProductImageId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ProductId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="PRODUCT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_IMAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ProductId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DefaultViewFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="DEFAULT_VIEW_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_IMAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DefaultViewFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DetailImageId"
+    Precision="15"
+    Scale="0"
+    ColumnName="DETAIL_IMAGE_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_IMAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DetailImageId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Image"
+    IsQueriable="false"
+    IsNotNull="true"
+    ColumnName="IMAGE"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    SQLType="BLOB"
+    TableName="PRODUCT_IMAGES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Image_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_IMAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="PRODUCT_IMAGES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_IMAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="PRODUCT_IMAGES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_IMAGES"
+    ChangeIndicator="true"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+<!--  <AccessorAttribute
+    Name="DetailImageIdProductImage"
+    Association="oracle.fodemo.storefront.entities.associations.ProductImagesFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ProductImagesFkAssoc.DetailImageIdProductImage"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.ProductImagesFkAssoc.ProductImage"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/> -->
+  <AccessorAttribute
+    Name="ProductBase"
+    Association="oracle.fodemo.storefront.entities.associations.ProductImagesProductsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ProductImagesProductsFkAssoc.ProductBase"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.ProductImagesProductsFkAssoc.ProductImage"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProductImage"
+    Association="oracle.fodemo.storefront.entities.associations.ProductImagesFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ProductImagesFkAssoc.ProductImage"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.ProductImagesFkAssoc.DetailImageIdProductImage"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ProductImagesDefaultChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_IMAGES_DEFAULT_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value="DEFAULT_VIEW_FLAG in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductImageEO.DefaultViewFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductImagesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_IMAGES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductImageEO.ProductImageId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055258">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055258"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_IMAGE_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductImageEO.ProductImageId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055259">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055259"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.ProductImageEO.ProductId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055260">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055260"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"DEFAULT_VIEW_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductImageEO.DefaultViewFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055261">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055261"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"IMAGE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.ProductImageEO.Image"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055262">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055262"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.ProductImageEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055263">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055263"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductImageEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055264">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055264"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductImageEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055265">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055265"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductImageEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055266">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055266"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductImageEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductImagesFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_IMAGES_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="PRODUCT_IMAGES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductImageEO.DetailImageId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductImagesProductsFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_IMAGES_PRODUCTS_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="PRODUCTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.ProductImageEO.ProductId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.ProductImageEOMsgBundle"/>
+  </ResourceBundle>
+</Entity>

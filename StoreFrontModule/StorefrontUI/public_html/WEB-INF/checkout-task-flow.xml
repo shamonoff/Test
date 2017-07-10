@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller">
+  <task-flow-definition id="checkout-task-flow">
+    <default-activity>reconcileShoppingCart</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition>
+      <name>userInfoBean</name>
+      <value>#{pageFlowScope.userInfoBean}</value>
+    </input-parameter-definition>
+    <managed-bean>
+      <managed-bean-name>paymentOptionsBean</managed-bean-name>
+      <managed-bean-class>oracle.fodemo.storefront.store.view.managed.PaymentOptionsBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <exception-handler>errorPage</exception-handler>
+    <view id="order">
+      <page>/checkout/order.jspx</page>
+    </view>
+    <view id="orderSummary">
+      <page>/checkout/orderSummary.jspx</page>
+    </view>
+    <task-flow-return id="continueShopping">
+      <outcome>
+        <name>globalHome</name>
+      </outcome>
+    </task-flow-return>
+    <view id="errorPage">
+      <page>/unexpectedErrorHandler.jspx</page>
+    </view>
+    <method-call id="reconcileShoppingCart">
+      <method>#{bindings.reconcileShoppingCart.execute}</method>
+      <outcome>
+        <fixed-outcome>viewOrder</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule>
+      <from-activity-id>order</from-activity-id>
+      <control-flow-case>
+        <from-outcome>orderSummary</from-outcome>
+        <to-activity-id>orderSummary</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>return</from-outcome>
+        <to-activity-id>continueShopping</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>orderSummary</from-activity-id>
+      <control-flow-case>
+        <from-outcome>return</from-outcome>
+        <to-activity-id>continueShopping</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>reconcileShoppingCart</from-activity-id>
+      <control-flow-case>
+        <from-outcome>viewOrder</from-outcome>
+        <to-activity-id>order</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="conditionaldelete.AppModule">
+      <AppModuleConfig name="AppModuleLocal" ApplicationName="conditionaldelete.AppModule" DeployPlatform="LOCAL" JDBCName="FOD" jbo.project="conditionaldelete.ConditionalDelete">
+         <Security AppModuleJndiName="conditionaldelete.AppModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleShared" ApplicationName="conditionaldelete.AppModule" DeployPlatform="LOCAL" JDBCName="FOD" jbo.project="conditionaldelete.ConditionalDelete">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="conditionaldelete.AppModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

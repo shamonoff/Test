@@ -1,0 +1,1502 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <name>SHIPPING_OPTIONS</name>
+    <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+    <schemaName>FOD</schemaName>
+    <type>VIEW</type>
+  </ID>
+  <name>SHIPPING_OPTIONS</name>
+  <SQLQuery class="oracle.javatools.db.ora.OracleSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>SQLQuery</name>
+      <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+      <parent class="oracle.javatools.db.IdentifierBasedID">
+        <name>SHIPPING_OPTIONS</name>
+        <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+        <schemaName>FOD</schemaName>
+        <type>VIEW</type>
+      </parent>
+      <schemaName>FOD</schemaName>
+      <type>SQLQuery</type>
+    </ID>
+    <distinct>false</distinct>
+    <distinctSource></distinctSource>
+    <fromObjects>
+      <fromObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SHIPPING_OPTION_TRANSLATIONS INNER JOIN SHIPPING_OPTIONS_BASE USING (SHIPPING_OPTION_ID)</name>
+          <identifier class="java.lang.String">723962bb-dec6-4847-ab31-85d469b2947e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>FROM</type>
+        </ID>
+        <expression class="oracle.javatools.db.sql.JoinObject">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">8fbbde78-e8fc-40c0-bbe3-522ca39da9bb</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <condition class="oracle.javatools.db.sql.UsingJoinCondition">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">2e8ae998-d3a7-4c25-8965-33a987d66bc6</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SHIPPING_OPTIONS</name>
+                  <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <columns>
+              <column class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">3bff108b-8f21-419e-94c4-e2e39ce86042</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>SHIPPING_OPTIONS</name>
+                      <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SHIPPING_OPTIONS_BASE</name>
+                  <identifier class="java.lang.String">8bcd261a-73d1-450d-960c-488b8de747cf</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>SHIPPING_OPTIONS</name>
+                      <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SHIPPING_OPTION_ID</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-811c-8223672bff0d</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">b63b5802-0112-1000-811b-8223672bff0d</identifier>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>false</qualified>
+              </column>
+            </columns>
+          </condition>
+          <includeJoinKeyword>true</includeJoinKeyword>
+          <joinType>INNER</joinType>
+          <leftExpression>
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTION_TRANSLATIONS</name>
+              <identifier class="java.lang.String">ec368a2d-abe1-49e6-aca1-600020bbcb04</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SHIPPING_OPTIONS</name>
+                  <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </ID>
+            <expression class="oracle.javatools.db.sql.RelationUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">b7f5a500-9585-4105-8c5b-c6f79d2162ec</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SQLQuery</name>
+                  <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SHIPPING_OPTIONS</name>
+                    <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                    <schemaName>FOD</schemaName>
+                    <type>VIEW</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLQuery</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLFragment</type>
+              </ID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTION_TRANSLATIONS</name>
+                <identifier class="java.lang.String">b63b5812-0112-1000-8182-8223672bff0d</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </objectID>
+            </expression>
+          </leftExpression>
+          <natural>false</natural>
+          <rightExpression>
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS_BASE</name>
+              <identifier class="java.lang.String">8bcd261a-73d1-450d-960c-488b8de747cf</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SHIPPING_OPTIONS</name>
+                  <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </ID>
+            <expression class="oracle.javatools.db.sql.RelationUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">2b19d49e-46da-40d1-9c3e-304a49a7697a</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SQLQuery</name>
+                  <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SHIPPING_OPTIONS</name>
+                    <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                    <schemaName>FOD</schemaName>
+                    <type>VIEW</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLQuery</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLFragment</type>
+              </ID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS_BASE</name>
+                <identifier class="java.lang.String">b63b5802-0112-1000-811b-8223672bff0d</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </objectID>
+            </expression>
+          </rightExpression>
+        </expression>
+      </fromObject>
+    </fromObjects>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SHIPPING_METHOD</name>
+          <identifier class="java.lang.String">76b3e261-dacb-4914-8e15-31fd7efba336</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>SHIPPING_METHOD</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">b850b4f5-a875-4030-9340-a808e43614ff</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTION_TRANSLATIONS</name>
+            <identifier class="java.lang.String">ec368a2d-abe1-49e6-aca1-600020bbcb04</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_METHOD</name>
+            <identifier class="java.lang.String">b63b5812-0112-1000-8185-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5812-0112-1000-8182-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SHIPPING_OPTION_ID</name>
+          <identifier class="java.lang.String">37a65af8-e5af-4705-8a26-db71820f5ed9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>SHIPPING_OPTION_ID</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">fbfc3d56-e885-4394-8d8e-bb4cf3a0ec45</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS_BASE</name>
+            <identifier class="java.lang.String">8bcd261a-73d1-450d-960c-488b8de747cf</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTION_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-811c-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-811b-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>false</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>COUNTRY_CODE</name>
+          <identifier class="java.lang.String">565aa24a-4993-4d01-ad92-77e2b2959bf7</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>COUNTRY_CODE</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">c3ff0531-bf14-42e0-8e96-80c5b0774910</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS_BASE</name>
+            <identifier class="java.lang.String">8bcd261a-73d1-450d-960c-488b8de747cf</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>COUNTRY_CODE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-811d-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-811b-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>COST_PER_CLASS1_ITEM</name>
+          <identifier class="java.lang.String">19fb0c0c-3536-4d19-b6d8-ed1247c6ddbd</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>COST_PER_CLASS1_ITEM</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">3ddea8a6-cf96-4186-a5c5-8fc0036ff1ff</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS_BASE</name>
+            <identifier class="java.lang.String">8bcd261a-73d1-450d-960c-488b8de747cf</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>COST_PER_CLASS1_ITEM</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-811e-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-811b-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>COST_PER_CLASS2_ITEM</name>
+          <identifier class="java.lang.String">a0536989-1f18-41ac-b7a4-e85f55b4e0f3</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>COST_PER_CLASS2_ITEM</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">14c96c5b-4ab8-4750-bd45-b5a2de9a8231</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS_BASE</name>
+            <identifier class="java.lang.String">8bcd261a-73d1-450d-960c-488b8de747cf</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>COST_PER_CLASS2_ITEM</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-811f-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-811b-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>COST_PER_CLASS3_ITEM</name>
+          <identifier class="java.lang.String">116d2192-49ef-4c55-9b2a-01514d909dca</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>COST_PER_CLASS3_ITEM</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">8ac39dc1-ea55-4240-bbf2-9aabb9f5c55a</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS_BASE</name>
+            <identifier class="java.lang.String">8bcd261a-73d1-450d-960c-488b8de747cf</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>COST_PER_CLASS3_ITEM</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8120-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-811b-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>FREE_SHIPPING_ALLOWED_FLAG</name>
+          <identifier class="java.lang.String">905ba91b-b0c7-4220-963f-38175ed60d36</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>FREE_SHIPPING_ALLOWED_FLAG</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">37b1df6e-6696-4470-8720-739e1bc788fd</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS_BASE</name>
+            <identifier class="java.lang.String">8bcd261a-73d1-450d-960c-488b8de747cf</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>FREE_SHIPPING_ALLOWED_FLAG</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8121-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-811b-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <whereObject>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5d03815a-6d2a-45e5-aa3a-82d732a76aee</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS</name>
+            <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>WHERE</type>
+      </ID>
+      <arguments>
+        <argument class="oracle.javatools.db.sql.Comparison">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">6aaf5044-cbf1-418a-98a4-835303a91ee6</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SHIPPING_OPTIONS</name>
+                <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <comparator>5</comparator>
+          <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">d4abdda2-e423-4fb4-b0bc-e04560b4b45c</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SHIPPING_OPTIONS</name>
+                  <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTION_TRANSLATIONS</name>
+              <identifier class="java.lang.String">ec368a2d-abe1-49e6-aca1-600020bbcb04</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SHIPPING_OPTIONS</name>
+                  <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </fromObjectID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>LANGUAGE</name>
+              <identifier class="java.lang.String">b63b5812-0112-1000-8186-8223672bff0d</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">b63b5812-0112-1000-8182-8223672bff0d</identifier>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </leftExpression>
+          <rightExpression class="oracle.javatools.db.sql.Function">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">88fae9f6-867f-4a3d-b084-908045bcdeac</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SHIPPING_OPTIONS</name>
+                  <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">a3ecde37-d704-484d-894e-a1f76d48055b</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>SHIPPING_OPTIONS</name>
+                      <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;userenv&apos;</SQLText>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">8e9dfb4f-3d44-42a6-8596-ff479e483b36</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>SHIPPING_OPTIONS</name>
+                      <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;LANG&apos;</SQLText>
+              </argument>
+            </arguments>
+            <distinct>false</distinct>
+            <function>SYS_CONTEXT</function>
+            <grouping>false</grouping>
+            <separator>, </separator>
+          </rightExpression>
+        </argument>
+      </arguments>
+      <operator>372</operator>
+    </whereObject>
+    <queryString>SELECT SHIPPING_OPTION_TRANSLATIONS.SHIPPING_METHOD SHIPPING_METHOD, SHIPPING_OPTION_ID SHIPPING_OPTION_ID, SHIPPING_OPTIONS_BASE.COUNTRY_CODE COUNTRY_CODE, SHIPPING_OPTIONS_BASE.COST_PER_CLASS1_ITEM COST_PER_CLASS1_ITEM, SHIPPING_OPTIONS_BASE.COST_PER_CLASS2_ITEM COST_PER_CLASS2_ITEM, SHIPPING_OPTIONS_BASE.COST_PER_CLASS3_ITEM COST_PER_CLASS3_ITEM, SHIPPING_OPTIONS_BASE.FREE_SHIPPING_ALLOWED_FLAG FREE_SHIPPING_ALLOWED_FLAG FROM SHIPPING_OPTION_TRANSLATIONS INNER JOIN SHIPPING_OPTIONS_BASE USING (SHIPPING_OPTION_ID) WHERE SHIPPING_OPTION_TRANSLATIONS.LANGUAGE = SYS_CONTEXT(&apos;userenv&apos;, &apos;LANG&apos;)</queryString>
+  </SQLQuery>
+  <columns>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SHIPPING_METHOD</name>
+        <identifier class="java.lang.String">1572cb49-f49f-4df9-864b-41817acd3330</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SHIPPING_OPTIONS</name>
+          <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>SHIPPING_METHOD</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7c2e5a8-bc10-433b-9416-c38d640969d3</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_METHOD</name>
+            <identifier class="java.lang.String">1572cb49-f49f-4df9-864b-41817acd3330</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">100</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SHIPPING_METHOD</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SHIPPING_OPTION_TRANSLATIONS</name>
+                  <identifier class="java.math.BigDecimal">20883</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SHIPPING_METHOD</name>
+        <identifier class="java.lang.String">76b3e261-dacb-4914-8e15-31fd7efba336</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS</name>
+            <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SHIPPING_OPTION_ID</name>
+        <identifier class="java.lang.String">305d2492-2c28-499b-a1ed-7a3bdc13ac32</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SHIPPING_OPTIONS</name>
+          <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>SHIPPING_OPTION_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2871a84c-68ad-4606-beef-b3368b0731cb</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTION_ID</name>
+            <identifier class="java.lang.String">305d2492-2c28-499b-a1ed-7a3bdc13ac32</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SHIPPING_OPTION_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SHIPPING_OPTIONS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20880</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SHIPPING_OPTION_ID</name>
+        <identifier class="java.lang.String">37a65af8-e5af-4705-8a26-db71820f5ed9</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS</name>
+            <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COUNTRY_CODE</name>
+        <identifier class="java.lang.String">5c00a11b-6c79-4b4c-b1d4-d46a09b495df</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SHIPPING_OPTIONS</name>
+          <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>COUNTRY_CODE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8a727a0e-7e68-4b2e-84b5-9dca355cf463</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COUNTRY_CODE</name>
+            <identifier class="java.lang.String">5c00a11b-6c79-4b4c-b1d4-d46a09b495df</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>COUNTRY_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SHIPPING_OPTIONS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20880</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COUNTRY_CODE</name>
+        <identifier class="java.lang.String">565aa24a-4993-4d01-ad92-77e2b2959bf7</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS</name>
+            <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COST_PER_CLASS1_ITEM</name>
+        <identifier class="java.lang.String">2aca4529-b89e-4f0b-af99-cb51ae205517</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SHIPPING_OPTIONS</name>
+          <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>COST_PER_CLASS1_ITEM</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">60888e4f-da2d-4042-a6fc-a1e49340b0b2</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COST_PER_CLASS1_ITEM</name>
+            <identifier class="java.lang.String">2aca4529-b89e-4f0b-af99-cb51ae205517</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">8</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>COST_PER_CLASS1_ITEM</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SHIPPING_OPTIONS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20880</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COST_PER_CLASS1_ITEM</name>
+        <identifier class="java.lang.String">19fb0c0c-3536-4d19-b6d8-ed1247c6ddbd</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS</name>
+            <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COST_PER_CLASS2_ITEM</name>
+        <identifier class="java.lang.String">d3aed44d-90f7-4a54-895c-1efcc135700e</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SHIPPING_OPTIONS</name>
+          <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>COST_PER_CLASS2_ITEM</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d9f65319-c43b-46df-ace6-2cffad2293ff</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COST_PER_CLASS2_ITEM</name>
+            <identifier class="java.lang.String">d3aed44d-90f7-4a54-895c-1efcc135700e</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">8</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>COST_PER_CLASS2_ITEM</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SHIPPING_OPTIONS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20880</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COST_PER_CLASS2_ITEM</name>
+        <identifier class="java.lang.String">a0536989-1f18-41ac-b7a4-e85f55b4e0f3</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS</name>
+            <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COST_PER_CLASS3_ITEM</name>
+        <identifier class="java.lang.String">b28960cf-64fd-4ddd-88da-03ca2db76495</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SHIPPING_OPTIONS</name>
+          <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>COST_PER_CLASS3_ITEM</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">85eda998-feb7-43d4-8611-1b0342ac4691</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COST_PER_CLASS3_ITEM</name>
+            <identifier class="java.lang.String">b28960cf-64fd-4ddd-88da-03ca2db76495</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">8</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>COST_PER_CLASS3_ITEM</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SHIPPING_OPTIONS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20880</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COST_PER_CLASS3_ITEM</name>
+        <identifier class="java.lang.String">116d2192-49ef-4c55-9b2a-01514d909dca</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS</name>
+            <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>FREE_SHIPPING_ALLOWED_FLAG</name>
+        <identifier class="java.lang.String">ee314e57-bfb4-403f-9ff6-a0852297f836</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SHIPPING_OPTIONS</name>
+          <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>FREE_SHIPPING_ALLOWED_FLAG</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">553ba03b-cd50-4342-bb88-5ec0f335a009</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>FREE_SHIPPING_ALLOWED_FLAG</name>
+            <identifier class="java.lang.String">ee314e57-bfb4-403f-9ff6-a0852297f836</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SHIPPING_OPTIONS</name>
+              <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>FREE_SHIPPING_ALLOWED_FLAG</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SHIPPING_OPTIONS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20880</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>FREE_SHIPPING_ALLOWED_FLAG</name>
+        <identifier class="java.lang.String">905ba91b-b0c7-4220-963f-38175ed60d36</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">2e395192-85e0-4817-bcea-9d7445f93aea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SHIPPING_OPTIONS</name>
+            <identifier class="java.lang.String">c0f9d122-0112-1000-80ca-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">FOD</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>SHIPPING_OPTIONS</name>
+        <identifier class="java.math.BigDecimal">20918</identifier>
+        <schemaName>FOD</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+      <value class="java.lang.Long">1233768290000</value>
+    </entry>
+  </properties>
+  <schema>
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>FOD</name>
+      <identifier class="java.lang.String">b628cc3c-0112-1000-8006-8223672b1417</identifier>
+      <type>SCHEMA</type>
+    </ID>
+    <name>FOD</name>
+  </schema>
+</view>

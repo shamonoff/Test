@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">continueBrowse</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>continueBrowse&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  globalHome&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">357.84473</property>
+      <property
+         name="x">208.0</property>
+   </TaskFlowReturn>
+   <TaskFlowReturn
+      id="TaskFlowReturn5">
+      <property
+         name="activityId">cancelAndReturn</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>cancelAndReturn&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  globalHome&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">184.04004</property>
+      <property
+         name="x">391.0</property>
+   </TaskFlowReturn>
+   <View
+      id="View7">
+      <property
+         name="activityId">productInfo</property>
+      <property
+         name="page">/product/productInfo.jspx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>productInfo&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">185.74707</property>
+      <property
+         name="x">208.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View7"
+      to="TaskFlowReturn5">
+      <property
+         name="fromOutcome">cancel</property>
+      <property
+         name="sdm:polyPoints">R50,249.5,185.39648,350.0,183.68945,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View7"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">success</property>
+      <property
+         name="sdm:polyPoints">B50,208.5,239.39648,208.0,303.49414,T50</property>
+   </ControlFlowCase>
+</SDM>

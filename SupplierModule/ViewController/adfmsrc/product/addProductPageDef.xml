@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.55" id="addProductPageDef" Package="product">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="Product_attributeCategory"
+                IsQueriable="false"/>
+      <variable Type="java.lang.Double" Name="Product_costPrice"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="Product_createdBy"
+                IsQueriable="false"/>
+      <variable Type="java.sql.Timestamp" Name="Product_creationDate"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="Product_externalUrl"
+                IsQueriable="false"/>
+      <variable Type="java.sql.Timestamp" Name="Product_lastUpdateDate"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="Product_lastUpdatedBy"
+                IsQueriable="false"/>
+      <variable Type="java.lang.Double" Name="Product_listPrice"
+                IsQueriable="false"/>
+      <variable Type="java.lang.Double" Name="Product_minPrice"
+                IsQueriable="false"/>
+      <variable Type="java.lang.Long" Name="Product_objectVersionId"
+                IsQueriable="false"/>
+      <variable Type="java.lang.Long" Name="Product_productId"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="Product_productName"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="Product_productStatus"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="Product_shippingClassCode"
+                IsQueriable="false"/>
+      <variable Type="java.lang.Long" Name="Product_warrantyPeriodMonths"
+                IsQueriable="false"/>
+    </variableIterator>
+    <page path="templates.StoreFrontTemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <methodIterator Binds="Product.result" DataControl="SupplierFacadeLocal"
+                    RangeSize="25"
+                    BeanClass="oracle.fodemo.supplier.model.Product"
+                    id="ProductIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="Product" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="Product" IsViewObjectMethod="false"
+                  DataControl="SupplierFacadeLocal"
+                  ClassName="oracle.fodemo.supplier.model.Product"
+                  ReturnName="SupplierFacadeLocal.methodResults.Product_SupplierFacadeLocal_Product_result">
+      <NamedData NDName="attribute1" NDType="java.lang.String"/>
+      <NamedData NDName="attribute10" NDType="java.lang.String"/>
+      <NamedData NDName="attribute11" NDType="java.lang.String"/>
+      <NamedData NDName="attribute12" NDType="java.lang.String"/>
+      <NamedData NDName="attribute13" NDType="java.lang.String"/>
+      <NamedData NDName="attribute14" NDType="java.lang.String"/>
+      <NamedData NDName="attribute15" NDType="java.lang.String"/>
+      <NamedData NDName="attribute2" NDType="java.lang.String"/>
+      <NamedData NDName="attribute3" NDType="java.lang.String"/>
+      <NamedData NDName="attribute4" NDType="java.lang.String"/>
+      <NamedData NDName="attribute5" NDType="java.lang.String"/>
+      <NamedData NDName="attribute6" NDType="java.lang.String"/>
+      <NamedData NDName="attribute7" NDType="java.lang.String"/>
+      <NamedData NDName="attribute8" NDType="java.lang.String"/>
+      <NamedData NDName="attribute9" NDType="java.lang.String"/>
+      <NamedData NDName="attributeCategory" NDType="java.lang.String"
+                 NDValue="${bindings.Product_attributeCategory}"/>
+      <NamedData NDName="productCategory"
+                 NDType="oracle.fodemo.supplier.model.ProductCategory"/>
+      <NamedData NDName="costPrice" NDType="java.lang.Double"
+                 NDValue="${bindings.Product_costPrice}"/>
+      <NamedData NDName="createdBy" NDType="java.lang.String"
+                 NDValue="${bindings.Product_createdBy}"/>
+      <NamedData NDName="creationDate" NDType="java.sql.Timestamp"
+                 NDValue="${bindings.Product_creationDate}"/>
+      <NamedData NDName="externalUrl" NDType="java.lang.String"
+                 NDValue="${bindings.Product_externalUrl}"/>
+      <NamedData NDName="lastUpdateDate" NDType="java.sql.Timestamp"
+                 NDValue="${bindings.Product_lastUpdateDate}"/>
+      <NamedData NDName="lastUpdatedBy" NDType="java.lang.String"
+                 NDValue="${bindings.Product_lastUpdatedBy}"/>
+      <NamedData NDName="listPrice" NDType="java.lang.Double"
+                 NDValue="${bindings.Product_listPrice}"/>
+      <NamedData NDName="minPrice" NDType="java.lang.Double"
+                 NDValue="${bindings.Product_minPrice}"/>
+      <NamedData NDName="objectVersionId" NDType="java.lang.Long"
+                 NDValue="${bindings.Product_objectVersionId}"/>
+      <NamedData NDName="productId" NDType="java.lang.Long"
+                 NDValue="${bindings.Product_productId}"/>
+      <NamedData NDName="productName" NDType="java.lang.String"
+                 NDValue="${bindings.Product_productName}"/>
+      <NamedData NDName="productStatus" NDType="java.lang.String"
+                 NDValue="${bindings.Product_productStatus}"/>
+      <NamedData NDName="shippingClassCode" NDType="java.lang.String"
+                 NDValue="${bindings.Product_shippingClassCode}"/>
+      <NamedData NDName="supplier"
+                 NDType="oracle.fodemo.supplier.model.Supplier"/>
+      <NamedData NDName="warrantyPeriodMonths" NDType="java.lang.Long"
+                 NDValue="${bindings.Product_warrantyPeriodMonths}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="attributeCategory">
+      <AttrNames>
+        <Item Value="Product_attributeCategory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="costPrice">
+      <AttrNames>
+        <Item Value="Product_costPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="createdBy">
+      <AttrNames>
+        <Item Value="Product_createdBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="creationDate">
+      <AttrNames>
+        <Item Value="Product_creationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="externalUrl">
+      <AttrNames>
+        <Item Value="Product_externalUrl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="lastUpdateDate">
+      <AttrNames>
+        <Item Value="Product_lastUpdateDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="lastUpdatedBy">
+      <AttrNames>
+        <Item Value="Product_lastUpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="listPrice">
+      <AttrNames>
+        <Item Value="Product_listPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="minPrice">
+      <AttrNames>
+        <Item Value="Product_minPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="objectVersionId">
+      <AttrNames>
+        <Item Value="Product_objectVersionId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="productId">
+      <AttrNames>
+        <Item Value="Product_productId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="productName">
+      <AttrNames>
+        <Item Value="Product_productName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="productStatus">
+      <AttrNames>
+        <Item Value="Product_productStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="shippingClassCode">
+      <AttrNames>
+        <Item Value="Product_shippingClassCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="warrantyPeriodMonths">
+      <AttrNames>
+        <Item Value="Product_warrantyPeriodMonths"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

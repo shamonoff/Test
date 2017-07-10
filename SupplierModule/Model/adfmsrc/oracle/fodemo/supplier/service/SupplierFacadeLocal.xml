@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.7"
+          id="SupplierFacadeLocal" Package="oracle.fodemo.supplier.service"
+          BeanClass="oracle.fodemo.supplier.service.SupplierFacadeLocal"
+          isJavaBased="true">
+  <AccessorAttribute id="addressesFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.Addresses"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="productTranslationFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.ProductTranslation"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="addressUsageFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="warehouseStockLevelFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="orderItemFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.OrderItem"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="personFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.Person"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="productCategoryFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="productFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.Product"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="supplierFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.Supplier"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="productImageFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="countryCodeFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.CountryCode"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="supplier" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Supplier"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="person" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Person"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="addresses" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Addresses"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="product" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Product"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Addresses"
+                  BeanClass="oracle.fodemo.supplier.model.Addresses"
+                  id="persistAddresses" ReturnNodeName="Addresses">
+    <ParameterInfo id="addresses" Type="oracle.fodemo.supplier.model.Addresses"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Addresses"
+                  BeanClass="oracle.fodemo.supplier.model.Addresses"
+                  id="mergeAddresses" ReturnNodeName="Addresses">
+    <ParameterInfo id="addresses" Type="oracle.fodemo.supplier.model.Addresses"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeAddresses"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="addresses" Type="oracle.fodemo.supplier.model.Addresses"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductTranslation"
+                  BeanClass="oracle.fodemo.supplier.model.ProductTranslation"
+                  id="persistProductTranslation"
+                  ReturnNodeName="ProductTranslation">
+    <ParameterInfo id="productTranslation"
+                   Type="oracle.fodemo.supplier.model.ProductTranslation"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductTranslation"
+                  BeanClass="oracle.fodemo.supplier.model.ProductTranslation"
+                  id="mergeProductTranslation"
+                  ReturnNodeName="ProductTranslation">
+    <ParameterInfo id="productTranslation"
+                   Type="oracle.fodemo.supplier.model.ProductTranslation"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeProductTranslation"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="productTranslation"
+                   Type="oracle.fodemo.supplier.model.ProductTranslation"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.AddressUsage"
+                  BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                  id="persistAddressUsage" ReturnNodeName="AddressUsage">
+    <ParameterInfo id="addressUsage"
+                   Type="oracle.fodemo.supplier.model.AddressUsage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.AddressUsage"
+                  BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                  id="mergeAddressUsage" ReturnNodeName="AddressUsage">
+    <ParameterInfo id="addressUsage"
+                   Type="oracle.fodemo.supplier.model.AddressUsage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeAddressUsage"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="addressUsage"
+                   Type="oracle.fodemo.supplier.model.AddressUsage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                  BeanClass="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                  id="persistWarehouseStockLevel"
+                  ReturnNodeName="WarehouseStockLevel">
+    <ParameterInfo id="warehouseStockLevel"
+                   Type="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                  BeanClass="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                  id="mergeWarehouseStockLevel"
+                  ReturnNodeName="WarehouseStockLevel">
+    <ParameterInfo id="warehouseStockLevel"
+                   Type="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void"
+                  id="removeWarehouseStockLevel" ReturnNodeName="Return">
+    <ParameterInfo id="warehouseStockLevel"
+                   Type="oracle.fodemo.supplier.model.WarehouseStockLevel"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.OrderItem"
+                  BeanClass="oracle.fodemo.supplier.model.OrderItem"
+                  id="persistOrderItem" ReturnNodeName="OrderItem">
+    <ParameterInfo id="orderItem" Type="oracle.fodemo.supplier.model.OrderItem"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.OrderItem"
+                  BeanClass="oracle.fodemo.supplier.model.OrderItem"
+                  id="mergeOrderItem" ReturnNodeName="OrderItem">
+    <ParameterInfo id="orderItem" Type="oracle.fodemo.supplier.model.OrderItem"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeOrderItem"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="orderItem" Type="oracle.fodemo.supplier.model.OrderItem"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Person"
+                  BeanClass="oracle.fodemo.supplier.model.Person"
+                  id="persistPerson" ReturnNodeName="Person">
+    <ParameterInfo id="person" Type="oracle.fodemo.supplier.model.Person"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Person"
+                  BeanClass="oracle.fodemo.supplier.model.Person"
+                  id="mergePerson" ReturnNodeName="Person">
+    <ParameterInfo id="person" Type="oracle.fodemo.supplier.model.Person"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removePerson"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="person" Type="oracle.fodemo.supplier.model.Person"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductCategory"
+                  BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                  id="persistProductCategory" ReturnNodeName="ProductCategory">
+    <ParameterInfo id="productCategory"
+                   Type="oracle.fodemo.supplier.model.ProductCategory"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductCategory"
+                  BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                  id="mergeProductCategory" ReturnNodeName="ProductCategory">
+    <ParameterInfo id="productCategory"
+                   Type="oracle.fodemo.supplier.model.ProductCategory"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeProductCategory"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="productCategory"
+                   Type="oracle.fodemo.supplier.model.ProductCategory"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Product"
+                  BeanClass="oracle.fodemo.supplier.model.Product"
+                  id="persistProduct" ReturnNodeName="Product">
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Product"
+                  BeanClass="oracle.fodemo.supplier.model.Product"
+                  id="mergeProduct" ReturnNodeName="Product">
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeProduct"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Supplier"
+                  BeanClass="oracle.fodemo.supplier.model.Supplier"
+                  id="persistSupplier" ReturnNodeName="Supplier">
+    <ParameterInfo id="supplier" Type="oracle.fodemo.supplier.model.Supplier"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Supplier"
+                  BeanClass="oracle.fodemo.supplier.model.Supplier"
+                  id="mergeSupplier" ReturnNodeName="Supplier">
+    <ParameterInfo id="supplier" Type="oracle.fodemo.supplier.model.Supplier"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeSupplier"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="supplier" Type="oracle.fodemo.supplier.model.Supplier"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductImage"
+                  BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                  id="persistProductImage" ReturnNodeName="ProductImage">
+    <ParameterInfo id="productImage"
+                   Type="oracle.fodemo.supplier.model.ProductImage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductImage"
+                  BeanClass="oracle.fodemo.supplier.model.ProductImage"
+                  id="mergeProductImage" ReturnNodeName="ProductImage">
+    <ParameterInfo id="productImage"
+                   Type="oracle.fodemo.supplier.model.ProductImage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeProductImage"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="productImage"
+                   Type="oracle.fodemo.supplier.model.ProductImage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.CountryCode"
+                  BeanClass="oracle.fodemo.supplier.model.CountryCode"
+                  id="persistCountryCode" ReturnNodeName="CountryCode">
+    <ParameterInfo id="countryCode"
+                   Type="oracle.fodemo.supplier.model.CountryCode"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.CountryCode"
+                  BeanClass="oracle.fodemo.supplier.model.CountryCode"
+                  id="mergeCountryCode" ReturnNodeName="CountryCode">
+    <ParameterInfo id="countryCode"
+                   Type="oracle.fodemo.supplier.model.CountryCode"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeCountryCode"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="countryCode"
+                   Type="oracle.fodemo.supplier.model.CountryCode"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="saveSupplierDetails"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="supplier" Type="oracle.fodemo.supplier.model.Supplier"
+                   isStructured="true"/>
+    <ParameterInfo id="person" Type="oracle.fodemo.supplier.model.Person"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Product"
+                  BeanClass="oracle.fodemo.supplier.model.Product"
+                  id="findProductById" ReturnNodeName="Product">
+    <ParameterInfo id="productId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

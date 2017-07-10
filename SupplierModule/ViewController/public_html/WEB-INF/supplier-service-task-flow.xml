@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="supplier-service-task-flow">
+    <default-activity id="__1">supplierRegistraton</default-activity>
+    <transaction id="__9">
+      <requires-transaction/>
+    </transaction>
+    <exception-handler id="__7">errorHandler</exception-handler>
+    <view id="supplierRegistraton">
+      <page id="__3">/supplier/registrationDetails.jspx</page>
+    </view>
+    <view id="errorHandler">
+      <page id="__6">/errorHandler.jspx</page>
+    </view>
+    <task-flow-return id="continueBroswing">
+      <outcome id="__10">
+        <name id="__11">globalHome</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="cancelAndcontinue">
+      <outcome id="__18">
+        <name id="__17">globalHome</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__15">
+      <from-activity-id id="__12">supplierRegistraton</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome id="__16">success</from-outcome>
+        <to-activity-id id="__13">continueBroswing</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__19">
+        <to-activity-id id="__20">cancelAndcontinue</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <visibility id="__8">
+      <url-invoke-allowed/>
+    </visibility>
+  </task-flow-definition>
+</adfc-config>

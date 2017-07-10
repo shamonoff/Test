@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Product"
+  DBObjectType="table"
+  DBObjectName="PRODUCTS_BASE"
+  AliasName="Product"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_version" Value="11.1.1.46.77"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="ProductId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="PRODUCT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SupplierId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="SUPPLIER_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProductName"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="PRODUCT_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProductStatus"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="PRODUCT_STATUS"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ListPrice"
+    IsNotNull="true"
+    Precision="8"
+    Scale="2"
+    ColumnName="LIST_PRICE"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MinPrice"
+    IsNotNull="true"
+    Precision="8"
+    Scale="2"
+    ColumnName="MIN_PRICE"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ShippingClassCode"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="SHIPPING_CLASS_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE"
+    DefaultValue="FOD">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PRODUCTS_BASE"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE"
+    DefaultValue="FOD">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PRODUCTS_BASE"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="ProductsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.customerrors.Product.ProductId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068353">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068353"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.customerrors.Product.ProductId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068354">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068354"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SUPPLIER_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.customerrors.Product.SupplierId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068355">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068355"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_NAME" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.customerrors.Product.ProductName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068356">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068356"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_STATUS" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.customerrors.Product.ProductStatus"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068357">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068357"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LIST_PRICE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.customerrors.Product.ListPrice"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068358">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068358"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"MIN_PRICE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.customerrors.Product.MinPrice"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068359">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068359"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SHIPPING_CLASS_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.customerrors.Product.ShippingClassCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductsSuppliersFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_SUPPLIERS_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="SUPPLIERS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.customerrors.Product.SupplierId"/>
+    </AttrArray>
+  </Key>
+</Entity>

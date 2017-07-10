@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductsVO"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  Passivate="All"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  Version="11.1.1.52.80"
+  FetchMode="FETCH_AS_NEEDED"
+  FetchSize="26">
+  <SQLQuery>
+    <![CDATA[SELECT ProductBaseEO.PRODUCT_ID, 
+       ProductBaseEO.SUPPLIER_ID, 
+       ProductBaseEO.CATEGORY_ID, 
+       ProductBaseEO.PRODUCT_NAME, 
+       ProductBaseEO.COST_PRICE, 
+       ProductBaseEO.LIST_PRICE, 
+       ProductBaseEO.MIN_PRICE, 
+       ProductBaseEO.PRODUCT_STATUS, 
+       ProductBaseEO.WARRANTY_PERIOD_MONTHS, 
+       ProductBaseEO.SHIPPING_CLASS_CODE,
+       ProductTranslationEO.LANGUAGE, 
+       ProductTranslationEO.SOURCE_LANG, 
+       ProductTranslationEO.DESCRIPTION, 
+       ProductTranslationEO.ADDITIONAL_INFO, 
+       ProductTranslationEO.PRODUCT_ID AS PRODUCT_ID1,  
+       CategoryTranslationEO.CATEGORY_NAME, 
+       CategoryTranslationEO.CATEGORY_DESCRIPTION, 
+       CategoryTranslationEO.CATEGORY_ID AS CATEGORY_ID1, 
+       CategoryTranslationEO.LANGUAGE AS LANGUAGE1,
+              (SELECT sum(WarehouseStockLevelEO.QUANTITY_ON_HAND) 
+        from WAREHOUSE_STOCK_LEVELS WarehouseStockLevelEO 
+        where WarehouseStockLevelEO.PRODUCT_ID = ProductBaseEO.PRODUCT_ID) as IN_STOCK
+FROM PRODUCTS_BASE ProductBaseEO, PRODUCT_TRANSLATIONS ProductTranslationEO,  CATEGORY_TRANSLATIONS CategoryTranslationEO
+WHERE ProductBaseEO.PRODUCT_ID = ProductTranslationEO.PRODUCT_ID (+) 
+AND ProductBaseEO.CATEGORY_ID = CategoryTranslationEO.CATEGORY_ID(+)
+AND CategoryTranslationEO.LANGUAGE = USERENV('CLIENT_INFO')
+AND ProductTranslationEO.LANGUAGE = USERENV('CLIENT_INFO')]]>
+  </SQLQuery>
+  <Variable
+    Name="bvProductId"
+    Kind="viewcriteria"
+    Type="java.math.BigDecimal"/>
+  <Variable
+    Name="bvProductName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="ProductBaseEO"
+    Entity="oracle.fodemo.storefront.entities.ProductBaseEO"
+    JoinType="INNER JOIN"/>
+  <EntityUsage
+    Name="ProductTranslationEO"
+    Entity="oracle.fodemo.storefront.entities.ProductTranslationEO"
+    SourceUsage="oracle.fodemo.storefront.store.queries.ProductsVO.ProductBaseEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN"
+    Association="oracle.fodemo.storefront.entities.associations.ProductTranslationsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ProductTranslationsFkAssoc.ProductTranslation">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.ProductBaseEO.ProductId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.ProductTranslationEO.ProductId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="ProductImageEO"
+    Entity="oracle.fodemo.storefront.entities.ProductImageEO"
+    SourceUsage="oracle.fodemo.storefront.store.queries.ProductsVO.ProductBaseEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN"
+    Association="oracle.fodemo.storefront.entities.associations.ProductImagesProductsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ProductImagesProductsFkAssoc.ProductImage">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.ProductBaseEO.ProductId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.ProductImageEO.ProductId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="WarehouseStockLevelEO"
+    Entity="oracle.fodemo.storefront.entities.WarehouseStockLevelEO"
+    Association="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFk1Assoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFk1Assoc.WarehouseStockLevel"
+    SourceUsage="oracle.fodemo.storefront.store.queries.ProductsVO.ProductBaseEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.ProductBaseEO.ProductId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.ProductId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="ProductCategoryBaseEO"
+    Entity="oracle.fodemo.storefront.entities.ProductCategoryBaseEO"
+    Association="oracle.fodemo.storefront.entities.associations.ProductsProductCategoriesFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ProductsProductCategoriesFkAssoc.ProductCategoryBase"
+    SourceUsage="oracle.fodemo.storefront.store.queries.ProductsVO.ProductBaseEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.ProductBaseEO.CategoryId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.CategoryId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="CategoryTranslationEO"
+    Entity="oracle.fodemo.storefront.entities.CategoryTranslationEO"
+    Association="oracle.fodemo.storefront.entities.associations.CategoryTranslationsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.CategoryTranslationsFkAssoc.CategoryTranslation"
+    SourceUsage="oracle.fodemo.storefront.store.queries.ProductsVO.ProductCategoryBaseEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.CategoryId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.CategoryTranslationEO.CategoryId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="ProductId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityUsage="ProductBaseEO"
+    AliasName="PRODUCT_ID"
+    IsUpdateable="while_insert"
+    EntityAttrName="ProductId"/>
+  <ViewAttribute
+    Name="SupplierId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityUsage="ProductBaseEO"
+    AliasName="SUPPLIER_ID"
+    
+    
+    EntityAttrName="SupplierId">
+  </ViewAttribute>
+  
+  
+  <ViewAttribute
+    
+    PrecisionRule="true"
+    EntityUsage="ProductBaseEO"
+    Name="CategoryId"
+    AliasName="CATEGORY_ID"
+    EntityAttrName="CategoryId"
+    IsNotNull="true"/>
+  <ViewAttribute
+    Name="ProductName"
+    PrecisionRule="true"
+    EntityAttrName="ProductName"
+    EntityUsage="ProductBaseEO"
+    AliasName="PRODUCT_NAME">
+  </ViewAttribute>
+<ViewAttribute
+    Name="CostPrice"
+    PrecisionRule="true"
+    EntityAttrName="CostPrice"
+    EntityUsage="ProductBaseEO"
+    AliasName="COST_PRICE"/>
+
+  <ViewAttribute
+    Name="ListPrice"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ListPrice"
+    EntityUsage="ProductBaseEO"
+    AliasName="LIST_PRICE"/><ViewAttribute
+    Name="MinPrice"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityUsage="ProductBaseEO"
+    AliasName="MIN_PRICE"
+    
+    
+  EntityAttrName="MinPrice"/>
+  <ViewAttribute
+    Name="ProductStatus"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProductStatus"
+    EntityUsage="ProductBaseEO"
+    AliasName="PRODUCT_STATUS"/>
+
+  <ViewAttribute
+    Name="WarrantyPeriodMonths"
+    PrecisionRule="true"
+    EntityAttrName="WarrantyPeriodMonths"
+    EntityUsage="ProductBaseEO"
+    AliasName="WARRANTY_PERIOD_MONTHS"/><ViewAttribute
+    Name="ShippingClassCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityUsage="ProductBaseEO"
+    AliasName="SHIPPING_CLASS_CODE"
+    
+    
+    EntityAttrName="ShippingClassCode"/>
+  
+  <ViewAttribute
+    Name="Language"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Language"
+    EntityUsage="ProductTranslationEO"
+    AliasName="LANGUAGE"/>
+<ViewAttribute
+    PrecisionRule="true"
+    EntityUsage="ProductTranslationEO"
+    AliasName="SOURCE_LANG"
+    
+    
+  Name="SourceLang"
+  EntityAttrName="SourceLang"/>
+  <ViewAttribute
+    Name="Description"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityUsage="ProductTranslationEO"
+    AliasName="DESCRIPTION"
+    
+    EntityAttrName="Description"/>
+  
+<ViewAttribute
+    Name="AdditionalInfo"
+    PrecisionRule="true"
+    EntityAttrName="AdditionalInfo"
+    EntityUsage="ProductTranslationEO"
+    AliasName="ADDITIONAL_INFO"/>
+  <ViewAttribute
+    Name="ProductId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProductId"
+    EntityUsage="ProductTranslationEO"
+    AliasName="PRODUCT_ID1"/><ViewAttribute
+    
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityUsage="CategoryTranslationEO"
+    AliasName="CATEGORY_NAME"
+    
+    EntityAttrName="CategoryName"
+                               Name="CategoryName"/>
+
+  <ViewAttribute
+    Name="CategoryDescription"
+    
+    PrecisionRule="true"
+    EntityAttrName="CategoryDescription"
+    EntityUsage="CategoryTranslationEO"
+    AliasName="CATEGORY_DESCRIPTION"/>
+
+  
+
+  <ViewAttribute
+    Name="CategoryId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CategoryId"
+    EntityUsage="CategoryTranslationEO"
+    AliasName="CATEGORY_ID1"/>
+<ViewAttribute
+    Name="Language1"
+    IsNotNull="true"
+    AliasName="LANGUAGE1"
+    
+    
+    PrecisionRule="true"
+    EntityAttrName="Language"
+    EntityUsage="CategoryTranslationEO"/>
+
+  
+  <ViewAttribute
+    Name="InStock"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    AliasName="IN_STOCK"
+    Expression="IN_STOCK"
+                             SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="InStock_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProductImageId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="$none$"
+    AliasName="PRODUCT_IMAGE_ID"
+    SQLType="$none$">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ProductImageId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DragId"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+<Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DragId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="FindByProductNameCriteria"
+    ViewObjectName="oracle.fodemo.storefront.store.queries.ProductsVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayName"
+          Value="Find Products By Name"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow87">
+      <ViewCriteriaItem
+        Name="ProductName"
+        ViewAttribute="ProductName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":bvProductName"
+        UpperColumns="1"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+<!--  <ViewCriteria
+    Name="FindByProductIdCriteria"
+    ViewObjectName="oracle.fodemo.storefront.store.queries.ProductsVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayName"
+          Value="Find Product by ID"/>
+        
+        
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow90">
+      <ViewCriteriaItem
+        Name="ProductId"
+        ViewAttribute="ProductId"
+        Operator="="
+        Conjunction="AND"
+        Value=":bvProductId"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      
+    </ViewCriteriaRow>
+  </ViewCriteria>-->
+  <ViewLinkAccessor
+    Name="WarehouseStockLevelsVO"
+    ViewLink="oracle.fodemo.storefront.store.queries.links.ProductsToWarehouseStockLevels"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.store.queries.common.ProductsVOMsgBundle"/>
+  </ResourceBundle>
+</ViewObject>

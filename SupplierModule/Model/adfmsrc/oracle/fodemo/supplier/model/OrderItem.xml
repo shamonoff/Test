@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.55"
+          id="OrderItem" Package="oracle.fodemo.supplier.model"
+          BeanClass="oracle.fodemo.supplier.model.OrderItem" isJavaBased="true">
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="creationDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="lastUpdatedBy" Type="java.lang.String"/>
+  <Attribute Name="lastUpdateDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="lineItemId" PrimaryKey="true" Type="java.lang.Long"/>
+  <Attribute Name="objectVersionId" Type="java.lang.Long"/>
+  <Attribute Name="orderId" PrimaryKey="true" Type="java.lang.Long"/>
+  <Attribute Name="quantity" Type="java.lang.Long" Precision="6"/>
+  <Attribute Name="unitPrice" Type="java.lang.Double" Precision="8" Scale="2"/>
+  <AccessorAttribute id="product" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Product"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.OrderItem"
+                     BeanClass="oracle.fodemo.supplier.model.OrderItem"
+                     id="OrderItem">
+    <ParameterInfo id="createdBy" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="creationDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdateDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdatedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="lineItemId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="objectVersionId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="orderId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+    <ParameterInfo id="quantity" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="unitPrice" Type="java.lang.Double" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.OrderItem"
+                     BeanClass="oracle.fodemo.supplier.model.OrderItem"
+                     id="OrderItem"/>
+</JavaBean>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document title="#{res['login.pageTitle']}"
+    initialFocusId="#{!empty cookie.fod_mpl_user.value?'t:pwd':'t:un'}" id="d1">
+      <af:form id="f1">
+         <af:panelBox text="#{res['login.header']}" ramp="core"
+                         background="light" icon="/images/key_ena.png" id="pb1"
+                      inlineStyle="width:400.0px;">
+          <f:facet name="toolbar"/>
+          <af:messages inline="true" partialTriggers="lb"
+                           globalOnly="true" text="#{res['login.error.global']}"
+                           message="#{res['login.error.detail']}" id="m1"/>
+          <af:panelFormLayout id="pfl1">
+            <f:facet name="footer">
+              <af:panelGroupLayout id="pgl1" layout="horizontal">
+                <af:commandButton partialSubmit="false" id="lb"
+                                  textAndAccessKey="#{res['login.logonButton.label']}"
+                                  action="#{loginBean.doLogin}"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <af:inputText labelAndAccessKey="#{res['login.username.label']}"
+                          id="un"
+                          required="true"
+                          shortDesc="#{res['login.username.hint']}"
+                          requiredMessageDetail="#{res['login.username.required']}"
+                          clientComponent="true"
+                          value="#{loginBean.username}"/>
+            <af:inputText id="pwd" secret="true"
+                          labelAndAccessKey="#{res['login.password.label']}"
+                          required="true"
+                          requiredMessageDetail="#{res['login.password.required']}"
+                          clientComponent="true"                          
+                          value="#{loginBean.password}"/>
+                          <af:selectBooleanCheckbox label="#{res['login.rememberme.label']}"
+                                          accessKey="#{res['login.rememberme.key']}"
+                                          value="#{sessionUIFlags['RememberMe']}"
+                                          shortDesc="#{res['login.rememberme.hint']}"
+                                          id="sbc1"/>
+          </af:panelFormLayout>
+        </af:panelBox>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

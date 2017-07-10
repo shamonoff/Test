@@ -1,0 +1,13 @@
+<mds:customization version="11.1.1.53.91"
+                   xmlns:mds="http://xmlns.oracle.com/mds">
+  <mds:modify element="tpgl4">
+    <mds:removeAttribute name="rendered"/>
+  </mds:modify>
+  <mds:modify element="tot1">
+    <mds:attribute name="value"
+                   value="Welcome Staff Member #{securityContext.userName}"/>
+  </mds:modify>
+</mds:customization>
+
+
+

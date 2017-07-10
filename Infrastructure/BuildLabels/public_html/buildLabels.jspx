@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <af:componentDef var="attrs" componentVar="component">
+    <f:loadBundle basename="resources.versionLabels" var="ver"/>
+
+      <af:dialog okVisible="false" cancelVisible="false" title="About FOD">
+        <af:panelHeader text="Build information for #{attrs.moduleIdentifier}">
+          <af:outputText value="Versions:"/>
+          <af:panelList>
+            <af:outputText value="#{ver['build.FOD']}"/>
+            <af:outputText value="#{ver['build.JDEV']}"/>
+            <af:outputText value="#{ver['build.ADFFACES']}"/>
+            <af:outputText value="#{ver['build.ASCORE']}"/>
+            <af:outputText value="#{ver['build.ASKERNEL']}"/>
+            <af:outputText value="#{ver['build.J2EE']}"/>
+            <af:outputText value="#{ver['build.PCBPEL']}"/>
+            <af:outputText value="#{ver['build.PORTAL']}"/>
+            <af:outputText value="#{ver['build.TOPLINK']}"/>
+            <af:outputText value="#{ver['build.WORKPLACE']}"/>
+            <af:outputText value="#{ver['build.ADFDI_SOLUTION']}"/>
+          </af:panelList>
+        </af:panelHeader>
+        <f:facet name="buttonBar">
+          <af:commandButton text="OK" action="continue"/>
+        </f:facet>
+      </af:dialog>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>buildLabels</display-name>
+        <attribute>
+          <attribute-name>moduleIdentifier</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+          <default-value>Fusion Order Demo</default-value>
+        </attribute>
+        <component-extension>
+          <component-tag-namespace>oracle.fodemo.components</component-tag-namespace>
+          <component-taglib-uri>/fodComponents</component-taglib-uri>
+        </component-extension>
+      </component>
+    </af:xmlContent>
+  </af:componentDef>
+</jsp:root>

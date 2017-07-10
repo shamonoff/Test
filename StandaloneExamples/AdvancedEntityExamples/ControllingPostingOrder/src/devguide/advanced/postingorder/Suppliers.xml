@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Suppliers"
+  DBObjectType="table"
+  DBObjectName="SUPPLIERS"
+  AliasName="Suppliers"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="devguide.advanced.postingorder.SuppliersImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_version" Value="11.1.1.46.61"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="SupplierId"
+    ColumnName="SUPPLIER_ID"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SUPPLIERS"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SupplierName"
+    IsNotNull="true"
+    Precision="120"
+    ColumnName="SUPPLIER_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SUPPLIERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="120"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SupplierStatus"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="SUPPLIER_STATUS"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SUPPLIERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PhoneNumber"
+    Precision="20"
+    ColumnName="PHONE_NUMBER"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SUPPLIERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    Precision="25"
+    ColumnName="EMAIL"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SUPPLIERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UiSkin"
+    Precision="60"
+    ColumnName="UI_SKIN"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SUPPLIERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SUPPLIERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="SUPPLIERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SUPPLIERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="SUPPLIERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SUPPLIERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="ProductsBase"
+    Association="devguide.advanced.postingorder.ProductsSuppliersFkAssoc"
+    AssociationEnd="devguide.advanced.postingorder.ProductsSuppliersFkAssoc.ProductsBase"
+    AssociationOtherEnd="devguide.advanced.postingorder.ProductsSuppliersFkAssoc.Suppliers"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SuppliersPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SUPPLIERS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.postingorder.Suppliers.SupplierId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066699">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066699"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SUPPLIER_ID" IS NOT NULL'/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="SysC0066700">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066700"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SUPPLIER_NAME" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.postingorder.Suppliers.SupplierName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066701">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066701"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SUPPLIER_STATUS" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.postingorder.Suppliers.SupplierStatus"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066702">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066702"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.postingorder.Suppliers.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066703">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066703"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.postingorder.Suppliers.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066704">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066704"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.postingorder.Suppliers.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066705">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066705"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.postingorder.Suppliers.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066706">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066706"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.postingorder.Suppliers.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+</Entity>

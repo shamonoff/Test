@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="devguide.examples.appmodules.StoreFrontService">
+      <AppModuleConfig name="StoreFrontServiceLocal"
+                       ApplicationName="devguide.examples.appmodules.StoreFrontService"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.examples.appmodules.ApplicationModules">
+         <Security AppModuleJndiName="devguide.examples.appmodules.StoreFrontService"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="StoreFrontServiceShared"
+                       ApplicationName="devguide.examples.appmodules.StoreFrontService"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.examples.appmodules.ApplicationModules">
+         <AM-Pooling jbo.ampool.maxpoolsize="1"
+                     jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="devguide.examples.appmodules.StoreFrontService"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="devguide.examples.appmodules.StoreFrontService2">
+      <AppModuleConfig name="StoreFrontService2Local"
+                       ApplicationName="devguide.examples.appmodules.StoreFrontService2"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.examples.appmodules.ApplicationModules">
+         <Security AppModuleJndiName="devguide.examples.appmodules.StoreFrontService2"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="StoreFrontService2Shared"
+                       ApplicationName="devguide.examples.appmodules.StoreFrontService2"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.examples.appmodules.ApplicationModules">
+         <AM-Pooling jbo.ampool.maxpoolsize="1"
+                     jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="devguide.examples.appmodules.StoreFrontService2"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

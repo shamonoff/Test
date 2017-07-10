@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>StoreFrontTemplate</display-name>
+        <facet>
+          <description>center</description>
+          <facet-name>center</facet-name>
+        </facet>
+        <facet>
+          <description>header</description>
+          <facet-name>header</facet-name>
+        </facet>
+        <facet>
+          <description>end</description>
+          <facet-name>end</facet-name>
+        </facet>
+        <facet>
+          <description>start</description>
+          <facet-name>start</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>WelcomeMessage</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+          <default-value></default-value>
+        </attribute>
+      </component>
+    </af:xmlContent>
+    <![CDATA[
+      <style type="text/css">
+      .NavigationGlobal {
+        text-align: right;
+        padding-left: 0px;
+        padding-right: 10px;
+        white-space: normal;
+      }
+      HTML[dir=rtl] .NavigationGlobal {
+        text-align: left;
+        padding-left: 10px;
+        padding-right: 0px;
+      }
+      </style>
+    ]]>
+    <af:decorativeBox theme="dark" inlineStyle=" height:800px;" id="ptdb1"
+                      styleClass="AFStretchWidth">
+      <f:facet name="center">
+        <af:panelSplitter orientation="vertical" splitterPosition="38"
+                          id="ptps1">
+          <f:facet name="first">
+            <af:panelGroupLayout layout="vertical" styleClass="AFStretchWidth"
+                                 id="ptpgl1">
+              <af:panelBorderLayout styleClass="AFBrandingBar" id="ptpbl1">
+                <f:facet name="start">
+                  <af:panelGroupLayout id="pt_g1">
+                    <af:spacer width="5" height="5" id="ptsp11"/>
+                    <af:panelGroupLayout layout="horizontal"
+                                         styleClass="AFBranding" id="ptpgl2">
+                      <af:spacer width="5" height="10" id="ptsp1"/>
+                      <af:image source="/images/brandingImage.gif" id="ptim1"
+                                shortDesc="branding image"/>
+                      <af:spacer width="10" height="10" id="ptsp12"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="pglV" layout="vertical">
+                      <af:toolbox id="tbx">
+                        <af:menuBar id="menuBar" styleClass="AFHideSidePadding">
+                          <af:menu text="Skin" id="ptm1">
+                            <af:commandMenuItem text="blafplus-rich"
+                                                type="radio"
+                                                actionListener="#{SkinHelper.skinMenuAction}"
+                                                selected="#{SkinHelper.skinFamily=='blafplus-rich'}"
+                                                id="ptcmi1"/>
+                            <af:commandMenuItem text="blafplus-medium"
+                                                type="radio"
+                                                actionListener="#{SkinHelper.skinMenuAction}"
+                                                selected="#{SkinHelper.skinFamily=='blafplus-medium'}"
+                                                id="ptcmi2"/>
+                            <af:commandMenuItem text="fusion" type="radio"
+                                                actionListener="#{SkinHelper.skinMenuAction}"
+                                                selected="#{SkinHelper.skinFamily=='fusion'}"
+                                                id="ptcmi31"/>
+                            <af:commandMenuItem text="richDemo" type="radio"
+                                                actionListener="#{SkinHelper.skinMenuAction}"
+                                                selected="#{SkinHelper.skinFamily=='richDemo'}"
+                                                id="ptcmi5"/>
+                          </af:menu>
+                        </af:menuBar>
+                      </af:toolbox>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <af:panelBorderLayout id="ptpbl2">
+                  <f:facet name="start"/>
+                  <af:panelGroupLayout halign="center" layout="horizontal"
+                                       id="ptpgl3">
+                    <af:facetRef facetName="header"/>
+                  </af:panelGroupLayout>
+                </af:panelBorderLayout>
+                <f:facet name="end">
+                  <af:panelGroupLayout layout="horizontal"
+                                       styleClass="NavigationGlobal"
+                                       id="ptpgl4">
+                    <af:panelGroupLayout halign="right" layout="horizontal"
+                                         id="ptpgl5">
+                      <af:image source="/images/glbl_login_msg.gif"
+                                visible="#{userInfoBean.loggedIn}" id="ptimg2"
+                                shortDesc="login image"/>
+                      <af:outputText value="Welcome #{securityContext.userName}"
+                                     noWrap="true"
+                                     visible="#{userInfoBean.loggedIn}"
+                                     id="ptop1"/>
+                    </af:panelGroupLayout>
+                    <af:spacer width="5" id="ptsp4"/>
+                    <af:navigationPane hint="buttons" id="ptnvp1">
+                      <af:commandNavigationItem icon="/images/glbl_logout.gif"
+                                                text="#{res['global.button.logout']}"
+                                                action="#{loginBean.doLogout}"
+                                                rendered="#{userInfoBean.loggedIn}"
+                                                id="ptcnvp1" immediate="false"/>
+                    </af:navigationPane>
+                    <af:spacer width="5" id="ptsp5"/>
+                    <af:statusIndicator id="ptsti1"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelBorderLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="second">
+            <af:panelSplitter orientation="vertical" splitterPosition="29"
+                              positionedFromEnd="true" id="ptps5">
+              <f:facet name="first">
+                <!-- start of secondary decoration -->
+                <af:decorativeBox theme="medium" id="ptdb3">
+                  <f:facet name="center">
+                    <af:panelSplitter orientation="horizontal"
+                                      splitterPosition="200" id="ptps2">
+                      <f:facet name="first">
+                        <af:facetRef facetName="start"/>
+                      </f:facet>
+                      <f:facet name="second">
+                        <af:panelSplitter orientation="horizontal"
+                                          splitterPosition="170"
+                                          positionedFromEnd="true" id="ptps4">
+                          <f:facet name="first">
+                            <!-- start of main decoration -->
+                            <af:decorativeBox theme="light" id="ptdb4">
+                              <f:facet name="center">
+                                <af:facetRef facetName="center"/>
+                              </f:facet>
+                            </af:decorativeBox>
+                            <!-- end of main decoration -->
+                          </f:facet>
+                          <f:facet name="second">
+                            <af:facetRef facetName="end"/>
+                          </f:facet>
+                        </af:panelSplitter>
+                      </f:facet>
+                    </af:panelSplitter>
+                  </f:facet>
+                </af:decorativeBox>
+                <!-- end of secondary decoration -->
+              </f:facet>
+              <f:facet name="second">
+                <af:panelGroupLayout styleClass="AFBrandingBarItem"
+                                     layout="vertical" id="ptpgl6">
+                  <af:panelBorderLayout id="ptpbl4" styleClass="AFStretchWidth">
+                    <af:outputText value=" " id="ptop4"/>
+                    <f:facet name="end">
+                      <af:panelGroupLayout id="ptpgl7">
+                        <af:outputFormatted value="#{res['template.copyright']}"
+                                            inlineStyle="white-space: nowrap;"
+                                            id="ptof1"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelBorderLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+        </af:panelSplitter>
+      </f:facet>
+    </af:decorativeBox>
+  </af:pageTemplateDef>
+</jsp:root>

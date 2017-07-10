@@ -1,0 +1,9 @@
+/* Policy File to run JDBC from Ant and allow JDBC to checkout an MBean  */
+
+grant codebase "file:/-" {
+    permission java.security.AllPermission;
+};
+
+grant {
+    permission javax.management.MBeanTrustPermission "register";
+}; 

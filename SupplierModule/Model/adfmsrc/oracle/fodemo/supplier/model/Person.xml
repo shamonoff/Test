@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.7"
+          id="Person" Package="oracle.fodemo.supplier.model"
+          BeanClass="oracle.fodemo.supplier.model.Person" isJavaBased="true">
+  <Attribute Name="approximateIncome" Type="java.lang.Long">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.approximateIncome_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.approximateIncome_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="childrenUnder18" Type="java.lang.Long">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.childrenUnder18_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.childrenUnder18_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="confirmedEmail" Type="java.lang.String" IsNotNull="true"
+             Precision="25">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.confirmedEmail_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.confirmedEmail_TOOLTIP"/>
+        <DISPLAYWIDTH Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="contactableFlag" Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.contactableFlag_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.contactableFlag_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="contactByAffilliatesFlag" Type="java.lang.String"/>
+  <Attribute Name="contactMethodCode" Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.contactMethodCode_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.contactMethodCode_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="creationDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="creditLimit" Type="java.lang.Double">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.creditLimit_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.creditLimit_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="dateOfBirth" Type="java.sql.Timestamp">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.dateOfBirth_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.dateOfBirth_TOOLTIP"/>
+        <DISPLAYWIDTH Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="email" Type="java.lang.String" IsNotNull="true"
+             Precision="25">
+    <RegExpValidationBean xmlns="http://xmlns.oracle.com/adfm/validation"
+                          OnAttribute="email"
+                          ResId="oracle.fodemo.supplier.model.Person.email_Rule_0"
+                          Inverse="false" Severity="Error" Name="email_Rule_0"
+                          Pattern="[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}"
+                          Flags="CaseInsensitive"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.email_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.email_TOOLTIP"/>
+        <DISPLAYWIDTH Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="firstName" Type="java.lang.String" IsNotNull="true"
+             Precision="30">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.firstName_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.firstName_TOOLTIP"/>
+        <DISPLAYWIDTH Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="gender" Type="java.lang.String" IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.gender_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.gender_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="lastName" Type="java.lang.String" DefaultValue=""
+             IsNotNull="true" Precision="30">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.lastName_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.lastName_TOOLTIP"/>
+        <DISPLAYWIDTH Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="lastUpdatedBy" Type="java.lang.String"/>
+  <Attribute Name="lastUpdateDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="maritalStatusCode" Type="java.lang.String" IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.maritalStatusCode_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.maritalStatusCode_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="membershipId" Type="java.lang.Long">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.membershipId_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.membershipId_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="mobilePhoneNumber" Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.mobilePhoneNumber_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.mobilePhoneNumber_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="objectVersionId" Type="java.lang.Long"/>
+  <Attribute Name="personId" PrimaryKey="true" Type="java.lang.Long">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.personId_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.personId_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="personTypeCode" Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.personTypeCode_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.personTypeCode_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="phoneNumber" Type="java.lang.String" Precision="20">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.phoneNumber_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.phoneNumber_TOOLTIP"/>
+        <DISPLAYWIDTH Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="principalName" Type="java.lang.String" Precision="60">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.principal_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.principal_TOOLTIP"/>
+        <DISPLAYWIDTH Value="60"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="provisionedFlag" Type="java.lang.String"/>
+  <Attribute Name="registeredDate" Type="java.sql.Timestamp">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.registeredDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="title" Type="java.lang.String" IsNotNull="true"
+             Precision="10">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Person.title_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Person.title_TOOLTIP"/>
+        <DISPLAYWIDTH Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute id="supplier" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Supplier"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="addressUsageList" IsCollection="true"
+                     RemoveMethod="removeAddressUsage"
+                     AddMethod="addAddressUsage"
+                     BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeAddressUsage"/>
+      <Property Name="AddMethod" Value="addAddressUsage"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="addresses" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Addresses"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.AddressUsage"
+                  BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                  id="addAddressUsage" ReturnNodeName="AddressUsage">
+    <ParameterInfo id="addressUsage"
+                   Type="oracle.fodemo.supplier.model.AddressUsage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.AddressUsage"
+                  BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                  id="removeAddressUsage" ReturnNodeName="AddressUsage">
+    <ParameterInfo id="addressUsage"
+                   Type="oracle.fodemo.supplier.model.AddressUsage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.Person"
+                     BeanClass="oracle.fodemo.supplier.model.Person"
+                     id="Person">
+    <ParameterInfo id="approximateIncome" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="childrenUnder18" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="confirmedEmail" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="contactByAffilliatesFlag" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="contactMethodCode" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="contactableFlag" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="createdBy" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="creationDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="creditLimit" Type="java.lang.Double"
+                   isStructured="false"/>
+    <ParameterInfo id="dateOfBirth" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="email" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="firstName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="gender" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="lastName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="lastUpdateDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdatedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="maritalStatusCode" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="membershipId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="mobilePhoneNumber" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="objectVersionId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="personId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="personTypeCode" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="phoneNumber" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="addresses" Type="oracle.fodemo.supplier.model.Addresses"
+                   isStructured="true"/>
+    <ParameterInfo id="principalName" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="provisionedFlag" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="registeredDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="supplier" Type="oracle.fodemo.supplier.model.Supplier"
+                   isStructured="true"/>
+    <ParameterInfo id="title" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.Person"
+                     BeanClass="oracle.fodemo.supplier.model.Person"
+                     id="Person"/>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="oracle.fodemo.supplier.model.ModelBundle"/>
+  </ResourceBundle>
+</JavaBean>

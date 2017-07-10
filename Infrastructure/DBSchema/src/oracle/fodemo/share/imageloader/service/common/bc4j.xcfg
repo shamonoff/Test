@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oracle.fodemo.share.imageloader.service.ImageLoaderServiceAM">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="DatabaseSchema" name="ImageLoaderServiceAMLocal" ApplicationName="oracle.fodemo.share.imageloader.service.ImageLoaderServiceAM">
+         <Security AppModuleJndiName="oracle.fodemo.share.imageloader.service.ImageLoaderServiceAM"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="ImageLoaderServiceAMShared" DeployPlatform="LOCAL" ApplicationName="oracle.fodemo.share.imageloader.service.ImageLoaderServiceAM" jbo.project="DatabaseSchema">
+         <AM-Pooling jbo.ampool.isuseexclusive="false" jbo.ampool.maxpoolsize="1"/>
+         <Security AppModuleJndiName="oracle.fodemo.share.imageloader.service.ImageLoaderServiceAM"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

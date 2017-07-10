@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:00e3c256-4e59-4bf8-8686-ff90fc90edfc'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Shipping Option Translation'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:6e67b15d-4e21-45e5-8761-aabbb66cd0b9'>
+   <general href='urn:uuid:5d1c5595-fc45-4251-b547-71d80491c104'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>

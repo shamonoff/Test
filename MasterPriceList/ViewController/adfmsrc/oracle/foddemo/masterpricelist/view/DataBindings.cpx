@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.51.69" id="DataBindings" SeparateXMLFiles="false"
+             Package="oracle.foddemo.masterpricelist.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/secured/excelAdvSearch.jspx"
+          usageId="excelAdvSearchPageDef"/>
+    <page path="/secured/PriceListSummary.jspx"
+          usageId="oracle_foddemo_masterpricelist_view_PriceListSummaryPageDef"/>
+    <page path="/login.jspx"
+          usageId="oracle_foddemo_masterpricelist_view_loginPageDef"/>
+    <page path="/secured/LandingPad.jspx"
+          usageId="oracle_foddemo_masterpricelist_view_LandingPadPageDef"/>
+    <page path="/secured/Information.jspx"
+          usageId="oracle_foddemo_masterpricelist_view_InformationPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="ExcelPriceListPageDef"
+          path="oracle.foddemo.masterpricelist.view.pageDefs.ExcelPriceListPageDef"/>
+    <page id="ExcelAdvPriceListPageDef"
+          path="oracle.foddemo.masterpricelist.view.pageDefs.ExcelAdvPriceListPageDef"/>
+    <page id="excelAdvSearchPageDef"
+          path="oracle.foddemo.masterpricelist.view.pageDefs.excelAdvSearchPageDef"/>
+    <page id="ExcelReadOnlyPageDef"
+          path="oracle.foddemo.masterpricelist.view.pageDefs.ExcelReadOnlyPageDef"/>
+    <page id="oracle_foddemo_masterpricelist_view_PriceListSummaryPageDef"
+          path="secured.PriceListSummaryPageDef"/>
+    <page id="oracle_foddemo_masterpricelist_view_loginPageDef"
+          path="oracle.foddemo.masterpricelist.view.pageDefs.loginPageDef"/>
+    <page id="oracle_foddemo_masterpricelist_view_LandingPadPageDef"
+          path="secured.LandingPadPageDef"/>
+    <page id="oracle_foddemo_masterpricelist_view_InformationPageDef"
+          path="secured.InformationPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="MasterPriceListServiceDataControl"
+                     Package="oracle.foddemo.masterpricelist.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="MasterPriceListServiceLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="MasterPriceListServiceAMDataControl"
+                     Package="oracle.foddemo.masterpricelist.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="MasterPriceListServiceLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="WarehouseEO"
+  DBObjectType="table"
+  DBObjectName="WAREHOUSES"
+  AliasName="WarehouseEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="oracle.fodemo.storefront.entities.WarehouseEOImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_version" Value="11.1.1.46.77"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="WarehouseId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="WAREHOUSE_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="WAREHOUSES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="WarehouseId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AddressId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="ADDRESS_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="WAREHOUSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="AddressId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="WarehouseName"
+    IsNotNull="true"
+    Precision="35"
+    ColumnName="WAREHOUSE_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="WAREHOUSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="35"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="WarehouseName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="WAREHOUSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="WAREHOUSES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="WAREHOUSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="WAREHOUSES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="WAREHOUSES"
+    ChangeIndicator="true"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Address"
+    Association="oracle.fodemo.storefront.entities.associations.WarehousesAddressesFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.WarehousesAddressesFkAssoc.Address"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.WarehousesAddressesFkAssoc.Warehouse"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Order"
+    Association="oracle.fodemo.storefront.entities.associations.OrdersWarehousesFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.OrdersWarehousesFkAssoc.Order"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.OrdersWarehousesFkAssoc.Warehouse"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="WarehouseStockLevel"
+    Association="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFkAssoc.WarehouseStockLevel"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFkAssoc.Warehouse"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SysC0055199">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055199"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"WAREHOUSE_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.WarehouseEO.WarehouseId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055200">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055200"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ADDRESS_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.WarehouseEO.AddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055201">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055201"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"WAREHOUSE_NAME" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseEO.WarehouseName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055202">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055202"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.WarehouseEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055203">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055203"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.WarehouseEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055204">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055204"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055205">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055205"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055206">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055206"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="WarehousesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="WAREHOUSES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.WarehouseEO.WarehouseId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="WarehousesAddressesFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="WAREHOUSES_ADDRESSES_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="ADDRESSES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.WarehouseEO.AddressId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.WarehouseEOMsgBundle"/>
+  </ResourceBundle>
+</Entity>

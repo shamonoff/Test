@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InMemoryOperations"
+  SeparateXMLFiles="true"
+  PackageName="devguide.advanced.inmemoryops">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../InMemoryOperations.jpr"/>
+    <Attr Name="_version" Value="11.1.1.46.77"/>
+    <Attr Name="_NamedConnection" Value="FOD"/>
+    <Attr Name="_appModuleNames0"
+      Value="devguide.advanced.inmemoryops.AppModule"/>
+  </DesignTime>
+  <Containee
+    Name="inmemoryops"
+    FullName="devguide.advanced.inmemoryops.inmemoryops"
+    ObjectType="JboPackage"/>
+</JboProject>

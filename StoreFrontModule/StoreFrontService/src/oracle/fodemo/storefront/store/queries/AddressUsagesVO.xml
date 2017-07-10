@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AddressUsagesVO"
+  SelectList="AddressUsageEO.ADDRESS_USAGES_ID, 
+       AddressUsageEO.ASSOCIATED_OWNER_ID, 
+       AddressUsageEO.OWNER_TYPE_CODE, 
+       AddressUsageEO.ADDRESS_ID, 
+       AddressUsageEO.USAGE_TYPE_CODE, 
+       AddressUsageEO.EXPIRED_FLAG"
+  FromList="ADDRESS_USAGES AddressUsageEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  Version="11.1.1.51.56"
+  FetchMode="FETCH_AS_NEEDED"
+  FetchSize="26">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="AddressUsageEO"
+    Entity="oracle.fodemo.storefront.entities.AddressUsageEO"
+    JoinType="INNER JOIN"/>
+  <ViewAttribute
+    Name="AddressUsagesId"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AddressUsagesId"
+    EntityUsage="AddressUsageEO"
+    AliasName="ADDRESS_USAGES_ID"/>
+  <ViewAttribute
+    Name="AssociatedOwnerId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AssociatedOwnerId"
+    EntityUsage="AddressUsageEO"
+    AliasName="ASSOCIATED_OWNER_ID"/>
+  <ViewAttribute
+    Name="OwnerTypeCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="OwnerTypeCode"
+    EntityUsage="AddressUsageEO"
+    AliasName="OWNER_TYPE_CODE"/>
+  <ViewAttribute
+    Name="AddressId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AddressId"
+    EntityUsage="AddressUsageEO"
+    AliasName="ADDRESS_ID"/>
+  <ViewAttribute
+    Name="UsageTypeCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UsageTypeCode"
+    EntityUsage="AddressUsageEO"
+    AliasName="USAGE_TYPE_CODE"/>
+  <ViewAttribute
+    Name="ExpiredFlag"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ExpiredFlag"
+    EntityUsage="AddressUsageEO"
+    AliasName="EXPIRED_FLAG"/>
+  <ViewLinkAccessor
+    Name="AddressesVO"
+    ViewLink="oracle.fodemo.storefront.store.queries.links.AddressUsagesToAddresses"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.2.0'/>
+ <uml:Class xmi:uuid='urn:uuid:5fcfa799-5329-46c7-9491-0272460c4478'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Address Usage'
+   visibility='public'>
+  <ownedAttribute xmi:uuid='urn:uuid:8c72c1ba-a5df-474c-bdba-7f0b4357267a'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='false'
+    name='Usage Type'
+    aggregation='none'>
+   <type href='mof:/addressUsageType:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:bf2c45bf-4316-4bcb-a8b4-4e6d5f64e04a'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:4adaec35-8bdb-4bde-ba18-9c3d70b03e0c'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+ </uml:Class>
+</xmi:XMI>

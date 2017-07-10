@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="devguide.examples.readonlyvo.PersonService">
+      <AppModuleConfig name="PersonServiceLocal" ApplicationName="devguide.examples.readonlyvo.PersonService" DeployPlatform="LOCAL" JDBCName="FOD" jbo.project="devguide.examples.readonlyvo.QueryingDataWithViewObjects" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
+         <Security AppModuleJndiName="devguide.examples.readonlyvo.PersonService"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="PersonServiceShared" ApplicationName="devguide.examples.readonlyvo.PersonService" DeployPlatform="LOCAL" JDBCName="FOD" jbo.project="devguide.examples.readonlyvo.QueryingDataWithViewObjects" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
+         <AM-Pooling jbo.ampool.isuseexclusive="false" jbo.ampool.maxpoolsize="1"/>
+         <Security AppModuleJndiName="devguide.examples.readonlyvo.PersonService"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!--
+ For skinning it is always a good idea to build several layers if skins. A base skin
+ from which the application skin is extended, an application skin that contains the 
+ skin definitions, as well as an instance specific skin that contains skins that are 
+ individual for an instance of the application or a set of component. The latter skin
+ then is what you configure in this configuration file
+-->
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+    <!-- FOD skin extends blafplus-rich.desktop so that changes in the fod skin are 
+    applied on top of this skin -->
+    <skin>
+        <id>fod_skin.desktop</id>
+        <family>fod_skin</family>
+        <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id> 
+        <extends>blafplus-rich.desktop</extends>
+        <style-sheet-name>skins/fod_skin.css</style-sheet-name>
+    </skin>
+    <!-- FOD skin extends fusion.desktop so that changes in the fod skin are 
+    applied on top of this skin -->
+    <skin>
+        <id>fod_fusion_skin.desktop</id>
+        <family>fod_fusion_skin</family>
+        <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id> 
+        <extends>fusion.desktop</extends>
+        <style-sheet-name>skins/fod_skin.css</style-sheet-name>
+    </skin>
+</skins>

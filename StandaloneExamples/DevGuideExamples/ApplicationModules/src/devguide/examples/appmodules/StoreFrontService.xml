@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="StoreFrontService"
+  ComponentClass="devguide.examples.appmodules.StoreFrontServiceImpl"
+  ClearCacheOnRollback="true"
+  ComponentInterface="devguide.examples.appmodules.common.StoreFrontService"
+  ClientProxyName="devguide.examples.appmodules.client.StoreFrontServiceClient"
+  Version="11.1.1.50.31">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ClientInterface>
+    <Method
+      Name="findOrderTotal">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="orderId"
+        Type="long"/>
+    </Method>
+    <Method
+      Name="findOrderCustomer">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="orderId"
+        Type="long"/>
+    </Method>
+    <Method
+      Name="findOrderTotal">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="orderId"
+        Type="long"/>
+    </Method>
+    <Method
+      Name="findOrderCustomer">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="orderId"
+        Type="long"/>
+    </Method>
+    <Method
+      Name="updateOrderStatus">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="orderId"
+        Type="long"/>
+      <Parameter
+        Name="newStatus"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="createProduct">
+      <Return
+        Type="long"/>
+      <Parameter
+        Name="name"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="status"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="shipCode"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

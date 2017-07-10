@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductQuantitiesVO"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  Version="11.1.1.51.47"
+  FetchMode="FETCH_AS_NEEDED"
+  MaxFetchSize="1">
+  <SQLQuery>
+    <![CDATA[select sum(quantity_on_hand) as quantity from warehouse_stock_levels where product_id = (
+select product_id from warehouse_stock_levels
+where product_id = :paramProductId
+group by product_id
+having sum(quantity_on_hand) >= :paramQuantity)]]>
+  </SQLQuery>
+  <Variable
+    Name="paramProductId"
+    Kind="where"
+    Type="java.lang.String"/>
+  <Variable
+    Name="paramQuantity"
+    Kind="where"
+    Type="java.lang.String"/>
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <ViewAttribute
+    Name="Quantity"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="QUANTITY"
+    Expression="QUANTITY"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Quantity_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.store.queries.common.ProductQuantitiesVOMsgBundle"/>
+  </ResourceBundle>
+</ViewObject>

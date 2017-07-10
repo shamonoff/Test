@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.43" id="supplierdetailPageDef"
+                Package="oracle.fodemo.supplier.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.StoreFrontTemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SupplierFacadeLocal"
+              id="SupplierFacadeLocalIterator" Refresh="always"/>
+    <accessorIterator MasterBinding="SupplierFacadeLocalIterator"
+                      Binds="productFindAll" RangeSize="25"
+                      DataControl="SupplierFacadeLocal"
+                      BeanClass="oracle.fodemo.supplier.model.Product"
+                      id="productFindAllIterator" CacheResults="false"/>
+    <accessorIterator MasterBinding="productFindAllIterator" Binds="supplier"
+                      RangeSize="25" DataControl="SupplierFacadeLocal"
+                      BeanClass="oracle.fodemo.supplier.model.Supplier"
+                      id="supplierIterator" CacheResults="false"/>
+    <methodIterator Binds="getStatusLookupCodeFindCodesByType.result"
+                    DataControl="GenericServiceFacadeLocal" RangeSize="25"
+                    BeanClass="oracle.fodemo.supplier.model.LookupCode"
+                    id="getStatusLookupCodeFindCodesByTypeIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="supplierIterator" id="supplierId">
+      <AttrNames>
+        <Item Value="supplierId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="supplierIterator" id="supplierName">
+      <AttrNames>
+        <Item Value="supplierName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="supplierIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="supplierIterator" id="phoneNumber">
+      <AttrNames>
+        <Item Value="phoneNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="supplierIterator" id="supplierStatus">
+      <AttrNames>
+        <Item Value="supplierStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="mergeSupplier" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="mergeSupplier"
+                  IsViewObjectMethod="false" DataControl="SupplierFacadeLocal"
+                  InstanceName="SupplierFacadeLocal.dataProvider"
+                  ReturnName="SupplierFacadeLocal.methodResults.mergeSupplier_SupplierFacadeLocal_dataProvider_mergeSupplier_result">
+      <NamedData NDName="supplier"
+                 NDValue="${bindings.supplierIterator.currentRow.dataProvider}"
+                 NDType="oracle.fodemo.supplier.model.Supplier"/>
+    </methodAction>
+    <methodAction id="getStatusLookupCodeFindCodesByType" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="getLookupCodeFindCodesByType"
+                  IsViewObjectMethod="false"
+                  DataControl="GenericServiceFacadeLocal"
+                  InstanceName="GenericServiceFacadeLocal.dataProvider"
+                  ReturnName="GenericServiceFacadeLocal.methodResults.getLookupCodeFindCodesByType_GenericServiceFacadeLocal_dataProvider_getLookupCodeFindCodesByType_result">
+      <NamedData NDName="language" NDValue="EL" NDType="java.lang.String"/>
+      <NamedData NDName="lookupType" NDValue="SUPPLIER_STATUS_CODE" NDType="java.lang.String"/>
+    </methodAction>
+    <list IterBinding="getStatusLookupCodeFindCodesByTypeIterator"
+          ListOperMode="navigation"
+          ListIter="getStatusLookupCodeFindCodesByTypeIterator"
+          id="SupplierStatusCode" DTSupportsMRU="true"></list>
+  </bindings>
+</pageDefinition>

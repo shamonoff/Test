@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<trinidad-config xmlns="http://myfaces.apache.org/trinidad/config">
+
+<!-- Skin can be switched in user interfaces. If the session scope attribute that 
+     holds the selected skin is nul, the we switch back to a default skin. Note the 
+     blank before and after the ":" colon. This is important as otherwise the EL 
+     forms an invalid expression -->
+ <skin-family>#{not empty SkinHelper.currentSkin?SkinHelper.currentSkin : 'skyros'}</skin-family>
+
+</trinidad-config>

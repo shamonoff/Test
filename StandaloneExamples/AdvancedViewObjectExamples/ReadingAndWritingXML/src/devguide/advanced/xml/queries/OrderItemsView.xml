@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OrderItemsView"
+  SelectList="OrderItems.ORDER_ID, 
+       OrderItems.LINE_ITEM_ID, 
+       OrderItems.PRODUCT_ID, 
+       OrderItems.QUANTITY, 
+       OrderItems.UNIT_PRICE, 
+       OrderItems.CREATED_BY, 
+       OrderItems.CREATION_DATE, 
+       OrderItems.LAST_UPDATED_BY, 
+       OrderItems.LAST_UPDATE_DATE, 
+       OrderItems.OBJECT_VERSION_ID"
+  FromList="ORDER_ITEMS OrderItems"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_version" Value="11.1.1.46.77"/>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="OrderItems"
+    Entity="devguide.advanced.xml.entities.OrderItems"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <Attr Name="_queryClause" Value="false"/>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="OrderId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="OrderId"
+    EntityUsage="OrderItems"
+    AliasName="ORDER_ID"/>
+  <ViewAttribute
+    Name="LineItemId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LineItemId"
+    EntityUsage="OrderItems"
+    AliasName="LINE_ITEM_ID"/>
+  <ViewAttribute
+    Name="ProductId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProductId"
+    EntityUsage="OrderItems"
+    AliasName="PRODUCT_ID"/>
+  <ViewAttribute
+    Name="Quantity"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Quantity"
+    EntityUsage="OrderItems"
+    AliasName="QUANTITY"/>
+  <ViewAttribute
+    Name="UnitPrice"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UnitPrice"
+    EntityUsage="OrderItems"
+    AliasName="UNIT_PRICE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="OrderItems"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreationDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="OrderItems"
+    AliasName="CREATION_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="OrderItems"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateDate"
+    EntityUsage="OrderItems"
+    AliasName="LAST_UPDATE_DATE"/>
+  <ViewAttribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ObjectVersionId"
+    EntityUsage="OrderItems"
+    AliasName="OBJECT_VERSION_ID"/>
+</ViewObject>

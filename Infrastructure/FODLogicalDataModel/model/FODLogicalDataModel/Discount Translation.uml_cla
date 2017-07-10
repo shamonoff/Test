@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:912b9bfb-5f6e-4a42-bc36-5263522fd450'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Discount Translation'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:74495e01-1551-41b2-b85e-520c5927a95c'>
+   <general href='urn:uuid:5d1c5595-fc45-4251-b547-71d80491c104'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>

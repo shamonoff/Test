@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="WarehouseStockLevelEO"
+  DBObjectType="table"
+  DBObjectName="WAREHOUSE_STOCK_LEVELS"
+  AliasName="WarehouseStockLevelEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  Version="11.1.1.48.80">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="ProductId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="PRODUCT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="WAREHOUSE_STOCK_LEVELS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ProductId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="WarehouseId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="WAREHOUSE_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="WAREHOUSE_STOCK_LEVELS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="WarehouseId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="QuantityOnHand"
+    IsNotNull="true"
+    Precision="8"
+    Scale="0"
+    ColumnName="QUANTITY_ON_HAND"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="WAREHOUSE_STOCK_LEVELS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="QuantityOnHand_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="WAREHOUSE_STOCK_LEVELS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="WAREHOUSE_STOCK_LEVELS"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="WAREHOUSE_STOCK_LEVELS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="WAREHOUSE_STOCK_LEVELS"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="WAREHOUSE_STOCK_LEVELS"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Warehouse"
+    Association="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFkAssoc.Warehouse"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFkAssoc.WarehouseStockLevel"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProductBase"
+    Association="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFk1Assoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFk1Assoc.ProductBase"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.WarehouseStockLevelsFk1Assoc.WarehouseStockLevel"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC0055207">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055207"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.ProductId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055208">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055208"/>
+      <Attr Name="_checkCondition" Value='"WAREHOUSE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.WarehouseId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055209">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055209"/>
+      <Attr Name="_checkCondition" Value='"QUANTITY_ON_HAND" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.QuantityOnHand"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055210">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055210"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055211">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055211"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055212">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055212"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055213">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055213"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055214">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055214"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="WarehouseStockLevelsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="WAREHOUSE_STOCK_LEVELS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.ProductId"/>
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.WarehouseId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="WarehouseStockLevelsFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="WAREHOUSES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="WAREHOUSE_STOCK_LEVELS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.WarehouseId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="WarehouseStockLevelsFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRODUCTS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="WAREHOUSE_STOCK_LEVELS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.WarehouseStockLevelEO.ProductId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.WarehouseStockLevelEOMsgBundle"/>
+  </ResourceBundle>
+</Entity>

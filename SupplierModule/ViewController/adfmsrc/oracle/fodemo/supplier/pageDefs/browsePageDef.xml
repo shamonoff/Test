@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.43" id="browsePageDef"
+                Package="oracle.fodemo.supplier.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.StoreFrontTemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SupplierFacadeLocal"
+              id="SupplierFacadeLocalIterator"/>
+    <accessorIterator MasterBinding="SupplierFacadeLocalIterator"
+                      Binds="productFindAll" RangeSize="25"
+                      DataControl="SupplierFacadeLocal"
+                      BeanClass="oracle.fodemo.supplier.model.Product"
+                      id="productFindAllIterator" Refresh="ifNeeded"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="productFindAllIterator"
+                  id="ImplicitViewCriteriaQuery" />
+  </executables>
+  <bindings>
+    <tree IterBinding="productFindAllIterator" id="productFindAll">
+      <nodeDefinition DefName="oracle.fodemo.supplier.model.Product"
+                      Name="productFindAll0">
+        <AttrNames>
+          <Item Value="productId"/>
+          <Item Value="productName"/>
+          <Item Value="costPrice"/>
+          <Item Value="listPrice"/>
+          <Item Value="minPrice"/>
+          <Item Value="productStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="removeProduct" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeProduct"
+                  IsViewObjectMethod="false" DataControl="SupplierFacadeLocal"
+                  InstanceName="SupplierFacadeLocal.dataProvider">
+      <NamedData NDName="product"
+                 NDValue="${bindings.productFindAllIterator.currentRow.dataProvider}"
+                 NDType="oracle.fodemo.supplier.model.Product"/>
+    </methodAction>
+    <action IterBinding="productFindAllIterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

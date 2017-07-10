@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="windows-1252" ?> 
+<PersonsViewRow>
+   <PersonId>110</PersonId>
+   <!-- This will update Customer's ConfirmedEmail attribute -->
+   <ConfirmedEmail>NewConfirmed</ConfirmedEmail>
+   <OrdersView>
+      <!-- This will be an update since it does exist -->
+      <OrdersViewRow>
+         <OrderId>1011</OrderId>
+         <OrderStatusCode>SHIP</OrderStatusCode>
+      </OrdersViewRow>
+      <!-- This will be an insert since it doesn't exist -->
+      <OrdersViewRow>
+         <OrderId>1070</OrderId>
+         <OrderStatusCode>PENDING</OrderStatusCode>
+      </OrdersViewRow>
+      <!-- This will be deleted -->
+      <OrdersViewRow bc4j-action="remove">
+         <OrderId>1026</OrderId>
+      </OrdersViewRow>        
+   </OrdersView>
+</PersonsViewRow>

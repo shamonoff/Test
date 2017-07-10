@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductImagesEO"
+  Version="11.1.1.49.49"
+  DBObjectType="table"
+  DBObjectName="PRODUCT_IMAGES"
+  AliasName="ProductImagesEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="ProductImageId"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Precision="15"
+    Scale="0"
+    ColumnName="PRODUCT_IMAGE_ID"
+    Domain="oracle.jbo.domain.DBSequence"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_IMAGES"
+    PrimaryKey="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProductId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="PRODUCT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_IMAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DefaultViewFlag"
+    IsNotNull="true"
+    DefaultValue="N"
+    Precision="1"
+    ColumnName="DEFAULT_VIEW_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_IMAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DetailImageId"
+    Precision="15"
+    Scale="0"
+    ColumnName="DETAIL_IMAGE_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_IMAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Image"
+    IsQueriable="false"
+    IsNotNull="true"
+    ColumnName="IMAGE"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    SQLType="BLOB"
+    TableName="PRODUCT_IMAGES"/>
+  <Attribute
+    Name="CreatedBy"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_IMAGES">
+    <TransientExpression>
+      <![CDATA[0]]>
+    </TransientExpression>
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="PRODUCT_IMAGES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_IMAGES">
+    <TransientExpression>
+      <![CDATA[0]]>
+    </TransientExpression>
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="PRODUCT_IMAGES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_IMAGES">
+    <TransientExpression>
+      <![CDATA[0]]>
+    </TransientExpression>
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="ProductImagesDefaultChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_IMAGES_DEFAULT_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value="DEFAULT_VIEW_FLAG in ('Y','N')"/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="ProductImagesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_IMAGES_PK"/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="SysC0024264">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024264"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_IMAGE_ID" IS NOT NULL'/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="SysC0024265">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024265"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_ID" IS NOT NULL'/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="SysC0024266">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024266"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"DEFAULT_VIEW_FLAG" IS NOT NULL'/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="SysC0024267">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024267"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"IMAGE" IS NOT NULL'/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="SysC0024268">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024268"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="SysC0024269">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024269"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="SysC0024270">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024270"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="SysC0024271">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024271"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="SysC0024272">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024272"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="ProductImagesFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_IMAGES_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="PRODUCT_IMAGES_PK"/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="ProductImagesProductsFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_IMAGES_PRODUCTS_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="PRODUCTS_PK"/>
+    </DesignTime>
+  </Key>
+</Entity>

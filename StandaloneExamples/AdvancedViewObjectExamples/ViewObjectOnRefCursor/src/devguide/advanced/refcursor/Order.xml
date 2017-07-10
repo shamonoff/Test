@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Order"
+  DBObjectType="table"
+  DBObjectName="ORDERS"
+  AliasName="Order"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_version" Value="11.1.1.46.77"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="OrderId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="ORDER_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ORDERS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OrderDate"
+    IsNotNull="true"
+    ColumnName="ORDER_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="ORDERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OrderStatusCode"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="ORDER_STATUS_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ORDERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OrderTotal"
+    IsNotNull="true"
+    Precision="8"
+    Scale="2"
+    ColumnName="ORDER_TOTAL"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ORDERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CustomerId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="CUSTOMER_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ORDERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="OrdersPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ORDERS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.refcursor.Order.OrderId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068328">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068328"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ORDER_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.refcursor.Order.OrderId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068329">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068329"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ORDER_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.refcursor.Order.OrderDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068330">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068330"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ORDER_STATUS_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.refcursor.Order.OrderStatusCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068331">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068331"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ORDER_TOTAL" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.refcursor.Order.OrderTotal"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068332">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068332"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CUSTOMER_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.refcursor.Order.CustomerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="OrdersPersonsFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ORDERS_PERSONS_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="PERSONS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.refcursor.Order.CustomerId"/>
+    </AttrArray>
+  </Key>
+</Entity>

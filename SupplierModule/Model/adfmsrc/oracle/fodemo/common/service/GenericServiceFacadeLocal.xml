@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.58"
+          id="GenericServiceFacadeLocal" Package="oracle.fodemo.common.service"
+          BeanClass="oracle.fodemo.common.service.GenericServiceFacadeLocal"
+          isJavaBased="true">
+  <AccessorAttribute id="lookupCodeFindAll" IsCollection="true"
+                     BeanClass="oracle.fodemo.supplier.model.LookupCode"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.LookupCode"
+                  BeanClass="oracle.fodemo.supplier.model.LookupCode"
+                  id="persistLookupCode" ReturnNodeName="LookupCode">
+    <ParameterInfo id="lookupCode"
+                   Type="oracle.fodemo.supplier.model.LookupCode"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.LookupCode"
+                  BeanClass="oracle.fodemo.supplier.model.LookupCode"
+                  id="mergeLookupCode" ReturnNodeName="LookupCode">
+    <ParameterInfo id="lookupCode"
+                   Type="oracle.fodemo.supplier.model.LookupCode"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeLookupCode"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="lookupCode"
+                   Type="oracle.fodemo.supplier.model.LookupCode"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="oracle.fodemo.supplier.model.LookupCode"
+                  BeanClass="oracle.fodemo.supplier.model.LookupCode"
+                  id="getLookupCodeFindCodesByType" ReturnNodeName="LookupCode"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="language" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="lookupType" Type="java.lang.String"
+                   isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

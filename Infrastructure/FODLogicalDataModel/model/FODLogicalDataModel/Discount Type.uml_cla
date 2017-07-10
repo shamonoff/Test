@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.2.0'/>
+ <uml:Class xmi:uuid='urn:uuid:0db0da0f-facc-4463-818a-7a4c077e993b'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Discount Type'
+   visibility='public'>
+  <ownedAttribute xmi:uuid='urn:uuid:3016b7de-94de-4804-ba6f-a24f223275b6'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='Free Shipping Flag'
+    aggregation='none'
+    visibility='private'>
+   <type href='mof:/boolean:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:9d1fdce6-f898-4070-8bbf-8da554549a68'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:5510dd4d-5d85-43b5-8588-823468cd61d6'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:uuid='urn:uuid:3834af03-0167-4a84-bb06-285e0cd48ca4'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='Percentage'
+    aggregation='none'>
+   <type href='mof:/decimal:uml:Type'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Port' xmi:uuid='urn:uuid:7474f292-a2a8-4004-81f0-310784440232'
+    isBehavior='false'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isService='true'
+    isStatic='false'
+    isUnique='true'
+    name='One Time Indicator'
+    aggregation='none'>
+   <type href='mof:/boolean:uml:Type'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:uuid='urn:uuid:2717709d-f821-44e9-b14d-1b13a209bc9a'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='Easy Code'
+    aggregation='none'>
+   <type href='mof:/char:uml:Type'/>
+  </ownedAttribute>
+ </uml:Class>
+</xmi:XMI>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBorderLayout id="pbl1">
+    <af:panelGroupLayout layout="vertical"
+                         inlineStyle="width:100%; height:100%;" id="pgl1">
+      <af:outputFormatted value="#{res['error.instructions']}" id="of1"/>
+                  <af:spacer width="10" height="10" id="s1"/>
+<af:outputFormatted value="#{controllerContext.currentViewPort.exceptionData.message}"
+                    id="of2"/>
+    </af:panelGroupLayout>
+    <f:facet name="innerTop">
+      <af:panelHeader text="#{res['error.header']}" inlineStyle="width:100%;"
+                      id="ph1">
+        <f:facet name="toolbar">
+          <af:group id="g1">
+            <af:commandButton text="#{res['error.review']}" action="goReview"
+                              id="cb1"/>
+            <af:spacer width="10" height="10" id="s2"/>
+            <af:commandButton text="#{res['global.button.Cancel']}" action="cancelRegistration"
+                              id="cb2"/>                     
+          </af:group>
+        </f:facet>
+      </af:panelHeader>
+    </f:facet>
+  </af:panelBorderLayout>
+</jsp:root>

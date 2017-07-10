@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['oracle.fodemo.supplier.view.ViewControllerBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document title="#{viewcontrollerBundle['login.pageTitle']}"
+                initialFocusId="pt1:un"
+                 id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/StoreFrontTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+            <af:panelGroupLayout layout="horizontal" valign="middle"
+                                 halign="center" id="pgl1">
+              <af:panelBox text="#{viewcontrollerBundle['login.header']}"
+                           ramp="core" background="light"
+                           icon="/images/key_ena.png" id="pb1"
+                           inlineStyle="width:400.0px;">
+                <f:facet name="toolbar"/>
+                <af:messages inline="true" partialTriggers="lb"
+                             globalOnly="true"
+                             text="#{viewcontrollerBundle['login.error.global']}"
+                             message="#{viewcontrollerBundle['login.error.detail']}"
+                             id="m1"/>
+                <af:panelFormLayout id="pfl1">
+                  <f:facet name="footer">
+                    <af:panelGroupLayout id="pg21" layout="horizontal">
+                      <af:commandButton partialSubmit="true" id="lb"
+                                        textAndAccessKey="#{viewcontrollerBundle['login.logonButton.label']}"
+                                        action="#{loginBean.doLogin}"
+                                        blocking="true"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <af:inputText labelAndAccessKey="#{viewcontrollerBundle['login.username.label']}"
+                                id="un" required="true"
+                                shortDesc="#{viewcontrollerBundle['login.username.hint']}"
+                                requiredMessageDetail="#{viewcontrollerBundle['login.username.required']}"
+                                clientComponent="true"
+                                value="#{loginBean.userName}"/>
+                  <af:inputText id="pwd" secret="true"
+                                labelAndAccessKey="#{viewcontrollerBundle['login.password.label']}"
+                                required="true"
+                                requiredMessageDetail="#{viewcontrollerBundle['login.password.required']}"
+                                clientComponent="true"
+                                value="#{loginBean.password}"/>
+                  <af:selectBooleanCheckbox label="#{viewcontrollerBundle['login.rememberme.label']}"
+                                            accessKey="#{viewcontrollerBundle['login.rememberme.key']}"
+                                            value="#{sessionUIFlags['RememberMe']}"
+                                            shortDesc="#{viewcontrollerBundle['login.rememberme.hint']}"
+                                            id="sbc1"/>
+                </af:panelFormLayout>
+              </af:panelBox>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="header"/>
+          <f:facet name="end">
+            <af:panelGroupLayout halign="center" valign="middle"
+                                 layout="vertical" id="pgl3">
+              <af:panelLabelAndMessage label="#{res['login.usertype.header']}"
+                                       id="plam1"/>
+              <af:separator id="s7"/>
+              <af:panelFormLayout id="pf21">
+                <af:panelLabelAndMessage label="#{res['login.usertype.cust']}"
+                                         id="plam4"/>
+                <af:panelLabelAndMessage label="#{res['login.username']}"
+                                         id="plam2">
+                  <af:outputText value="#{res['login.usertype.cust.username']}"
+                                 id="ot1"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{res['login.password']}"
+                                         id="plam3">
+                  <af:outputText value="welcome1" id="ot2"/>
+                </af:panelLabelAndMessage>
+              </af:panelFormLayout>
+              <af:spacer width="10" height="10" id="s6"/>
+              <af:spacer width="10" height="10" id="s8"/>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="start">
+            <af:spacer width="10" height="10" id="s5"/>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

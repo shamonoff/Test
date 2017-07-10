@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+
+<!--
+  This is a sample ANT script to demonstrate the invocation
+  of the ADFdi command line workbook publishing tool which prepares
+  a source (Design Time) workbook for Run Time use.
+-->
+
+<project name="publish-mpl-workbooks" default="publish-workbooks">
+  <property file="build.properties"/>
+  <property name="jdev.ant.port" value="2249"/>
+  <property name="ant.home" value="${jdeveloper.home}/ant"/>
+  
+  <target name="publish-MPL_workbooks">
+    <ant antfile="publish-workbooks.xml" dir="."
+         target="publish-workbooks" inheritrefs="true"/>
+  </target>
+</project>

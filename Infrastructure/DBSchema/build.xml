@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!-- Database Creation Ant Buildfile for Fusion Order Demo -->
+<!-- $Id: build.xml 799 2007-02-19 18:34:44Z lmunsing $ -->
+<project default="createDatabase">
+  <property file="../Ant/build.properties"/>
+  <property name="jdbc.url" value="${jdbc.urlBase}:${jdbc.port}:${jdbc.sid}"/>
+  <property name="scriptHome" value="Scripts"/>
+  <property name="populateScriptHome" value="Scripts/DataScripts"/>
+  <property name="imageHome" value="../Images/"/>
+  <property name="model.src.dir" value="src"/>
+  <property name="model.build.dir" value="classes"/>
+  <!-- Classpath Libraries used for Compiling the Image Loader -->
+  <property name="jlib.lib" value="${jdeveloper.home}/jlib"/>
+  <property name="adfbc.lib" value="${jdeveloper.home}/BC4J/lib"/>
+  <path id="oracle.jdbc.path">
+    <fileset dir="${jdeveloper.home}/../wlserver_10.3/server/lib">
+      <include name="ojdbc6.jar"/>
+    </fileset>
+  </path>
+  <macrodef name="sqlRunner" description="Macro used to run a SQL script">
+    <attribute name="username" default="null"/>
+    <attribute name="password" default="null"/>
+    <attribute name="script" default="null"/>
+    <attribute name="onerror" default="stop"/>
+    <sequential>
+      <sql driver="${jdbc.driver}" url="${jdbc.url}" userid="@{username}"
+           password="@{password}" classpathref="oracle.jdbc.path"
+           src="@{script}" onerror="@{onerror}"/>
+    </sequential>
+  </macrodef>
+  <macrodef name="sqlRunnerWithArgs"
+            description="Macro used to run a script containing substitution variables">
+    <attribute name="username" default="null"/>
+    <attribute name="password" default="null"/>
+    <attribute name="script" default="null"/>
+    <attribute name="onerror" default="stop"/>
+    <attribute name="arg1" default="null"/>
+    <attribute name="arg2" default="null"/>
+    <sequential>
+      <tempfile property="sqlrunner.tempfile" destdir="${scriptHome}"
+                prefix="SQLRunner" suffix=".sql"/>
+      <concat destfile="${sqlrunner.tempfile}">
+        <header filtering="no" trimleading="yes">
+          <![CDATA[
+            REM Generated ANT SQL Runner Stub
+            REM You can delete this file
+          ]]>
+        </header>
+        <path path="@{script}"/>
+      </concat>
+      <replace file="${sqlrunner.tempfile}" token="&amp;&amp;1"
+               value="@{arg1}"/>
+      <replace file="${sqlrunner.tempfile}" token="&amp;&amp;2"
+               value="@{arg2}"/>
+      <sqlRunner username="@{username}" password="@{password}"
+                 script="${sqlrunner.tempfile}" onerror="@{onerror}"/>
+      <delete file="${sqlrunner.tempfile}"/>
+    </sequential>
+  </macrodef>
+  <target name="createDatabase"
+          depends="refreshSchema, createSchemaObjects, createSequenceTriggers, populateTables, createIndexes, populateImages, revokePrivs">
+    <echo message="Database (Re)Creation Complete"></echo>
+  </target>
+  <target name="echoSettings"
+          description="Prints out the connection info and accounts in use">
+    <echo message=""></echo>
+    <echo message="Setting up Fusion Order Demo database"></echo>
+    <echo message="-------------------------------------"></echo>
+    <echo message="The following settings will be used (from build.properties):"></echo>
+    <echo message=""></echo>
+    <echo message="JDBC Driver Class: ${jdbc.driver}"></echo>
+    <echo message="JDBC URL to target Database: ${jdbc.url}"></echo>
+    <echo message=""></echo>
+    <echo message=""></echo>
+    <echo message="DBA Account: ${db.adminUser}"></echo>
+    <echo message="DBA Password: **********"></echo>
+    <echo message=""></echo>
+    <echo message="Demo User Account: ${db.demoUser}"></echo>
+    <echo message="Demo User Password: **********"></echo>
+    <echo message="Default Tablespace: ${db.demoUser.tablespace}"></echo>
+    <echo message="Temp Tablespace: ${db.demoUser.tempTablespace}"></echo>
+    <echo message=""></echo>
+    <echo message="Scripts read from: ${scriptHome}"></echo>
+    <echo message=""></echo>
+  </target>
+  <target name="refreshSchema">
+    <sqlRunnerWithArgs username="${db.adminUser}"
+                       password="${db.adminUser.password}"
+                       script="${scriptHome}/createFODSchema.sql"
+                       onerror="continue" arg1="${db.demoUser}"
+                       arg2="${db.demoUser.password}"/>
+    <echo level="warning"
+          message="Warning: An unlocked database user '${db.demoUser}' has been created, with create session, table, and sequence privileges."></echo>
+  </target>
+  <target name="createSchemaObjects">
+    <sqlRunner username="${db.demoUser}" password="${db.demoUser.password}"
+               script="${scriptHome}/createFODSchemaObjects.sql"/>
+  </target>
+  <target name="createSequenceTriggers">
+    <sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${db.demoUser}"
+         password="${db.demoUser.password}" classpathref="oracle.jdbc.path"
+         rdbms="oracle" delimiter="/" delimitertype="row" keepformat="yes"
+         src="${scriptHome}/createSequenceTriggers.sql"/>
+  </target>
+  <target name="populateTables">
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/DEMO_OPTIONS.sql"
+                       arg1="${override.email}" arg2="${smtp.server}"/>
+    <echo message="Demo Options Created"></echo>
+    <sqlRunner username="${db.demoUser}" password="${db.demoUser.password}"
+               script="${populateScriptHome}/AVAILABLE_LANGUAGES.sql"/>
+    <echo message="Available Languages Created"></echo>
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/COUNTRY_CODES.sql"
+                       arg1="EN"/>
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/COUNTRY_CODES.sql"
+                       arg1="FR"/>
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/COUNTRY_CODES.sql"
+                       arg1="DE"/>
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/COUNTRY_CODES.sql"
+                       arg1="JA"/>
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/COUNTRY_CODES.sql"
+                       arg1="EL"/>
+    <echo message="Country Codes Created"></echo>
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/LOOKUP_CODES.sql"
+                       arg1="EN"/>
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/LOOKUP_CODES.sql"
+                       arg1="FR"/>
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/LOOKUP_CODES.sql"
+                       arg1="DE"/>
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/LOOKUP_CODES.sql"
+                       arg1="JA"/>
+    <sqlRunnerWithArgs username="${db.demoUser}"
+                       password="${db.demoUser.password}"
+                       script="${populateScriptHome}/LOOKUP_CODES.sql"
+                       arg1="EL"/>
+    <echo message="Lookup Codes Created"></echo>
+    <sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${db.demoUser}"
+         password="${db.demoUser.password}" classpathref="oracle.jdbc.path"
+         rdbms="oracle" delimiter=";">
+      <fileset dir="${populateScriptHome}">
+        <include name="ADDRESSES.sql"/>
+        <include name="DISCOUNTS_BASE.sql"/>
+        <include name="MEMBERSHIPS_BASE.sql"/>
+        <include name="SHIPPING_OPTIONS_BASE.sql"/>
+        <include name="SUPPLIERS.sql"/>
+      </fileset>
+    </sql>
+    <echo message="Addresses, Memberships, Discounts, Shipping Options and Suppliers Created"></echo>
+    <sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${db.demoUser}"
+         password="${db.demoUser.password}" classpathref="oracle.jdbc.path"
+         rdbms="oracle" delimiter=";">
+      <fileset dir="${populateScriptHome}">
+        <include name="PERSONS.sql"/>
+        <include name="WAREHOUSES.sql"/>
+        <include name="DISCOUNT_TRANSLATIONS.sql"/>
+        <include name="MEMBERSHIP_TRANSLATIONS.sql"/>
+        <include name="SHIPPING_OPTION_TRANSLATIONS.sql"/>
+        <include name="ELIGIBLE_DISCOUNTS.sql"/>
+      </fileset>
+    </sql>
+    <echo message="Persons, Warehouses, Discount Translations, Shipping Option Translations, and Eligible Discounts Created"></echo>
+    <sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${db.demoUser}"
+         password="${db.demoUser.password}" classpathref="oracle.jdbc.path"
+         rdbms="oracle" delimiter=";">
+      <fileset dir="${populateScriptHome}">
+        <include name="ADDRESS_USAGES.sql"/>
+        <include name="CUSTOMER_IDENTIFICATIONS.sql"/>
+        <include name="PAYMENT_OPTIONS.sql"/>
+        <include name="PRODUCT_CATEGORIES_BASE.sql"/>
+      </fileset>
+    </sql>
+    <echo message="Address Usages, Customer Identifications, Payment Options, Product Categories, and Orders Created"></echo>
+    <sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${db.demoUser}"
+         password="${db.demoUser.password}" classpathref="oracle.jdbc.path"
+         rdbms="oracle" delimiter=";">
+      <fileset dir="${populateScriptHome}">
+        <include name="PRODUCTS_BASE.sql"/>
+        <include name="WAREHOUSE_STOCK_LEVELS.sql"/>
+        <include name="CATEGORY_TRANSLATIONS.sql"/>
+        <include name="CUSTOMER_INTERESTS.sql"/>
+        <include name="ORDERS.sql"/>
+      </fileset>
+    </sql>
+    <echo message="Products, Warehouse Stock Levels, Coupon Usages, Categories, and Customer Interests Created"></echo>
+    <sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${db.demoUser}"
+         password="${db.demoUser.password}" classpathref="oracle.jdbc.path"
+         rdbms="oracle" delimiter=";">
+      <fileset dir="${populateScriptHome}">
+        <include name="COUPON_USAGES.sql"/>
+        <include name="PRODUCT_TRANSLATIONS.sql"/>
+        <include name="ORDER_ITEMS.sql"/>
+        <include name="HELP_TRANSLATIONS.sql"/>
+        <include name="ALTER_TABLES.sql"/>
+      </fileset>
+    </sql>
+    <echo message="Coupon Usages, Product Translations, Order Items, and Help Translations Created"></echo>
+    <sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${db.demoUser}"
+         password="${db.demoUser.password}" classpathref="oracle.jdbc.path"
+         rdbms="oracle" delimiter="/">
+      <fileset dir="${scriptHome}/PackageScripts">
+        <include name="user_context.sql"/>
+      </fileset>
+    </sql>
+    <echo message="USER_CONTEXT Package Created"></echo>     
+  </target>
+  
+    <target name="createIndexes">
+   <sqlRunner username="${db.demoUser}" password="${db.demoUser.password}"
+               script="${scriptHome}/createIndexes.sql"/>
+      <echo message="Indexes Created"></echo>     
+    </target>
+  
+  <path id="schema.classpath">
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.javacache_11.1.1">
+      <include name="cache.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.jps_11.1.1">
+      <include name="jps-api.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.adf.share_11.1.1">
+      <include name="adflogginghandler.jar"/>
+      <include name="adf-share-support.jar"/>
+      <include name="commons-cli-1.0.jar"/>
+      <include name="commons-el.jar"/>
+      <include name="jsp-el-api.jar"/>
+      <include name="ojmisc.jar"/>
+      <include name="oracle-el.jar"/>
+      <include name="share.jar"/>
+      <include name="adfsharembean.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.adf.share.ca_11.1.1">
+      <include name="adf-share-base.jar"/>
+      <include name="adf-share-ca.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.xmlef_11.1.1">
+      <include name="xmlef.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.bali.share_11.1.1">
+      <include name="share.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.mds_11.1.1">
+      <include name="mdsrt.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.adf.model_11.1.1">
+      <include name="adfm.jar"/>
+      <include name="adfdt_common.jar"/>
+      <include name="bc4jsyscat.jar"/>
+      <include name="db-ca.jar"/>
+      <include name="jdev-cm.jar"/>
+      <include name="adflibfilter.jar"/>
+      <include name="bc4j-mbeans.jar"/>
+      <include name="bc4jwizard.jar"/>
+    </fileset>
+   <fileset dir="${jdeveloper.home}/../oracle_common/modules">
+      <include name="groovy-all-1.6.0.jar"/>
+      <include name="oracle.ucp_11.1.0.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.xdk_11.1.0">
+      <include name="xmlparserv2.jar"/>
+      <include name="xml.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.dms_11.1.1">
+      <include name="dms.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.odl_11.1.1">
+      <include name="ojdl.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.javatools_11.1.1">
+      <include name="javatools-nodeps.jar"/>
+      <include name="resourcebundle.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.jmx_11.1.1">
+      <include name="jmxframework.jar"/>
+      <include name="jmxspi.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../oracle_common/modules/oracle.idm_11.1.1">
+      <include name="identitystore.jar"/>
+    </fileset>
+    <fileset dir="${jdeveloper.home}/../modules">
+      <include name="javax.activation_1.1.0.0_1-1.jar"/>
+      <include name="glassfish.jaxb_1.0.0.0_2-1-7.jar"/>
+      <include name="javax.xml.bind_2.1.1.jar"/>
+      <include name="com.bea.core.apache.xercesImpl_2.8.1.jar"/>
+    </fileset>
+     <fileset dir="${jdeveloper.home}/../wlserver_10.3/server/lib">
+      <include name="weblogic.jar"/>
+    </fileset>
+     <fileset dir="${jdeveloper.home}/../wlserver_10.3/server/ext/jdbc/oracle/11g">
+      <include name="ojdbc6.jar"/>
+    </fileset>
+     <fileset dir="${jdeveloper.home}/jlib">
+      <include name="ohj.jar"/>
+      <include name="help-share.jar"/>
+    </fileset> 
+  </path>
+  <target name="compileImagesApp"
+          description="Compiles the ApplicationSchema project">
+    <mkdir dir="${model.build.dir}"/>
+    <javac destdir="${model.build.dir}" source="1.5" target="1.5" debug="true"
+           deprecation="false" optimize="false" failonerror="true">
+      <src path="${model.src.dir}"/>
+      <classpath refid="schema.classpath"/>
+      <classpath refid="oracle.jdbc.path"/>
+    </javac>
+    <copy todir="${model.build.dir}" preservelastmodified="true">
+      <fileset dir="${model.src.dir}">
+        <include name="**/bc4j.xcfg"/>
+        <include name="**/*.xml"/>
+        <include name="*.jpx"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="populateImages" depends="compileImagesApp">
+    <java classname="oracle.fodemo.share.imageloader.LoadImages">
+      <classpath refid="schema.classpath"/>
+      <classpath refid="oracle.jdbc.path"/>
+      <classpath>
+        <pathelement location="classes/"/>
+      </classpath>
+      <arg value="${jdbc.url}"/>
+      <arg value="${db.demoUser}"/>
+      <arg value="${db.demoUser.password}"/>
+      <arg value="${imageHome}"/>
+    </java>
+  </target>
+  <target name="revokePrivs">
+    <sqlRunnerWithArgs username="${db.adminUser}"
+                       password="${db.adminUser.password}"
+                       script="${scriptHome}/revokeFODPrivileges.sql"
+                       onerror="continue" arg1="${db.demoUser}"
+                       arg2="${db.demoUser.password}"/>
+    <echo level="warning" message="Cleaning up database user privileges."></echo>
+  </target>
+  <target name="dropSchema">
+    <sqlRunnerWithArgs username="${db.adminUser}"
+                       password="${db.adminUser.password}"
+                       script="${scriptHome}/dropFODSchema.sql"
+                       onerror="continue" arg1="${db.demoUser}"
+                       arg2="${db.demoUser.password}"/>
+    <echo level="warning"
+          message="Warning: The database user '${db.demoUser}' has been dropped."></echo>
+  </target>
+</project>

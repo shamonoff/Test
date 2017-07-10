@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductCategoryBaseEO"
+  DBObjectType="table"
+  DBObjectName="PRODUCT_CATEGORIES_BASE"
+  AliasName="ProductCategoryBaseEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  Version="11.1.1.48.80">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="CategoryId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="CATEGORY_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_CATEGORIES_BASE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CategoryId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ParentCategoryId"
+    Precision="15"
+    Scale="0"
+    ColumnName="PARENT_CATEGORY_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ParentCategoryId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CategoryLockedFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="CATEGORY_LOCKED_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CategoryLockedFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="RepresentativeProductId"
+    Precision="15"
+    Scale="0"
+    ColumnName="REPRESENTATIVE_PRODUCT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="RepresentativeProductId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="PRODUCT_CATEGORIES_BASE"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="PRODUCT_CATEGORIES_BASE"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_CATEGORIES_BASE"
+    ChangeIndicator="true"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="ParentCategoryIdProductCategoryBase"
+    Association="oracle.fodemo.storefront.entities.associations.ProductCategoriesFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ProductCategoriesFkAssoc.ParentCategoryIdProductCategoryBase"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.ProductCategoriesFkAssoc.ProductCategoryBase"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProductBase1"
+    Association="oracle.fodemo.storefront.entities.associations.RepresentativeProductFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.RepresentativeProductFkAssoc.ProductBase1"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.RepresentativeProductFkAssoc.ProductCategoryBase1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProductBase"
+    Association="oracle.fodemo.storefront.entities.associations.ProductsProductCategoriesFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ProductsProductCategoriesFkAssoc.ProductBase"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.ProductsProductCategoriesFkAssoc.ProductCategoryBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ProductCategoryBase"
+    Association="oracle.fodemo.storefront.entities.associations.ProductCategoriesFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ProductCategoriesFkAssoc.ProductCategoryBase"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.ProductCategoriesFkAssoc.ParentCategoryIdProductCategoryBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerInterest"
+    Association="oracle.fodemo.storefront.entities.associations.CustomerInterestsFk1Assoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.CustomerInterestsFk1Assoc.CustomerInterest"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.CustomerInterestsFk1Assoc.ProductCategoryBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CategoryTranslation"
+    Association="oracle.fodemo.storefront.entities.associations.CategoryTranslationsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.CategoryTranslationsFkAssoc.CategoryTranslation"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.CategoryTranslationsFkAssoc.ProductCategoryBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ProductCategoriesLockedChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_CATEGORIES_LOCKED_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value="CATEGORY_LOCKED_FLAG in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.CategoryLockedFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductTagsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_TAGS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.CategoryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055223">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055223"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CATEGORY_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.CategoryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055224">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055224"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CATEGORY_LOCKED_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.CategoryLockedFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055225">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055225"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055226">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055226"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055227">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055227"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055228">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055228"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055229">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055229"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductCategoriesFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_CATEGORIES_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="PRODUCT_TAGS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.ParentCategoryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="RepresentativeProductFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="REPRESENTATIVE_PRODUCT_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="PRODUCTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.ProductCategoryBaseEO.RepresentativeProductId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.ProductCategoryBaseEOMsgBundle"/>
+  </ResourceBundle>
+</Entity>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.34" id="templates_StoreFrontTemplatePageDef"
+                Package="oracle.fodemo.storefront.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="AuthenticatedUserIterator" Binds="AuthenticatedUser"
+              RangeSize="25" DataControl="StoreServiceAMDataControl"/>
+  </executables>
+  <bindings>
+    <action IterBinding="AuthenticatedUserIterator" id="ExecuteWithParams"
+            InstanceName="StoreServiceAMDataControl.AuthenticatedUser"
+            DataControl="StoreServiceAMDataControl" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="userPrincipal" NDValue="#{userInfoBean.principalName}"
+                 NDType="java.lang.String"/>
+    </action>
+    <tree IterBinding="AuthenticatedUserIterator" id="AuthenticatedUser">
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.PersonsVO"
+                      Name="AuthenticatedUser.0">
+        <AttrNames>
+          <Item Value="PersonId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PrincipalName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

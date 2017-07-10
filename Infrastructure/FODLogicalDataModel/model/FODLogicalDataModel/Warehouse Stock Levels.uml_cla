@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.2.0'/>
+ <uml:Class xmi:uuid='urn:uuid:a35b7b1a-fb60-447b-8d21-f0598351c77a'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Warehouse Stock Levels'
+   visibility='public'>
+  <ownedAttribute xmi:uuid='urn:uuid:e07f0088-34ea-42eb-964f-25d6e18114a7'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='Quantity On Hand'
+    aggregation='none'
+    visibility='package'>
+   <type href='mof:/number:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:1fa096de-48e2-46f8-9c8f-43d919f44726'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:3fcb7d33-e43d-473a-9ec8-13bad4af18f7'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:uuid='urn:uuid:ea7586b4-bfd8-42da-bdd7-73758156a49c'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='Reorder Level'
+    aggregation='none'
+    visibility='package'>
+   <type href='mof:/number:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:4808084f-cc99-4f57-9f29-147c6ae03701'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:b26db9de-d351-4cb3-9842-8e0486967a5c'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:uuid='urn:uuid:7222008a-3b1c-40af-8b8d-2b5350722351'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='Reorder Quantity'
+    aggregation='none'
+    visibility='package'>
+   <type href='mof:/number:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:24b6aa0a-876d-4c23-82a6-cb9a7942c041'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:06fdcdbb-4c16-493a-82a1-0a3a71c537e1'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+ </uml:Class>
+</xmi:XMI>

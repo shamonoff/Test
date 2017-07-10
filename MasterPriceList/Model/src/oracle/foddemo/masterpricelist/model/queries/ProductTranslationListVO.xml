@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductTranslationListVO"
+  Version="11.1.1.52.93"
+  SelectList="ProductTranslationsEO.PRODUCT_ID, 
+       ProductTranslationsEO.LANGUAGE, 
+       ProductTranslationsEO.SOURCE_LANG, 
+       ProductTranslationsEO.DESCRIPTION, 
+       ProductTranslationsEO.ADDITIONAL_INFO"
+  FromList="PRODUCT_TRANSLATIONS ProductTranslationsEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="AvailableLanguagesLOV1"
+    ViewObjectName="oracle.foddemo.masterpricelist.model.queries.AvailableLanguagesLOV"/>
+  <ListBinding
+    Name="LOV_Language"
+    ListVOName="AvailableLanguagesLOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_Language_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Language"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Language"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Language"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SourceLang"
+    ListVOName="AvailableLanguagesLOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_SourceLang_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SourceLang"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Language"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Language"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ProductTranslationsEO"
+    Entity="oracle.foddemo.masterpricelist.model.entities.ProductTranslationsEO"/>
+  <ViewAttribute
+    Name="ProductId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProductId"
+    EntityUsage="ProductTranslationsEO"
+    AliasName="PRODUCT_ID"/>
+  <ViewAttribute
+    Name="Language"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Language"
+    EntityUsage="ProductTranslationsEO"
+    AliasName="LANGUAGE"
+    LOVName="LOV_Language">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="oracle.foddemo.masterpricelist.model.queries.ProductTranslationListVO.Language_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SourceLang"
+    PrecisionRule="true"
+    EntityAttrName="SourceLang"
+    EntityUsage="ProductTranslationsEO"
+    AliasName="SOURCE_LANG"
+    LOVName="LOV_SourceLang">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="oracle.foddemo.masterpricelist.model.queries.ProductTranslationListVO.SourceLang_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="ProductTranslationsEO"
+    AliasName="DESCRIPTION">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oracle.foddemo.masterpricelist.model.queries.ProductTranslationListVO.Description_LABEL"/>
+        <DISPLAYWIDTH
+          Value="120"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AdditionalInfo"
+    PrecisionRule="true"
+    EntityAttrName="AdditionalInfo"
+    EntityUsage="ProductTranslationsEO"
+    AliasName="ADDITIONAL_INFO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oracle.foddemo.masterpricelist.model.queries.ProductTranslationListVO.AdditionalInfo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.foddemo.masterpricelist.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

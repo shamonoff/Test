@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller">
+  <view id="home">
+    <page>/home.jspx</page>
+  </view>
+  <task-flow-call id="checkout-task-flow">
+    <task-flow-reference>
+      <document>/WEB-INF/checkout-task-flow.xml</document>
+      <id>checkout-task-flow</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <view id="updateUserInfo">
+    <page>/account/updateUserInfo.jspx</page>
+  </view>
+  <view id="register">
+    <page>/account/register.jspx</page>
+  </view>
+  <task-flow-call id="myorders-task-flow">
+    <task-flow-reference>
+      <document>/WEB-INF/myorders-task-flow.xml</document>
+      <id>myorders-task-flow</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <control-flow-rule>
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case>
+      <from-outcome>globalHome</from-outcome>
+      <to-activity-id>home</to-activity-id>
+    </control-flow-case>
+    <control-flow-case>
+      <from-outcome>globalUpdateUserInfo</from-outcome>
+      <to-activity-id>updateUserInfo</to-activity-id>
+    </control-flow-case>
+    <control-flow-case>
+      <from-outcome>globalCheckout</from-outcome>
+      <to-activity-id>checkout-task-flow</to-activity-id>
+    </control-flow-case>
+    <control-flow-case>
+      <from-outcome>globalMyOrders</from-outcome>
+      <to-activity-id>myorders-task-flow</to-activity-id>
+    </control-flow-case>
+    <control-flow-case>
+      <from-outcome>globalRegisterUser</from-outcome>
+      <to-activity-id>register</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>homePageBean</managed-bean-name>
+    <managed-bean-class>oracle.fodemo.storefront.store.view.managed.HomeBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>shoppingCartBean</managed-bean-name>
+    <managed-bean-class>oracle.fodemo.storefront.cart.view.managed.ShoppingCartBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>navigationBean</managed-bean-name>
+    <managed-bean-class>oracle.fodemo.storefront.store.view.managed.NavigationBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean> 
+  <managed-bean>
+    <managed-bean-name>orderPageBean</managed-bean-name>
+    <managed-bean-class>oracle.fodemo.storefront.store.view.managed.OrderBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>userInfoBean</managed-bean-name>
+    <managed-bean-class>oracle.fodemo.storefront.store.view.managed.UserInfoBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+    <managed-bean>
+      <managed-bean-name>myOrdersBean</managed-bean-name>
+      <managed-bean-class>oracle.fodemo.storefront.orders.view.managed.MyOrdersBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>updateUserInfoBean</managed-bean-name>
+    <managed-bean-class>oracle.fodemo.storefront.account.view.managed.UpdateUserInfoBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    <managed-property>
+      <property-name>allItemsIteratorName</property-name>
+      <value>AvailableCategoriesShuttleListIterator</value>
+    </managed-property>
+    <managed-property>
+      <property-name>allItemsValueAttrName</property-name>
+      <value>CategoryId</value>
+    </managed-property>    <managed-property>
+      <property-name>allItemsDisplayAttrName</property-name>
+      <value>CategoryName</value>
+    </managed-property>
+    <managed-property>
+      <property-name>allItemsDescriptionAttrName</property-name>
+      <value>CategoryDescription</value>
+    </managed-property>
+    <managed-property>
+      <property-name>selectedValuesIteratorName</property-name>
+      <value>CustomerInterestsIterator</value>
+    </managed-property>
+    <managed-property>
+      <property-name>selectedValuesValueAttrName</property-name>
+      <value>CategoryId</value>
+    </managed-property>
+    <managed-property>
+      <property-name>addressTable</property-name>
+      <property-class>oracle.adf.view.rich.component.rich.data.RichTable</property-class>
+      <value></value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>registrationBean</managed-bean-name>
+    <managed-bean-class>oracle.fodemo.storefront.account.view.managed.RegistrationBean</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name id="__4">SkinHelper</managed-bean-name>
+    <managed-bean-class id="__3">oracle.fodemo.skinning.SkinHelperBean</managed-bean-class>
+    <managed-bean-scope id="__1">session</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

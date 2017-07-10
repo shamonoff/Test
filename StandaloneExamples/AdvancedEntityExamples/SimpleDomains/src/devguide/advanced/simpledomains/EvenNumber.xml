@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Domain SYSTEM "jbo_03_01.dtd">
+<!---->
+<Domain
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EvenNumber">
+  <DesignTime>
+    <Attr Name="_isSelected" Value="true"/>
+    <Attr Name="_isUpdateable" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_version" Value="11.1.1.46.61"/>
+    <Attr Name="_type" Value="Number"/>
+  </DesignTime>
+</Domain>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PersonsToPersonsInterestsVO">
+  <DesignTime>
+    <Attr Name="_version" Value="11.1.1.45.87"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="PersonsVO"
+    Cardinality="1"
+    Owner="oracle.fodemo.storefront.store.queries.PersonsVO"
+    Source="true">
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.store.queries.PersonsVO.PersonId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_finderName" Value="PersonsVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CustomerInterestsVO"
+    Cardinality="-1"
+    Owner="oracle.fodemo.storefront.account.queries.CustomerInterestsVO">
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.account.queries.CustomerInterestsVO.CustomerId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_finderName" Value="CustomerInterestsVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </ViewLinkDefEnd>
+</ViewLink>

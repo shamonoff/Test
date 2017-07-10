@@ -1,0 +1,224 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="status">warning</property>
+      <property
+         name="activityId">excelLogin</property>
+      <property
+         name="statusDescription">EL token '''screenMode''' is unknown</property>
+      <property
+         name="page">/login.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>excelLogin&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="rawDescription">view - excelLogin</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">148.0</property>
+      <property
+         name="x">268.0</property>
+      <property
+         name="realized">true</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">LandingPad</property>
+      <property
+         name="page">/secured/LandingPad.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>LandingPad&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - LandingPad</property>
+      <property
+         name="y">147.0</property>
+      <property
+         name="x">581.0</property>
+      <property
+         name="realized">true</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">loggedIn</property>
+      <property
+         name="sdm:polyPoints">R50,309.0,147.64941,540.0,146.64941,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View5">
+      <property
+         name="status">warning</property>
+      <property
+         name="activityId">login</property>
+      <property
+         name="statusDescription">EL token '''screenMode''' is unknown</property>
+      <property
+         name="page">/login.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>login&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="rawDescription">view - login</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">310.0</property>
+      <property
+         name="x">141.0</property>
+      <property
+         name="realized">true</property>
+   </View>
+   <note
+      id="note6">
+      <property
+         name="sdm:nodeHeight">125.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      When logging in from Excel we use this &quot;version&quot; of the login page which 
+      will not show the change password link and also directs onto the 
+      LandingPad page. The point here is that the landingpad page is 
+      essentially empty, so we don't loose time in Excel waiting for page 
+      content that will never be seen to be prepared.
+    </p>
+    <p>
+      The only difference with this version of the page is the screenMode 
+      parameter which will be set to either 'web' or 'excel'
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">-20.5</property>
+      <property
+         name="sdm:nodeWidth">409.0</property>
+      <property
+         name="x">316.5</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment7"
+      from="View2"
+      to="note6">
+      <property
+         name="sdm:polyPoints">T50,268.0,94.0,316.5,52.5,B50</property>
+   </attachment>
+   <note
+      id="note8">
+      <property
+         name="sdm:nodeHeight">52.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      This is the normal way into the web version of the application
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">406.0</property>
+      <property
+         name="sdm:nodeWidth">226.0</property>
+      <property
+         name="x">-25.0</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment9"
+      from="View5"
+      to="note8">
+      <property
+         name="sdm:polyPoints">B44,137.5,363.6494,98.5,406.0,R50</property>
+   </attachment>
+   <TaskFlowCall
+      id="TaskFlowCall12">
+      <property
+         name="taskFlowId">price-editing-flow</property>
+      <property
+         name="id">TaskFlowCall12</property>
+      <property
+         name="activityId">price-editing-flow</property>
+      <property
+         name="documentReference">/WEB-INF/price-editing-flow.xml</property>
+      <property
+         name="runAsDialog">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>price-editing-flow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="rawDescription">task-flow-call - price-editing-flow</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">307.5</property>
+      <property
+         name="x">439.35156</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase13"
+      from="View5"
+      to="TaskFlowCall12">
+      <property
+         name="id">ControlFlowCase13</property>
+      <property
+         name="fromOutcome">loggedIn</property>
+      <property
+         name="sdm:polyPoints">R50,182.0,309.6494,398.35156,307.1494,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall12">
+      <property
+         name="activityId">logout</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>logout&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="rawDescription">method-call - logout</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">463.0</property>
+      <property
+         name="x">325.0</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase14"
+      from="TaskFlowCall12"
+      to="MethodCall12">
+      <property
+         name="fromOutcome">priceEditsComplete</property>
+      <property
+         name="sdm:polyPoints">B50,439.35156,361.1494,325.0,408.6494,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase15"
+      from="MethodCall12"
+      to="View5">
+      <property
+         name="fromOutcome">restart</property>
+      <property
+         name="sdm:polyPoints">L50,284.0,462.6494,144.5,363.6494,B56</property>
+   </ControlFlowCase>
+</SDM>

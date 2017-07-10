@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='US-ASCII'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=US-ASCII"/>
+  <f:view>
+    <af:document title="#{res['login.title']}" id="d1">
+        <af:pageTemplate viewId="/templates/StoreFrontTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="ptemp">
+          <f:facet name="center">
+            <af:panelGroupLayout layout="horizontal" valign="middle"
+                                 halign="center" id="pgl1">
+              <!-- main body -->
+            <af:panelBox text="#{res['global.login.header']}"
+                         inlineStyle="width:260px;" id="pb1">
+              <af:spacer height="1px" width="240px" id="s1"/>
+              <f:verbatim>
+                <form action="j_security_check" method="POST">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Username
+                        </td>
+                        <td>
+                          <input type="text" id="j_username" name="j_username"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                            Password
+                        </td>
+                        <td>
+                          <input type="password" id="j_password"
+                                 name="j_password"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" colspan="2">
+                          <input id="login" type="submit" value="Log In" onclick="this.disabled=true; this.form.submit();" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </f:verbatim>
+              <!--af:form-->
+                <af:panelGroupLayout halign="end" id="pgl2">
+                <af:separator inlineStyle="width:250px;" id="s2"/>
+                   <af:goLink destination="#{navigationBean.createAccountURL}"
+                                 text="#{res['global.login.newuser']}"
+                                 inlineStyle="outline-style:none; border-style:hidden;"
+                              id="gl1"/>
+                   <af:spacer height="20px" id="s3"/>                                 
+                   <af:goLink text=">> #{res['global.login.continue']}" destination="#{navigationBean.homeURL}"
+                              id="gl2"/>
+                  <f:facet name="separator">
+                    <af:spacer height="5px" id="s4"/>
+                  </f:facet>
+                </af:panelGroupLayout>
+            </af:panelBox>
+          </af:panelGroupLayout>
+          </f:facet>
+        <f:facet name="start">
+          <af:spacer width="10" height="10" id="s5"/>
+        </f:facet>
+        <f:facet name="end">
+                <af:panelGroupLayout halign="center" valign="middle"
+                                 layout="vertical" id="pgl3">
+                <af:panelLabelAndMessage label="#{res['login.usertype.header']}"
+                                         id="plam1"/>
+            <af:separator id="s7"/>
+            <af:panelFormLayout id="pfl1">
+              <af:panelLabelAndMessage label="#{res['login.usertype.cust']}" id="plam4"/>
+              <af:panelLabelAndMessage label="#{res['login.username']}" id="plam2">
+                  <af:outputText value="#{res['login.usertype.cust.username']}" id="ot1"/>
+                </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{res['login.password']}" id="plam3">
+                <af:outputText value="welcome1" id="ot2"/>
+                </af:panelLabelAndMessage>
+              </af:panelFormLayout>
+            <af:spacer width="10" height="10" id="s6"/>
+            <af:panelFormLayout id="panelFormLayout1">
+              <af:panelLabelAndMessage id="outputLabel1"
+                                       label="#{res['login.usertype.staff']}"/>
+              <af:panelLabelAndMessage label="#{res['login.username']}"
+                                       id="panelLabelAndMessage1">
+                <af:outputText value="#{res['login.usertype.staff.username']}"
+                               id="outputText1"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{res['login.password']}"
+                                       id="panelLabelAndMessage2">
+                <af:outputText value="welcome1" id="outputText2"/>
+              </af:panelLabelAndMessage>
+            </af:panelFormLayout>
+            <af:spacer width="10" height="10" id="s8"/>
+            <af:panelFormLayout id="panelFormLayout2">
+              <af:panelLabelAndMessage id="outputLabel2"
+                                       label="#{res['login.usertype.supp']}"/>
+              <af:panelLabelAndMessage label="#{res['login.username']}"
+                                       id="panelLabelAndMessage3">
+                <af:outputText value="#{res['login.usertype.supp.username']}"
+                               id="outputText3"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{res['login.password']}"
+                                       id="panelLabelAndMessage4">
+                <af:outputText value="welcome1" id="outputText4"/>
+              </af:panelLabelAndMessage>
+            </af:panelFormLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:pageTemplate>
+    </af:document>
+  </f:view>
+</jsp:root>

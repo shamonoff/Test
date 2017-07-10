@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.65" id="PriceListSummaryPageDef"
+                Package="secured">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="MasterPriceListServiceDataControl"
+                     Binds="searchTerm" Name="ProductQuery_searchTerm"
+                     IsQueriable="false"/>
+      <variableUsage DataControl="MasterPriceListServiceDataControl"
+                     Binds="categoryId"
+                     Name="executeAdvancedProductQuery_categoryId"
+                     IsQueriable="false"/>
+      <variableUsage DataControl="MasterPriceListServiceDataControl"
+                     Binds="includeDiscontinued"
+                     Name="executeAdvancedProductQuery_includeDiscontinued"
+                     IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="ProductCategories" RangeSize="-1"
+              DataControl="MasterPriceListServiceDataControl"
+              id="ProductCategoriesIterator"/>
+    <iterator Binds="ActiveDiscounts" RangeSize="25"
+              DataControl="MasterPriceListServiceDataControl"
+              id="ActiveDiscountsIterator"/>
+    <searchRegion Binds="ActiveDiscountsIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ActiveDiscountsQuery"/>
+    <iterator Binds="ProductList" RangeSize="25"
+              DataControl="MasterPriceListServiceDataControl"
+              id="ProductListIterator" Refresh="ifNeeded"/>
+    <iterator Binds="ProductSalesByMonth" RangeSize="-1"
+              DataControl="MasterPriceListServiceDataControl"
+              id="ProductSalesByMonthIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="executeSimpleProductQuery" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="executeSimpleProductQuery"
+                  IsViewObjectMethod="true"
+                  DataControl="MasterPriceListServiceDataControl"
+                  InstanceName="MasterPriceListServiceDataControl.ProductList">
+      <NamedData NDName="searchTerm" NDType="java.lang.String"
+                 NDValue="${ProductQuery_searchTerm}"/>
+      <NamedData NDName="includeDiscontinued" NDType="java.lang.Boolean"
+                 NDValue="${sessionUIFlags.ShowDiscontinuedProducts}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="searchTerm">
+      <AttrNames>
+        <Item Value="ProductQuery_searchTerm"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="executeAdvancedProductQuery" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="executeAdvancedProductQuery"
+                  IsViewObjectMethod="true"
+                  DataControl="MasterPriceListServiceDataControl"
+                  InstanceName="MasterPriceListServiceDataControl.ProductList"
+                  IterBinding="ProductListIterator">
+      <NamedData NDName="searchTerm" NDValue="${ProductQuery_searchTerm}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="categoryId"
+                 NDValue="${executeAdvancedProductQuery_categoryId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="includeDiscontinued"
+                 NDValue="${sessionUIFlags.ShowDiscontinuedProducts}"
+                 NDType="java.lang.Boolean"/>
+    </methodAction>
+    <list StaticList="false" IterBinding="variables"
+          ListIter="ProductCategoriesIterator" id="categoryId">
+      <AttrNames>
+        <Item Value="executeAdvancedProductQuery_categoryId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="CategoryId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="CategoryName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <tree IterBinding="ActiveDiscountsIterator" id="ActiveDiscounts">
+      <nodeDefinition DefName="oracle.foddemo.masterpricelist.model.queries.ActiveDiscountsVO"
+                      Name="ActiveDiscounts.0">
+        <AttrNames>
+          <Item Value="EasyCode"/>
+          <Item Value="Description"/>
+          <Item Value="DiscountAmount"/>
+          <Item Value="ApplyAsPercentageFlag"/>
+          <Item Value="AddFreeShippingFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="MasterPriceListServiceDataControl"/>
+    <attributeValues IterBinding="ProductListIterator" id="ProductId">
+      <AttrNames>
+        <Item Value="ProductId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductListIterator" id="ProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductListIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ProductListIterator" StaticList="false"
+          Uses="LOV_SupplierId" id="SupplierId" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="ProductListIterator" id="CostPrice">
+      <AttrNames>
+        <Item Value="CostPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductListIterator" id="MinPrice">
+      <AttrNames>
+        <Item Value="MinPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductListIterator" id="ListPrice">
+      <AttrNames>
+        <Item Value="ListPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductListIterator" id="Margin">
+      <AttrNames>
+        <Item Value="Margin"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ProductListIterator" StaticList="false"
+          Uses="LOV_ProductStatus" id="ProductStatus" DTSupportsMRU="false"
+          NullValueFlag="none"/>
+    <graph IterBinding="ProductSalesByMonthIterator" id="ProductSalesByMonth"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap leafOnly="true">
+        <groups>
+          <nodeDefinition DefName="oracle.foddemo.masterpricelist.model.queries.ProductSalesByMonth">
+            <AttrNames>
+              <Item type="value" Value="Salemonth"/>
+              <Item type="data" Value="Sales"/>
+            </AttrNames>
+          </nodeDefinition>
+        </groups>
+        <series/>
+        <data>
+          <item value="Sales"/>
+        </data>
+      </graphDataMap>
+    </graph>
+    <tree IterBinding="ProductListIterator" id="ProductList">
+      <nodeDefinition DefName="oracle.foddemo.masterpricelist.model.queries.ProductsVO"
+                      Name="ProductList.0">
+        <AttrNames>
+          <Item Value="ProductId"/>
+          <Item Value="ProductName"/>
+          <Item Value="Description"/>
+          <Item Value="ProductStatus"/>
+          <Item Value="SupplierName"/>
+          <Item Value="CostPrice"/>
+          <Item Value="MinPrice"/>
+          <Item Value="ListPrice"/>
+          <Item Value="Margin"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ProductListIterator" id="SupplierName">
+      <AttrNames>
+        <Item Value="SupplierName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

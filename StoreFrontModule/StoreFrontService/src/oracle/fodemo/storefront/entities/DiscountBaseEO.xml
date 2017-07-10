@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DiscountBaseEO"
+  DBObjectType="table"
+  DBObjectName="DISCOUNTS_BASE"
+  AliasName="DiscountBaseEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  Version="11.1.1.48.80">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="DiscountId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="DISCOUNT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="DISCOUNTS_BASE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DiscountId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DiscountTypeCode"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="DISCOUNT_TYPE_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DiscountTypeCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DiscountAmount"
+    IsNotNull="true"
+    ColumnName="DISCOUNT_AMOUNT"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <RangeValidationBean
+      xmlns="http://xmlns.oracle.com/adfm/validation"
+      Name="DiscountAmount_Rule_0"
+      ResId="DiscountAmount_RangeError_0"
+      OnAttribute="DiscountAmount"
+      OperandType="LITERAL"
+      Inverse="false"
+      MinValue="0"
+      MaxValue="40"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DiscountAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ApplyAsPercentageFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="APPLY_AS_PERCENTAGE_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ApplyAsPercentageFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="EasyCode"
+    Precision="20"
+    ColumnName="EASY_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="EasyCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AddFreeShippingFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ADD_FREE_SHIPPING_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="AddFreeShippingFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="OnetimeDiscountFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ONETIME_DISCOUNT_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="OnetimeDiscountFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="DISCOUNTS_BASE"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="DISCOUNTS_BASE"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="DISCOUNTS_BASE"
+    ChangeIndicator="true"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="CouponUsage"
+    Association="oracle.fodemo.storefront.entities.associations.CouponUsagesDiscountsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.CouponUsagesDiscountsFkAssoc.CouponUsage"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.CouponUsagesDiscountsFkAssoc.DiscountBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="DiscountTranslation"
+    Association="oracle.fodemo.storefront.entities.associations.DiscountTranslationsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.DiscountTranslationsFkAssoc.DiscountTranslation"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.DiscountTranslationsFkAssoc.DiscountBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="EligibleDiscount"
+    Association="oracle.fodemo.storefront.entities.associations.EligibleDiscountsFk1Assoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.EligibleDiscountsFk1Assoc.EligibleDiscount"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.EligibleDiscountsFk1Assoc.DiscountBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Order"
+    Association="oracle.fodemo.storefront.entities.associations.OrdersDiscountsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.OrdersDiscountsFkAssoc.Order"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.OrdersDiscountsFkAssoc.DiscountBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Order1"
+    Association="oracle.fodemo.storefront.entities.associations.OrdersDiscountsFk1Assoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.OrdersDiscountsFk1Assoc.Order1"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.OrdersDiscountsFk1Assoc.DiscountBase1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="DiscountAsPercentageChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCOUNT_AS_PERCENTAGE_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition"
+        Value="APPLY_AS_PERCENTAGE_FLAG in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.ApplyAsPercentageFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DiscountsFreeShippingChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCOUNTS_FREE_SHIPPING_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value="ADD_FREE_SHIPPING_FLAG in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.AddFreeShippingFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DiscountsOnetimeChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCOUNTS_ONETIME_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value="ONETIME_DISCOUNT_FLAG in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.OnetimeDiscountFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DiscountsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCOUNTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.DiscountId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055230">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055230"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"DISCOUNT_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.DiscountId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055231">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055231"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"DISCOUNT_TYPE_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.DiscountTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055232">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055232"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"DISCOUNT_AMOUNT" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.DiscountAmount"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055233">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055233"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition"
+        Value='"APPLY_AS_PERCENTAGE_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.ApplyAsPercentageFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055234">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055234"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition"
+        Value='"ADD_FREE_SHIPPING_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.AddFreeShippingFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055235">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055235"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ONETIME_DISCOUNT_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.OnetimeDiscountFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055236">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055236"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.DiscountBaseEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055237">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055237"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055238">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055238"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055239">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055239"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055240">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055240"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.DiscountBaseEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.DiscountBaseEOMsgBundle"/>
+  </ResourceBundle>
+</Entity>

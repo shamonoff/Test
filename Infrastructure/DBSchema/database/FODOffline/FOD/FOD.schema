@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+    <ID><![CDATA[b628cc3c-0112-1000-8006-8223672b1417]]></ID>
+    <type><![CDATA[SCHEMA]]></type>
+  </ID>
+  <name><![CDATA[FOD]]></name>
+</schema>

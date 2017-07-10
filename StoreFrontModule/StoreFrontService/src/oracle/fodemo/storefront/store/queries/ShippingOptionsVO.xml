@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ShippingOptionsVO"
+  SelectList="ShippingOptionBaseEO.SHIPPING_OPTION_ID, 
+       ShippingOptionBaseEO.COUNTRY_CODE, 
+       ShippingOptionBaseEO.COST_PER_CLASS1_ITEM, 
+       ShippingOptionBaseEO.COST_PER_CLASS2_ITEM, 
+       ShippingOptionBaseEO.COST_PER_CLASS3_ITEM, 
+       ShippingOptionBaseEO.FREE_SHIPPING_ALLOWED_FLAG, 
+       ShippingOptionBaseEO.OBJECT_VERSION_ID, 
+       ShippingOptionTranslationEO.SHIPPING_TRANSLATIONS_ID, 
+       ShippingOptionTranslationEO.SHIPPING_OPTION_ID AS SHIPPING_OPTION_ID1, 
+       ShippingOptionTranslationEO.SHIPPING_METHOD, 
+       ShippingOptionTranslationEO.OBJECT_VERSION_ID AS OBJECT_VERSION_ID1"
+  FromList="SHIPPING_OPTIONS_BASE ShippingOptionBaseEO, SHIPPING_OPTION_TRANSLATIONS ShippingOptionTranslationEO"
+  Where="ShippingOptionBaseEO.SHIPPING_OPTION_ID = ShippingOptionTranslationEO.SHIPPING_OPTION_ID AND
+ShippingOptionTranslationEO.LANGUAGE = USERENV('CLIENT_INFO')"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  Version="11.1.1.52.10"
+  FetchMode="FETCH_AS_NEEDED"
+  FetchSize="26">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="ShippingOptionBaseEO"
+    Entity="oracle.fodemo.storefront.entities.ShippingOptionBaseEO"
+    JoinType="INNER JOIN"/>
+  <EntityUsage
+    Name="ShippingOptionTranslationEO"
+    Entity="oracle.fodemo.storefront.entities.ShippingOptionTranslationEO"
+    Association="oracle.fodemo.storefront.entities.associations.ShippingOptionTranslationFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ShippingOptionTranslationFkAssoc.ShippingOptionTranslation"
+    SourceUsage="oracle.fodemo.storefront.store.queries.ShippingOptionsVO.ShippingOptionBaseEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN"/>
+  <ViewAttribute
+    Name="ShippingOptionId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ShippingOptionId"
+    EntityUsage="ShippingOptionBaseEO"
+    AliasName="SHIPPING_OPTION_ID"/>
+  <ViewAttribute
+    Name="CountryCode"
+    PrecisionRule="true"
+    EntityAttrName="CountryCode"
+    EntityUsage="ShippingOptionBaseEO"
+    AliasName="COUNTRY_CODE"/>
+  <ViewAttribute
+    Name="CostPerClass1Item"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CostPerClass1Item"
+    EntityUsage="ShippingOptionBaseEO"
+    AliasName="COST_PER_CLASS1_ITEM"/>
+  <ViewAttribute
+    Name="CostPerClass2Item"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CostPerClass2Item"
+    EntityUsage="ShippingOptionBaseEO"
+    AliasName="COST_PER_CLASS2_ITEM"/>
+  <ViewAttribute
+    Name="CostPerClass3Item"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CostPerClass3Item"
+    EntityUsage="ShippingOptionBaseEO"
+    AliasName="COST_PER_CLASS3_ITEM"/>
+  <ViewAttribute
+    Name="FreeShippingAllowedFlag"
+    PrecisionRule="true"
+    EntityAttrName="FreeShippingAllowedFlag"
+    EntityUsage="ShippingOptionBaseEO"
+    AliasName="FREE_SHIPPING_ALLOWED_FLAG"/>
+  <ViewAttribute
+    Name="ObjectVersionId"
+    IsUpdateable="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ObjectVersionId"
+    EntityUsage="ShippingOptionBaseEO"
+    AliasName="OBJECT_VERSION_ID"/>
+  <ViewAttribute
+    Name="ShippingTranslationsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ShippingTranslationsId"
+    EntityUsage="ShippingOptionTranslationEO"
+    AliasName="SHIPPING_TRANSLATIONS_ID"/>
+  <ViewAttribute
+    Name="ShippingOptionId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ShippingOptionId"
+    EntityUsage="ShippingOptionTranslationEO"
+    AliasName="SHIPPING_OPTION_ID1"/>
+  <ViewAttribute
+    Name="ShippingMethod"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ShippingMethod"
+    EntityUsage="ShippingOptionTranslationEO"
+    AliasName="SHIPPING_METHOD"/>
+  <ViewAttribute
+    Name="ObjectVersionId1"
+    IsUpdateable="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ObjectVersionId"
+    EntityUsage="ShippingOptionTranslationEO"
+    AliasName="OBJECT_VERSION_ID1"/>
+</ViewObject>

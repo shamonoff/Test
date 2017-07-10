@@ -1,0 +1,1191 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <name>MEMBERSHIPS</name>
+    <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+    <schemaName>FOD</schemaName>
+    <type>VIEW</type>
+  </ID>
+  <name>MEMBERSHIPS</name>
+  <SQLQuery class="oracle.javatools.db.ora.OracleSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>SQLQuery</name>
+      <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+      <parent class="oracle.javatools.db.IdentifierBasedID">
+        <name>MEMBERSHIPS</name>
+        <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+        <schemaName>FOD</schemaName>
+        <type>VIEW</type>
+      </parent>
+      <schemaName>FOD</schemaName>
+      <type>SQLQuery</type>
+    </ID>
+    <distinct>false</distinct>
+    <distinctSource></distinctSource>
+    <fromObjects>
+      <fromObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>MEMBERSHIP_TRANSLATIONS INNER JOIN MEMBERSHIPS_BASE USING (MEMBERSHIP_ID)</name>
+          <identifier class="java.lang.String">8af98a83-b5d5-4208-b154-6087f7706b5e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>FROM</type>
+        </ID>
+        <expression class="oracle.javatools.db.sql.JoinObject">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">76e470d8-d57c-43df-a0a6-003b07cf9b2f</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <condition class="oracle.javatools.db.sql.UsingJoinCondition">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">74c1d06c-32ed-48a4-b690-089da2aa177a</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>MEMBERSHIPS</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <columns>
+              <column class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">f51f66ee-8d10-4e3b-9ec8-db180983573f</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>MEMBERSHIPS</name>
+                      <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>MEMBERSHIPS_BASE</name>
+                  <identifier class="java.lang.String">3179a1ed-1071-4ea6-baef-8c4b2eb3b010</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>MEMBERSHIPS</name>
+                      <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>MEMBERSHIP_ID</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-80be-8223672bff0d</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">b63b5802-0112-1000-80bd-8223672bff0d</identifier>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>false</qualified>
+              </column>
+            </columns>
+          </condition>
+          <includeJoinKeyword>true</includeJoinKeyword>
+          <joinType>INNER</joinType>
+          <leftExpression>
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIP_TRANSLATIONS</name>
+              <identifier class="java.lang.String">7fa418ed-378e-42eb-b6dc-c9068b98a8a3</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>MEMBERSHIPS</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </ID>
+            <expression class="oracle.javatools.db.sql.RelationUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">4af88a60-d1e3-4603-8e64-39659c36640e</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SQLQuery</name>
+                  <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>MEMBERSHIPS</name>
+                    <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                    <schemaName>FOD</schemaName>
+                    <type>VIEW</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLQuery</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLFragment</type>
+              </ID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIP_TRANSLATIONS</name>
+                <identifier class="java.lang.String">b63b5802-0112-1000-8058-8223672bff0d</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </objectID>
+            </expression>
+          </leftExpression>
+          <natural>false</natural>
+          <rightExpression>
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS_BASE</name>
+              <identifier class="java.lang.String">3179a1ed-1071-4ea6-baef-8c4b2eb3b010</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>MEMBERSHIPS</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </ID>
+            <expression class="oracle.javatools.db.sql.RelationUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">befed8b7-5cad-44e7-9c9d-90b96f7bf7f6</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SQLQuery</name>
+                  <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>MEMBERSHIPS</name>
+                    <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                    <schemaName>FOD</schemaName>
+                    <type>VIEW</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLQuery</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLFragment</type>
+              </ID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS_BASE</name>
+                <identifier class="java.lang.String">b63b5802-0112-1000-80bd-8223672bff0d</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </objectID>
+            </expression>
+          </rightExpression>
+        </expression>
+      </fromObject>
+    </fromObjects>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>MEMBERSHIP_ID</name>
+          <identifier class="java.lang.String">8bdb7d7d-f2b3-49b4-931a-1c472ab48f25</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>MEMBERSHIP_ID</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">9203af9e-f713-487f-a7d2-1960b92ea9c0</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIPS_BASE</name>
+            <identifier class="java.lang.String">3179a1ed-1071-4ea6-baef-8c4b2eb3b010</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIP_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80be-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-80bd-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>false</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>MEMBERSHIP_TYPE_CODE</name>
+          <identifier class="java.lang.String">709d2f27-bd73-45b3-bf26-2971c9ce36b0</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>MEMBERSHIP_TYPE_CODE</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">3fc59803-7d44-404b-9c38-1707ba8850d9</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIPS_BASE</name>
+            <identifier class="java.lang.String">3179a1ed-1071-4ea6-baef-8c4b2eb3b010</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIP_TYPE_CODE</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80bf-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-80bd-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>MEMBERSHIP_NAME</name>
+          <identifier class="java.lang.String">286a18c3-dcd0-4735-9928-e167d3f13e44</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>MEMBERSHIP_NAME</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">ebea87e8-c1a7-4d3a-9757-0983b18b0a6b</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIP_TRANSLATIONS</name>
+            <identifier class="java.lang.String">7fa418ed-378e-42eb-b6dc-c9068b98a8a3</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIP_NAME</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-805b-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-8058-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>DESCRIPTION</name>
+          <identifier class="java.lang.String">90d48c12-f66d-4b9e-a7df-2b0a5f0ce6fe</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>DESCRIPTION</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">1350c7e8-fac0-4626-a5e3-9cc67746bde3</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIP_TRANSLATIONS</name>
+            <identifier class="java.lang.String">7fa418ed-378e-42eb-b6dc-c9068b98a8a3</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>DESCRIPTION</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-805c-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-8058-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CONTACT_ID</name>
+          <identifier class="java.lang.String">0ad1c831-9727-45fb-993a-80b9f655fcbb</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>CONTACT_ID</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">cc137f43-7c6b-4fd4-89b5-73eac643d152</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIPS_BASE</name>
+            <identifier class="java.lang.String">3179a1ed-1071-4ea6-baef-8c4b2eb3b010</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>CONTACT_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80c0-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-80bd-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <whereObject>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">468102b1-66c5-4fe0-b425-6dc668e99481</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIPS</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>WHERE</type>
+      </ID>
+      <arguments>
+        <argument class="oracle.javatools.db.sql.Comparison">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">0f99df56-1e3e-41c3-a436-67d41fe653a5</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MEMBERSHIPS</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <comparator>5</comparator>
+          <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">1e267296-3035-44ca-a656-ee3b68247cfe</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>MEMBERSHIPS</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIP_TRANSLATIONS</name>
+              <identifier class="java.lang.String">7fa418ed-378e-42eb-b6dc-c9068b98a8a3</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>MEMBERSHIPS</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </fromObjectID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>LANGUAGE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-805d-8223672bff0d</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">b63b5802-0112-1000-8058-8223672bff0d</identifier>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </leftExpression>
+          <rightExpression class="oracle.javatools.db.sql.Function">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">70f732f0-ecb7-4abb-a234-ddd788492237</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>MEMBERSHIPS</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">8fb27deb-e46c-4372-9f8e-8548285d6862</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>MEMBERSHIPS</name>
+                      <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;USERENV&apos;</SQLText>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">a73cd0aa-0b2d-467b-909e-a4d55018094a</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>MEMBERSHIPS</name>
+                      <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;LANG&apos;</SQLText>
+              </argument>
+            </arguments>
+            <distinct>false</distinct>
+            <function>SYS_CONTEXT</function>
+            <grouping>false</grouping>
+            <separator>, </separator>
+          </rightExpression>
+        </argument>
+      </arguments>
+      <operator>372</operator>
+    </whereObject>
+  </SQLQuery>
+  <columns>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>MEMBERSHIP_ID</name>
+        <identifier class="java.lang.String">df84e0e4-3a80-4313-be08-692bd9bd8a98</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>MEMBERSHIPS</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>MEMBERSHIP_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4674c4d3-4f2e-425a-82a3-a4e09b467ee8</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIP_ID</name>
+            <identifier class="java.lang.String">df84e0e4-3a80-4313-be08-692bd9bd8a98</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>MEMBERSHIP_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MEMBERSHIPS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20875</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>MEMBERSHIP_ID</name>
+        <identifier class="java.lang.String">8bdb7d7d-f2b3-49b4-931a-1c472ab48f25</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIPS</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>MEMBERSHIP_TYPE_CODE</name>
+        <identifier class="java.lang.String">d5cbb16a-1b60-4415-865b-c9313beabb8d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>MEMBERSHIPS</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>MEMBERSHIP_TYPE_CODE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f83ac65e-0506-4222-894d-673794a3c8f7</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIP_TYPE_CODE</name>
+            <identifier class="java.lang.String">d5cbb16a-1b60-4415-865b-c9313beabb8d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>MEMBERSHIP_TYPE_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MEMBERSHIPS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20875</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>MEMBERSHIP_TYPE_CODE</name>
+        <identifier class="java.lang.String">709d2f27-bd73-45b3-bf26-2971c9ce36b0</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIPS</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>MEMBERSHIP_NAME</name>
+        <identifier class="java.lang.String">a1ae37ab-948e-421c-82c7-7f733828c6cd</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>MEMBERSHIPS</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>MEMBERSHIP_NAME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">161a1e3e-a1c8-4028-998d-00d278461488</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIP_NAME</name>
+            <identifier class="java.lang.String">a1ae37ab-948e-421c-82c7-7f733828c6cd</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">120</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>MEMBERSHIP_NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MEMBERSHIP_TRANSLATIONS</name>
+                  <identifier class="java.math.BigDecimal">20884</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>MEMBERSHIP_NAME</name>
+        <identifier class="java.lang.String">286a18c3-dcd0-4735-9928-e167d3f13e44</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIPS</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DESCRIPTION</name>
+        <identifier class="java.lang.String">3f8baa7d-b143-4160-92bb-416d0458a1a6</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>MEMBERSHIPS</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>DESCRIPTION</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b187c07b-8bd1-4af1-9b8c-f7a90bd38ef5</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>DESCRIPTION</name>
+            <identifier class="java.lang.String">3f8baa7d-b143-4160-92bb-416d0458a1a6</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">2000</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DESCRIPTION</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MEMBERSHIP_TRANSLATIONS</name>
+                  <identifier class="java.math.BigDecimal">20884</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DESCRIPTION</name>
+        <identifier class="java.lang.String">90d48c12-f66d-4b9e-a7df-2b0a5f0ce6fe</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIPS</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CONTACT_ID</name>
+        <identifier class="java.lang.String">d5bad349-ec4f-47a3-802d-cf20b4d1c610</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>MEMBERSHIPS</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>CONTACT_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">bfd20bfa-58b8-4557-8261-2b1d0d53dc8b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CONTACT_ID</name>
+            <identifier class="java.lang.String">d5bad349-ec4f-47a3-802d-cf20b4d1c610</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>MEMBERSHIPS</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CONTACT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MEMBERSHIPS_BASE</name>
+                  <identifier class="java.math.BigDecimal">20875</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CONTACT_ID</name>
+        <identifier class="java.lang.String">0ad1c831-9727-45fb-993a-80b9f655fcbb</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">08d59413-40f4-4073-a408-62be9490fdd9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MEMBERSHIPS</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80d4-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">FOD</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>MEMBERSHIPS</name>
+        <identifier class="java.math.BigDecimal">20922</identifier>
+        <schemaName>FOD</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+      <value class="java.lang.Long">1233768290000</value>
+    </entry>
+  </properties>
+  <schema>
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>FOD</name>
+      <identifier class="java.lang.String">b628cc3c-0112-1000-8006-8223672b1417</identifier>
+      <type>SCHEMA</type>
+    </ID>
+    <name>FOD</name>
+  </schema>
+</view>

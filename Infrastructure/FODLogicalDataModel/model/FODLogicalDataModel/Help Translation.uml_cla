@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:61b7ad19-ddec-4e74-8985-d40e4dc91359'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Help Translation'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:f986bf99-f2e7-447d-9009-6b0e5fd5325e'>
+   <general href='urn:uuid:5d1c5595-fc45-4251-b547-71d80491c104'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>

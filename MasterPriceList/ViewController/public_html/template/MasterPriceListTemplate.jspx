@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <af:pageTemplateDef var="attrs">
+    <af:panelGroupLayout id="ptpgl1">
+    <af:panelStretchLayout id="ptpsl1"
+                           inlineStyle="width:100%; height:800.0px;">
+      <f:facet name="center">
+        <af:panelSplitter orientation="vertical" splitterPosition="30"
+                          id="ptps1" inlineStyle="width:100.0%;">
+          <f:facet name="first">
+            <af:panelStretchLayout startWidth="0" id="ptpsl2">
+              <f:facet name="center">
+            <af:panelBorderLayout id="ptpbl1">
+              <f:facet name="start">
+                <af:panelGroupLayout layout="vertical" id="ptpgl2">
+                  <af:spacer height="4" id="pts1"/>
+                  <af:panelGroupLayout id="ptpgl3">
+                    <af:spacer width="10" id="pts2"/>
+                    <af:image source="/images/brandingImage.gif" shortDesc="#{res['template.branding.description']}"
+                              id="pti1"/>
+                  </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                  </f:facet>
+              <f:facet name="end">
+                <af:panelGroupLayout layout="horizontal" id="ptpgl4">
+                   <af:panelGroupLayout layout="horizontal"
+                                        id="ptpgl5"
+                                        rendered="#{securityContext.authenticated}">
+                     <af:outputText value="#{res['template.loggedin.label']}"
+                                    id="ptot1"/>
+                     <af:outputText value="#{securityContext.userName}" id="ptot2"/> 
+                     <af:spacer width="10" id="pts3"/>
+                     <af:commandImageLink text="#{res['template.logout']}"
+                                        icon="/images/groupdisconnect_ena.png"
+                                        hoverIcon="/images/groupdisconnect_ovr.png"
+                                        disabledIcon="/images/groupdisconnect_dis.png"
+                                        depressedIcon="/images/groupdisconnect_dwn.png"
+                                          id="ptcil1"
+                                          action="#{loginBean.doLogout}"/>
+                     <f:facet name="separator">
+                       <af:spacer width="4" id="pts4"/>
+                     </f:facet>
+                   </af:panelGroupLayout>
+                   <af:statusIndicator shortDesc="#{res['template.working']}"
+                                       id="ptsi1"/>
+                   <f:facet name="separator">
+                     <af:spacer width="20" id="pts5"/>
+                   </f:facet>
+                </af:panelGroupLayout>
+              </f:facet>
+                  <af:spacer width="10" height="10" id="pts6"/>
+                  <af:outputFormatted value="#{res['template.header']}"
+                                      styleUsage="pageStamp" id="ptof1"/>
+                </af:panelBorderLayout>
+            </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+          <f:facet name="second">
+              <af:facetRef facetName="content"/>
+          </f:facet>
+        </af:panelSplitter>
+      </f:facet>
+      <f:facet name="start"/>
+      <f:facet name="end"/>
+    </af:panelStretchLayout>
+    </af:panelGroupLayout>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>MasterPriceListTemplate</display-name>
+        <facet>
+          <description>All content will be in this area</description>
+          <facet-name>content</facet-name>
+        </facet>
+      </component>
+    </af:xmlContent>
+  </af:pageTemplateDef>
+</jsp:root>

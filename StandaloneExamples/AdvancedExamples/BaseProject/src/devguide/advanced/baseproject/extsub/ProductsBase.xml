@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductsBase"
+  DBObjectType="table"
+  DBObjectName="PRODUCTS_BASE"
+  AliasName="ProductsBase"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="devguide.advanced.baseproject.extsub.ProductsBaseImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_version" Value="11.1.1.46.77"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ProductId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="PRODUCT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCTS_BASE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProductName"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="PRODUCT_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CheckSum"
+    IsQueriable="false"
+    IsPersistent="false"
+    ColumnName="$none$"
+    Type="java.lang.String"
+    ColumnType="$none$"
+    SQLType="VARCHAR"/>
+  <Key
+    Name="ProductsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.baseproject.extsub.ProductsBase.ProductId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068353">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068353"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.baseproject.extsub.ProductsBase.ProductId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068355">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068355"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_NAME" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.baseproject.extsub.ProductsBase.ProductName"/>
+    </AttrArray>
+  </Key>
+</Entity>

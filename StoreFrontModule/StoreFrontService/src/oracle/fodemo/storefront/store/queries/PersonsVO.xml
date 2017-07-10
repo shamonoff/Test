@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject xmlns="http://xmlns.oracle.com/bc4j" Name="PersonsVO"
+   SelectList="PersonEO.TITLE, 
+       PersonEO.PERSON_ID, 
+       PersonEO.LAST_NAME, 
+       PersonEO.PRINCIPAL_NAME, 
+       PersonEO.PROVISIONED_FLAG, 
+       PersonEO.FIRST_NAME, 
+       PersonEO.REGISTERED_DATE, 
+       PersonEO.PERSON_TYPE_CODE, 
+       PersonEO.EMAIL, 
+       PersonEO.PRIMARY_ADDRESS_ID, 
+       PersonEO.PHONE_NUMBER, 
+       PersonEO.MEMBERSHIP_ID, 
+       PersonEO.CREDIT_LIMIT, 
+       PersonEO.CONFIRMED_EMAIL, 
+       PersonEO.MARITAL_STATUS_CODE, 
+       PersonEO.MOBILE_PHONE_NUMBER, 
+       PersonEO.CHILDREN_UNDER_18, 
+       PersonEO.DATE_OF_BIRTH, 
+       PersonEO.CONTACT_METHOD_CODE, 
+       PersonEO.GENDER, 
+       PersonEO.CONTACT_BY_AFFILLIATES_FLAG, 
+       PersonEO.APPROXIMATE_INCOME, 
+       CustomerInterestEO.CUSTOMER_INTERESTS_ID, 
+       PersonEO.CONTACTABLE_FLAG, 
+       AddressEO.ADDRESS_ID, 
+       CustomerInterestEO.CUSTOMER_ID, 
+       AddressEO.ADDRESS2, 
+       CustomerInterestEO.CATEGORY_ID, 
+       AddressEO.POSTAL_CODE, 
+       AddressEO.ADDRESS1, 
+       AddressEO.COUNTRY_ID, 
+       AddressEO.CITY, 
+       AddressEO.LATITUDE, 
+       AddressEO.STATE_PROVINCE, 
+       AddressEO.LONGITUDE, 
+       AddressEO.OBJECT_VERSION_ID"
+   FromList="CUSTOMER_INTERESTS CustomerInterestEO, PERSONS PersonEO, ADDRESSES AddressEO, ADDRESS_USAGES AddressUsageEO"
+   Where="(CustomerInterestEO.CUSTOMER_ID(+) = PersonEO.PERSON_ID) AND (PersonEO.PERSON_ID = AddressUsageEO.ASSOCIATED_OWNER_ID) AND
+(AddressUsageEO.Address_id = AddressEO.ADDRESS_ID) AND (AddressEO.ADDRESS_ID = PersonEO.Primary_Address_id)"
+            BindingStyle="OracleName"
+            ComponentClass="oracle.fodemo.storefront.store.queries.PersonsVOImpl"
+            CustomQuery="false" FetchMode="FETCH_AS_NEEDED" PageIterMode="Full"
+            RowClass="oracle.fodemo.storefront.store.queries.PersonsVORowImpl"
+            UseGlueCode="false"
+   Version="11.1.1.53.91"
+   FetchSize="2"
+   ComponentInterface="oracle.fodemo.storefront.store.queries.common.PersonsVO"
+   ClientProxyName="oracle.fodemo.storefront.store.queries.client.PersonsVOClient">
+   <DesignTime>
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+      <Attr Name="_isCodegen" Value="true"/>
+   </DesignTime>
+   <Variable Name="userPrincipal" Kind="viewcriteria" Type="java.lang.String">
+      <TransientExpression><![CDATA[adf.context.securityContext.userName]]></TransientExpression>
+   </Variable>
+   <ListBinding Name="TitleLOV" ListVOName="PersonEO.PersonTitleTypesVA"
+                ListRangeSize="-1"
+      NullValueFlag="start"
+                NullValueId="LOVUIHints_NullValueId" MRUCount="0">
+      <AttrArray Name="AttrNames">
+         <Item Value="Title"/>
+      </AttrArray>
+      <AttrArray Name="ListAttrNames">
+         <Item Value="Value"/>
+      </AttrArray>
+      <AttrArray Name="ListDisplayAttrNames">
+         <Item Value="Name"/>
+      </AttrArray>
+      <DisplayCriteria/>
+   </ListBinding>
+   <ListBinding Name="GenderLOV" ListVOName="PersonEO.GenderVA"
+                ListRangeSize="-1"
+      NullValueFlag="start"
+                NullValueId="LOVUIHints_NullValueId" MRUCount="0">
+      <AttrArray Name="AttrNames">
+         <Item Value="Gender"/>
+      </AttrArray>
+      <AttrArray Name="ListAttrNames">
+         <Item Value="Value"/>
+      </AttrArray>
+      <AttrArray Name="ListDisplayAttrNames">
+         <Item Value="Name"/>
+      </AttrArray>
+      <DisplayCriteria/>
+   </ListBinding>
+   <ListBinding Name="PersonTypeCodeLOV" ListVOName="PersonEO.PersonTypesVA"
+                ListRangeSize="-1"
+      NullValueFlag="start"
+                NullValueId="LOVUIHints_NullValueId" MRUCount="0">
+      <AttrArray Name="AttrNames">
+         <Item Value="PersonTypeCode"/>
+      </AttrArray>
+      <AttrArray Name="ListAttrNames">
+         <Item Value="Value"/>
+      </AttrArray>
+      <AttrArray Name="ListDisplayAttrNames">
+         <Item Value="Name"/>
+      </AttrArray>
+      <DisplayCriteria/>
+   </ListBinding>
+   <ListBinding Name="MaritalStatusCodeLOV"
+                ListVOName="PersonEO.MaritalStatusVA" ListRangeSize="-1"
+                NullValueFlag="none" NullValueId="LOVUIHints_NullValueId"
+                MRUCount="0">
+      <AttrArray Name="AttrNames">
+         <Item Value="MaritalStatusCode"/>
+      </AttrArray>
+      <AttrArray Name="ListAttrNames">
+         <Item Value="Value"/>
+      </AttrArray>
+      <AttrArray Name="ListDisplayAttrNames">
+         <Item Value="Name"/>
+      </AttrArray>
+      <DisplayCriteria
+         Hint="showAndExecute"/>
+   </ListBinding>
+   <EntityUsage Name="CustomerInterestEO"
+                Entity="oracle.fodemo.storefront.entities.CustomerInterestEO"
+                SourceUsage="oracle.fodemo.storefront.store.queries.PersonsVO.PersonEO"
+                ReadOnly="true" DeleteParticipant="false"/>
+   <EntityUsage Name="PersonEO"
+                Entity="oracle.fodemo.storefront.entities.PersonEO"
+                JoinType="INNER JOIN"
+      Association="oracle.fodemo.storefront.entities.associations.CustomerInterestsPersonFk1Assoc"
+      AssociationEnd="oracle.fodemo.storefront.entities.associations.CustomerInterestsPersonFk1Assoc.Person"
+      SourceUsage="oracle.fodemo.storefront.store.queries.PersonsVO.CustomerInterestEO"
+      ReadOnly="true"
+      DeleteParticipant="false">
+      <DesignTime>
+         <AttrArray Name="_srcAttributes">
+            <Item
+               Value="oracle.fodemo.storefront.entities.CustomerInterestEO.CustomerId"/>
+         </AttrArray>
+         <AttrArray Name="_dstAttributes">
+            <Item Value="oracle.fodemo.storefront.entities.PersonEO.PersonId"/>
+         </AttrArray>
+      </DesignTime>
+   </EntityUsage>
+   <EntityUsage Name="AddressEO"
+                Entity="oracle.fodemo.storefront.entities.AddressEO"
+                SourceUsage="oracle.fodemo.storefront.store.queries.PersonsVO.CustomerInterestEO"
+                ReadOnly="true" Reference="true" DeleteParticipant="false"/>
+   <EntityUsage
+      Name="AddressUsageEO"
+      Entity="oracle.fodemo.storefront.entities.AddressUsageEO"
+      Association="oracle.fodemo.storefront.entities.associations.AddressUsagesPersonsFkAssoc"
+      AssociationEnd="oracle.fodemo.storefront.entities.associations.AddressUsagesPersonsFkAssoc.AddressUsage"
+      SourceUsage="oracle.fodemo.storefront.store.queries.PersonsVO.PersonEO"
+      ReadOnly="true"
+      Reference="true"
+      DeleteParticipant="false"
+      JoinType="INNER JOIN">
+      <DesignTime>
+         <AttrArray Name="_srcAttributes">
+            <Item Value="oracle.fodemo.storefront.entities.PersonEO.PersonId"/>
+         </AttrArray>
+         <AttrArray Name="_dstAttributes">
+            <Item
+               Value="oracle.fodemo.storefront.entities.AddressUsageEO.AssociatedOwnerId"/>
+         </AttrArray>
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute Name="Title" PrecisionRule="true" EntityAttrName="Title"
+                  EntityUsage="PersonEO" AliasName="TITLE" LOVName="TitleLOV">
+      <Properties>
+         <SchemaBasedProperties>
+            <CONTROLTYPE Value="choice"/>
+         </SchemaBasedProperties>
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute Name="PersonId" IsUpdateable="while_insert" IsNotNull="true"
+                  PrecisionRule="true" EntityAttrName="PersonId"
+                  EntityUsage="PersonEO" AliasName="PERSON_ID"/>
+   <ViewAttribute Name="LastName" PrecisionRule="true" EntityAttrName="LastName"
+                  EntityUsage="PersonEO" AliasName="LAST_NAME"/>
+   <ViewAttribute Name="PrincipalName" IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="PrincipalName" EntityUsage="PersonEO"
+                  AliasName="PRINCIPAL_NAME"/>
+   <ViewAttribute Name="ProvisionedFlag" PrecisionRule="true"
+                  EntityAttrName="ProvisionedFlag" EntityUsage="PersonEO"
+                  AliasName="PROVISIONED_FLAG"/>
+   <ViewAttribute Name="FirstName" PrecisionRule="true"
+                  EntityAttrName="FirstName" EntityUsage="PersonEO"
+                  AliasName="FIRST_NAME"/>
+   <ViewAttribute Name="RegisteredDate" PrecisionRule="true"
+                  EntityAttrName="RegisteredDate" EntityUsage="PersonEO"
+                  Domain="oracle.fodemo.storefront.entities.formatters.UppercaseOracleStyleDate"
+                  AliasName="REGISTERED_DATE"/>
+   <ViewAttribute Name="PersonTypeCode" IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="PersonTypeCode" EntityUsage="PersonEO"
+                  AliasName="PERSON_TYPE_CODE" LOVName="PersonTypeCodeLOV">
+      <Properties>
+         <SchemaBasedProperties>
+            <CONTROLTYPE Value="choice"/>
+         </SchemaBasedProperties>
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute Name="Email" IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="Email" EntityUsage="PersonEO"
+                  AliasName="EMAIL"/>
+   <ViewAttribute Name="PrimaryAddressId" PrecisionRule="true"
+                  EntityAttrName="PrimaryAddressId" EntityUsage="PersonEO"
+                  AliasName="PRIMARY_ADDRESS_ID"/>
+   <ViewAttribute Name="PhoneNumber" PrecisionRule="true"
+                  EntityAttrName="PhoneNumber" EntityUsage="PersonEO"
+                  AliasName="PHONE_NUMBER"/>
+   <ViewAttribute Name="MembershipId" PrecisionRule="true"
+                  EntityAttrName="MembershipId" EntityUsage="PersonEO"
+                  AliasName="MEMBERSHIP_ID"/>
+   <ViewAttribute Name="CreditLimit" PrecisionRule="true"
+                  EntityAttrName="CreditLimit" EntityUsage="PersonEO"
+                  AliasName="CREDIT_LIMIT"/>
+   <ViewAttribute Name="ConfirmedEmail" PrecisionRule="true"
+                  EntityAttrName="ConfirmedEmail" EntityUsage="PersonEO"
+                  AliasName="CONFIRMED_EMAIL"/>
+   <ViewAttribute Name="MaritalStatusCode" IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="MaritalStatusCode" EntityUsage="PersonEO"
+                  AliasName="MARITAL_STATUS_CODE"
+                  LOVName="MaritalStatusCodeLOV">
+      <Properties>
+         <SchemaBasedProperties>
+            <CONTROLTYPE Value="choice"/>
+         </SchemaBasedProperties>
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute Name="MobilePhoneNumber" PrecisionRule="true"
+                  EntityAttrName="MobilePhoneNumber" EntityUsage="PersonEO"
+                  AliasName="MOBILE_PHONE_NUMBER"/>
+   <ViewAttribute Name="ChildrenUnder18" PrecisionRule="true"
+                  EntityAttrName="ChildrenUnder18" EntityUsage="PersonEO"
+                  AliasName="CHILDREN_UNDER_18"/>
+   <ViewAttribute Name="DateOfBirth" PrecisionRule="true"
+                  EntityAttrName="DateOfBirth" EntityUsage="PersonEO"
+                  Domain="oracle.fodemo.storefront.entities.formatters.UppercaseOracleStyleDate"
+                  AliasName="DATE_OF_BIRTH"/>
+   <ViewAttribute Name="ContactMethodCode" PrecisionRule="true"
+                  EntityAttrName="ContactMethodCode" EntityUsage="PersonEO"
+                  AliasName="CONTACT_METHOD_CODE"/>
+   <ViewAttribute Name="Gender" IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="Gender" EntityUsage="PersonEO"
+                  AliasName="GENDER" LOVName="GenderLOV">
+      <Properties>
+         <SchemaBasedProperties>
+            <CONTROLTYPE Value="choice"/>
+         </SchemaBasedProperties>
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute Name="ContactByAffilliatesFlag" IsNotNull="true"
+                  PrecisionRule="true" EntityAttrName="ContactByAffilliatesFlag"
+                  EntityUsage="PersonEO"
+                  AliasName="CONTACT_BY_AFFILLIATES_FLAG"/>
+   <ViewAttribute Name="ApproximateIncome" PrecisionRule="true"
+                  EntityAttrName="ApproximateIncome" EntityUsage="PersonEO"
+                  AliasName="APPROXIMATE_INCOME"/>
+   <ViewAttribute Name="CustomerInterestsId" IsUpdateable="while_insert"
+                  IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="CustomerInterestsId"
+                  EntityUsage="CustomerInterestEO"
+                  AliasName="CUSTOMER_INTERESTS_ID"/>
+   <ViewAttribute Name="ContactableFlag" IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="ContactableFlag" EntityUsage="PersonEO"
+                  AliasName="CONTACTABLE_FLAG"/>
+   <ViewAttribute Name="AddressId" IsUpdateable="while_insert"
+                  PrecisionRule="true" EntityAttrName="AddressId"
+                  EntityUsage="AddressEO" AliasName="ADDRESS_ID"/>
+   <ViewAttribute Name="CustomerId" IsUnique="true" IsNotNull="true"
+                  PrecisionRule="true" EntityAttrName="CustomerId"
+                  EntityUsage="CustomerInterestEO" AliasName="CUSTOMER_ID"/>
+   <ViewAttribute Name="Address2" PrecisionRule="true" EntityAttrName="Address2"
+                  EntityUsage="AddressEO" AliasName="ADDRESS2"/>
+   <ViewAttribute Name="CategoryId" IsUnique="true" IsNotNull="true"
+                  PrecisionRule="true" EntityAttrName="CategoryId"
+                  EntityUsage="CustomerInterestEO" AliasName="CATEGORY_ID"/>
+   <ViewAttribute Name="PostalCode" PrecisionRule="true"
+                  EntityAttrName="PostalCode" EntityUsage="AddressEO"
+                  AliasName="POSTAL_CODE"/>
+   <ViewAttribute Name="Address1" IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="Address1" EntityUsage="AddressEO"
+                  AliasName="ADDRESS1"/>
+   <ViewAttribute Name="CountryId" IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="CountryId" EntityUsage="AddressEO"
+                  AliasName="COUNTRY_ID"/>
+   <ViewAttribute Name="City" IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="City" EntityUsage="AddressEO"
+                  AliasName="CITY"/>
+   <ViewAttribute Name="Latitude" PrecisionRule="true" EntityAttrName="Latitude"
+                  EntityUsage="AddressEO" AliasName="LATITUDE"/>
+   <ViewAttribute Name="StateProvince" IsNotNull="true" PrecisionRule="true"
+                  EntityAttrName="StateProvince" EntityUsage="AddressEO"
+                  AliasName="STATE_PROVINCE"/>
+   <ViewAttribute Name="Longitude" PrecisionRule="true"
+                  EntityAttrName="Longitude" EntityUsage="AddressEO"
+                  AliasName="LONGITUDE"/>
+   <ViewAttribute Name="ObjectVersionId" IsUpdateable="false" IsNotNull="true"
+                  PrecisionRule="true" EntityAttrName="ObjectVersionId"
+                  EntityUsage="AddressEO" AliasName="OBJECT_VERSION_ID"/>
+   <ViewCriteria Name="AuthenticatedUserByPrincipalCriteria"
+                 ViewObjectName="oracle.fodemo.storefront.store.queries.PersonsVO"
+                 Conjunction="AND">
+      <Properties>
+         <CustomProperties>
+            <Property Name="autoExecute" Value="false"/>
+            <Property Name="showInList" Value="true"/>
+            <Property Name="mode" Value="Basic"/>
+            <Property
+               Name="displayOperators"
+               Value="InAdvancedMode"/>
+            <Property
+               Name="allowConjunctionOverride"
+               Value="true"/>
+         </CustomProperties>
+      </Properties>
+      <ViewCriteriaRow
+         Name="vcrow55">
+         <ViewCriteriaItem
+            Name="PrincipalName"
+            ViewAttribute="PrincipalName"
+            Operator="="
+            Conjunction="AND"
+            Value=":userPrincipal"
+            UpperColumns="1"
+            IsBindVarValue="true"
+            Required="Required"
+            ValidateBindVars="true"/>
+      </ViewCriteriaRow>
+      <ViewCriteriaRow Name="vcrow55">
+         <ViewCriteriaItem Name="PrincipalName" ViewAttribute="PrincipalName"
+                           Operator="=" Conjunction="AND" Value=":userPrincipal"
+                           UpperColumns="1" IsBindVarValue="true"
+                           Required="Required"
+            ValidateBindVars="true"/>
+      </ViewCriteriaRow>
+   </ViewCriteria>
+   <ViewKey Name="PrincipalName_AltKey">
+      <AttrArray Name="EntityKeys">
+         <Item Value=""/>
+         <Item Value="PrincipalName_AltKey"/>
+         <Item Value=""/>
+         <Item Value=""/>
+      </AttrArray>
+   </ViewKey>
+   <ViewLinkAccessor Name="PaymentOptionsVO"
+                     ViewLink="oracle.fodemo.storefront.store.queries.links.PersonsToPaymentOptions"
+                     Type="oracle.jbo.RowIterator" IsUpdateable="false"/>
+   <ViewLinkAccessor
+      Name="OrdersVO"
+      ViewLink="oracle.fodemo.storefront.store.queries.links.PersonsToOrders"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false"/>
+   <ViewLinkAccessor
+      Name="MembershipDiscountsVO"
+      ViewLink="oracle.fodemo.storefront.store.queries.links.PersonsToMembershipDiscounts"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false"/>
+   <ViewLinkAccessor
+      Name="AddressUsagesVO"
+      ViewLink="oracle.fodemo.storefront.store.queries.links.PersonsToAddressUsages"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false"/>
+   <ViewLinkAccessor
+      Name="CustomerInterestsVO"
+      ViewLink="oracle.fodemo.storefront.account.queries.links.PersonsToPersonsInterestsVO"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false"/>
+   <ViewLinkAccessor
+      Name="CustomerAddressVO"
+      ViewLink="oracle.fodemo.storefront.account.queries.links.PersonsToCustomerAddress"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false"/>
+   <ViewLinkAccessor
+      Name="AddressesAndUsagesVO"
+      ViewLink="oracle.fodemo.storefront.store.queries.links.PersonsToAddressesAndUsages"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false"/>
+   <ResourceBundle>
+      <PropertiesBundle
+         PropertiesFile="oracle.fodemo.storefront.store.queries.common.PersonsVOMsgBundle"/> 
+   </ResourceBundle>
+   <ClientInterface>
+      <Method
+         Name="getuserPrincipal">
+         <Return
+            Type="java.lang.String"/>
+      </Method>
+      <Method
+         Name="getuserPrincipal">
+         <Return
+            Type="java.lang.String"/>
+      </Method>
+      <Method
+         Name="findPerson">
+         <Return
+            Type="java.lang.String"/>
+         <Parameter
+            Name="principalName"
+            Type="java.lang.String"/>
+      </Method>
+   </ClientInterface>
+</ViewObject>

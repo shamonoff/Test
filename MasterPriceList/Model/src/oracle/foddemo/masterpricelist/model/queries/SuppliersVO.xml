@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SuppliersVO"
+  Version="11.1.1.52.93"
+  SelectList="SuppliersEO.SUPPLIER_ID, 
+       SuppliersEO.SUPPLIER_NAME, 
+       SuppliersEO.SUPPLIER_STATUS, 
+       SuppliersEO.PHONE_NUMBER, 
+       SuppliersEO.EMAIL"
+  FromList="SUPPLIERS SuppliersEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="SuppliersEO"
+    Entity="oracle.foddemo.masterpricelist.model.entities.SuppliersEO"
+    ReadOnly="true"
+    DeleteParticipant="false"/>
+  <ViewAttribute
+    Name="SupplierId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SupplierId"
+    EntityUsage="SuppliersEO"
+    AliasName="SUPPLIER_ID"/>
+  <ViewAttribute
+    Name="SupplierName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SupplierName"
+    EntityUsage="SuppliersEO"
+    AliasName="SUPPLIER_NAME"/>
+  <ViewAttribute
+    Name="SupplierStatus"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SupplierStatus"
+    EntityUsage="SuppliersEO"
+    AliasName="SUPPLIER_STATUS"/>
+  <ViewAttribute
+    Name="PhoneNumber"
+    PrecisionRule="true"
+    EntityAttrName="PhoneNumber"
+    EntityUsage="SuppliersEO"
+    AliasName="PHONE_NUMBER"/>
+  <ViewAttribute
+    Name="Email"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="SuppliersEO"
+    AliasName="EMAIL"/>
+</ViewObject>

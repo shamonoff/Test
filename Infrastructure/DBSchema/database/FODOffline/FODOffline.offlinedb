@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <value n="id" v="b6289e18-0112-1000-8005-8223672b1417"/>
+   <value n="name" v="FODOffline"/>
+   <value n="offlineDBSchema" v="FOD"/>
+   <hash n="oracle.jdeveloper.offlinedb.model.IDMigrationMap">
+      <hash n="map">
+         <value n="I:PACKAGE:7317531e-0438-42c0-8868-998074f94f16" v="N:PACKAGE:USER_CONTEXT_PKG:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:16bc3866-9e86-4634-bdbf-5ae2990a090c" v="N:TRIGGER:ASSIGN_SHIPPING_OPTION_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:180ab08b-c6a6-49af-887e-0ed5e66628be" v="N:TRIGGER:ASSIGN_WAREHOUSE_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:265995da-973e-4cbb-a2ae-10a4725a7988" v="N:TRIGGER:ASSIGN_MEMBERSHIP_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:58b518da-ee9a-4bbb-ad94-6b3212a04b38" v="N:TRIGGER:ASSIGN_PAYMENT_OPTION_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:5a8f728b-dbb6-4a1d-9dde-d38a2ba82dec" v="N:TRIGGER:ASSIGN_ORDER_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:6e3d3c6b-11d0-430d-9151-48d2b85d2a97" v="N:TRIGGER:ASSIGN_HELP_TRANS_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:7f37fcd4-08c0-470c-9007-a05c46d66a98" v="N:TRIGGER:ASSIGN_ADDRESS_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:8ad74272-42cf-4c61-976f-282a1350fdab" v="N:TRIGGER:ASSIGN_CATEGORY_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:9e50bd82-0f52-4166-8684-dc2476e4a2e0" v="N:TRIGGER:ASSIGN_ADDRESS_USAGES_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:a73b26fc-4888-4244-b013-208afd712cc8" v="N:TRIGGER:ASSIGN_CUSTOMER_INTRSTS_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:c2f07b61-5990-4617-a86a-99406ff171a7" v="N:TRIGGER:ASSIGN_MEMBERSHIP_TRANS_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:c6508076-5ccc-4b5c-a73d-1a63a527c402" v="N:TRIGGER:ASSIGN_PRODUCT_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:d41c608e-a53e-4ab5-b33a-09757b421b4d" v="N:TRIGGER:ASSIGN_LINE_ITEM_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:d61ebb0f-7085-492a-a65f-c27da04c83f2" v="N:TRIGGER:ASSIGN_DISCOUNT_TRANS_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:d631a8aa-597c-476a-b501-a79b9dec0b0b" v="N:TRIGGER:ASSIGN_SUPPLIER_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:e0b70f74-1d69-47d3-8385-398a49a7891d" v="N:TRIGGER:ASSIGN_PRODUCT_IMAGE_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:e1ba2c7c-ebfc-4406-8ab1-14daed6f620b" v="N:TRIGGER:ASSIGN_SHIPPING_TRANS_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:e6529439-da60-487d-8b7d-2bd046f0317d" v="N:TRIGGER:ASSIGN_DISCOUNT_ID:SCHEMA:FOD"/>
+         <value n="I:TRIGGER:e893ecac-47b1-4884-815c-bfc540e00eb6" v="N:TRIGGER:ASSIGN_PERSON_ID:SCHEMA:FOD"/>
+      </hash>
+   </hash>
+</ProviderSettings>

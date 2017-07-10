@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:2cea6e12-d426-47d3-ba83-de2ef9723006'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Coupon Usage'
+   visibility='public'>
+  <ownedAttribute xmi:uuid='urn:uuid:d78637fd-12c7-4f88-ba37-bab63d77b92e'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='Usage Date'
+    aggregation='none'>
+   <type href='mof:/date:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:a41ab857-166f-40b8-b65c-3937a133a422'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:eb11e05a-99fe-459f-a3f7-4d6b7e6dfa7d'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:uuid='urn:uuid:4929bf21-a8de-4091-a2bf-01d3ba585fec'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='CouponID'
+    aggregation='none'
+    visibility='package'>
+   <type href='mof:/number:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:56f18f35-e7fc-4ce1-999e-c7ff9abde807'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:5dd3b457-54fe-4597-86b2-915d9e3425fc'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+ </uml:Class>
+</xmi:XMI>

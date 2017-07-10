@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.48.68" id="account_addressDetailsPageDef"
+                Package="oracle.fodemo.storefront.pageDefs"
+                ControllerClass="oracle.fodemo.storefront.account.view.managed.AddressDetailsPageLifeCycle">
+  <parameters/>
+  <executables>
+    <page path="oracle.fodemo.storefront.pageDefs.templates_StoreFrontTemplatePageDef"
+          id="pageTemplateBinding"/>
+    <iterator Binds="CustomerAddress" RangeSize="-1"
+              DataControl="StoreServiceAMDataControl"
+              id="CustomerAddressIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CustomerAddressIterator" id="Address1">
+      <AttrNames>
+        <Item Value="Address1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="Address2">
+      <AttrNames>
+        <Item Value="Address2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="City">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="PostalCode">
+      <AttrNames>
+        <Item Value="PostalCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="StateProvince">
+      <AttrNames>
+        <Item Value="StateProvince"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="AddressLabel">
+      <AttrNames>
+        <Item Value="AddressLabel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="AddressUsagesId">
+      <AttrNames>
+        <Item Value="AddressUsagesId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator"
+                     id="AssociatedOwnerId">
+      <AttrNames>
+        <Item Value="AssociatedOwnerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="AddressId1">
+      <AttrNames>
+        <Item Value="AddressId1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="ExpiredFlag">
+      <AttrNames>
+        <Item Value="ExpiredFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="IsoCountryCode">
+      <AttrNames>
+        <Item Value="IsoCountryCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="CountryName">
+      <AttrNames>
+        <Item Value="CountryName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="Language">
+      <AttrNames>
+        <Item Value="Language"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator"
+                     id="UsageTypeDescription">
+      <AttrNames>
+        <Item Value="UsageTypeDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAddressIterator" id="Language1">
+      <AttrNames>
+        <Item Value="Language1"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CustomerAddressIterator" Uses="UsageTypeCodeLOV"
+          id="UsageTypeCode"/>
+    <list IterBinding="CustomerAddressIterator" Uses="CountryIdLOV"
+          id="CountryId"/>
+    <methodAction IterBinding="CustomerAddressIterator"
+                  id="discardAddressChanges" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="refreshRemoveNewCurrentRow"
+                  IsViewObjectMethod="true"
+                  DataControl="StoreServiceAMDataControl"
+                  InstanceName="StoreServiceAMDataControl.CustomerAddress"/>
+    <methodAction IterBinding="CustomerAddressIterator"
+                  id="refreshAndDiscardChanges" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="refreshAndDiscardChanges"
+                  IsViewObjectMethod="true"
+                  DataControl="StoreServiceAMDataControl"
+                  InstanceName="StoreServiceAMDataControl.CustomerAddress"/>
+  </bindings>
+</pageDefinition>

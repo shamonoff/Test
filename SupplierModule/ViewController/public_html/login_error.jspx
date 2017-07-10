@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/StoreFrontTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+           <f:facet name="center">
+          <af:panelGroupLayout layout="horizontal" valign="middle"
+                               halign="center" id="pgl1">
+            <!-- main body -->
+            <af:panelBox text="#{res['global.login.header']}"
+                         inlineStyle="width:260px;" id="pb1">
+
+                <af:panelGroupLayout halign="end" id="pgl2">    
+              <af:spacer height="25px" width="240px" id="s1"/>
+              <af:outputText value="#{res['loginerror.incorrect']}"
+                             inlineStyle="background:#FFEBE8 none repeat scroll 0%; border:1px solid #DD3C10; margin:0pt 10px 10px; padding:10px;"
+                             id="ot1"/>
+              <af:spacer height="25px" width="240px" id="s2"/>
+                <af:separator inlineStyle="width:250px;" id="s3"/>
+                   <af:goLink destination="#{navigationBean.createAccountURL}"
+                                 text="#{res['global.login.newuser']}"
+                                 inlineStyle="outline-style:none; border-style:hidden;"
+                              id="gl1"/>
+                   <af:spacer height="20px" id="s4"/>                                 
+                   <af:goLink text="#{res['global.login.continue']}" destination="#{navigationBean.homeURL}"
+                              id="gl2"/>
+                  <f:facet name="separator">
+                    <af:spacer height="5px" id="s5"/>
+                  </f:facet>
+                </af:panelGroupLayout>
+            </af:panelBox>            
+          </af:panelGroupLayout>
+        </f:facet>
+          <f:facet name="end">
+          <af:spacer width="10" height="10" id="s6"/>
+        </f:facet>
+          <f:facet name="start">
+          <af:spacer width="10" height="10" id="s7"/>
+        </f:facet>
+         
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

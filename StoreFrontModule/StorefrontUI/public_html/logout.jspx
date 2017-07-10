@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/StoreFrontTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="ptemp">
+          <f:facet name="center">
+          <af:panelGroupLayout layout="horizontal" valign="middle"
+                               halign="center" id="pgl1">
+                               <af:panelBox text="#{res['logout.title']}"
+                         inlineStyle="width:260px;" id="pb1">
+              <af:spacer height="10px" width="240px" id="s1"/>
+              <af:panelFormLayout id="pfl1">
+              <af:outputLabel value="#{res['logout.text']}" id="ol1"/>
+              <af:spacer height="10px" width="240px" id="s2"/>
+                              <af:separator inlineStyle="width:250px;" id="s3"/>
+<af:goLink text="#{res['global.login.continue']}" destination="#{navigationBean.homeURL}" id="gl1"/>
+            </af:panelFormLayout>
+            </af:panelBox>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

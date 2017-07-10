@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Domain SYSTEM "jbo_03_01.dtd">
+<!---->
+<Domain xmlns="http://xmlns.oracle.com/bc4j" Name="UppercaseOracleStyleDate"
+   Version="11.1.1.51.95">
+   <Properties>
+      <SchemaBasedProperties>
+         <FMT_FORMAT
+            ResId="oracle.fodemo.storefront.entities.formatters.UppercaseOracleStyleDate.FMT_FORMAT"/>
+         <FMT_FORMATTER
+            ResId="oracle.fodemo.storefront.entities.formatters.UppercaseOracleStyleDate.FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+   </Properties>
+   <DesignTime>
+      <Attr Name="_isSelected" Value="true"/>
+      <Attr Name="_isQueriable" Value="true"/>
+      <Attr Name="_isPersistent" Value="true"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+   </DesignTime>
+   <ResourceBundle>
+      <PropertiesBundle
+         PropertiesFile="oracle.fodemo.storefront.entities.formatters.common.UppercaseOracleStyleDateMsgBundle"/>
+   </ResourceBundle>
+</Domain>

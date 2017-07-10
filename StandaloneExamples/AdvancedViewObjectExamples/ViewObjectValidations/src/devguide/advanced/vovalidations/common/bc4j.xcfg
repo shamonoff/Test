@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="devguide.advanced.vovalidations.PersonsModule">
+      <AppModuleConfig name="PersonsModuleLocal" ApplicationName="devguide.advanced.vovalidations.PersonsModule" DeployPlatform="LOCAL" JDBCName="FOD" jbo.project="devguide.advanced.vovalidations.ViewObjectValidations">
+         <Security AppModuleJndiName="devguide.advanced.vovalidations.PersonsModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="PersonsModuleShared" ApplicationName="devguide.advanced.vovalidations.PersonsModule" DeployPlatform="LOCAL" JDBCName="FOD" jbo.project="devguide.advanced.vovalidations.ViewObjectValidations">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="devguide.advanced.vovalidations.PersonsModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

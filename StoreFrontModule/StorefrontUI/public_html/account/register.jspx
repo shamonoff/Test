@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/StoreFrontTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="ptemp">
+          <f:facet name="center">
+            <af:panelGroupLayout id="pgl2" layout="vertical">
+            <af:region value="#{bindings.dynamicRegion1.regionModel}"
+                         id="r1"/>
+          </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="header">
+            <af:panelGroupLayout layout="horizontal" halign="center"
+                                 inlineStyle="height:15px;" id="pgl3">
+              <af:navigationPane hint="buttons" id="np1">
+                <af:commandNavigationItem icon="/images/home.gif" text="Home"
+                                          action="globalHome" id="cni1"
+                                          immediate="true"/>
+              </af:navigationPane>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="end">
+            <af:region value="#{bindings.helptaskflow1.regionModel}"
+                       id="helpt1"/>
+          </f:facet>
+          <f:facet name="start">
+              <af:panelGroupLayout layout="vertical" id="pgl4">
+              <af:spacer width="5" height="20" id="spacer3"/>
+              <af:commandButton text="#{res['welcome.createcust']}"
+                                  action="#{viewScope.registrationBean.customerregistrationtaskflow}" icon="/images/user.png"
+                                  immediate="true" id="cb2">
+                <af:setPropertyListener type="action"
+                                        to="#{pageFlowScope.userType}"
+                                        from="'CUST'"/>
+                </af:commandButton>
+              <af:spacer width="5" height="10" id="spacer4"/>
+              <af:commandButton text="#{res['welcome.createemp']}"
+                                  action="#{viewScope.registrationBean.employeeregistrationtaskflow}" icon="/images/user.png"
+                                  disabled="#{userInfoBean.principalName eq 'SKING'}"
+                                  immediate="true" id="cb3">
+                <af:setPropertyListener type="action"
+                                        to="#{pageFlowScope.userType}"
+                                        from="'STAFF'"/>
+                </af:commandButton>
+            </af:panelGroupLayout>
+          </f:facet>
+      </af:pageTemplate>
+      </af:form>
+    </af:document>         
+</f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:registrationBean-->
+</jsp:root>

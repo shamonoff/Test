@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="browse">
+    <page id="__1">/browse.jspx</page>
+  </view>
+  <view id="supplierdetail">
+    <page id="__2">/supplier/supplierDetails.jspx</page>
+  </view>
+  <task-flow-call id="product-details-task-flow">
+    <task-flow-reference>
+      <document id="__16">/WEB-INF/product-details-task-flow.xml</document>
+      <id id="__15">product-details-task-flow</id>
+    </task-flow-reference>
+    <input-parameter id="__71">
+      <name>ProductId</name>
+      <value>#{pageFlowScope.ProductId}</value>
+    </input-parameter>
+  </task-flow-call>
+  <view id="login">
+    <page id="__48">/login.jspx</page>
+  </view>
+  <view id="registrationDetails">
+    <page>/supplier/registrationDetails.jspx</page>
+  </view>
+  <control-flow-rule id="__4">
+    <from-activity-id id="__3">browse</from-activity-id>
+    <control-flow-case id="__6">
+      <from-outcome id="__22">supplierDetails</from-outcome>
+      <to-activity-id id="__5">supplierdetail</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__77">
+      <from-outcome id="__78">addSupplier</from-outcome>
+      <to-activity-id id="__64">registrationDetails</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__89">
+      <from-outcome id="__91">productDetails</from-outcome>
+      <to-activity-id id="__90">product-details-task-flow</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__41">
+    <from-activity-id id="__40">supplierdetail</from-activity-id>
+    <control-flow-case id="__39">
+      <from-outcome id="__43">success</from-outcome>
+      <to-activity-id id="__42">browse</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__45">
+      <to-activity-id id="__44">browse</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__50">
+    <from-activity-id id="__51">login</from-activity-id>
+    <control-flow-case id="__52">
+      <from-outcome id="__53">validUser</from-outcome>
+      <to-activity-id id="__49">browse</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__66">
+    <from-activity-id id="__65">*</from-activity-id>
+    <control-flow-case id="__67">
+      <from-outcome id="__56">doLogin</from-outcome>
+      <to-activity-id id="__68">login</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__23">
+    <from-activity-id id="__18">product-details-task-flow</from-activity-id>
+    <control-flow-case id="__17">
+      <from-outcome id="__37">globalHome</from-outcome>
+      <to-activity-id id="__24">browse</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__73">
+    <from-activity-id id="__72">*</from-activity-id>
+    <control-flow-case id="__74">
+      <from-outcome id="__76">globalHome</from-outcome>
+      <to-activity-id id="__75">browse</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__80">
+    <from-activity-id id="__79">*</from-activity-id>
+    <control-flow-case id="__82">
+      <from-outcome id="__83">cancel</from-outcome>
+      <to-activity-id id="__81">browse</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__58">
+    <from-activity-id id="__57">*</from-activity-id>
+    <control-flow-case id="__60">
+      <from-outcome id="__61">doLogout</from-outcome>
+      <to-activity-id id="__59">login</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__84">
+    <from-activity-id id="__85">registrationDetails</from-activity-id>
+    <control-flow-case id="__86">
+      <from-outcome id="__88">globalHome</from-outcome>
+      <to-activity-id id="__87">browse</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>userInfoBean</managed-bean-name>
+    <managed-bean-class>oracle.fodemo.supplier.view.managed.UserInfoBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__9">
+    <managed-bean-name id="__7">SupplierRegistrationBean</managed-bean-name>
+    <managed-bean-class id="__8">oracle.fodemo.supplier.backing.SupplierRegistrationBean</managed-bean-class>
+    <managed-bean-scope id="__10">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__11">
+    <managed-bean-name id="__12">loginBean</managed-bean-name>
+    <managed-bean-class id="__14">oracle.fodemo.security.Login</managed-bean-class>
+    <managed-bean-scope id="__13">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__25">
+    <managed-bean-name id="__26">sessionUIFlags</managed-bean-name>
+    <managed-bean-class id="__28">java.util.HashMap</managed-bean-class>
+    <managed-bean-scope id="__27">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__62">
+    <managed-bean-name id="__63">ProductBrowserBean</managed-bean-name>
+    <managed-bean-class id="__54">oracle.fodemo.product.backing.ProductBrowserBean</managed-bean-class>
+    <managed-bean-scope id="__55">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__35">
+    <managed-bean-name id="__33">SupplierRegistrationServiceBean</managed-bean-name>
+    <managed-bean-class id="__34">oracle.fodemo.supplier.backing.SupplierRegistrationServiceBean</managed-bean-class>
+    <managed-bean-scope id="__36">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__19">
+    <managed-bean-name id="__21">SkinHelper</managed-bean-name>
+    <managed-bean-class>oracle.fodemo.skinning.SkinHelperBean</managed-bean-class>
+    <managed-bean-scope id="__20">session</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

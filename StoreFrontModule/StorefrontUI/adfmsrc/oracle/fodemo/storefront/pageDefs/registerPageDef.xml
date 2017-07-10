@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.10" id="registerPageDef" Package="oracle.fodemo.storefront.pageDefs">
+  <parameters/>
+  <executables>
+    <page path="oracle.fodemo.storefront.pageDefs.templates_StoreFrontTemplatePageDef"
+          id="pageTemplateBinding" Refresh="ifNeeded"/>
+          
+ 
+   <!-- To refresh the region if the param_userType is changed, use Refresh="ifNeeded" -->
+             <taskFlow id="dynamicRegion1"
+              taskFlowId="#{viewScope.registrationBean.dynamicTaskFlowId}"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"
+              Refresh="ifNeeded">
+                 <parameters>
+        <parameter id="param_userType" value="#{empty pageFlowScope.userType ? 'CUST' : pageFlowScope.userType}"
+                   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                   evaluate="inPrepareModel"/>
+      </parameters>
+    </taskFlow>
+    <taskFlow id="helptaskflow1"
+              taskFlowId="/WEB-INF/help-task-flow.xml#help-task-flow"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="HelpTranslations" RangeSize="25"
+              DataControl="LookupServiceAMDataControl"
+              id="HelpTranslationsIterator"/>
+  </executables>
+  <bindings/>
+  <eventMap xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+    <event name="queueHelpTopic">
+      <producer region="*">
+        <consumer region="helptaskflow1" handler="helpPageDef.findHelpTextById"
+                  handleCondition="">
+          <parameters>
+            <parameter name="helpTopicId" value="${payLoad}"/>
+          </parameters>
+        </consumer>
+      </producer>
+    </event>
+  </eventMap>
+</pageDefinition>

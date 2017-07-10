@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View3">
+      <property
+         name="activityId">supplierRegistraton</property>
+      <property
+         name="page">/supplier/registrationDetails.jspx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>supplierRegistraton&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">214.74707</property>
+      <property
+         name="x">301.69434</property>
+   </View>
+   <View
+      id="View5">
+      <property
+         name="activityId">errorHandler</property>
+      <property
+         name="page">/errorHandler.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>errorHandler&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">true</property>
+      <property
+         name="y">346.39648</property>
+      <property
+         name="x">475.75977</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn6">
+      <property
+         name="activityId">continueBroswing</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>continueBroswing&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  globalHome&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">383.84473</property>
+      <property
+         name="x">301.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View3"
+      to="TaskFlowReturn6">
+      <property
+         name="fromOutcome">success</property>
+      <property
+         name="sdm:polyPoints">B50,301.69434,268.39648,301.0,329.49414,T50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn8">
+      <property
+         name="activityId">cancelAndcontinue</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>cancelAndcontinue&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  globalHome&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">215.5459</property>
+      <property
+         name="x">479.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View3"
+      to="TaskFlowReturn8">
+      <property
+         name="fromOutcome">*</property>
+      <property
+         name="sdm:polyPoints">R50,342.69434,214.39648,438.0,215.19531,L50</property>
+   </ControlFlowCase>
+</SDM>

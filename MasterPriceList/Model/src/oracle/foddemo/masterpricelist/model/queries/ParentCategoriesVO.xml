@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ParentCategoriesVO"
+  Version="11.1.1.54.68"
+  SelectList="ProductCategoriesBaseEO.CATEGORY_LOCKED_FLAG, 
+       CategoryTranslationsEO.CATEGORY_NAME, 
+       ProductCategoriesBaseEO.CATEGORY_ID, 
+       CategoryTranslationsEO.CATEGORY_ID AS CATEGORY_ID1, 
+       CategoryTranslationsEO.LANGUAGE, 
+       CategoryTranslationsEO.CATEGORY_DESCRIPTION"
+  FromList="PRODUCT_CATEGORIES_BASE ProductCategoriesBaseEO, CATEGORY_TRANSLATIONS CategoryTranslationsEO"
+  Where="ProductCategoriesBaseEO.CATEGORY_ID = CategoryTranslationsEO.CATEGORY_ID and ProductCategoriesBaseEO.parent_category_id is null and CategoryTranslationsEO.LANGUAGE = :sessionLanguage"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <Variable
+    Name="sessionLanguage"
+    Kind="where"
+    Type="java.lang.String"
+    IsUpdateable="false">
+    <TransientExpression><![CDATA[adf.userSession.userData.CurrentSessionLanguage]]></TransientExpression>
+  </Variable>
+  <EntityUsage
+    Name="ProductCategoriesBaseEO"
+    Entity="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO"/>
+  <EntityUsage
+    Name="CategoryTranslationsEO"
+    Entity="oracle.foddemo.masterpricelist.model.entities.CategoryTranslationsEO"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.CategoryTranslationsFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.CategoryTranslationsFkAssoc.CategoryTranslations"
+    SourceUsage="oracle.foddemo.masterpricelist.model.queries.ParentCategoriesVO.ProductCategoriesBaseEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.CategoryId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="oracle.foddemo.masterpricelist.model.entities.CategoryTranslationsEO.CategoryId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="CategoryLockedFlag"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CategoryLockedFlag"
+    EntityUsage="ProductCategoriesBaseEO"
+    AliasName="CATEGORY_LOCKED_FLAG"/>
+  <ViewAttribute
+    Name="CategoryName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CategoryName"
+    EntityUsage="CategoryTranslationsEO"
+    AliasName="CATEGORY_NAME"/>
+  <ViewAttribute
+    Name="CategoryId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CategoryId"
+    EntityUsage="ProductCategoriesBaseEO"
+    AliasName="CATEGORY_ID"/>
+  <ViewAttribute
+    Name="CategoryId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CategoryId"
+    EntityUsage="CategoryTranslationsEO"
+    AliasName="CATEGORY_ID1"/>
+  <ViewAttribute
+    Name="Language"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Language"
+    EntityUsage="CategoryTranslationsEO"
+    AliasName="LANGUAGE"/>
+  <ViewAttribute
+    Name="CategoryDescription"
+    PrecisionRule="true"
+    EntityAttrName="CategoryDescription"
+    EntityUsage="CategoryTranslationsEO"
+    AliasName="CATEGORY_DESCRIPTION"/>
+</ViewObject>

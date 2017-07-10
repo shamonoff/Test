@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="excelLogin">
+    <page>/login.jspx</page>
+    <input-page-parameter>
+      <from-value>excel</from-value>
+      <to-value>#{sessionUIFlags['screenMode']}</to-value>
+    </input-page-parameter>
+  </view>
+  <view id="LandingPad">
+    <page>/secured/LandingPad.jspx</page>
+  </view>
+  <view id="login">
+    <page>/login.jspx</page>
+    <input-page-parameter>
+      <from-value>web</from-value>
+      <to-value>#{sessionUIFlags['screenMode']}</to-value>
+    </input-page-parameter>
+  </view>
+  <task-flow-call id="price-editing-flow">
+    <task-flow-reference>
+      <document>/WEB-INF/price-editing-flow.xml</document>
+      <id>price-editing-flow</id>
+    </task-flow-reference>
+    <input-parameter>
+      <name>uiState</name>
+      <value>#{!empty cookie.fod_mpl_uistate?cookie.fod_mpl_uistate.value:''}</value>
+    </input-parameter>
+  </task-flow-call>
+  <method-call id="logout">
+    <method>#{loginBean.doLogout}</method>
+    <outcome>
+      <fixed-outcome>restart</fixed-outcome>
+    </outcome>
+  </method-call>
+  <control-flow-rule>
+    <from-activity-id>excelLogin</from-activity-id>
+    <control-flow-case>
+      <from-outcome>loggedIn</from-outcome>
+      <to-activity-id>LandingPad</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>login</from-activity-id>
+    <control-flow-case>
+      <from-outcome>loggedIn</from-outcome>
+      <to-activity-id>price-editing-flow</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>price-editing-flow</from-activity-id>
+    <control-flow-case>
+      <from-outcome>priceEditsComplete</from-outcome>
+      <to-activity-id>logout</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>logout</from-activity-id>
+    <control-flow-case>
+      <from-outcome>restart</from-outcome>
+      <to-activity-id>login</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>sessionUIFlags</managed-bean-name>
+    <managed-bean-class>java.util.HashMap</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>loginBean</managed-bean-name>
+    <managed-bean-class>oracle.foddemo.masterpricelist.backing.Login</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>excelAdvancedSearchBacking</managed-bean-name>
+    <managed-bean-class>oracle.foddemo.masterpricelist.backing.AdvSearchBacking</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>uiMode</managed-bean-name>
+    <managed-bean-class>java.lang.Boolean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

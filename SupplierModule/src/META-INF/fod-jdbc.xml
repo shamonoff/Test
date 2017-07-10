@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<jdbc-data-source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bea.com/ns/weblogic/jdbc-data-source http://www.bea.com/ns/weblogic/jdbc-data-source/1.0/jdbc-data-source.xsd" xmlns="http://www.bea.com/ns/weblogic/jdbc-data-source">
+    <name>fod</name>
+    <jdbc-driver-params>
+        <url>jdbc:oracle:thin:@localhost:1521:XE</url>
+        <driver-name>oracle.jdbc.OracleDriver</driver-name>
+        <properties>
+            <property>
+                <name>user</name>
+                <value>fod</value>
+            </property>
+            <property>
+                <name>servername</name>
+                <value>localhost</value>
+            </property>
+            <property>
+                <name>portnumber</name>
+                <value>1521</value>
+            </property>
+            <property>
+                <name>sid</name>
+                <value>XE</value>
+            </property>
+        </properties>
+        <password-encrypted>F8FF1B4EFA9EC8B93504ADD27BA668D3</password-encrypted>
+    </jdbc-driver-params>
+    <jdbc-connection-pool-params>
+        <test-table-name>dual</test-table-name>
+    </jdbc-connection-pool-params>
+    <jdbc-data-source-params>
+        <jndi-name>jdbc/fodDS</jndi-name>
+        <scope>Application</scope>
+    </jdbc-data-source-params>
+</jdbc-data-source>

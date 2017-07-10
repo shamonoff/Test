@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PaymentOption"
+  DBObjectType="table"
+  DBObjectName="PAYMENT_OPTIONS"
+  AliasName="PaymentOption"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_version" Value="11.1.1.46.77"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="PaymentOptionId"
+    IsNotNull="true"
+    Precision="16"
+    Scale="0"
+    ColumnName="PAYMENT_OPTION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PAYMENT_OPTIONS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8066-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="CustomerId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="CUSTOMER_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8067-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="PaymentTypeCode"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="PAYMENT_TYPE_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8068-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="BillingAddressId"
+    Precision="38"
+    Scale="0"
+    ColumnName="BILLING_ADDRESS_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8069-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="AccountNumber"
+    IsNotNull="true"
+    Precision="19"
+    Scale="0"
+    ColumnName="ACCOUNT_NUMBER"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-806a-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="CardTypeCode"
+    Precision="30"
+    ColumnName="CARD_TYPE_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-806b-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ExpireDate"
+    ColumnName="EXPIRE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-806c-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="CheckDigits"
+    Precision="4"
+    Scale="0"
+    ColumnName="CHECK_DIGITS"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-806d-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="RoutingIdentifier"
+    Precision="15"
+    ColumnName="ROUTING_IDENTIFIER"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-806e-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="InstitutionName"
+    Precision="120"
+    ColumnName="INSTITUTION_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="120"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-806f-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ValidFromDate"
+    ColumnName="VALID_FROM_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8070-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ValidToDate"
+    ColumnName="VALID_TO_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8071-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8072-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8073-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8074-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8075-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PAYMENT_OPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1a582948-0115-1000-8076-8d904bc64032::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <AccessorAttribute
+    Name="Person"
+    Association="devguide.advanced.multiplemasters.PayOptCustAssoc"
+    AssociationEnd="devguide.advanced.multiplemasters.PayOptCustAssoc.Person"
+    AssociationOtherEnd="devguide.advanced.multiplemasters.PayOptCustAssoc.PaymentOption"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OrderEO1"
+    Association="devguide.advanced.multiplemasters.PayOptOrderAssoc"
+    AssociationEnd="devguide.advanced.multiplemasters.PayOptOrderAssoc.OrderEO1"
+    AssociationOtherEnd="devguide.advanced.multiplemasters.PayOptOrderAssoc.PaymentOption1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PaymentOptionsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PAYMENT_OPTIONS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.multiplemasters.PaymentOption.PaymentOptionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068310">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068310"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PAYMENT_OPTION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.multiplemasters.PaymentOption.PaymentOptionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068311">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068311"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CUSTOMER_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.multiplemasters.PaymentOption.CustomerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068312">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068312"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PAYMENT_TYPE_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.multiplemasters.PaymentOption.PaymentTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068313">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068313"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ACCOUNT_NUMBER" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.multiplemasters.PaymentOption.AccountNumber"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068314">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068314"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.multiplemasters.PaymentOption.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Data>
+    <Property
+      Name="COMPLETE_LIBRARY"
+      Value="FALSE"/>
+    <Property
+      Name="VISIBILITY"
+      Value="PUBLIC"/>
+    <Property
+      Name="IS_LEAF"
+      Value="FALSE"/>
+    <Property
+      Name="IS_ACTIVE"
+      Value="FALSE"/>
+    <Property
+      Name="IS_ROOT"
+      Value="FALSE"/>
+    <Property
+      Name="IS_ABSTRACT"
+      Value="FALSE"/>
+    <Property
+      Name="ID"
+      Value="1a5828ee-0115-1000-8065-8d904bc64032::::EntityObject"/>
+  </Data>
+  <Key
+    Name="SysC0068315">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068315"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.multiplemasters.PaymentOption.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068316">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068316"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.multiplemasters.PaymentOption.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068317">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068317"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.multiplemasters.PaymentOption.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0068318">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0068318"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.multiplemasters.PaymentOption.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PaymentOptionsPersonsFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PAYMENT_OPTIONS_PERSONS_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="PERSONS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.multiplemasters.PaymentOption.CustomerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_PaymentOption">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="FK_PAYMENT_OPTION"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="PERSONS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.multiplemasters.PaymentOption.CustomerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_PaymentOption1">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="FK_PAYMENT_OPTION1"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="UK_ORDER_EO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.multiplemasters.PaymentOption.PaymentOptionId"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OrderItemsInfoVO"
+  Version="11.1.1.51.63"
+  SelectList="OrderItemEO.ORDER_ID, 
+       OrderItemEO.LINE_ITEM_ID, 
+       OrderItemEO.PRODUCT_ID, 
+       OrderItemEO.QUANTITY, 
+       OrderItemEO.UNIT_PRICE, 
+       ProductBaseEO.PRODUCT_NAME, 
+       SupplierEO.SUPPLIER_NAME, 
+       OrderItemEO.OBJECT_VERSION_ID, 
+       ProductBaseEO.PRODUCT_ID AS PRODUCT_ID1, 
+       SupplierEO.SUPPLIER_ID, 
+       SupplierEO.OBJECT_VERSION_ID AS OBJECT_VERSION_ID1"
+  FromList="ORDER_ITEMS OrderItemEO, PRODUCTS_BASE ProductBaseEO, SUPPLIERS SupplierEO"
+  Where="(OrderItemEO.PRODUCT_ID = ProductBaseEO.PRODUCT_ID(+)) AND (ProductBaseEO.SUPPLIER_ID = SupplierEO.SUPPLIER_ID)"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  SdoGen="true"
+  SdoName="OrderItemsInfoVOSDO"
+  SdoNameSpace="/oracle/fodemo/storefront/store/queries/common/">
+  <EntityUsage
+    Name="OrderItemEO"
+    Entity="oracle.fodemo.storefront.entities.OrderItemEO"/>
+  <EntityUsage
+    Name="ProductBaseEO"
+    Entity="oracle.fodemo.storefront.entities.ProductBaseEO"
+    Association="oracle.fodemo.storefront.entities.associations.OrderItemsProductsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.OrderItemsProductsFkAssoc.ProductBase"
+    SourceUsage="oracle.fodemo.storefront.store.queries.OrderItemsInfoVO.OrderItemEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="oracle.fodemo.storefront.entities.OrderItemEO.ProductId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.ProductBaseEO.ProductId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="SupplierEO"
+    Entity="oracle.fodemo.storefront.entities.SupplierEO"
+    Association="oracle.fodemo.storefront.entities.associations.ProductsSuppliersFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.ProductsSuppliersFkAssoc.Supplier"
+    SourceUsage="oracle.fodemo.storefront.store.queries.OrderItemsInfoVO.ProductBaseEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="oracle.fodemo.storefront.entities.ProductBaseEO.SupplierId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="oracle.fodemo.storefront.entities.SupplierEO.SupplierId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="OrderId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="OrderId"
+    EntityUsage="OrderItemEO"
+    AliasName="ORDER_ID"/>
+  <ViewAttribute
+    Name="LineItemId"
+    IsUpdateable="while_insert"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="LineItemId"
+    EntityUsage="OrderItemEO"
+    AliasName="LINE_ITEM_ID"/>
+  <ViewAttribute
+    Name="ProductId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProductId"
+    EntityUsage="OrderItemEO"
+    AliasName="PRODUCT_ID"/>
+  <ViewAttribute
+    Name="Quantity"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Quantity"
+    EntityUsage="OrderItemEO"
+    AliasName="QUANTITY"/>
+  <ViewAttribute
+    Name="UnitPrice"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UnitPrice"
+    EntityUsage="OrderItemEO"
+    AliasName="UNIT_PRICE"/>
+  <ViewAttribute
+    Name="ProductName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProductName"
+    EntityUsage="ProductBaseEO"
+    AliasName="PRODUCT_NAME"/>
+  <ViewAttribute
+    Name="SupplierName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SupplierName"
+    EntityUsage="SupplierEO"
+    AliasName="SUPPLIER_NAME"/>
+  <ViewAttribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ObjectVersionId"
+    EntityUsage="OrderItemEO"
+    AliasName="OBJECT_VERSION_ID"/>
+  <ViewAttribute
+    Name="ProductId1"
+    IsUpdateable="while_insert"
+    PrecisionRule="true"
+    EntityAttrName="ProductId"
+    EntityUsage="ProductBaseEO"
+    AliasName="PRODUCT_ID1"/>
+  <ViewAttribute
+    Name="SupplierId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SupplierId"
+    EntityUsage="SupplierEO"
+    AliasName="SUPPLIER_ID"/>
+  <ViewAttribute
+    Name="ObjectVersionId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ObjectVersionId"
+    EntityUsage="SupplierEO"
+    AliasName="OBJECT_VERSION_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="OrderId"/>
+    <Item Value="LineItemId"/>
+    <Item Value="ProductId"/>
+  </AttrArray>
+</ViewObject>

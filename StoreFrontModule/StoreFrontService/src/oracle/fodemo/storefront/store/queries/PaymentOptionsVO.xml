@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PaymentOptionsVO"
+  SelectList="PaymentOptionEO.PAYMENT_OPTION_ID, 
+       PaymentOptionEO.CUSTOMER_ID, 
+       PaymentOptionEO.PAYMENT_TYPE_CODE, 
+       PaymentOptionEO.BILLING_ADDRESS_ID, 
+       PaymentOptionEO.ACCOUNT_NUMBER, 
+       PaymentOptionEO.CARD_TYPE_CODE, 
+       PaymentOptionEO.EXPIRE_DATE, 
+       PaymentOptionEO.CHECK_DIGITS, 
+       PaymentOptionEO.ROUTING_IDENTIFIER, 
+       PaymentOptionEO.INSTITUTION_NAME, 
+       PaymentOptionEO.VALID_FROM_DATE, 
+       PaymentOptionEO.VALID_TO_DATE"
+  FromList="PAYMENT_OPTIONS PaymentOptionEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Partial"
+  UseGlueCode="false"
+  Version="11.1.1.53.91"
+  FetchSize="26">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <Variable
+    Name="personid"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
+  <Variable
+    Name="paymentId"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
+  <ViewAccessor
+    Name="AddressesAndUsagesVO"
+    ViewObjectName="oracle.fodemo.storefront.store.queries.AddressesAndUsagesVO">
+    <ViewCriteriaUsage
+      Name="AddressesForUserCriteria"
+      FullName="oracle.fodemo.storefront.store.queries.AddressesAndUsagesVO.AddressesForUserCriteria"/>
+    <ViewCriteriaUsage
+      Name="BillingAddressesCriteria"
+      FullName="oracle.fodemo.storefront.store.queries.AddressesAndUsagesVO.BillingAddressesCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="personid">
+        <TransientExpression><![CDATA[CustomerId]]>
+        </TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_PaymentTypeCode"
+    ListVOName="PaymentOptionEO.PaymentTypesVA"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PaymentTypeCode"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="hide"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BillingAddressId"
+    ListVOName="AddressesAndUsagesVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_BillingAddressId_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BillingAddressId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AddressId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Address1"/>
+      <Item Value="City"/>
+      <Item Value="StateProvince"/>
+      <Item Value="CountryId"/>
+      <Item Value="PostalCode"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CardTypeCode"
+    ListVOName="PaymentOptionEO.CreditCardTypesVA"
+    ListRangeSize="10"
+    NullValueFlag="start"
+    NullValueId="LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CardTypeCode"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <EntityUsage
+    Name="PaymentOptionEO"
+    Entity="oracle.fodemo.storefront.entities.PaymentOptionEO"
+    JoinType="INNER JOIN"/>
+  <ViewAttribute
+    Name="PaymentOptionId"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PaymentOptionId"
+    EntityUsage="PaymentOptionEO"
+    AliasName="PAYMENT_OPTION_ID"
+    DefaultValue="@0"/>
+  <ViewAttribute
+    Name="CustomerId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CustomerId"
+    EntityUsage="PaymentOptionEO"
+    AliasName="CUSTOMER_ID"/>
+  <ViewAttribute
+    Name="PaymentTypeCode"
+    LOVName="LOV_PaymentTypeCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PaymentTypeCode"
+    EntityUsage="PaymentOptionEO"
+    AliasName="PAYMENT_TYPE_CODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BillingAddressId"
+    LOVName="LOV_BillingAddressId"
+    PrecisionRule="true"
+    EntityAttrName="BillingAddressId"
+    EntityUsage="PaymentOptionEO"
+    AliasName="BILLING_ADDRESS_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AccountNumber"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AccountNumber"
+    EntityUsage="PaymentOptionEO"
+    AliasName="ACCOUNT_NUMBER"/>
+  <ViewAttribute
+    Name="CardTypeCode"
+    LOVName="LOV_CardTypeCode"
+    PrecisionRule="true"
+    EntityAttrName="CardTypeCode"
+    EntityUsage="PaymentOptionEO"
+    AliasName="CARD_TYPE_CODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ExpireDate"
+    PrecisionRule="true"
+    EntityAttrName="ExpireDate"
+    EntityUsage="PaymentOptionEO"
+    Domain="oracle.fodemo.storefront.entities.formatters.UppercaseOracleStyleDate"
+    AliasName="EXPIRE_DATE"/>
+  <ViewAttribute
+    Name="CheckDigits"
+    PrecisionRule="true"
+    EntityAttrName="CheckDigits"
+    EntityUsage="PaymentOptionEO"
+    AliasName="CHECK_DIGITS"/>
+  <ViewAttribute
+    Name="RoutingIdentifier"
+    PrecisionRule="true"
+    EntityAttrName="RoutingIdentifier"
+    EntityUsage="PaymentOptionEO"
+    AliasName="ROUTING_IDENTIFIER"/>
+  <ViewAttribute
+    Name="InstitutionName"
+    PrecisionRule="true"
+    EntityAttrName="InstitutionName"
+    EntityUsage="PaymentOptionEO"
+    AliasName="INSTITUTION_NAME"/>
+  <ViewAttribute
+    Name="ValidFromDate"
+    PrecisionRule="true"
+    EntityAttrName="ValidFromDate"
+    EntityUsage="PaymentOptionEO"
+    Domain="oracle.fodemo.storefront.entities.formatters.UppercaseOracleStyleDate"
+    AliasName="VALID_FROM_DATE"/>
+  <ViewAttribute
+    Name="ValidToDate"
+    PrecisionRule="true"
+    EntityAttrName="ValidToDate"
+    EntityUsage="PaymentOptionEO"
+    Domain="oracle.fodemo.storefront.entities.formatters.UppercaseOracleStyleDate"
+    AliasName="VALID_TO_DATE"/>
+  <ViewCriteria
+    Name="PaymentOptionsForUser"
+    ViewObjectName="oracle.fodemo.storefront.store.queries.PaymentOptionsVO"
+    Conjunction="AND">
+    <ViewCriteriaRow
+      Name="vcrow48">
+      <ViewCriteriaItem
+        Name="CustomerId"
+        ViewAttribute="CustomerId"
+        Operator="="
+        Conjunction="AND"
+        Value=":personid"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="findById"
+    ViewObjectName="oracle.fodemo.storefront.store.queries.PaymentOptionsVO"
+    Conjunction="AND">
+    <ViewCriteriaRow
+      Name="vcrow33">
+      <ViewCriteriaItem
+        Name="PaymentOptionId"
+        ViewAttribute="PaymentOptionId"
+        Operator="="
+        Conjunction="AND"
+        Value=":paymentId"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewLinkAccessor
+    Name="AddressesVO"
+    ViewLink="oracle.fodemo.storefront.store.queries.links.PaymentOptionsToAddresses"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.store.queries.common.PaymentOptionsVOMsgBundle"/>
+  </ResourceBundle>
+</ViewObject>

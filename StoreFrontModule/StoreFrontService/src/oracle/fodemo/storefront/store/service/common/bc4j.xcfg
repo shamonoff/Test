@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oracle.fodemo.storefront.store.service.StoreServiceAM">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="StoreFrontService" name="StoreServiceAMLocal" ApplicationName="oracle.fodemo.storefront.store.service.StoreServiceAM">
+         <Database jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="oracle.fodemo.storefront.store.service.StoreServiceAM"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/FODDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="StoreFrontService" name="StoreServiceAMLocalWeb" ApplicationName="oracle.fodemo.storefront.store.service.StoreServiceAM">
+         <AM-Pooling jbo.ampool.initpoolsize="1"/>
+         <Database jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="oracle.fodemo.storefront.store.service.StoreServiceAM"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/FODDS" fod.application.issoaenabled="false"/>
+      </AppModuleConfig>
+      <AppModuleConfig DeployPlatform="SI" jbo.project="StoreFrontService" name="StoreFrontService" ApplicationName="oracle.fodemo.storefront.store.service.StoreServiceAM">
+         <Database jbo.TypeMapEntries="Java" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="oracle.fodemo.storefront.store.service.StoreServiceAM"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/FODDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomizedErrorMessages"
+  SeparateXMLFiles="true"
+  PackageName="devguide.advanced.customerrors"
+  Version="11.1.1.59.23">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../CustomizedErrorMessages.jpr"/>
+    <Attr Name="_NamedConnection" Value="FOD"/>
+    <Attr Name="_appModuleNames0"
+      Value="devguide.advanced.customerrors.ProductModule"/>
+  </DesignTime>
+  <Containee
+    Name="customerrors"
+    PackageName="devguide.advanced.customerrors"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AttrArray Name="MessageBundles">
+    <Item Value="devguide.advanced.customerrors.CustomMessageBundle"/>
+  </AttrArray>
+</JboProject>

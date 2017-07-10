@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductCategoriesBaseEO"
+  Version="11.1.1.54.68"
+  DBObjectType="table"
+  DBObjectName="PRODUCT_CATEGORIES_BASE"
+  AliasName="ProductCategoriesBaseEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="CategoryId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="CATEGORY_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_CATEGORIES_BASE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ParentCategoryId"
+    Precision="15"
+    Scale="0"
+    ColumnName="PARENT_CATEGORY_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CategoryLockedFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="CATEGORY_LOCKED_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RepresentativeProductId"
+    Precision="15"
+    Scale="0"
+    ColumnName="REPRESENTATIVE_PRODUCT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PRODUCT_CATEGORIES_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="CategoryTranslations"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.CategoryTranslationsFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.CategoryTranslationsFkAssoc.CategoryTranslations"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.CategoryTranslationsFkAssoc.ProductCategoriesBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ProductCategoriesBase"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.ProductCategoriesFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductCategoriesFkAssoc.ProductCategoriesBase"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductCategoriesFkAssoc.ParentCategoryIdProductCategoriesBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ParentCategoryIdProductCategoriesBase"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.ProductCategoriesFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductCategoriesFkAssoc.ParentCategoryIdProductCategoriesBase"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductCategoriesFkAssoc.ProductCategoriesBase"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProductsBase"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.RepresentativeProductFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.RepresentativeProductFkAssoc.ProductsBase"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.RepresentativeProductFkAssoc.ProductCategoriesBase"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProductsBase1"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.ProductsProductCategoriesFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductsProductCategoriesFkAssoc.ProductsBase1"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.ProductsProductCategoriesFkAssoc.ProductCategoriesBase1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ProductCategoriesLockedChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_CATEGORIES_LOCKED_CHK"/>
+      <Attr Name="_checkCondition" Value="CATEGORY_LOCKED_FLAG in ('Y','N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.CategoryLockedFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductTagsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCT_TAGS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.CategoryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010758">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010758"/>
+      <Attr Name="_checkCondition" Value='"CATEGORY_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.CategoryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010759">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010759"/>
+      <Attr Name="_checkCondition" Value='"CATEGORY_LOCKED_FLAG" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.CategoryLockedFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010760">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010760"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010761">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010761"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010762">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010762"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010763">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010763"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010764">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010764"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductCategoriesFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRODUCT_TAGS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PRODUCT_CATEGORIES_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.ParentCategoryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="RepresentativeProductFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRODUCTS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="REPRESENTATIVE_PRODUCT_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.ProductCategoriesBaseEO.RepresentativeProductId"/>
+    </AttrArray>
+  </Key>
+</Entity>

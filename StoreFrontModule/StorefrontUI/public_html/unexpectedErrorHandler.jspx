@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document title="#{res['unexpectedErrorHandler.title']}" id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/StoreFrontTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="ptemp">
+          <f:facet name="center">
+            <af:panelGroupLayout id="pgl1">
+              <af:panelGroupLayout layout="horizontal" halign="center"
+                                   id="pgl2">
+                <af:panelBox text="#{res['unexpectedErrorHandler.page_access_error']}"
+                             inlineStyle="width:500px;" id="pb1">
+                  <af:outputText value="#{res['unexpectedErrorHandler.page_access_error_sub']}"
+                                 inlineStyle="width:200px;" id="ot1"/>
+                </af:panelBox>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout layout="horizontal" halign="center"
+                                   id="pgl3">
+                <af:goLink text="#{res['unexpectedErrorHandler.continue_shopping']}"
+                           destination="/faces/home.jspx" id="gl1"/>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="end">
+            <af:panelGroupLayout id="pgl4"/>
+          </f:facet>
+          <f:facet name="start">
+            <af:panelGroupLayout id="pgl5"/>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,1591 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <name>PRODUCT_CATEGORIES</name>
+    <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+    <schemaName>FOD</schemaName>
+    <type>VIEW</type>
+  </ID>
+  <name>PRODUCT_CATEGORIES</name>
+  <SQLQuery class="oracle.javatools.db.ora.OracleSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>SQLQuery</name>
+      <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+      <parent class="oracle.javatools.db.IdentifierBasedID">
+        <name>PRODUCT_CATEGORIES</name>
+        <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+        <schemaName>FOD</schemaName>
+        <type>VIEW</type>
+      </parent>
+      <schemaName>FOD</schemaName>
+      <type>SQLQuery</type>
+    </ID>
+    <distinct>false</distinct>
+    <distinctSource></distinctSource>
+    <fromObjects>
+      <fromObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY_TRANSLATIONS INNER JOIN PRODUCT_CATEGORIES_BASE USING (CATEGORY_ID)</name>
+          <identifier class="java.lang.String">bd04ef8d-42db-4c63-943e-ac49cc7bf741</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>FROM</type>
+        </ID>
+        <expression class="oracle.javatools.db.sql.JoinObject">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">9f5e7527-89db-4ecc-9db8-610677bb6974</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <condition class="oracle.javatools.db.sql.UsingJoinCondition">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">a9dadc2b-dec6-4f64-9f3f-ac7477f90b12</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <columns>
+              <column class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">17425a07-056b-44fa-aae6-7d0b477da737</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>PRODUCT_CATEGORIES</name>
+                      <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.lang.String">5b775f86-5766-4001-bfd2-1d108511102a</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>PRODUCT_CATEGORIES</name>
+                      <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>CATEGORY_ID</name>
+                  <identifier class="java.lang.String">b63b5802-0112-1000-80c8-8223672bff0d</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>false</qualified>
+              </column>
+            </columns>
+          </condition>
+          <includeJoinKeyword>true</includeJoinKeyword>
+          <joinType>INNER</joinType>
+          <leftExpression>
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <name>CATEGORY_TRANSLATIONS</name>
+              <identifier class="java.lang.String">d814cc0e-9b2c-4aa3-89db-83fa674f16f4</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </ID>
+            <expression class="oracle.javatools.db.sql.RelationUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">ddc6ad41-889e-4ec7-ac81-33e9d0e2c0b8</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SQLQuery</name>
+                  <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>PRODUCT_CATEGORIES</name>
+                    <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                    <schemaName>FOD</schemaName>
+                    <type>VIEW</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLQuery</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLFragment</type>
+              </ID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>CATEGORY_TRANSLATIONS</name>
+                <identifier class="java.lang.String">b63b5802-0112-1000-803a-8223672bff0d</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </objectID>
+            </expression>
+          </leftExpression>
+          <natural>false</natural>
+          <rightExpression>
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">5b775f86-5766-4001-bfd2-1d108511102a</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </ID>
+            <expression class="oracle.javatools.db.sql.RelationUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">83e44884-0512-4c28-88e9-4756cdf930cc</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SQLQuery</name>
+                  <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>PRODUCT_CATEGORIES</name>
+                    <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                    <schemaName>FOD</schemaName>
+                    <type>VIEW</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLQuery</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLFragment</type>
+              </ID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES_BASE</name>
+                <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+                <schemaName>FOD</schemaName>
+                <type>TABLE</type>
+              </objectID>
+            </expression>
+          </rightExpression>
+        </expression>
+      </fromObject>
+      <fromObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_IMAGES</name>
+          <identifier class="java.lang.String">6156c866-f491-4e5e-be4a-bfb6aacd2b4c</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>FROM</type>
+        </ID>
+        <expression class="oracle.javatools.db.sql.RelationUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">40e296cd-3515-47e2-a7d1-8e2366b13200</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_IMAGES</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-8136-8223672bff0d</identifier>
+            <schemaName>FOD</schemaName>
+            <type>TABLE</type>
+          </objectID>
+        </expression>
+      </fromObject>
+    </fromObjects>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY_NAME</name>
+          <identifier class="java.lang.String">dc533e43-66ef-44eb-8bc8-cb976244dac9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>CATEGORY_NAME</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">4f81cbec-fd3a-4e83-8fb7-f725fc58f814</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_TRANSLATIONS</name>
+            <identifier class="java.lang.String">d814cc0e-9b2c-4aa3-89db-83fa674f16f4</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_NAME</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-803c-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-803a-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY_DESCRIPTION</name>
+          <identifier class="java.lang.String">d20ab44f-65d0-4a45-a002-d974d4c4ab1a</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>CATEGORY_DESCRIPTION</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">96b833a8-be20-4306-a045-ca53eaa52c5b</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_TRANSLATIONS</name>
+            <identifier class="java.lang.String">d814cc0e-9b2c-4aa3-89db-83fa674f16f4</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_DESCRIPTION</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-803d-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-803a-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY_ID</name>
+          <identifier class="java.lang.String">9bbc7ba7-7027-45d7-87a9-f2111e1cba0a</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>CATEGORY_ID</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">ea83e04b-f84e-4db0-9a41-15e24e0ce554</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES_BASE</name>
+            <identifier class="java.lang.String">5b775f86-5766-4001-bfd2-1d108511102a</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80c8-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>false</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PARENT_CATEGORY_ID</name>
+          <identifier class="java.lang.String">5db714a3-eca4-4dae-80d2-533a7a0468ef</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>PARENT_CATEGORY_ID</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">ae437b7c-f6d2-4ae6-9d2d-fe54a6c39e1a</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES_BASE</name>
+            <identifier class="java.lang.String">5b775f86-5766-4001-bfd2-1d108511102a</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>PARENT_CATEGORY_ID</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80c9-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY_LOCKED_FLAG</name>
+          <identifier class="java.lang.String">a8374cbb-e7a7-4cb6-b36e-6b161752d021</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>CATEGORY_LOCKED_FLAG</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">030f9a61-cc2c-4c2f-8fad-7d06de6f0616</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES_BASE</name>
+            <identifier class="java.lang.String">5b775f86-5766-4001-bfd2-1d108511102a</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_LOCKED_FLAG</name>
+            <identifier class="java.lang.String">b63b5802-0112-1000-80ca-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <name>IMAGE</name>
+          <identifier class="java.lang.String">28d5897a-90e5-4a4e-bf63-3a871a2ef8f1</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SQLQuery</name>
+            <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLQuery</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SELECT</type>
+        </ID>
+        <alias>IMAGE</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">b6c91a86-ff76-4865-843b-76dc5f6157c3</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_IMAGES</name>
+            <identifier class="java.lang.String">6156c866-f491-4e5e-be4a-bfb6aacd2b4c</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>IMAGE</name>
+            <identifier class="java.lang.String">b63b5812-0112-1000-813b-8223672bff0d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b63b5802-0112-1000-8136-8223672bff0d</identifier>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <whereObject>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d09b320c-d4c4-4f69-b61a-691a4b02f489</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>WHERE</type>
+      </ID>
+      <arguments>
+        <argument class="oracle.javatools.db.sql.Comparison">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">740bde2c-b366-4944-8e05-a8973a3e5f3f</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <comparator>5</comparator>
+          <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">d93ad594-ed93-4589-9c6c-9a40d94b4ae2</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_IMAGES</name>
+              <identifier class="java.lang.String">6156c866-f491-4e5e-be4a-bfb6aacd2b4c</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </fromObjectID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_ID</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-8138-8223672bff0d</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">b63b5802-0112-1000-8136-8223672bff0d</identifier>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </leftExpression>
+          <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">e415e708-c763-4a71-8d34-fb6b0551faff</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES_BASE</name>
+              <identifier class="java.lang.String">5b775f86-5766-4001-bfd2-1d108511102a</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </fromObjectID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>REPRESENTATIVE_PRODUCT_ID</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-80cb-8223672bff0d</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">b63b5802-0112-1000-80c7-8223672bff0d</identifier>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </rightExpression>
+        </argument>
+        <argument class="oracle.javatools.db.sql.Comparison">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">782829d7-2367-4975-9067-9a90f4621de7</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <comparator>5</comparator>
+          <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">85240bd5-5aec-4407-b227-8077b5bde406</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_IMAGES</name>
+              <identifier class="java.lang.String">6156c866-f491-4e5e-be4a-bfb6aacd2b4c</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </fromObjectID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>DEFAULT_VIEW_FLAG</name>
+              <identifier class="java.lang.String">b63b5812-0112-1000-8139-8223672bff0d</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">b63b5802-0112-1000-8136-8223672bff0d</identifier>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </leftExpression>
+          <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">be33e178-b1e1-4762-80a3-a93195a6be4e</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <SQLText>&apos;Y&apos;</SQLText>
+          </rightExpression>
+        </argument>
+        <argument class="oracle.javatools.db.sql.Comparison">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">04d051b1-0811-440f-9ae7-ee286df1b2bd</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SQLQuery</name>
+              <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRODUCT_CATEGORIES</name>
+                <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                <schemaName>FOD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>SQLFragment</type>
+          </ID>
+          <comparator>5</comparator>
+          <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">8ded94fa-dd08-4a42-a1c7-7d9829a88a26</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>CATEGORY_TRANSLATIONS</name>
+              <identifier class="java.lang.String">d814cc0e-9b2c-4aa3-89db-83fa674f16f4</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>FROM</type>
+            </fromObjectID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>LANGUAGE</name>
+              <identifier class="java.lang.String">b63b5802-0112-1000-803e-8223672bff0d</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">b63b5802-0112-1000-803a-8223672bff0d</identifier>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </leftExpression>
+          <rightExpression class="oracle.javatools.db.sql.Function">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">e41a7829-9c0a-4594-8e88-f51709f2d13e</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SQLQuery</name>
+                <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PRODUCT_CATEGORIES</name>
+                  <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>VIEW</type>
+                </parent>
+                <schemaName>FOD</schemaName>
+                <type>SQLQuery</type>
+              </parent>
+              <schemaName>FOD</schemaName>
+              <type>SQLFragment</type>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">3db701b6-43da-4d53-b107-35a7f8b73ca5</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>PRODUCT_CATEGORIES</name>
+                      <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;userenv&apos;</SQLText>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">3c10a56f-21e8-4f37-9219-5c1a2bb7a829</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SQLQuery</name>
+                    <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>PRODUCT_CATEGORIES</name>
+                      <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+                      <schemaName>FOD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>FOD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>FOD</schemaName>
+                  <type>SQLFragment</type>
+                </ID>
+                <SQLText>&apos;LANG&apos;</SQLText>
+              </argument>
+            </arguments>
+            <distinct>false</distinct>
+            <function>SYS_CONTEXT</function>
+            <grouping>false</grouping>
+            <separator>, </separator>
+          </rightExpression>
+        </argument>
+      </arguments>
+      <operator>372</operator>
+    </whereObject>
+    <queryString>SELECT CATEGORY_TRANSLATIONS.CATEGORY_NAME CATEGORY_NAME, CATEGORY_TRANSLATIONS.CATEGORY_DESCRIPTION CATEGORY_DESCRIPTION, CATEGORY_ID CATEGORY_ID, PRODUCT_CATEGORIES_BASE.PARENT_CATEGORY_ID PARENT_CATEGORY_ID, PRODUCT_CATEGORIES_BASE.CATEGORY_LOCKED_FLAG CATEGORY_LOCKED_FLAG, PRODUCT_IMAGES.IMAGE IMAGE FROM CATEGORY_TRANSLATIONS INNER JOIN PRODUCT_CATEGORIES_BASE USING (CATEGORY_ID), PRODUCT_IMAGES WHERE PRODUCT_IMAGES.PRODUCT_ID = PRODUCT_CATEGORIES_BASE.REPRESENTATIVE_PRODUCT_ID AND PRODUCT_IMAGES.DEFAULT_VIEW_FLAG = &apos;Y&apos; AND CATEGORY_TRANSLATIONS.LANGUAGE = SYS_CONTEXT(&apos;userenv&apos;, &apos;LANG&apos;)</queryString>
+  </SQLQuery>
+  <columns>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_NAME</name>
+        <identifier class="java.lang.String">cf82370a-62fd-448b-88ce-2aca826df3cd</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>CATEGORY_NAME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">70acf781-cf91-41db-9c59-26087a803553</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_NAME</name>
+            <identifier class="java.lang.String">cf82370a-62fd-448b-88ce-2aca826df3cd</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CATEGORY_NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CATEGORY_TRANSLATIONS</name>
+                  <identifier class="java.math.BigDecimal">20882</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_NAME</name>
+        <identifier class="java.lang.String">dc533e43-66ef-44eb-8bc8-cb976244dac9</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_DESCRIPTION</name>
+        <identifier class="java.lang.String">f36c625a-6147-4ab5-9385-a5e41ffa1da6</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>CATEGORY_DESCRIPTION</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3c2494fd-b258-43c4-a3c5-05b6b0726fd1</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_DESCRIPTION</name>
+            <identifier class="java.lang.String">f36c625a-6147-4ab5-9385-a5e41ffa1da6</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1000</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CATEGORY_DESCRIPTION</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CATEGORY_TRANSLATIONS</name>
+                  <identifier class="java.math.BigDecimal">20882</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_DESCRIPTION</name>
+        <identifier class="java.lang.String">d20ab44f-65d0-4a45-a002-d974d4c4ab1a</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_ID</name>
+        <identifier class="java.lang.String">eade9087-a9a4-40df-a078-7d41bf128679</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>CATEGORY_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ff8deb86-246f-49a1-80c4-e7a37cd9d9a0</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_ID</name>
+            <identifier class="java.lang.String">eade9087-a9a4-40df-a078-7d41bf128679</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CATEGORY_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_ID</name>
+        <identifier class="java.lang.String">9bbc7ba7-7027-45d7-87a9-f2111e1cba0a</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PARENT_CATEGORY_ID</name>
+        <identifier class="java.lang.String">9a5aa07b-3f2a-4641-8a7f-727e3550bcc0</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>PARENT_CATEGORY_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">6a897789-2913-444a-813b-26277a39be8c</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PARENT_CATEGORY_ID</name>
+            <identifier class="java.lang.String">9a5aa07b-3f2a-4641-8a7f-727e3550bcc0</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PARENT_CATEGORY_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PARENT_CATEGORY_ID</name>
+        <identifier class="java.lang.String">5db714a3-eca4-4dae-80d2-533a7a0468ef</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_LOCKED_FLAG</name>
+        <identifier class="java.lang.String">bae83618-5012-4a6d-ae35-83c7813bb392</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>CATEGORY_LOCKED_FLAG</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">471a65a1-626a-450f-a3f0-dba366504508</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_LOCKED_FLAG</name>
+            <identifier class="java.lang.String">bae83618-5012-4a6d-ae35-83c7813bb392</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CATEGORY_LOCKED_FLAG</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_CATEGORIES_BASE</name>
+                  <identifier class="java.math.BigDecimal">20868</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_LOCKED_FLAG</name>
+        <identifier class="java.lang.String">a8374cbb-e7a7-4cb6-b36e-6b161752d021</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <name>IMAGE</name>
+        <identifier class="java.lang.String">1b498cdf-f479-4f43-9476-3ee7d0967d94</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRODUCT_CATEGORIES</name>
+          <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+          <schemaName>FOD</schemaName>
+          <type>VIEW</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>COLUMN</type>
+      </ID>
+      <name>IMAGE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">08bc4f1b-55c6-4182-8129-570abd9cb032</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>IMAGE</name>
+            <identifier class="java.lang.String">1b498cdf-f479-4f43-9476-3ee7d0967d94</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRODUCT_CATEGORIES</name>
+              <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+              <schemaName>FOD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <schemaName>FOD</schemaName>
+            <type>COLUMN</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>DataTypeUsage</type>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle8</providerClass>
+          <typeName>BLOB</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>IMAGE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRODUCT_IMAGES</name>
+                  <identifier class="java.math.BigDecimal">20872</identifier>
+                  <schemaName>FOD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>IMAGE</name>
+        <identifier class="java.lang.String">28d5897a-90e5-4a4e-bf63-3a871a2ef8f1</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SQLQuery</name>
+          <identifier class="java.lang.String">b1ef74e1-262d-4a83-bec3-8baab357456f</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRODUCT_CATEGORIES</name>
+            <identifier class="java.lang.String">c1078dfa-0112-1000-80db-c0a8014059d9</identifier>
+            <schemaName>FOD</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>FOD</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>FOD</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">Simplified view of categories</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">FOD</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>PRODUCT_CATEGORIES</name>
+        <identifier class="java.math.BigDecimal">20919</identifier>
+        <schemaName>FOD</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+      <value class="java.lang.Long">1233768290000</value>
+    </entry>
+  </properties>
+  <queryRestriction>WITH READ ONLY</queryRestriction>
+  <schema>
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <name>FOD</name>
+      <identifier class="java.lang.String">b628cc3c-0112-1000-8006-8223672b1417</identifier>
+      <type>SCHEMA</type>
+    </ID>
+    <name>FOD</name>
+  </schema>
+</view>

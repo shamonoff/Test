@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.34" id="account_paymentOptionsPageDef"
+                Package="oracle.fodemo.storefront.pageDefs">
+  <parameters/>
+  <executables>
+    <page path="oracle.fodemo.storefront.pageDefs.templates_StoreFrontTemplatePageDef"
+          id="pageTemplateBinding"/>
+    <iterator Binds="CustomerPaymentOption" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="CustomerPaymentOptionIterator"/>
+    <invokeAction Binds="setHelpId" id="invokeSetHelpId" Refresh="ifNeeded"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomerPaymentOptionIterator"
+          id="CustomerPaymentOption">
+      <nodeDefinition DefName="oracle.fodemo.storefront.account.queries.CustomerPaymentOptionVO"
+                      Name="CustomerPaymentOption.0">
+        <AttrNames>
+          <Item Value="PaymentOptionId"/>
+          <Item Value="PaymentTypeCode"/>
+          <Item Value="BillingAddressId"/>
+          <Item Value="AccountNumber"/>
+          <Item Value="CardTypeCode"/>
+          <Item Value="ExpireDate"/>
+          <Item Value="CheckDigits"/>
+          <Item Value="RoutingIdentifier"/>
+          <Item Value="InstitutionName"/>
+          <Item Value="ValidFromDate"/>
+          <Item Value="ValidToDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="setHelpId"
+                  InstanceName="LookupServiceAMDataControl.dataProvider"
+                  DataControl="LookupServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="setHelpId" IsViewObjectMethod="false"
+                  ReturnName="LookupServiceAMDataControl.methodResults.setHelpId_LookupServiceAMDataControl_dataProvider_setHelpId_result">
+      <NamedData NDName="usage" NDValue="CREATE_PAYMENT_OPTIONS"
+                 NDType="java.lang.String"/>
+      <events xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+        <event name="queueHelpTopic"/>
+      </events>
+    </methodAction>
+  </bindings>
+</pageDefinition>

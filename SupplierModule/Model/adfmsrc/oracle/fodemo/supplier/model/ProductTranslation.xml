@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.55"
+          id="ProductTranslation" Package="oracle.fodemo.supplier.model"
+          BeanClass="oracle.fodemo.supplier.model.ProductTranslation"
+          isJavaBased="true">
+  <Attribute Name="additionalInfo" Type="java.lang.String"/>
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="creationDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="description" Type="java.lang.String"/>
+  <Attribute Name="language" PrimaryKey="true" Type="java.lang.String"/>
+  <Attribute Name="lastUpdatedBy" Type="java.lang.String"/>
+  <Attribute Name="lastUpdateDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="objectVersionId" Type="java.lang.Long"/>
+  <Attribute Name="productId" PrimaryKey="true" Type="java.lang.Long"/>
+  <Attribute Name="sourceLang" Type="java.lang.String"/>
+  <AccessorAttribute id="product" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Product"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.ProductTranslation"
+                     BeanClass="oracle.fodemo.supplier.model.ProductTranslation"
+                     id="ProductTranslation">
+    <ParameterInfo id="additionalInfo" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="createdBy" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="creationDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="description" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="language" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="lastUpdateDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdatedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="objectVersionId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+    <ParameterInfo id="sourceLang" Type="java.lang.String"
+                   isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.ProductTranslation"
+                     BeanClass="oracle.fodemo.supplier.model.ProductTranslation"
+                     id="ProductTranslation"/>
+</JavaBean>

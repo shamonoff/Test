@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:d406f953-e920-45c4-8cda-611a5bf39360'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Customer Interest'
+   visibility='public'>
+  <ownedAttribute xmi:uuid='urn:uuid:09f3e4ba-b20f-4a62-ae8e-ea8cc19ef6c5'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='Creation Date'
+    aggregation='none'>
+   <type href='mof:/char:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:4b0a3e2e-8a59-4517-a2e7-0b4a4c253903'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:9ba98635-39da-4b2e-8d9c-40635f4c1175'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+ </uml:Class>
+</xmi:XMI>

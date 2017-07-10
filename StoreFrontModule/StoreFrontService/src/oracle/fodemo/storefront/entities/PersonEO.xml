@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  Name="PersonEO"
+  Version="11.1.1.55.36"
+  DBObjectType="table"
+  DBObjectName="PERSONS"
+  AliasName="PersonEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="oracle.fodemo.storefront.entities.PersonEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="ContactMethodsVA"
+    ViewObjectName="oracle.fodemo.storefront.lookups.LookupsBaseVO"
+    AMUsageName="SharedLookupService"
+    ViewInstanceName="ContactMethodTypes"/>
+  <ViewAccessor
+    Name="PersonTypesVA"
+    ViewObjectName="oracle.fodemo.storefront.lookups.LookupsBaseVO"
+    AMUsageName="SharedLookupService"
+    ViewInstanceName="PersonTypes"/>
+  <ViewAccessor
+    Name="MaritalStatusVA"
+    ViewObjectName="oracle.fodemo.storefront.lookups.LookupsBaseVO"
+    AMUsageName="SharedLookupService"
+    ViewInstanceName="MaritalStatusTypes"/>
+  <ViewAccessor
+    Name="GenderVA"
+    ViewObjectName="oracle.fodemo.storefront.lookups.LookupsBaseVO"
+    AMUsageName="SharedLookupService"
+    ViewInstanceName="GenderTypes"/>
+  <ViewAccessor
+    Name="PersonTitleTypesVA"
+    ViewObjectName="oracle.fodemo.storefront.lookups.LookupsBaseVO"
+    AMUsageName="SharedLookupService"
+    ViewInstanceName="PersonTitleTypes"/>
+  <Attribute
+    Name="PersonId"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    ColumnName="PERSON_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="PERSONS"
+    PrimaryKey="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PersonId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PrincipalName"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="PRINCIPAL_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PrincipalName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Title"
+    Precision="12"
+    ColumnName="TITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Title_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="FirstName"
+    Precision="30"
+    ColumnName="FIRST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="FirstName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="LastName"
+    Precision="30"
+    ColumnName="LAST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LastName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PersonTypeCode"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="PERSON_TYPE_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PersonTypeCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="SupplierId"
+    ColumnName="SUPPLIER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SupplierId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ProvisionedFlag"
+    Precision="1"
+    ColumnName="PROVISIONED_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ProvisionedFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PrimaryAddressId"
+    Precision="15"
+    Scale="0"
+    ColumnName="PRIMARY_ADDRESS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PrimaryAddressId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="RegisteredDate"
+    ColumnName="REGISTERED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="RegisteredDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:ExpressionValidationBean
+      Name="RegisteredDate_Rule_0"
+      OperandType="EXPR"
+      Inverse="false">
+      <validation:MsgIds>
+        <validation:Item
+          Value="RegisteredDate_Rule_0"/>
+      </validation:MsgIds>
+      <validation:TransientExpression><![CDATA[
+newValue <= (new java.sql.Timestamp(System.currentTimeMillis()))
+        ]]></validation:TransientExpression>
+    </validation:ExpressionValidationBean>
+  </Attribute>
+  <Attribute
+    Name="MembershipId"
+    Precision="15"
+    Scale="0"
+    ColumnName="MEMBERSHIP_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="MembershipId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:ExistsValidationBean
+      Name="MembershipId_Rule_0"
+      ResId="MembershipId_Rule_0"
+      OperandType="EO"
+      AssocName="oracle.fodemo.storefront.entities.associations.PersonsMembershipsBaseFkAssoc"/>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    IsNotNull="true"
+    Precision="25"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Email_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ConfirmedEmail"
+    IsNotNull="true"
+    Precision="25"
+    ColumnName="CONFIRMED_EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ConfirmedEmail_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PhoneNumber"
+    Precision="20"
+    ColumnName="PHONE_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PhoneNumber_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="MobilePhoneNumber"
+    Precision="20"
+    ColumnName="MOBILE_PHONE_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="MobilePhoneNumber_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreditLimit"
+    Precision="9"
+    Scale="2"
+    ColumnName="CREDIT_LIMIT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CreditLimit_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DateOfBirth"
+    ColumnName="DATE_OF_BIRTH"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DateOfBirth_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="MaritalStatusCode"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="MARITAL_STATUS_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="MaritalStatusCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Gender"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="GENDER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Gender_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:ListValidationBean
+      Name="Gender_Rule_0"
+      ResId="Gender_Error"
+      OnAttribute="Gender"
+      OperandType="LITERAL"
+      Inverse="false">
+      <validation:AttrArray
+        Name="List">
+        <validation:Item
+          Value="M"/>
+        <validation:Item
+          Value="F"/>
+      </validation:AttrArray>
+    </validation:ListValidationBean>
+  </Attribute>
+  <Attribute
+    Name="ChildrenUnder18"
+    Precision="2"
+    Scale="0"
+    ColumnName="CHILDREN_UNDER_18"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ChildrenUnder18_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ApproximateIncome"
+    Precision="15"
+    Scale="0"
+    ColumnName="APPROXIMATE_INCOME"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ApproximateIncome_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ContactMethodCode"
+    Precision="30"
+    ColumnName="CONTACT_METHOD_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ContactMethodCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:ListValidationBean
+      Name="ContactMethodCode_Rule_0"
+      ResId="ContactMethod_Rule_0"
+      OnAttribute="ContactMethodCode"
+      OperandType="SQL"
+      Inverse="false"
+      ListValue="select distinct lookup_code from lookup_codes where lookup_type='CONTACT_METHOD_CODE'"/>
+  </Attribute>
+  <Attribute
+    Name="ContactableFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="CONTACTABLE_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ContactableFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:ListValidationBean
+      Name="ContactableFlag_Rule_0"
+      ResId="ContactableFlag_Rule_0"
+      OnAttribute="ContactableFlag"
+      OperandType="LITERAL"
+      Inverse="false">
+      <validation:AttrArray
+        Name="List">
+        <validation:Item
+          Value="N"/>
+        <validation:Item
+          Value="Y"/>
+      </validation:AttrArray>
+    </validation:ListValidationBean>
+  </Attribute>
+  <Attribute
+    Name="ContactByAffilliatesFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="CONTACT_BY_AFFILLIATES_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ContactByAffilliatesFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:ListValidationBean
+      Name="ContactByAffilliatesFlag_Rule_0"
+      ResId="ContactByAffilliatesFlag_Rule_0"
+      OnAttribute="ContactByAffilliatesFlag"
+      OperandType="LITERAL"
+      Inverse="false">
+      <validation:AttrArray
+        Name="List">
+        <validation:Item
+          Value="N"/>
+        <validation:Item
+          Value="Y"/>
+      </validation:AttrArray>
+    </validation:ListValidationBean>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="PERSONS"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="PERSONS"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PERSONS"
+    ChangeIndicator="true"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Address"
+    Association="oracle.fodemo.storefront.entities.associations.PersonsAddressesFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.PersonsAddressesFkAssoc.Address"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.PersonsAddressesFkAssoc.Person"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="MembershipBase"
+    Association="oracle.fodemo.storefront.entities.associations.PersonsMembershipsBaseFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.PersonsMembershipsBaseFkAssoc.MembershipBase"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.PersonsMembershipsBaseFkAssoc.Person"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="CouponUsage"
+    Association="oracle.fodemo.storefront.entities.associations.CouponUsagesPersonsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.CouponUsagesPersonsFkAssoc.CouponUsage"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.CouponUsagesPersonsFkAssoc.Person"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PaymentOption"
+    Association="oracle.fodemo.storefront.entities.associations.PaymentOptionsPersonsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.PaymentOptionsPersonsFkAssoc.PaymentOption"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.PaymentOptionsPersonsFkAssoc.Person"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AddressUsage"
+    Association="oracle.fodemo.storefront.entities.associations.AddressUsagesPersonsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.AddressUsagesPersonsFkAssoc.AddressUsage"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.AddressUsagesPersonsFkAssoc.Person"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Order"
+    Association="oracle.fodemo.storefront.entities.associations.OrdersPersonsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.OrdersPersonsFkAssoc.Order"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.OrdersPersonsFkAssoc.Person"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerInterest"
+    Association="oracle.fodemo.storefront.entities.associations.CustomerInterestsPersonFk1Assoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.CustomerInterestsPersonFk1Assoc.CustomerInterest"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.CustomerInterestsPersonFk1Assoc.Person"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerIdentification"
+    Association="oracle.fodemo.storefront.entities.associations.CustomerIdentificationsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.CustomerIdentificationsFkAssoc.CustomerIdentification"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.CustomerIdentificationsFkAssoc.Person"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="CustomerIdentification1"
+    Association="oracle.fodemo.storefront.entities.associations.CustomerIdentificationsFk1Assoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.CustomerIdentificationsFk1Assoc.CustomerIdentification1"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.CustomerIdentificationsFk1Assoc.Person1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="AltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PERSONS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.Email"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsAffContactChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_AFF_CONTACT_CHK"/>
+      <Attr Name="_checkCondition"
+        Value="CONTACT_BY_AFFILLIATES_FLAG in ('Y','N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.PersonEO.ContactByAffilliatesFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsConfirmedEmailCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PERSONS_CONFIRMED_EMAIL_CHECK"/>
+      <Attr Name="_checkCondition" Value='"CONFIRMED_EMAIL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.ConfirmedEmail"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsContactChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_CONTACT_CHK"/>
+      <Attr Name="_checkCondition" Value="CONTACTABLE_FLAG in ('Y','N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.ContactableFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsGenderChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_GENDER_CHK"/>
+      <Attr Name="_checkCondition" Value="GENDER in ('M','F','D')"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.Gender"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.PersonId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsProvisionedChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_PROVISIONED_CHK"/>
+      <Attr Name="_checkCondition" Value="PROVISIONED_FLAG in ('Y','N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.ProvisionedFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PrincipalName_AltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PERSONS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.PrincipalName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030495">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030495"/>
+      <Attr Name="_checkCondition" Value='"PERSON_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.PersonId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030496">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030496"/>
+      <Attr Name="_checkCondition" Value='"PRINCIPAL_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.PrincipalName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030497">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030497"/>
+      <Attr Name="_checkCondition" Value='"PERSON_TYPE_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.PersonTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030498">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030498"/>
+      <Attr Name="_checkCondition" Value='"EMAIL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.Email"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030499">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030499"/>
+      <Attr Name="_checkCondition" Value='"MARITAL_STATUS_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.PersonEO.MaritalStatusCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030500">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030500"/>
+      <Attr Name="_checkCondition" Value='"GENDER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.Gender"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030501">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030501"/>
+      <Attr Name="_checkCondition" Value='"CONTACTABLE_FLAG" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.ContactableFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030502">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030502"/>
+      <Attr Name="_checkCondition"
+        Value='"CONTACT_BY_AFFILLIATES_FLAG" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.PersonEO.ContactByAffilliatesFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030503">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030503"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030504">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030504"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030505">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030505"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030506">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030506"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030507">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030507"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055105">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055105"/>
+      <Attr Name="_checkCondition" Value='"PERSON_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.PersonId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055106">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055106"/>
+      <Attr Name="_checkCondition" Value='"PRINCIPAL_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.PrincipalName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055107">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055107"/>
+      <Attr Name="_checkCondition" Value='"PERSON_TYPE_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.PersonTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055108">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055108"/>
+      <Attr Name="_checkCondition" Value='"EMAIL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.Email"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055109">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055109"/>
+      <Attr Name="_checkCondition" Value='"MARITAL_STATUS_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.PersonEO.MaritalStatusCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055110">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055110"/>
+      <Attr Name="_checkCondition" Value='"GENDER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.Gender"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055111">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055111"/>
+      <Attr Name="_checkCondition" Value='"CONTACTABLE_FLAG" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.ContactableFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055112">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055112"/>
+      <Attr Name="_checkCondition"
+        Value='"CONTACT_BY_AFFILLIATES_FLAG" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.PersonEO.ContactByAffilliatesFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055113">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055113"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055114">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055114"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055115">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055115"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055116">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055116"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055117">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055117"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsAddressesFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADDRESSES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PERSONS_ADDRESSES_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.PersonEO.PrimaryAddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsMembershipsBaseFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="MEMBERSHIPS_BASE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PERSONS_MEMBERSHIPS_BASE_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.PersonEO.MembershipId"/>
+    </AttrArray>
+  </Key>
+  <validation:CompareValidationBean
+    Name="PersonEO_Rule_0"
+    ResId="PersonEO_Rule_0"
+    OnAttribute="Email"
+    OperandType="ATTR"
+    Inverse="false"
+    CompareType="EQUALTO"
+    CompareValue="ConfirmedEmail"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.PersonEOMsgBundle"/>
+  </ResourceBundle>
+  <BusLogicGroup
+    Name="PersonTypeCodeGroup"
+    DiscrAttrName="PersonTypeCode"/>
+</Entity>

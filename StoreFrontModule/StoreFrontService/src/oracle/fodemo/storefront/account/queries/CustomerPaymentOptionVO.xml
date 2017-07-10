@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomerPaymentOptionVO"
+  Version="11.1.1.55.36"
+  SelectList="PaymentOptionEO.PAYMENT_OPTION_ID, 
+       PaymentOptionEO.CUSTOMER_ID, 
+       PaymentOptionEO.PAYMENT_TYPE_CODE, 
+       PaymentOptionEO.BILLING_ADDRESS_ID, 
+       PaymentOptionEO.ACCOUNT_NUMBER, 
+       PaymentOptionEO.CARD_TYPE_CODE, 
+       PaymentOptionEO.EXPIRE_DATE, 
+       PaymentOptionEO.CHECK_DIGITS, 
+       PaymentOptionEO.ROUTING_IDENTIFIER, 
+       PaymentOptionEO.INSTITUTION_NAME, 
+       PaymentOptionEO.VALID_FROM_DATE, 
+       PaymentOptionEO.VALID_TO_DATE, 
+       PaymentOptionEO.OBJECT_VERSION_ID, 
+       LookupCodeEO.LOOKUP_TYPE, 
+       LookupCodeEO.LOOKUP_CODE, 
+       LookupCodeEO.MEANING, 
+       LookupCodeEO.LANGUAGE, 
+       LookupCodeEO.OBJECT_VERSION_ID AS OBJECT_VERSION_ID1"
+  FromList="PAYMENT_OPTIONS PaymentOptionEO, LOOKUP_CODES LookupCodeEO"
+  Where="LookupCodeEO.LOOKUP_TYPE='PAYMENT_TYPE_CODE' and LookupCodeEO.LOOKUP_CODE  = PaymentOptionEO.PAYMENT_TYPE_CODE AND LookupCodeEO.LANGUAGE = USERENV('CLIENT_INFO')"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  RowClass="oracle.fodemo.storefront.account.queries.CustomerPaymentOptionVORowImpl"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="CustomerAddressVA"
+    ViewObjectName="oracle.fodemo.storefront.account.queries.CustomerAddressVO">
+    <ViewCriteriaUsage
+      Name="listBillingAddressByCustomer"
+      FullName="oracle.fodemo.storefront.account.queries.CustomerAddressVO.listBillingAddressByCustomer"/>
+    <ParameterMap>
+      <PIMap Variable="vcParamAssociatedOwnerId">
+        <TransientExpression><![CDATA[CustomerId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="CustomerRegistrationVA"
+    ViewObjectName="oracle.fodemo.storefront.account.queries.CustomerRegistrationVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="PaymentTypeCodeLOV"
+    ListVOName="PaymentOptionEO.PaymentTypesVA"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PaymentTypeCode"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="CardTypeCodeLOV"
+    ListVOName="PaymentOptionEO.CreditCardTypesVA"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CardTypeCode"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="BillingAddressIdLOV"
+    ListVOName="CustomerAddressVA"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BillingAddressId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AddressId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AddressLabel"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="PaymentOptionEO"
+    Entity="oracle.fodemo.storefront.entities.PaymentOptionEO"
+    JoinType="INNER JOIN"/>
+  <EntityUsage
+    Name="LookupCodeEO"
+    Entity="oracle.fodemo.storefront.entities.LookupCodeEO"
+    SourceUsage="oracle.fodemo.storefront.account.queries.CustomerPaymentOptionVO.PaymentOptionEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN"/>
+  <ViewAttribute
+    Name="PaymentOptionId"
+    IsUpdateable="while_insert"
+    PrecisionRule="true"
+    EntityAttrName="PaymentOptionId"
+    EntityUsage="PaymentOptionEO"
+    AliasName="PAYMENT_OPTION_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CustomerId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CustomerId"
+    EntityUsage="PaymentOptionEO"
+    AliasName="CUSTOMER_ID">
+    <TransientExpression><![CDATA[CustomerRegistrationVA.PersonId]]></TransientExpression>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PaymentTypeCode"
+    LOVName="PaymentTypeCodeLOV"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PaymentTypeCode"
+    EntityUsage="PaymentOptionEO"
+    AliasName="PAYMENT_TYPE_CODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BillingAddressId"
+    LOVName="BillingAddressIdLOV"
+    PrecisionRule="true"
+    EntityAttrName="BillingAddressId"
+    EntityUsage="PaymentOptionEO"
+    AliasName="BILLING_ADDRESS_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <DISPLAYHEIGHT
+          Value="1"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AccountNumber"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AccountNumber"
+    EntityUsage="PaymentOptionEO"
+    AliasName="ACCOUNT_NUMBER"/>
+  <ViewAttribute
+    Name="CardTypeCode"
+    LOVName="CardTypeCodeLOV"
+    PrecisionRule="true"
+    EntityAttrName="CardTypeCode"
+    EntityUsage="PaymentOptionEO"
+    AliasName="CARD_TYPE_CODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ExpireDate"
+    PrecisionRule="true"
+    EntityAttrName="ExpireDate"
+    EntityUsage="PaymentOptionEO"
+    AliasName="EXPIRE_DATE"/>
+  <ViewAttribute
+    Name="CheckDigits"
+    PrecisionRule="true"
+    EntityAttrName="CheckDigits"
+    EntityUsage="PaymentOptionEO"
+    AliasName="CHECK_DIGITS"/>
+  <ViewAttribute
+    Name="RoutingIdentifier"
+    PrecisionRule="true"
+    EntityAttrName="RoutingIdentifier"
+    EntityUsage="PaymentOptionEO"
+    AliasName="ROUTING_IDENTIFIER"/>
+  <ViewAttribute
+    Name="InstitutionName"
+    PrecisionRule="true"
+    EntityAttrName="InstitutionName"
+    EntityUsage="PaymentOptionEO"
+    AliasName="INSTITUTION_NAME"/>
+  <ViewAttribute
+    Name="ValidFromDate"
+    PrecisionRule="true"
+    EntityAttrName="ValidFromDate"
+    EntityUsage="PaymentOptionEO"
+    AliasName="VALID_FROM_DATE"/>
+  <ViewAttribute
+    Name="ValidToDate"
+    PrecisionRule="true"
+    EntityAttrName="ValidToDate"
+    EntityUsage="PaymentOptionEO"
+    AliasName="VALID_TO_DATE"/>
+  <ViewAttribute
+    Name="ObjectVersionId"
+    IsUpdateable="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ObjectVersionId"
+    EntityUsage="PaymentOptionEO"
+    AliasName="OBJECT_VERSION_ID"/>
+  <ViewAttribute
+    Name="LookupType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LookupType"
+    EntityUsage="LookupCodeEO"
+    AliasName="LOOKUP_TYPE"/>
+  <ViewAttribute
+    Name="LookupCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LookupCode"
+    EntityUsage="LookupCodeEO"
+    AliasName="LOOKUP_CODE"/>
+  <ViewAttribute
+    Name="Meaning"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Meaning"
+    EntityUsage="LookupCodeEO"
+    AliasName="MEANING"/>
+  <ViewAttribute
+    Name="Language"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Language"
+    EntityUsage="LookupCodeEO"
+    AliasName="LANGUAGE"/>
+  <ViewAttribute
+    Name="ObjectVersionId1"
+    IsUpdateable="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ObjectVersionId"
+    EntityUsage="LookupCodeEO"
+    AliasName="OBJECT_VERSION_ID1"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.account.queries.common.CustomerPaymentOptionVOMsgBundle"/>
+  </ResourceBundle>
+</ViewObject>

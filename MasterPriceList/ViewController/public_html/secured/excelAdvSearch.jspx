@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document title="#{res['excel.advSearch.dialogTitle']}" id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelHeader text="#{res['excel.advSearch.header']}" id="ph1">
+          <f:facet name="context"/>
+          <f:facet name="menuBar"/>
+          <f:facet name="toolbar"/>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+          <af:spacer height="10" id="s1"/>
+        </af:panelHeader>
+        <af:panelFormLayout id="pfl1">
+          <af:inputText value="#{bindings.searchTerm.inputValue}"
+                        label="#{res['pls.productSearch.simpleSearch.label']}"
+                        required="#{bindings.searchTerm.hints.mandatory}"
+                        columns="#{bindings.searchTerm.hints.displayWidth}"
+                        maximumLength="#{bindings.searchTerm.hints.precision}"
+                        shortDesc="#{bindings.searchTerm.hints.tooltip}"
+                        id="it1">
+            <f:validator binding="#{bindings.searchTerm.validator}"/>
+          </af:inputText>
+          <af:group id="g1">
+            <af:selectOneListbox label="#{res['pls.productSearch.categoryId.label']}"
+                                 required="#{bindings.categoryIdList.hints.mandatory}"
+                                 shortDesc="#{res['pls.productSearch.categoryId.hint']}"
+                                 value="#{bindings.categoryIdList.inputValue}"
+                                 id="sol1">
+              <f:selectItems value="#{bindings.categoryIdList.items}" id="si1"/>
+            </af:selectOneListbox>
+            <af:selectBooleanCheckbox value="#{bindings.includeDiscontinued.inputValue}"
+                                      label="#{res['pls.productSearch.incDiscontinued.label']}"
+                                      shortDesc="#{res['pls.productSearch.incDiscontinued.hint']}"
+                                      id="sbc1"/>
+            <af:spacer height="4" id="s2"/>
+          </af:group>
+          <f:facet name="footer">
+            <af:panelGroupLayout layout="horizontal" id="pgl1" halign="center">
+              <af:commandButton text="#{res['pls.productSearch.searchButton.label']}"
+                                disabled="#{!bindings.executeAdvancedProductQuery.enabled}"
+                                action="#{excelAdvancedSearchBacking.searchAction}"
+                                id="cb1">
+                <af:setActionListener from="search"
+                                      to="#{requestScope.searchAction}"/>
+              </af:commandButton>
+              <af:commandButton text="#{res['excel.advSearch.cancelButton.label']}"
+                                id="cb2">
+                <af:setActionListener from="cancel"
+                                      to="#{requestScope.searchAction}"/>
+              </af:commandButton>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelFormLayout>
+        <f:verbatim rendered="#{requestScope.searchAction eq 'search'}">
+          <!-- Note the continue tag must be exactly like this - no whitespace-->
+          <span id="ADFdi_CloseWindow">Continue</span>
+        </f:verbatim>
+        <f:verbatim rendered="#{requestScope.searchAction eq 'cancel'}">
+          <!-- Note the Abort tag must be exactly like this - no whitespace-->
+          <span id="ADFdi_CloseWindow">Abort</span>
+          </f:verbatim>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.34" id="homePageDef"
+                Package="oracle.fodemo.storefront.pageDefs"
+                EnableTokenValidation="false">
+  <parameters/>
+  <executables>
+    <page path="oracle.fodemo.storefront.pageDefs.templates_StoreFrontTemplatePageDef"
+          id="pageTemplateBinding"/>
+    <iterator Binds="ParentProductCategories" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="ParentProductCategoriesIterator"/>
+    <iterator Binds="MostPopularProductsByCategories" RangeSize="20"
+              DataControl="StoreServiceAMDataControl" Refresh="prepareModel"
+              id="MostPopularProductsByCategoriesIterator"/>
+    <iterator RangeSize="25" DataControl="StoreServiceAMDataControl"
+              id="ProductsByCategoriesIterator" Binds="ProductsByCategories"/>
+    <iterator Binds="Products" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="SearchProductsIterator"/>
+    <iterator Binds="ProductsByCategoriesToWarehouseStockLevels" RangeSize="-1"
+              DataControl="StoreServiceAMDataControl"
+              id="ProductsByCategoriesToWarehouseStockLevelsIterator"/>
+    <iterator Binds="WarehouseStockLevels" RangeSize="-1"
+              DataControl="StoreServiceAMDataControl"
+              id="WarehouseStockLevelsIterator"/>
+    <iterator Binds="ProductOrdersCount" RangeSize="-1"
+              DataControl="StoreServiceAMDataControl"
+              id="ProductOrdersCountIterator"/>
+    <searchRegion Criteria="FindByProductNameCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SearchProductsIterator"
+                  id="FindByProductNameCriteriaQuery"/>
+    <searchRegion Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SearchProductsIterator"
+                  id="FindByProductNameCriteriaQuery1"
+                  Criteria="__ImplicitViewCriteria__"/>
+    <iterator Binds="MyShoppingCart" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="MyShoppingCartIterator"/>
+    <iterator Binds="AuthenticatedUser" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="AuthenticatedUserIterator"/>
+    <iterator id="ProductOrdersMaxQuantityIterator"
+              Binds="ProductOrdersMaxQuantity"
+              DataControl="StoreServiceAMDataControl" RangeSize="-1"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ParentProductCategoriesIterator"
+          id="ParentProductCategories">
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.ProductCategoriesVO"
+                      Name="ParentProductCategories.0">
+        <AttrNames>
+          <Item Value="CategoryId"/>
+          <Item Value="CategoryName"/>
+          <Item Value="ParentCategoryId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="ProductCategoriesVO"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.ProductCategoriesVO"
+                      Name="ParentProductCategories.1">
+        <AttrNames>
+          <Item Value="CategoryId"/>
+          <Item Value="CategoryName"/>
+          <Item Value="ParentCategoryId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ProductsByCategoriesIterator"
+            id="ProductsByCategoriesExecuteWithParams"
+            InstanceName="StoreServiceAMDataControl.ProductsByCategories"
+            DataControl="StoreServiceAMDataControl" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="category" NDValue="3" NDType="java.lang.Integer"/>
+    </action>
+    <tree IterBinding="MostPopularProductsByCategoriesIterator"
+          id="MostPopularProductsByCategories">
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.MostPopularProductsByCategoriesVO"
+                      Name="MostPopularProductsByCategories">
+        <AttrNames>
+          <Item Value="ProductId"/>
+          <Item Value="ProductName"/>
+          <Item Value="ListPrice"/>
+          <Item Value="MinPrice"/>
+          <Item Value="Description"/>
+          <Item Value="AdditionalInfo"/>
+          <Item Value="CategoryName"/>
+          <Item Value="CategoryId"/>
+          <Item Value="ProductImageId"/>
+          <Item Value="InStock"/>
+          <Item Value="DragId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ProductsByCategoriesIterator" id="ProductsByCategories">
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.ProductsByCategoriesVO"
+                      Name="ProductsByCategories">
+        <AttrNames>
+          <Item Value="ProductId"/>
+          <Item Value="ProductName"/>
+          <Item Value="ListPrice"/>
+          <Item Value="MinPrice"/>
+          <Item Value="Description"/>
+          <Item Value="AdditionalInfo"/>
+          <Item Value="CategoryName"/>
+          <Item Value="CategoryId"/>
+          <Item Value="ProductImageId"/>
+          <Item Value="InStock"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SearchProductsIterator" id="SearchProducts">
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.ProductsVO"
+                      Name="SearchProducts">
+        <AttrNames>
+          <Item Value="ProductId"/>
+          <Item Value="ProductName"/>
+          <Item Value="ListPrice"/>
+          <Item Value="MinPrice"/>
+          <Item Value="Description"/>
+          <Item Value="AdditionalInfo"/>
+          <Item Value="CategoryName"/>
+          <Item Value="CategoryId"/>
+          <Item Value="ProductImageId"/>
+          <Item Value="InStock"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <graph IterBinding="ProductsByCategoriesToWarehouseStockLevelsIterator"
+           id="ProductsByCategoriesToWarehouseStockLevels"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="QuantityOnHand" label="Quantity"/>
+          </data>
+        </series>
+        <groups>
+          <item value="WarehouseId" label="WarehouseName"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <graph IterBinding="WarehouseStockLevelsIterator" id="WarehouseStockLevels"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="QuantityOnHand" label="Quantity"/>
+          </data>
+        </series>
+        <groups>
+          <item value="WarehouseId" label="WarehouseName"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <graph IterBinding="ProductOrdersCountIterator" id="ProductOrdersCount"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_HORIZ_CLUST">
+      <graphDataMap leafOnly="true">
+        <groups>
+          <item value="ProductId" label="ProductName"/>
+        </groups>
+        <series>
+          <data>
+            <item value="ItemsOrdered" label="Orders"/>
+          </data>
+        </series>
+      </graphDataMap>
+    </graph>
+    <attributeValues IterBinding="ProductOrdersCountIterator" id="ProductId">
+      <AttrNames>
+        <Item Value="ProductId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductOrdersCountIterator" id="ProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductOrdersCountIterator" id="ListPrice">
+      <AttrNames>
+        <Item Value="ListPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductOrdersCountIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductOrdersCountIterator" id="ItemsOrdered">
+      <AttrNames>
+        <Item Value="ItemsOrdered"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="MyShoppingCartIterator" id="MyShoppingCart">
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.ShoppingCartTransientVO"
+                      Name="MyShoppingCart">
+        <AttrNames>
+          <Item Value="ProductId"/>
+          <Item Value="ListPrice"/>
+          <Item Value="Description"/>
+          <Item Value="AdditionalInformation"/>
+          <Item Value="Quantity"/>
+          <Item Value="CategoryName"/>
+          <Item Value="ShippingCost"/>
+          <Item Value="ProductName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <!--    <methodAction id="addItemToCart"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="addItemToCart" IsViewObjectMethod="false">
+      <NamedData NDName="productId" NDType="java.lang.Integer"/>
+      <NamedData NDName="quantity" NDType="java.lang.Integer"/>
+    </methodAction> -->
+    <methodAction id="updateItemInCart"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="updateItemInCart" IsViewObjectMethod="false">
+      <NamedData NDName="productId" NDType="java.lang.Integer"/>
+      <NamedData NDName="quantity" NDType="java.lang.Integer"/>
+      <NamedData NDName="isSet" NDType="java.lang.Boolean"/>
+    </methodAction>
+    <methodAction id="removeAllItemsFromCart"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="removeAllItemsFromCart"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllItemsFromTransientCart"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="removeAllItemsFromTransientCart"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeItemFromCart"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="removeItemFromCart" IsViewObjectMethod="false">
+      <NamedData NDName="productId" NDType="java.lang.Integer"/>
+    </methodAction>
+    <attributeValues IterBinding="MyShoppingCartIterator"
+                     id="LineItemsSubtotal">
+      <AttrNames>
+        <Item Value="LineItemsSubtotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsByCategoriesIterator"
+                     id="PBCPopupProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsByCategoriesIterator"
+                     id="PBCPopupProductId">
+      <AttrNames>
+        <Item Value="ProductId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsByCategoriesIterator"
+                     id="PBCPopupCategoryName">
+      <AttrNames>
+        <Item Value="CategoryName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsByCategoriesIterator"
+                     id="PBCPopupListPrice">
+      <AttrNames>
+        <Item Value="ListPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsByCategoriesIterator"
+                     id="PBCPopupInStock">
+      <AttrNames>
+        <Item Value="InStock"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsByCategoriesIterator"
+                     id="PBCPopupDescription">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsByCategoriesIterator"
+                     id="PBCPopupAdditionalInfo">
+      <AttrNames>
+        <Item Value="AdditionalInfo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SearchProductsIterator" id="SPPopupProductId">
+      <AttrNames>
+        <Item Value="ProductId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SearchProductsIterator"
+                     id="SPPopupProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SearchProductsIterator"
+                     id="SPPopupCategoryName">
+      <AttrNames>
+        <Item Value="CategoryName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SearchProductsIterator" id="SPPopupListPrice">
+      <AttrNames>
+        <Item Value="ListPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SearchProductsIterator" id="SPPopupInStock">
+      <AttrNames>
+        <Item Value="InStock"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SearchProductsIterator"
+                     id="SPPopupDescription">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SearchProductsIterator"
+                     id="SPPopupAdditionalInfo">
+      <AttrNames>
+        <Item Value="AdditionalInfo"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="resetProductQueryCriteria"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="resetProductQueryCriteria"
+                  IsViewObjectMethod="false"/>
+    <attributeValues IterBinding="AuthenticatedUserIterator"
+                     id="PersonTypeCode">
+      <AttrNames>
+        <Item Value="PersonTypeCode"/>
+      </AttrNames>
+    </attributeValues>
+        <graph IterBinding="ProductOrdersMaxQuantityIterator"
+           id="ProductOrdersMaxQuantity"
+           xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="Maxquantity" label="MaxQuantity"/>
+          </data>
+        </series>
+        <groups>
+          <item value="ProductId" label="ProductName"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.34" id="checkout_orderPageDef"
+                Package="oracle.fodemo.storefront.pageDefs"
+                EnableTokenValidation="false">
+  <parameters/>
+  <executables>
+    <iterator Binds="AuthenticatedUser" RangeSize="1"
+              DataControl="StoreServiceAMDataControl"
+              id="AuthenticatedUserIterator"/>
+    <iterator Binds="PaymentOptionsForUser" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="PaymentOptionsForUserIterator"/>
+    <iterator id="MyShoppingCartIterator" Binds="MyShoppingCart" RangeSize="1"
+              DataControl="StoreServiceAMDataControl"/>
+<!-- This iterator is set to always refresh and to not cache results so that the correct order is shown when re-ordering on the same session -->
+    <iterator Binds="ShoppingCart" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="ShoppingCartIterator" Refresh="always" CacheResults="false"/>
+    <iterator Binds="AddressesAndUsages" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="AddressesAndUsagesIterator"/>
+    <iterator id="FindAddressesByIdIterator" RangeSize="1"
+              Binds="FindAddressesById"
+              DataControl="StoreServiceAMDataControl"/>
+    <iterator id="FindPaymentOptionsByIdIterator" Binds="FindPaymentOptionsById"
+              RangeSize="1" DataControl="StoreServiceAMDataControl"/>
+    </executables>
+  <bindings>
+    <attributeValues IterBinding="ShoppingCartIterator" id="OrderId">
+      <AttrNames>
+        <Item Value="OrderId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="OrderDate">
+      <AttrNames>
+        <Item Value="OrderDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="OrderShippedDate">
+      <AttrNames>
+        <Item Value="OrderShippedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="OrderStatusCode">
+      <AttrNames>
+        <Item Value="OrderStatusCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="OrderTotal">
+      <AttrNames>
+        <Item Value="OrderTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="CustomerId">
+      <AttrNames>
+        <Item Value="CustomerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="ShipToName">
+      <AttrNames>
+        <Item Value="ShipToName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="ShipToPhoneNumber">
+      <AttrNames>
+        <Item Value="ShipToPhoneNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ShoppingCartIterator" id="ShippingOptionId"
+          Uses="LOV_ShippingOptionId" StaticList="false"/>
+    <attributeValues IterBinding="ShoppingCartIterator" id="CouponId">
+      <AttrNames>
+        <Item Value="CouponId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="GiftwrapMessage">
+      <AttrNames>
+        <Item Value="GiftwrapMessage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator"
+                     id="CalculatedOrderTotal">
+      <AttrNames>
+        <Item Value="CalculatedOrderTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="TotalShippingCost">
+      <AttrNames>
+        <Item Value="TotalShippingCost"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="DiscountAmount">
+      <AttrNames>
+        <Item Value="DiscountAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ShoppingCartIterator" id="InvoiceTotal">
+      <AttrNames>
+        <Item Value="InvoiceTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ShoppingCartIterator" id="TypedCouponCode"
+          Uses="LOV_TypedCouponCode" StaticList="false"/>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator"
+                     id="RegisteredDate">
+      <AttrNames>
+        <Item Value="RegisteredDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="PhoneNumber">
+      <AttrNames>
+        <Item Value="PhoneNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator"
+                     id="MobilePhoneNumber">
+      <AttrNames>
+        <Item Value="MobilePhoneNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="Address1">
+      <AttrNames>
+        <Item Value="Address1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="Address2">
+      <AttrNames>
+        <Item Value="Address2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="City">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="PostalCode">
+      <AttrNames>
+        <Item Value="PostalCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="StateProvince">
+      <AttrNames>
+        <Item Value="StateProvince"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="CountryId">
+      <AttrNames>
+        <Item Value="CountryId"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" InstanceName="StoreServiceAMDataControl"
+            DataControl="StoreServiceAMDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
+    <list IterBinding="PaymentOptionsForUserIterator" id="PaymentTypeCode"
+          Uses="LOV_PaymentTypeCode" StaticList="false"/>
+    <list IterBinding="PaymentOptionsForUserIterator" id="BillingAddressId"
+          Uses="LOV_BillingAddressId" StaticList="false"/>
+    <attributeValues IterBinding="PaymentOptionsForUserIterator"
+                     id="AccountNumber">
+      <AttrNames>
+        <Item Value="AccountNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PaymentOptionsForUserIterator" id="CardTypeCode"
+          Uses="LOV_CardTypeCode" StaticList="false"/>
+    <attributeValues IterBinding="PaymentOptionsForUserIterator"
+                     id="ExpireDate">
+      <AttrNames>
+        <Item Value="ExpireDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentOptionsForUserIterator"
+                     id="CheckDigits">
+      <AttrNames>
+        <Item Value="CheckDigits"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentOptionsForUserIterator"
+                     id="RoutingIdentifier">
+      <AttrNames>
+        <Item Value="RoutingIdentifier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentOptionsForUserIterator"
+                     id="InstitutionName">
+      <AttrNames>
+        <Item Value="InstitutionName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentOptionsForUserIterator"
+                     id="ValidFromDate">
+      <AttrNames>
+        <Item Value="ValidFromDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentOptionsForUserIterator"
+                     id="ValidToDate">
+      <AttrNames>
+        <Item Value="ValidToDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="FindPaymentOptionsByIdIterator"
+            id="FindPaymentOptionsByIdExecuteWithParams"
+            InstanceName="StoreServiceAMDataControl.FindPaymentOptionsById"
+            DataControl="StoreServiceAMDataControl" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="paymentId" NDType="java.lang.Integer"/>
+    </action>
+    <list IterBinding="FindPaymentOptionsByIdIterator" id="PaymentTypeCode1"
+          Uses="LOV_PaymentTypeCode" StaticList="false"/>
+    <list IterBinding="FindPaymentOptionsByIdIterator" id="BillingAddressId1"
+          Uses="LOV_BillingAddressId" StaticList="false"/>
+    <attributeValues IterBinding="FindPaymentOptionsByIdIterator"
+                     id="AccountNumber1">
+      <AttrNames>
+        <Item Value="AccountNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="FindPaymentOptionsByIdIterator" id="CardTypeCode1"
+          Uses="LOV_CardTypeCode" StaticList="false"/>
+    <attributeValues IterBinding="FindPaymentOptionsByIdIterator"
+                     id="ExpireDate1">
+      <AttrNames>
+        <Item Value="ExpireDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindPaymentOptionsByIdIterator"
+                     id="CheckDigits1">
+      <AttrNames>
+        <Item Value="CheckDigits"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindPaymentOptionsByIdIterator"
+                     id="RoutingIdentifier1">
+      <AttrNames>
+        <Item Value="RoutingIdentifier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindPaymentOptionsByIdIterator"
+                     id="InstitutionName1">
+      <AttrNames>
+        <Item Value="InstitutionName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindPaymentOptionsByIdIterator"
+                     id="ValidFromDate1">
+      <AttrNames>
+        <Item Value="ValidFromDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindPaymentOptionsByIdIterator"
+                     id="ValidToDate1">
+      <AttrNames>
+        <Item Value="ValidToDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ShoppingCartIterator" StaticList="false"
+          Uses="LOV_ShipToAddressId" id="ShipToAddressId" DTSupportsMRU="true"
+          ListIter="ShoppingCartIterator"/>
+    <list StaticList="false" IterBinding="ShoppingCartIterator"
+          Uses="LOV_PaymentOptionId" id="PaymentOptionId" DTSupportsMRU="true"/>
+   <action IterBinding="FindAddressesByIdIterator"
+            id="ExecuteWithParamsFindAddressesById"
+            InstanceName="StoreServiceAMDataControl.FindAddressesById"
+            DataControl="StoreServiceAMDataControl" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="id" NDType="java.lang.Integer"/>
+    </action>
+    <action id="Rollback" InstanceName="StoreServiceAMDataControl"
+            DataControl="StoreServiceAMDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+    <tree IterBinding="MyShoppingCartIterator" id="MyShoppingCart">
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.ShoppingCartTransientVO"
+                      Name="MyShoppingCart">
+        <AttrNames>
+          <Item Value="ProductId"/>
+          <Item Value="ListPrice"/>
+          <Item Value="Description"/>
+          <Item Value="AdditionalInformation"/>
+          <Item Value="Quantity"/>
+          <Item Value="CategoryName"/>
+          <Item Value="ShippingCost"/>
+          <Item Value="ProductName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="removeAllItemsFromTransientCart"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="removeAllItemsFromTransientCart"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllItemsFromCart"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="removeAllItemsFromCart"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeItemFromCart"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="removeItemFromCart" IsViewObjectMethod="false">
+      <NamedData NDName="productId" NDType="java.lang.Integer"/>
+    </methodAction>
+    <attributeValues IterBinding="MyShoppingCartIterator"
+                     id="LineItemsSubtotal">
+      <AttrNames>
+        <Item Value="LineItemsSubtotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindAddressesByIdIterator" id="AddressId">
+      <AttrNames>
+        <Item Value="AddressId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindAddressesByIdIterator" id="Address11">
+      <AttrNames>
+        <Item Value="Address1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindAddressesByIdIterator" id="Address21">
+      <AttrNames>
+        <Item Value="Address2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindAddressesByIdIterator" id="City1">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindAddressesByIdIterator" id="PostalCode1">
+      <AttrNames>
+        <Item Value="PostalCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FindAddressesByIdIterator"
+                     id="StateProvince1">
+      <AttrNames>
+        <Item Value="StateProvince"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="AddressesAndUsagesIterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="AddressesAndUsagesIterator" id="Create"
+            RequiresUpdateModel="true" Action="createRow"/>
+    <attributeValues IterBinding="AddressesAndUsagesIterator" id="AddressId11">
+      <AttrNames>
+        <Item Value="AddressId1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AddressesAndUsagesIterator" id="Address12">
+      <AttrNames>
+        <Item Value="Address1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AddressesAndUsagesIterator" id="Address22">
+      <AttrNames>
+        <Item Value="Address2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AddressesAndUsagesIterator" id="City2">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AddressesAndUsagesIterator" id="PostalCode2">
+      <AttrNames>
+        <Item Value="PostalCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AddressesAndUsagesIterator"
+                     id="StateProvince2">
+      <AttrNames>
+        <Item Value="StateProvince"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AddressesAndUsagesIterator" StaticList="false"
+          Uses="LOV_CountryId" id="CountryId2" DTSupportsMRU="false"/>
+    <list IterBinding="FindAddressesByIdIterator" StaticList="false"
+          Uses="LOV_CountryId" id="CountryId1" DTSupportsMRU="true"/>
+    <action IterBinding="PaymentOptionsForUserIterator" id="Create1"
+            InstanceName="StoreServiceAMDataControl.PaymentOptionsForUser"
+            DataControl="StoreServiceAMDataControl" RequiresUpdateModel="true"
+            Action="createRow"/>
+    <methodAction id="updateItemInCart"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="updateItemInCart" IsViewObjectMethod="false">
+      <NamedData NDName="productId" NDType="java.lang.Integer"/>
+      <NamedData NDName="quantity" NDType="java.lang.Integer"/>
+      <NamedData NDName="isSet" NDType="java.lang.Boolean"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

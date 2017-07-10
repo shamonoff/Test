@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.55" id="registrationDetailsPageDef"
+                Package="supplier">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.StoreFrontTemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <taskFlow id="dynamicRegion1"
+              taskFlowId="${backingBeanScope.SupplierRegistrationServiceBean.dynamicTaskFlowId}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"
+              Refresh="ifNeeded">
+      <parameters>
+        <parameter id="refreshFlag"
+                   value="#{empty sessionScope.supplierRegRefreshFlag ? 'true': sessionScope.supplierRegRefreshFlag}"
+                   xmlns="http://xmlns.oracle.com/adfm/uimodel"/>
+      </parameters>
+    </taskFlow>
+  </executables>
+  <bindings/>
+</pageDefinition>

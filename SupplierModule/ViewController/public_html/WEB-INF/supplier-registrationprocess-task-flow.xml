@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"
+             id="__1">
+  <task-flow-definition id="supplier-registrationprocess-task-flow">
+    <default-activity id="__5">regStep1</default-activity>
+    <input-parameter-definition id="__38">
+      <name id="__39">refreshFlag</name>
+      <value>#{pageFlowScope.refreshFlag}</value>
+    </input-parameter-definition>
+    <managed-bean id="__35">
+    <managed-bean-name id="__32">SupplierRegistrationBean</managed-bean-name>
+    <managed-bean-class id="__34">oracle.fodemo.supplier.backing.SupplierRegistrationBean</managed-bean-class>
+    <managed-bean-scope id="__36">pageFlow</managed-bean-scope>
+  </managed-bean>
+    <finalizer id="__40">#{pageFlowScope.SupplierRegistrationBean.finalizer}</finalizer>
+    <exception-handler id="__67">errorPage</exception-handler>
+    <view id="regStep1">
+      <display-name id="__28">Supplier Registration - Step1</display-name>
+      <page id="__6">/supplier/regStep1.jsff</page>
+      <train-stop id="__4">
+        <display-name id="__37">Supplier Registration - Step1</display-name>
+      </train-stop>
+    </view>
+    <view id="regStep2">
+      <display-name id="__29">Supplier Registration - Step2</display-name>
+      <page id="__8">/supplier/regStep2.jsff</page>
+      <train-stop id="__7">
+        <display-name id="__31">Supplier Registration - Step2</display-name>
+      </train-stop>
+    </view>
+    <view id="regStep3">
+      <display-name id="__30">Supplier Registration - Step3</display-name>
+      <page id="__9">/supplier/regStep3.jsff</page>
+      <train-stop id="__10">
+        <display-name id="__33">Supplier Registration - Step3</display-name>
+      </train-stop>
+    </view>
+    <task-flow-return id="commitRegistration">
+      <outcome id="__2">
+        <name id="__3">globalHome</name>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="cancel">
+      <outcome id="__26">
+        <name id="__27">globalHome</name>
+      </outcome>
+    </task-flow-return>
+    <parent-action id="exitRegistration">
+      <parent-outcome id="__41">globalHome</parent-outcome>
+    </parent-action>
+    <parent-action id="globalHome">
+      <parent-outcome id="__51">globalHome</parent-outcome>
+    </parent-action>
+    <view id="errorPage">
+      <page>/supplier/errorPage.jsff</page>
+    </view>
+    <train/>
+    <control-flow-rule id="__13">
+      <from-activity-id id="__14">regStep3</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome id="__15">success</from-outcome>
+        <to-activity-id id="__12">commitRegistration</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__18">
+      <from-activity-id id="__19">regStep1</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__20">next</from-outcome>
+        <to-activity-id id="__16">regStep2</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__23">
+      <from-activity-id id="__24">regStep2</from-activity-id>
+      <control-flow-case id="__22">
+        <from-outcome id="__25">next</from-outcome>
+        <to-activity-id id="__21">regStep3</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__45">
+      <from-activity-id id="__52">*</from-activity-id>
+      <control-flow-case id="__53">
+        <from-outcome id="__63">cancelRegistration</from-outcome>
+        <to-activity-id id="__54">cancel</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__56">
+        <from-outcome id="__64">exitRegistration</from-outcome>
+        <to-activity-id id="__55">exitRegistration</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__61">
+        <from-outcome id="__65">globalHome</from-outcome>
+        <to-activity-id id="__62">globalHome</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

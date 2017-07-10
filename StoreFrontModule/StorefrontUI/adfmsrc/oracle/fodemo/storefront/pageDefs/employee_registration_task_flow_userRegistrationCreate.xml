@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.45.87"
+                id="employee_registration_task_flow_userRegistrationCreate"
+                Package="oracle.fodemo.storefront.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="userRegistrationCreate"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="userRegistrationCreate"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="userType" NDValue="STAFF" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

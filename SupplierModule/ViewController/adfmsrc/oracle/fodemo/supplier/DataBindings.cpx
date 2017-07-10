@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.54.7" id="DataBindings" SeparateXMLFiles="false"
+             Package="oracle.fodemo.supplier" ClientType="Generic"
+             ErrorHandlerClass="oracle.fodemo.frmwkext.CustomErrorHandlerImpl">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/templates/StoreFrontTemplate.jspx"
+          usageId="oracle_fodemo_supplier_StoreFrontTemplatePageDef"/>
+    <page path="/browse.jspx" usageId="oracle_fodemo_supplier_browsePageDef"/>
+    <page path="/supplier/supplierDetails.jspx"
+          usageId="oracle_fodemo_supplier_supplierdetailPageDef"/>
+    <page path="/login_error.jspx"
+          usageId="oracle_fodemo_supplier_login_errorPageDef"/>
+    <page path="/login.jspx" usageId="oracle_fodemo_supplier_loginPageDef"/>
+    <page path="/errorHandler.jspx"
+          usageId="oracle_fodemo_supplier_errorHandlerPageDef"/>
+    <page path="/product/addProduct.jspx"
+          usageId="oracle_fodemo_supplier_addProductPageDef"/>
+    <page path="/supplier/regStep1.jsff"
+          usageId="oracle_fodemo_supplier_regStep1PageDef"/>
+    <page path="/supplier/regStep2.jsff"
+          usageId="oracle_fodemo_supplier_regStep2PageDef"/>
+    <page path="/supplier/regStep3.jsff"
+          usageId="oracle_fodemo_supplier_regStep3PageDef"/>
+    <page path="/supplier/registrationDetails.jspx"
+          usageId="oracle_fodemo_supplier_registrationDetailsPageDef"/>
+    <page path="/product/productInfo.jspx"
+          usageId="oracle_fodemo_supplier_productInfoPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_fodemo_supplier_StoreFrontTemplatePageDef"
+          path="templates.StoreFrontTemplatePageDef"/>
+    <page id="oracle_fodemo_supplier_browsePageDef"
+          path="oracle.fodemo.supplier.pageDefs.browsePageDef"/>
+    <page id="oracle_fodemo_supplier_supplierdetailPageDef"
+          path="oracle.fodemo.supplier.pageDefs.supplierdetailPageDef"/>
+    <page id="oracle_fodemo_supplier_login_errorPageDef"
+          path="oracle.fodemo.supplier.pageDefs.login_errorPageDef"/>
+    <page id="oracle_fodemo_supplier_supplierRegistrationPageDef"
+          path="supplier.supplierRegistrationPageDef"/>
+    <page id="oracle_fodemo_supplier_supplierRegistrationPageDef1"
+          path="supplier.supplierRegistrationPageDef1"/>
+    <page id="oracle_fodemo_supplier_loginPageDef"
+          path="oracle.fodemo.supplier.pageDefs.loginPageDef"/>
+    <page id="oracle_fodemo_supplier_errorHandlerPageDef"
+          path="oracle.fodemo.supplier.pageDefs.errorHandlerPageDef"/>
+    <page id="oracle_fodemo_supplier_addProductPageDef"
+          path="product.addProductPageDef"/>
+    <page id="oracle_fodemo_supplier_regStep1PageDef"
+          path="supplier.regStep1PageDef"/>
+    <page id="oracle_fodemo_supplier_regStep2PageDef"
+          path="supplier.regStep2PageDef"/>
+    <page id="oracle_fodemo_supplier_regStep3PageDef"
+          path="supplier.regStep3PageDef"/>
+    <page id="oracle_fodemo_supplier_registrationDetailsPageDef"
+          path="supplier.registrationDetailsPageDef"/>
+    <page id="oracle_fodemo_supplier_productInfoPageDef"
+          path="product.productInfoPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="GenericServiceFacadeLocal"
+        path="oracle.fodemo.supplier.model.GenericServiceFacadeLocal"/>
+    <dc id="SupplierFacadeLocal"
+        path="oracle.fodemo.supplier.model.SupplierFacadeLocal"/>
+  </dataControlUsages>
+</Application>

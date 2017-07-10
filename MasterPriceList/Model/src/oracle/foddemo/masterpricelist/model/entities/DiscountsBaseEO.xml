@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DiscountsBaseEO"
+  Version="11.1.1.51.54"
+  DBObjectType="table"
+  DBObjectName="DISCOUNTS_BASE"
+  AliasName="DiscountsBaseEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="DiscountId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="DISCOUNT_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="DISCOUNTS_BASE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DiscountTypeCode"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="DISCOUNT_TYPE_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DiscountAmount"
+    IsNotNull="true"
+    ColumnName="DISCOUNT_AMOUNT"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ApplyAsPercentageFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="APPLY_AS_PERCENTAGE_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EasyCode"
+    Precision="20"
+    ColumnName="EASY_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AddFreeShippingFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ADD_FREE_SHIPPING_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OnetimeDiscountFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ONETIME_DISCOUNT_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="DISCOUNTS_BASE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="DiscountTranslations"
+    Association="oracle.foddemo.masterpricelist.model.entities.associations.DiscountTranslationsFkAssoc"
+    AssociationEnd="oracle.foddemo.masterpricelist.model.entities.associations.DiscountTranslationsFkAssoc.DiscountTranslations"
+    AssociationOtherEnd="oracle.foddemo.masterpricelist.model.entities.associations.DiscountTranslationsFkAssoc.DiscountsBase"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="DiscountAsPercentageChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCOUNT_AS_PERCENTAGE_CHK"/>
+      <Attr Name="_checkCondition"
+        Value="APPLY_AS_PERCENTAGE_FLAG in ('Y','N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.ApplyAsPercentageFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DiscountsFreeShippingChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCOUNTS_FREE_SHIPPING_CHK"/>
+      <Attr Name="_checkCondition" Value="ADD_FREE_SHIPPING_FLAG in ('Y','N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.AddFreeShippingFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DiscountsOnetimeChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCOUNTS_ONETIME_CHK"/>
+      <Attr Name="_checkCondition" Value="ONETIME_DISCOUNT_FLAG in ('Y','N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.OnetimeDiscountFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DiscountsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCOUNTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.DiscountId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010765">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010765"/>
+      <Attr Name="_checkCondition" Value='"DISCOUNT_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.DiscountId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010766">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010766"/>
+      <Attr Name="_checkCondition" Value='"DISCOUNT_TYPE_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.DiscountTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010767">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010767"/>
+      <Attr Name="_checkCondition" Value='"DISCOUNT_AMOUNT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.DiscountAmount"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010768">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010768"/>
+      <Attr Name="_checkCondition"
+        Value='"APPLY_AS_PERCENTAGE_FLAG" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.ApplyAsPercentageFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010769">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010769"/>
+      <Attr Name="_checkCondition"
+        Value='"ADD_FREE_SHIPPING_FLAG" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.AddFreeShippingFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010770">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010770"/>
+      <Attr Name="_checkCondition" Value='"ONETIME_DISCOUNT_FLAG" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.OnetimeDiscountFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010771">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010771"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010772">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010772"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010773">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010773"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010774">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010774"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010775">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010775"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.foddemo.masterpricelist.model.entities.DiscountsBaseEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+</Entity>

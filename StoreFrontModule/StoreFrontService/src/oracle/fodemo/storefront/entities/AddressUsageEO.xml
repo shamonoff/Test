@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AddressUsageEO"
+  DBObjectType="table"
+  DBObjectName="ADDRESS_USAGES"
+  AliasName="AddressUsageEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="oracle.fodemo.storefront.entities.AddressUsageEOImpl"
+  Version="11.1.1.54.12"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="AddressOwnerTypesVA"
+    ViewObjectName="oracle.fodemo.storefront.lookups.LookupsBaseVO"
+    AMUsageName="SharedLookupService"
+    ViewInstanceName="AddressOwnerTypes"/>
+  <ViewAccessor
+    Name="AddressUsageTypesVA"
+    ViewObjectName="oracle.fodemo.storefront.lookups.LookupsBaseVO"
+    AMUsageName="SharedLookupService"
+    ViewInstanceName="AddressUsageTypes"/>
+  <Attribute
+    Name="AddressUsagesId"
+    IsUpdateable="while_insert"
+    ColumnName="ADDRESS_USAGES_ID"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ADDRESS_USAGES"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    DefaultValue="@0"
+    RetrievedOnUpdate="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="AddressUsagesId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AssociatedOwnerId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="ASSOCIATED_OWNER_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ADDRESS_USAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="AssociatedOwnerId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="OwnerTypeCode"
+    IsNotNull="true"
+    DefaultValue="CUST"
+    Precision="30"
+    ColumnName="OWNER_TYPE_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ADDRESS_USAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <ListValidationBean
+      xmlns="http://xmlns.oracle.com/adfm/validation"
+      Name="OwnerTypeCode_Rule_0"
+      ResId="OwnerTypeCode_Error_0"
+      OnAttribute="OwnerTypeCode"
+      OperandType="VO_USAGE"
+      Inverse="false"
+      ViewAccAttrName="Value"
+      ViewAccName="AddressOwnerTypesVA">
+      <ResExpressions>
+        <Expression
+          Name="ownertypevalue"><![CDATA[def ownertypevalue = []
+while ( AddressOwnerTypesVA.hasNext() ) {
+AddressOwnerTypesVA.next()
+    ownertypevalue.add(AddressOwnerTypesVA.currentRow.Value)
+}
+return ownertypevalue]]></Expression>
+      </ResExpressions>
+    </ListValidationBean>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="OwnerTypeCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AddressId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="ADDRESS_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ADDRESS_USAGES"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="AddressId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UsageTypeCode"
+    IsNotNull="true"
+    DefaultValue="IN"
+    Precision="30"
+    ColumnName="USAGE_TYPE_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ADDRESS_USAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <ListValidationBean
+      xmlns="http://xmlns.oracle.com/adfm/validation"
+      Name="UsageTypeCode_Rule_0"
+      ResId="UsageTypeCode_Error_0"
+      OnAttribute="UsageTypeCode"
+      OperandType="VO_USAGE"
+      Inverse="false"
+      ViewAccAttrName="Value"
+      ViewAccName="AddressUsageTypesVA"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="UsageTypeCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ExpiredFlag"
+    IsNotNull="true"
+    DefaultValue="N"
+    Precision="1"
+    ColumnName="EXPIRED_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ADDRESS_USAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ExpiredFlag_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ADDRESS_USAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="ADDRESS_USAGES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    DefaultValue="FOD"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ADDRESS_USAGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="DATE"
+    TableName="ADDRESS_USAGES"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ADDRESS_USAGES"
+    ChangeIndicator="true"
+    HistoryColumn="VersionHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Address"
+    Association="oracle.fodemo.storefront.entities.associations.AddressUsagesAddressesFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.AddressUsagesAddressesFkAssoc.Address"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.AddressUsagesAddressesFkAssoc.AddressUsage"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Person"
+    Association="oracle.fodemo.storefront.entities.associations.AddressUsagesPersonsFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.AddressUsagesPersonsFkAssoc.Person"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.AddressUsagesPersonsFkAssoc.AddressUsage"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Supplier"
+    Association="oracle.fodemo.storefront.entities.associations.AddressUsagesSuppliersFkAssoc"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.AddressUsagesSuppliersFkAssoc.Supplier"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.AddressUsagesSuppliersFkAssoc.AddressUsage"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LookupCodeEO"
+    Association="oracle.fodemo.storefront.entities.associations.LookupCodesToAddressUsages"
+    AssociationEnd="oracle.fodemo.storefront.entities.associations.LookupCodesToAddressUsages.LookupCodeEO"
+    AssociationOtherEnd="oracle.fodemo.storefront.entities.associations.LookupCodesToAddressUsages.AddressUsageEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="AddressUsagesChkExpired">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ADDRESS_USAGES_CHK_EXPIRED"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value="EXPIRED_FLAG in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.ExpiredFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AddressUsagesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ADDRESS_USAGES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.AddressUsagesId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030519">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030519"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ASSOCIATED_OWNER_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.AssociatedOwnerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030520">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030520"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OWNER_TYPE_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.OwnerTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030521">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030521"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ADDRESS_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.AddressUsageEO.AddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030522">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030522"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"USAGE_TYPE_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.UsageTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030523">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030523"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"EXPIRED_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.ExpiredFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030524">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030524"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.AddressUsageEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030525">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030525"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030526">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030526"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030527">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030527"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0030528">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0030528"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005002">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005002"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ADDRESS_USAGES_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.AddressUsagesId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005003">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005003"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ASSOCIATED_OWNER_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.AssociatedOwnerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005004">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005004"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OWNER_TYPE_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.OwnerTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005005">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005005"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ADDRESS_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.AddressUsageEO.AddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005006">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005006"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"USAGE_TYPE_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.UsageTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005007">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005007"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"EXPIRED_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.ExpiredFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005008">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005008"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.AddressUsageEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005009">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005009"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005010">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005010"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005011">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005011"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005012">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005012"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055128">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055128"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ADDRESS_USAGES_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.AddressUsagesId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055129">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055129"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ASSOCIATED_OWNER_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.AssociatedOwnerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055130">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055130"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OWNER_TYPE_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.OwnerTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055131">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055131"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ADDRESS_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.AddressUsageEO.AddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055132">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055132"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"USAGE_TYPE_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.UsageTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055133">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055133"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"EXPIRED_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.ExpiredFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055134">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055134"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.AddressUsageEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055135">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055135"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055136">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055136"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055137">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055137"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0055138">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0055138"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AddressUsagesAddressesFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ADDRESS_USAGES_ADDRESSES_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="ADDRESSES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fodemo.storefront.entities.AddressUsageEO.AddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AddressUsagesPersonsFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ADDRESS_USAGES_PERSONS_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="PERSONS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.AssociatedOwnerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AddressUsagesSuppliersFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ADDRESS_USAGES_SUPPLIERS_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="SUPPLIERS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fodemo.storefront.entities.AddressUsageEO.AssociatedOwnerId"/>
+    </AttrArray>
+  </Key>
+  <validation:ExistsValidationBean
+    Name="AddressUsageEO_Rule_0"
+    ResId="AddressUsages_Key_Error_0"
+    TransactionLevel="true"
+    OperandType="EO"
+    AssocName="oracle.fodemo.storefront.entities.associations.AddressUsagesPersonsFkAssoc">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="AssociatedOwnerId"/>
+    </validation:OnAttributes>
+  </validation:ExistsValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.fodemo.storefront.entities.common.AddressUsageEOMsgBundle"/>
+  </ResourceBundle>
+</Entity>

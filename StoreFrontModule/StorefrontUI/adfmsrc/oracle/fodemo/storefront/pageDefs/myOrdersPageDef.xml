@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.34" id="myOrdersPageDef"
+                Package="oracle.fodemo.storefront.pageDefs"
+                EnableTokenValidation="false">
+  <parameters/>
+  <executables>
+    <page path="oracle.fodemo.storefront.pageDefs.templates_StoreFrontTemplatePageDef"
+          id="pageTemplateBinding"/>
+    <iterator Binds="MyOrderItems" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="MyOrderItemsIterator"/>
+    <iterator Binds="MyOrders" RangeSize="-1"
+              DataControl="StoreServiceAMDataControl" id="MyOrdersIterator"/>
+    <iterator Binds="MyOrdersAddresses" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="MyOrdersAddressesIterator"/>
+    <iterator Binds="MyOrdersBillingAddresses" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="MyOrdersBillingAddressesIterator"/>
+    <iterator Binds="MyOrdersPaymentOptions" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="MyOrdersPaymentOptionsIterator"/>
+    <iterator Binds="AuthenticatedUser" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="AuthenticatedUserIterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" InstanceName="StoreServiceAMDataControl"
+            DataControl="StoreServiceAMDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
+    <action id="Rollback" InstanceName="StoreServiceAMDataControl"
+            DataControl="StoreServiceAMDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+<!--    <methodAction id="executeMyOrdersForCustomerVO" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="executeMyOrdersForCustomerVO"
+                  IsViewObjectMethod="false"
+                  DataControl="StoreServiceAMDataControl"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"/> -->
+    <tree IterBinding="MyOrdersIterator" id="MyOrders">
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.OrdersVO"
+                      Name="MyOrders">
+        <AttrNames>
+          <Item Value="OrderId"/>
+          <Item Value="OrderDate"/>
+          <Item Value="OrderShippedDate"/>
+          <Item Value="OrderStatusCode"/>
+          <Item Value="OrderTotal"/>
+          <Item Value="CustomerId"/>
+          <Item Value="ShipToName"/>
+          <Item Value="ShipToAddressId"/>
+          <Item Value="ShipToPhoneNumber"/>
+          <Item Value="ShippingOptionId"/>
+          <Item Value="PaymentOptionId"/>
+          <Item Value="CalculatedOrderTotal"/>
+          <Item Value="TotalShippingCost"/>
+          <Item Value="DiscountAmount"/>
+          <Item Value="InvoiceTotal"/>
+          <Item Value="LastUpdateDate"/>
+          <Item Value="TypedCouponCode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MyOrdersIterator" id="MyOrders1">
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.OrdersVO"
+                      Name="MyOrders1">
+        <AttrNames>
+          <Item Value="OrderId"/>
+          <Item Value="OrderStatusCode"/>
+          <Item Value="OrderDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MyOrderItemsIterator" id="MyOrderItems1">
+      <nodeDefinition DefName="oracle.fodemo.storefront.store.queries.OrderItemsVO"
+                      Name="MyOrderItems1">
+        <AttrNames>
+          <Item Value="OrderId"/>
+          <Item Value="LineItemId"/>
+          <Item Value="ProductId"/>
+          <Item Value="Quantity"/>
+          <Item Value="UnitPrice"/>
+          <Item Value="ProductId1"/>
+          <Item Value="SupplierId"/>
+          <Item Value="CategoryId"/>
+          <Item Value="ProductName"/>
+          <Item Value="CostPrice"/>
+          <Item Value="ListPrice1_1"/>
+          <Item Value="MinPrice"/>
+          <Item Value="WarrantyPeriodMonths"/>
+          <Item Value="ShippingClassCode"/>
+          <Item Value="ProductId2"/>
+          <Item Value="Language"/>
+          <Item Value="SourceLang"/>
+          <Item Value="Description"/>
+          <Item Value="AdditionalInfo"/>
+          <Item Value="CreatedBy2"/>
+          <Item Value="CreationDate2"/>
+          <Item Value="LastUpdatedBy2"/>
+          <Item Value="LastUpdateDate2"/>
+          <Item Value="ObjectVersionId2"/>
+          <Item Value="CategoryId1"/>
+          <Item Value="CategoryName"/>
+          <Item Value="CategoryDescription"/>
+          <Item Value="ProductImageId"/>
+          <Item Value="ProductId3"/>
+          <Item Value="DefaultViewFlag"/>
+          <Item Value="DetailImageId"/>
+          <Item Value="Language1"/>
+          <Item Value="ShippingCost"/>
+          <Item Value="LineItemTotal"/>
+          <Item Value="ListPrice"/>
+          <Item Value="QuantityOnHand"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="MyOrdersIterator" id="OrderDate1">
+      <AttrNames>
+        <Item Value="OrderDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersIterator" id="OrderId1">
+      <AttrNames>
+        <Item Value="OrderId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersIterator" id="InvoiceTotal">
+      <AttrNames>
+        <Item Value="InvoiceTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersAddressesIterator" id="Address1">
+      <AttrNames>
+        <Item Value="Address1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersAddressesIterator" id="Address2">
+      <AttrNames>
+        <Item Value="Address2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersAddressesIterator" id="City">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersAddressesIterator" id="PostalCode">
+      <AttrNames>
+        <Item Value="PostalCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersAddressesIterator" id="StateProvince">
+      <AttrNames>
+        <Item Value="StateProvince"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersAddressesIterator" id="CountryId">
+      <AttrNames>
+        <Item Value="CountryId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersBillingAddressesIterator"
+                     id="AddressId">
+      <AttrNames>
+        <Item Value="AddressId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersBillingAddressesIterator"
+                     id="Address11">
+      <AttrNames>
+        <Item Value="Address1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersBillingAddressesIterator"
+                     id="Address21">
+      <AttrNames>
+        <Item Value="Address2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersBillingAddressesIterator" id="City1">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersBillingAddressesIterator"
+                     id="PostalCode1">
+      <AttrNames>
+        <Item Value="PostalCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersBillingAddressesIterator"
+                     id="StateProvince1">
+      <AttrNames>
+        <Item Value="StateProvince"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersBillingAddressesIterator"
+                     id="CountryId1">
+      <AttrNames>
+        <Item Value="CountryId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersPaymentOptionsIterator"
+                     id="PaymentTypeCode">
+      <AttrNames>
+        <Item Value="PaymentTypeCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersPaymentOptionsIterator"
+                     id="AccountNumber">
+      <AttrNames>
+        <Item Value="AccountNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersPaymentOptionsIterator"
+                     id="CardTypeCode">
+      <AttrNames>
+        <Item Value="CardTypeCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersPaymentOptionsIterator"
+                     id="ExpireDate">
+      <AttrNames>
+        <Item Value="ExpireDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersPaymentOptionsIterator"
+                     id="CheckDigits">
+      <AttrNames>
+        <Item Value="CheckDigits"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersPaymentOptionsIterator"
+                     id="RoutingIdentifier">
+      <AttrNames>
+        <Item Value="RoutingIdentifier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersPaymentOptionsIterator"
+                     id="InstitutionName">
+      <AttrNames>
+        <Item Value="InstitutionName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersPaymentOptionsIterator"
+                     id="ValidFromDate">
+      <AttrNames>
+        <Item Value="ValidFromDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersPaymentOptionsIterator"
+                     id="ValidToDate">
+      <AttrNames>
+        <Item Value="ValidToDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="MyOrdersIterator" Uses="LOV_ShippingOptionId"
+          id="ShippingOptionId1"/>
+    <attributeValues IterBinding="MyOrdersIterator" id="ShipToName1">
+      <AttrNames>
+        <Item Value="ShipToName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersIterator" id="TotalShippingCost">
+      <AttrNames>
+        <Item Value="TotalShippingCost"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersIterator" id="DiscountAmount">
+      <AttrNames>
+        <Item Value="DiscountAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersIterator" id="CalculatedOrderTotal">
+      <AttrNames>
+        <Item Value="CalculatedOrderTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersIterator" id="OrderTotal">
+      <AttrNames>
+        <Item Value="OrderTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersIterator" id="OrderStatusCode1">
+      <AttrNames>
+        <Item Value="OrderStatusCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AuthenticatedUserIterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <navigationlist IterBinding="MyOrdersIterator" ListIter="MyOrdersIterator"
+                    id="MyOrders3" ListOperMode="navigation">
+      <AttrNames>
+        <Item Value="OrderId"/>
+        <Item Value="OrderStatusCode"/>
+      </AttrNames>
+    </navigationlist>
+    <methodAction IterBinding="MyOrdersIterator" id="cancelOrder"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="cancelOrder" IsViewObjectMethod="true"
+                  DataControl="StoreServiceAMDataControl"
+                  InstanceName="StoreServiceAMDataControl.MyOrders"
+                  ReturnName="StoreServiceAMDataControl.methodResults.StoreServiceAMDataControl_MyOrders_cancelOrder_result"/>
+    <attributeValues IterBinding="MyOrdersAddressesIterator" id="AddressId1">
+      <AttrNames>
+        <Item Value="AddressId"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false" IterBinding="MyOrdersAddressesIterator"
+                  Uses="LOV_CountryId" id="CountryId2"/>
+    <list IterBinding="MyOrdersIterator" Uses="LOV_PaymentOptionId"
+          id="PaymentOptionId1"/>
+    <attributeValues IterBinding="MyOrdersIterator" id="GiftwrapMessage1">
+      <AttrNames>
+        <Item Value="GiftwrapMessage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrdersIterator" id="isCancelable">
+      <AttrNames>
+        <Item Value="isCancelable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrderItemsIterator" id="Quantity">
+      <AttrNames>
+        <Item Value="Quantity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrderItemsIterator" id="ProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrderItemsIterator" id="CostPrice">
+      <AttrNames>
+        <Item Value="CostPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrderItemsIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrderItemsIterator" id="AdditionalInfo">
+      <AttrNames>
+        <Item Value="AdditionalInfo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrderItemsIterator" id="CategoryName">
+      <AttrNames>
+        <Item Value="CategoryName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrderItemsIterator" id="ProductImageId">
+      <AttrNames>
+        <Item Value="ProductImageId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrderItemsIterator" id="ShippingCost">
+      <AttrNames>
+        <Item Value="ShippingCost"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrderItemsIterator" id="ListPrice">
+      <AttrNames>
+        <Item Value="ListPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MyOrderItemsIterator" id="ProductId">
+      <AttrNames>
+        <Item Value="ProductId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="deleteCurrentMyOrderItem"
+                  InstanceName="StoreServiceAMDataControl.dataProvider"
+                  DataControl="StoreServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="deleteCurrentMyOrderItem"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

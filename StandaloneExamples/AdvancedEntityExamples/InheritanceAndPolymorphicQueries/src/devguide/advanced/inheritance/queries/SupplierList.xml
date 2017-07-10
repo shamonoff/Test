@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SupplierList"
+  Extends="devguide.advanced.inheritance.queries.PersonList"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  SelectList="ThePerson.PERSON_ID, 
+       ThePerson.PRINCIPAL_NAME, 
+       ThePerson.TITLE, 
+       ThePerson.FIRST_NAME, 
+       ThePerson.LAST_NAME, 
+       ThePerson.PERSON_TYPE_CODE, 
+       ThePerson.SUPPLIER_ID, 
+       ThePerson.PROVISIONED_FLAG, 
+       ThePerson.PRIMARY_ADDRESS_ID, 
+       ThePerson.REGISTERED_DATE, 
+       ThePerson.MEMBERSHIP_ID, 
+       ThePerson.EMAIL, 
+       ThePerson.CONFIRMED_EMAIL, 
+       ThePerson.PHONE_NUMBER, 
+       ThePerson.MOBILE_PHONE_NUMBER, 
+       ThePerson.CREDIT_LIMIT, 
+       ThePerson.DATE_OF_BIRTH, 
+       ThePerson.MARITAL_STATUS_CODE, 
+       ThePerson.GENDER, 
+       ThePerson.CHILDREN_UNDER_18, 
+       ThePerson.APPROXIMATE_INCOME, 
+       ThePerson.CONTACT_METHOD_CODE, 
+       ThePerson.CONTACTABLE_FLAG, 
+       ThePerson.CONTACT_BY_AFFILLIATES_FLAG, 
+       ThePerson.CREATED_BY, 
+       ThePerson.CREATION_DATE, 
+       ThePerson.LAST_UPDATED_BY, 
+       ThePerson.LAST_UPDATE_DATE, 
+       ThePerson.OBJECT_VERSION_ID, 
+       ThePerson.CONTRACT_EXPIRES"
+  RowClass="devguide.advanced.inheritance.queries.SupplierListRowImpl"
+  RowInterface="devguide.advanced.inheritance.queries.common.SupplierListRow"
+  ClientRowProxyName="devguide.advanced.inheritance.queries.client.SupplierListRowClient">
+  <DesignTime>
+    <Attr Name="_version" Value="11.1.1.46.77"/>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="ThePerson"
+    Entity="devguide.advanced.inheritance.Supplier"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <Attr Name="_queryClause" Value="false"/>
+    </DesignTime>
+  </EntityUsage>
+  <AttrArray Name="EntityImports">
+    <Item Value="devguide.advanced.inheritance.Supplier"/>
+  </AttrArray>
+  <ViewAttribute
+    Name="PersonId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PersonId"
+    EntityUsage="ThePerson"
+    AliasName="PERSON_ID">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreditLimit"
+    PrecisionRule="true"
+    EntityAttrName="CreditLimit"
+    EntityUsage="ThePerson"
+    AliasName="CREDIT_LIMIT">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PrincipalName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PrincipalName"
+    EntityUsage="ThePerson"
+    AliasName="PRINCIPAL_NAME">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DateOfBirth"
+    PrecisionRule="true"
+    EntityAttrName="DateOfBirth"
+    EntityUsage="ThePerson"
+    AliasName="DATE_OF_BIRTH">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Title"
+    PrecisionRule="true"
+    EntityAttrName="Title"
+    EntityUsage="ThePerson"
+    AliasName="TITLE">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MaritalStatusCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MaritalStatusCode"
+    EntityUsage="ThePerson"
+    AliasName="MARITAL_STATUS_CODE">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="ThePerson"
+    AliasName="FIRST_NAME">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Gender"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Gender"
+    EntityUsage="ThePerson"
+    AliasName="GENDER">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="ThePerson"
+    AliasName="LAST_NAME">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ChildrenUnder18"
+    PrecisionRule="true"
+    EntityAttrName="ChildrenUnder18"
+    EntityUsage="ThePerson"
+    AliasName="CHILDREN_UNDER_18">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PersonTypeCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    DiscrColumn="true"
+    EntityAttrName="PersonTypeCode"
+    EntityUsage="ThePerson"
+    AliasName="PERSON_TYPE_CODE"
+    DefaultValue="SUPP">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ApproximateIncome"
+    PrecisionRule="true"
+    EntityAttrName="ApproximateIncome"
+    EntityUsage="ThePerson"
+    AliasName="APPROXIMATE_INCOME">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SupplierId"
+    PrecisionRule="true"
+    EntityAttrName="SupplierId"
+    EntityUsage="ThePerson"
+    AliasName="SUPPLIER_ID">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContactMethodCode"
+    PrecisionRule="true"
+    EntityAttrName="ContactMethodCode"
+    EntityUsage="ThePerson"
+    AliasName="CONTACT_METHOD_CODE">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProvisionedFlag"
+    PrecisionRule="true"
+    EntityAttrName="ProvisionedFlag"
+    EntityUsage="ThePerson"
+    AliasName="PROVISIONED_FLAG">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContactableFlag"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ContactableFlag"
+    EntityUsage="ThePerson"
+    AliasName="CONTACTABLE_FLAG">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PrimaryAddressId"
+    PrecisionRule="true"
+    EntityAttrName="PrimaryAddressId"
+    EntityUsage="ThePerson"
+    AliasName="PRIMARY_ADDRESS_ID">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContactByAffilliatesFlag"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ContactByAffilliatesFlag"
+    EntityUsage="ThePerson"
+    AliasName="CONTACT_BY_AFFILLIATES_FLAG">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RegisteredDate"
+    PrecisionRule="true"
+    EntityAttrName="RegisteredDate"
+    EntityUsage="ThePerson"
+    AliasName="REGISTERED_DATE">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="ThePerson"
+    AliasName="CREATED_BY">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MembershipId"
+    PrecisionRule="true"
+    EntityAttrName="MembershipId"
+    EntityUsage="ThePerson"
+    AliasName="MEMBERSHIP_ID">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreationDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="ThePerson"
+    AliasName="CREATION_DATE">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Email"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="ThePerson"
+    AliasName="EMAIL">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="ThePerson"
+    AliasName="LAST_UPDATED_BY">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ConfirmedEmail"
+    PrecisionRule="true"
+    EntityAttrName="ConfirmedEmail"
+    EntityUsage="ThePerson"
+    AliasName="CONFIRMED_EMAIL">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateDate"
+    EntityUsage="ThePerson"
+    AliasName="LAST_UPDATE_DATE">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PhoneNumber"
+    PrecisionRule="true"
+    EntityAttrName="PhoneNumber"
+    EntityUsage="ThePerson"
+    AliasName="PHONE_NUMBER">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ObjectVersionId"
+    EntityUsage="ThePerson"
+    AliasName="OBJECT_VERSION_ID">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MobilePhoneNumber"
+    PrecisionRule="true"
+    EntityAttrName="MobilePhoneNumber"
+    EntityUsage="ThePerson"
+    AliasName="MOBILE_PHONE_NUMBER">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContractExpires"
+    PrecisionRule="true"
+    EntityAttrName="ContractExpires"
+    EntityUsage="ThePerson"
+    AliasName="CONTRACT_EXPIRES"/>
+  <ClientRowInterface>
+    <Method
+      Name="performSupplierFunction">
+      <Return
+        Type="void"/>
+    </Method>
+  </ClientRowInterface>
+</ViewObject>

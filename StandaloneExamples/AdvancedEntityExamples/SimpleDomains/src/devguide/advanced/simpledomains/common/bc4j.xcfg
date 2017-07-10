@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="devguide.advanced.simpledomains.PersonModule">
+      <AppModuleConfig name="PersonModuleLocal"
+                       ApplicationName="devguide.advanced.simpledomains.PersonModule"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.simpledomains.SimpleDomains">
+         <Security AppModuleJndiName="devguide.advanced.simpledomains.PersonModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="PersonModuleShared"
+                       ApplicationName="devguide.advanced.simpledomains.PersonModule"
+                       DeployPlatform="LOCAL" JDBCName="FOD"
+                       jbo.project="devguide.advanced.simpledomains.SimpleDomains">
+         <AM-Pooling jbo.ampool.maxpoolsize="1"
+                     jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="devguide.advanced.simpledomains.PersonModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

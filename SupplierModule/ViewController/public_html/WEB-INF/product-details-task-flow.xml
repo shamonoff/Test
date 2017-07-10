@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"
+             id="__1">
+  <task-flow-definition id="product-details-task-flow">
+    <default-activity id="__17">productInfo</default-activity>
+    <input-parameter-definition id="__5">
+      <name id="__6">ProductId</name>
+      <value>#{pageFlowScope.ProductId}</value>
+    </input-parameter-definition>
+    <managed-bean id="__2">
+      <managed-bean-name id="__18">ProductDetailsBean</managed-bean-name>
+      <managed-bean-class>oracle.fodemo.product.backing.ProductDeatilsBean</managed-bean-class>
+      <managed-bean-scope id="__19">backingBean</managed-bean-scope>
+    </managed-bean>
+    <task-flow-return id="continueBrowse">
+      <outcome id="__4">
+        <name id="__3">globalHome</name>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="cancelAndReturn">
+      <outcome id="__15">
+        <name id="__14">globalHome</name>
+      </outcome>
+    </task-flow-return>
+    <view id="productInfo">
+      <page>/product/productInfo.jspx</page>
+    </view>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">productInfo</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome id="__11">cancel</from-outcome>
+        <to-activity-id id="__10">cancelAndReturn</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome id="__16">success</from-outcome>
+        <to-activity-id id="__12">continueBrowse</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

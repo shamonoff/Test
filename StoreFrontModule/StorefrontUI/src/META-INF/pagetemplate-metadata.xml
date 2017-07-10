@@ -1,0 +1,5 @@
+<pageTemplateDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/pagetemplate">
+  <pagetemplate-jsp-ui-def>
+    /templates/StoreFrontTemplate.jspx
+  </pagetemplate-jsp-ui-def>
+</pageTemplateDefs>

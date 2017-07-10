@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.35" id="ExcelReadOnlyPageDef"
+                Package="oracle.foddemo.masterpricelist.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="ProductListIterator" Binds="ProductList"
+              DataControl="MasterPriceListServiceDataControl" RangeSize="25"/>
+    <variableIterator id="variables">
+      <variable Name="executeSimpleProductQuery_searchTerm"
+                Type="java.lang.String" IsQueriable="false"/>
+      <variable Name="executeSimpleProductQuery_includeDiscontinued"
+                Type="java.lang.Boolean" IsQueriable="false"
+                DefaultValue="true"/>
+      <variable Name="getConnectedUser_result" Type="java.lang.String"
+                DefaultValue="${bindings.getConnectedUser.result}"
+                IsQueriable="false"/>
+    </variableIterator>
+    <invokeAction Binds="getConnectedUser" id="invokeConnectedUser"
+                  Refresh="ifNeeded"
+                  RefreshCondition="${empty bindings.getConnectedUser.result}"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ProductListIterator" id="ProductList">
+      <nodeDefinition DefName="oracle.foddemo.masterpricelist.model.queries.ProductsVO"
+                      Name="ProductList.0">
+        <AttrNames>
+          <Item Value="ProductId"/>
+          <Item Value="ProductName"/>
+          <Item Value="ProductStatus"/>
+          <Item Value="SupplierName"/>
+          <Item Value="CostPrice"/>
+          <Item Value="MinPrice"/>
+          <Item Value="ListPrice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction IterBinding="ProductListIterator"
+                  id="executeSimpleProductQuery" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="executeSimpleProductQuery"
+                  IsViewObjectMethod="true"
+                  DataControl="MasterPriceListServiceDataControl"
+                  InstanceName="MasterPriceListServiceDataControl.ProductList">
+      <NamedData NDName="searchTerm" NDType="java.lang.String"
+                 NDValue="${bindings.executeSimpleProductQuery_searchTerm}"/>
+      <NamedData NDName="includeDiscontinued" NDType="java.lang.Boolean"
+                 NDValue="${bindings.executeSimpleProductQuery_includeDiscontinued}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables"
+                     id="searchTerm">
+      <AttrNames>
+        <Item Value="executeSimpleProductQuery_searchTerm"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables"
+                     id="includeDiscontinued">
+      <AttrNames>
+        <Item Value="executeSimpleProductQuery_includeDiscontinued"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="getConnectedUser"
+                  InstanceName="MasterPriceListServiceDataControl.dataProvider"
+                  DataControl="MasterPriceListServiceDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getConnectedUser" IsViewObjectMethod="false"
+                  ReturnName="MasterPriceListServiceDataControl.methodResults.getConnectedUser_MasterPriceListServiceDataControl_dataProvider_getConnectedUser_result"/>
+    <attributeValues IterBinding="variables" id="loggedInUser">
+      <AttrNames>
+        <Item Value="getConnectedUser_result"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Persons"
+  DBObjectType="table"
+  DBObjectName="PERSONS"
+  AliasName="Persons"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="devguide.advanced.inheritance.PersonsImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_version" Value="11.1.1.46.77"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="PersonId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="PERSON_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PERSONS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2a9-0115-1000-8003-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="PrincipalName"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="PRINCIPAL_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2bd-0115-1000-8004-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="Title"
+    Precision="12"
+    ColumnName="TITLE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2bd-0115-1000-8005-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="FirstName"
+    Precision="30"
+    ColumnName="FIRST_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2bd-0115-1000-8006-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="LastName"
+    Precision="30"
+    ColumnName="LAST_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2bd-0115-1000-8007-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="PersonTypeCode"
+    IsNotNull="true"
+    DiscrColumn="true"
+    DefaultValue="CUST"
+    Precision="30"
+    ColumnName="PERSON_TYPE_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2bd-0115-1000-8008-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="SupplierId"
+    ColumnName="SUPPLIER_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2bd-0115-1000-8009-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ProvisionedFlag"
+    Precision="1"
+    ColumnName="PROVISIONED_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2bd-0115-1000-800a-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="PrimaryAddressId"
+    Precision="15"
+    Scale="0"
+    ColumnName="PRIMARY_ADDRESS_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-800b-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="RegisteredDate"
+    ColumnName="REGISTERED_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-800c-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="MembershipId"
+    Precision="15"
+    Scale="0"
+    ColumnName="MEMBERSHIP_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-800d-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    IsNotNull="true"
+    Precision="25"
+    ColumnName="EMAIL"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-800e-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ConfirmedEmail"
+    Precision="25"
+    ColumnName="CONFIRMED_EMAIL"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-800f-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="PhoneNumber"
+    Precision="20"
+    ColumnName="PHONE_NUMBER"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-8010-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="MobilePhoneNumber"
+    Precision="20"
+    ColumnName="MOBILE_PHONE_NUMBER"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-8011-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="CreditLimit"
+    Precision="9"
+    Scale="2"
+    ColumnName="CREDIT_LIMIT"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-8012-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="DateOfBirth"
+    ColumnName="DATE_OF_BIRTH"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-8013-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="MaritalStatusCode"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="MARITAL_STATUS_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-8014-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="Gender"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="GENDER"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-8015-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ChildrenUnder18"
+    Precision="2"
+    Scale="0"
+    ColumnName="CHILDREN_UNDER_18"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-8016-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ApproximateIncome"
+    Precision="15"
+    Scale="0"
+    ColumnName="APPROXIMATE_INCOME"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-8017-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ContactMethodCode"
+    Precision="30"
+    ColumnName="CONTACT_METHOD_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-8018-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ContactableFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="CONTACTABLE_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-8019-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ContactByAffilliatesFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="CONTACT_BY_AFFILLIATES_FLAG"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-801a-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-801b-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-801c-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-801d-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-801e-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Attribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="OBJECT_VERSION_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="PERSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Data>
+      <Property
+        Name="OWNER_SCOPE"
+        Value="INSTANCE"/>
+      <Property
+        Name="CHANGEABILITY"
+        Value="CHANGEABLE"/>
+      <Property
+        Name="VISIBILITY"
+        Value="PACKAGE"/>
+      <Property
+        Name="MULTIPLICITY"
+        Value="1"/>
+      <Property
+        Name="ID"
+        Value="1f93b2c7-0115-1000-801f-8d905161981d::::EntityObjectAttribute"/>
+    </Data>
+  </Attribute>
+  <Key
+    Name="PersonsAffContactChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_AFF_CONTACT_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition"
+        Value="CONTACT_BY_AFFILLIATES_FLAG in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.inheritance.Persons.ContactByAffilliatesFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsContactChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_CONTACT_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value="CONTACTABLE_FLAG in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.ContactableFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsGenderChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_GENDER_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value="GENDER in ('M','F','D')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.Gender"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.PersonId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsProvisionedChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_PROVISIONED_CHK"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value="PROVISIONED_FLAG in ('Y','N')"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.ProvisionedFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066665">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066665"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PERSON_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.PersonId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066666">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066666"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PRINCIPAL_NAME" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.PrincipalName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066667">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066667"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PERSON_TYPE_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.PersonTypeCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066668">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066668"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"EMAIL" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.Email"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066669">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066669"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"MARITAL_STATUS_CODE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.MaritalStatusCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066670">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066670"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"GENDER" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.Gender"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066671">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066671"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CONTACTABLE_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.ContactableFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066672">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066672"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition"
+        Value='"CONTACT_BY_AFFILLIATES_FLAG" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="devguide.advanced.inheritance.Persons.ContactByAffilliatesFlag"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066673">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066673"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066674">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066674"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066675">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066675"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066676">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066676"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0066677">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0066677"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OBJECT_VERSION_ID" IS NOT NULL'/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.ObjectVersionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonSupplierFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSON_SUPPLIER_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="SUPPLIERS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.SupplierId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsAddressesFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_ADDRESSES_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="ADDRESSES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.PrimaryAddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PersonsMembershipsBaseFk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PERSONS_MEMBERSHIPS_BASE_FK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_referencedKey" Value="MEMBERSHIPS_BASE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="devguide.advanced.inheritance.Persons.MembershipId"/>
+    </AttrArray>
+  </Key>
+  <Data>
+    <Property
+      Name="COMPLETE_LIBRARY"
+      Value="FALSE"/>
+    <Property
+      Name="VISIBILITY"
+      Value="PUBLIC"/>
+    <Property
+      Name="IS_LEAF"
+      Value="FALSE"/>
+    <Property
+      Name="IS_ACTIVE"
+      Value="FALSE"/>
+    <Property
+      Name="IS_ROOT"
+      Value="FALSE"/>
+    <Property
+      Name="IS_ABSTRACT"
+      Value="FALSE"/>
+    <Property
+      Name="ID"
+      Value="1f93b28b-0115-1000-8002-8d905161981d::::EntityObject"/>
+  </Data>
+</Entity>

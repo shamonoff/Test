@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.7"
+          id="ProductCategory" Package="oracle.fodemo.supplier.model"
+          BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+          isJavaBased="true">
+  <Attribute Name="categoryId" PrimaryKey="true" Type="java.lang.Long">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.ProductCategory.categoryId_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.ProductCategory.categoryId_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="categoryLockedFlag" Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.ProductCategory.categoryLockedFlag_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.ProductCategory.categoryLockedFlag_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="creationDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="lastUpdatedBy" Type="java.lang.String"/>
+  <Attribute Name="lastUpdateDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="objectVersionId" Type="java.lang.Long"/>
+  <AccessorAttribute id="productCategory" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="productCategoryList" IsCollection="true"
+                     RemoveMethod="removeProductCategory"
+                     AddMethod="addProductCategory"
+                     BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeProductCategory"/>
+      <Property Name="AddMethod" Value="addProductCategory"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="productList" IsCollection="true"
+                     RemoveMethod="removeProduct" AddMethod="addProduct"
+                     BeanClass="oracle.fodemo.supplier.model.Product"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeProduct"/>
+      <Property Name="AddMethod" Value="addProduct"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="product" IsCollection="false"
+                     BeanClass="oracle.fodemo.supplier.model.Product"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductCategory"
+                  BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                  id="addProductCategory" ReturnNodeName="ProductCategory">
+    <ParameterInfo id="productCategory"
+                   Type="oracle.fodemo.supplier.model.ProductCategory"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.ProductCategory"
+                  BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                  id="removeProductCategory" ReturnNodeName="ProductCategory">
+    <ParameterInfo id="productCategory"
+                   Type="oracle.fodemo.supplier.model.ProductCategory"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Product"
+                  BeanClass="oracle.fodemo.supplier.model.Product"
+                  id="addProduct" ReturnNodeName="Product">
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Product"
+                  BeanClass="oracle.fodemo.supplier.model.Product"
+                  id="removeProduct" ReturnNodeName="Product">
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.ProductCategory"
+                     BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                     id="ProductCategory">
+    <ParameterInfo id="categoryId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="categoryLockedFlag" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="createdBy" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="creationDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdateDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdatedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="objectVersionId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="productCategory"
+                   Type="oracle.fodemo.supplier.model.ProductCategory"
+                   isStructured="true"/>
+    <ParameterInfo id="product" Type="oracle.fodemo.supplier.model.Product"
+                   isStructured="true"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.ProductCategory"
+                     BeanClass="oracle.fodemo.supplier.model.ProductCategory"
+                     id="ProductCategory"/>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="oracle.fodemo.supplier.model.ModelBundle"/>
+  </ResourceBundle>
+</JavaBean>

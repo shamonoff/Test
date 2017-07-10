@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.65" id="LandingPadPageDef" Package="secured">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="getConnectedUser_return"
+                IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.getConnectedUser.result}"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="getConnectedUser" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getConnectedUser"
+                  IsViewObjectMethod="false"
+                  DataControl="MasterPriceListServiceDataControl"
+                  InstanceName="MasterPriceListServiceDataControl.dataProvider"
+                  ReturnName="MasterPriceListServiceDataControl.methodResults.getConnectedUser_MasterPriceListServiceDataControl_dataProvider_getConnectedUser_result"/>
+    <attributeValues IterBinding="variables" id="return">
+      <AttrNames>
+        <Item Value="getConnectedUser_return"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelBox text="#{res['registration.help.header']}" id="pb1">
+    <af:panelGroupLayout layout="vertical" id="pgl1">
+    <af:spacer width="10" height="10" id="s1"/>
+    <af:outputFormatted value="#{bindings.return.inputValue}" id="of1"/>
+    </af:panelGroupLayout>
+  </af:panelBox>
+</jsp:root>

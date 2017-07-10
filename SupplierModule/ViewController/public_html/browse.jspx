@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['oracle.fodemo.supplier.view.ViewControllerBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1" title="#{viewcontrollerBundle['browse.title']}">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/StoreFrontTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+            <af:group id="g1">
+              <af:panelGroupLayout id="pgl1" layout="scroll">
+                <af:panelHeader text=" Products for   #{userInfoBean.username}"
+                                id="ph1">
+                  <af:panelHeader text="#{viewcontrollerBundle['product.search.title']}"
+                                  id="ph2" styleClass="AFStretchWidth">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                              model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                              queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                              queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                              resultComponentId="::pc1:t1"/>
+                  </af:panelHeader>
+                  <af:spacer width="10" height="10" id="s1"/>
+                  <af:panelCollection styleClass="AFStretchWidth" id="pc1">
+                    <f:facet name="menus"/>
+                    <f:facet name="toolbar">
+                      <af:toolbar id="t2">
+                        <af:spacer width="10" height="5" id="s5"/>
+                        <af:commandToolbarButton text="#{viewcontrollerBundle['global.button.Edit']}"
+                                                 id="ctb4" partialSubmit="true"
+                                                 icon="/images/update_ena.png"
+                                                 action="productDetails"
+                                                 immediate="true">
+                          <af:setPropertyListener to="#{pageFlowScope.ProductId}"
+                                                  from="#{bindings.productFindAll.currentRow.dataProvider.productId}"
+                                                  type="action"/>
+                        </af:commandToolbarButton>
+                        <af:spacer width="10" height="5" id="s6"/>
+                        <af:commandToolbarButton text="#{viewcontrollerBundle['global.button.Remove']}"
+                                                 disabled="#{!bindings.removeProduct.enabled}"
+                                                 id="ctb3" partialSubmit="true"
+                                                 icon="/images/delete_ena.png">
+                          <af:showPopupBehavior popupId="confirmDeletePopup"
+                                                triggerType="action"/>
+                        </af:commandToolbarButton>
+                        <af:spacer width="10" height="5" id="s7"/>
+                      </af:toolbar>
+                    </f:facet>
+                    <af:popup id="confirmDeletePopup"
+                              contentDelivery="lazyUncached">
+                      <af:dialog closeIconVisible="false" modal="true"
+                                 title="#{viewcontrollerBundle['global.confirmdelete']}"
+                                 dialogListener="#{viewScope.ProductBrowserBean.confirmDeleteAction}"
+                                 id="confirmDeleteDialog">
+                        <af:panelGroupLayout inlineStyle="background-color:Window;"
+                                             layout="vertical" halign="left"
+                                             valign="middle" id="pg21">
+                          <af:spacer width="10" height="10" id="s2"/>
+                          <af:outputText value="#{viewcontrollerBundle['product.browse.confirm']}"
+                                         id="ot21"/>
+                          <af:outputText value="#{bindings.productFindAllIterator.currentRow.dataProvider.productName}?"
+                                         inlineStyle="font-weight:bold;"
+                                         id="ot22"/>
+                          <af:spacer width="10" height="10" id="s3"/>
+                        </af:panelGroupLayout>
+                      </af:dialog>
+                    </af:popup>
+                    <af:table value="#{bindings.productFindAll.collectionModel}"
+                              var="row"
+                              rows="#{bindings.productFindAll.rangeSize}"
+                              emptyText="#{bindings.productFindAll.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.productFindAll.rangeSize}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.productFindAll.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.productFindAll.collectionModel.makeCurrent}"
+                              rowSelection="single" id="t1"
+                              contentDelivery="immediate"
+                              columnStretching="column:c2"
+                              styleClass="AFStretchWidth"
+                              partialTriggers="::ctb3" autoHeightRows="20"
+                              binding="#{viewScope.ProductBrowserBean.productTable}">
+                      <af:column sortProperty="productId" sortable="false"
+                                 headerText="#{bindings.productFindAll.hints.productId.label}"
+                                 id="c4">
+                        <af:commandLink text="#{row.productId}" id="cl1"
+                                        action="productDetails"/>
+                      </af:column>
+                      <af:column sortProperty="productName" sortable="false"
+                                 headerText="#{bindings.productFindAll.hints.productName.label}"
+                                 id="c2">
+                        <af:commandLink text="#{row.productName}" id="cl2"
+                                        action="productDetails">
+                          <af:setPropertyListener to="#{pageFlowScope.ProductId}"
+                                                  from="#{bindings.productFindAll.currentRow.dataProvider.productId}"
+                                                  type="action"/>
+                        </af:commandLink>
+                      </af:column>
+                      <af:column sortProperty="costPrice" sortable="false"
+                                 headerText="#{bindings.productFindAll.hints.costPrice.label}"
+                                 id="c6" align="right">
+                        <af:outputText value="#{row.costPrice}" id="ot1">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.productFindAll.hints.costPrice.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="listPrice" sortable="false"
+                                 headerText="#{bindings.productFindAll.hints.listPrice.label}"
+                                 id="c1" align="right">
+                        <af:outputText value="#{row.listPrice}" id="ot6">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.productFindAll.hints.listPrice.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="minPrice" sortable="false"
+                                 headerText="#{bindings.productFindAll.hints.minPrice.label}"
+                                 id="c3" align="right">
+                        <af:outputText value="#{row.minPrice}" id="ot3">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.productFindAll.hints.minPrice.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="productStatus" sortable="false"
+                                 headerText="#{bindings.productFindAll.hints.productStatus.label}"
+                                 id="c5">
+                        <af:outputText value="#{row.productStatus}" id="ot4"/>
+                      </af:column>
+                    </af:table>
+                  </af:panelCollection>
+                </af:panelHeader>
+              </af:panelGroupLayout>
+            </af:group>
+          </f:facet>
+          <f:facet name="header">
+            <af:panelGroupLayout valign="middle" layout="horizontal" id="pgl2"
+                                 styleClass="AFBrandingBarItem">
+              <f:facet name="separator">
+                <af:spacer width="10" id="s4" height="10"/>
+              </f:facet>
+              <af:commandLink text="#{viewcontrollerBundle['global.nav.editProd']}"
+                              id="cl4" action="productDetails">
+                <af:setPropertyListener to="#{pageFlowScope.ProductId}"
+                                        from="#{bindings.productFindAll.currentRow.dataProvider.productId}"
+                                        type="action"/>
+                </af:commandLink>
+                <af:commandLink action="supplierDetails" id="cl6"
+                                text="#{viewcontrollerBundle['global.nav.supplierDetails']}"/>
+                <af:commandLink action="addSupplier" id="cl7"
+                                text="#{viewcontrollerBundle['global.nav.addSupplier']}"/>
+       
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="end"/>
+          <f:facet name="start"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

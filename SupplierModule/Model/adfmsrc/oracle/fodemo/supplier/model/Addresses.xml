@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.54.7"
+          id="Addresses" Package="oracle.fodemo.supplier.model"
+          BeanClass="oracle.fodemo.supplier.model.Addresses" isJavaBased="true">
+  <Attribute Name="address1" Type="java.lang.String" Precision="40">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Addresses.address1_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Addresses.address1_TOOLTIP"/>
+        <DISPLAYWIDTH Value="40"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="address2" Type="java.lang.String" Precision="40">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Addresses.address2_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Addresses.address2_TOOLTIP"/>
+        <DISPLAYWIDTH Value="40"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="addressId" PrimaryKey="true" Type="java.lang.Long">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Addresses.addressId_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Addresses.addressId_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="city" Type="java.lang.String" IsNotNull="true"
+             Precision="40">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Addresses.city_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Addresses.city_TOOLTIP"/>
+        <DISPLAYWIDTH Value="40"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="countryId" Type="java.lang.String" IsNotNull="true"
+             Precision="2">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Addresses.countryId_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Addresses.countryId_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="creationDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="lastUpdatedBy" Type="java.lang.String"/>
+  <Attribute Name="lastUpdateDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="latitude" Type="java.lang.Long"/>
+  <Attribute Name="longitude" Type="java.lang.Long"/>
+  <Attribute Name="objectVersionId" Type="java.lang.Long"/>
+  <Attribute Name="postalCode" Type="java.lang.String" IsNotNull="true"
+             Precision="12">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Addresses.postalCode_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Addresses.postalCode_TOOLTIP"/>
+        <DISPLAYWIDTH Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="stateProvince" Type="java.lang.String" IsNotNull="true"
+             Precision="40">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL ResId="oracle.fodemo.supplier.model.Addresses.stateProvince_LABEL"/>
+        <TOOLTIP ResId="oracle.fodemo.supplier.model.Addresses.stateProvince_TOOLTIP"/>
+        <DISPLAYWIDTH Value="40"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute id="addressUsageList" IsCollection="true"
+                     RemoveMethod="removeAddressUsage"
+                     AddMethod="addAddressUsage"
+                     BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeAddressUsage"/>
+      <Property Name="AddMethod" Value="addAddressUsage"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="personList" IsCollection="true"
+                     RemoveMethod="removePerson" AddMethod="addPerson"
+                     BeanClass="oracle.fodemo.supplier.model.Person"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removePerson"/>
+      <Property Name="AddMethod" Value="addPerson"/>
+    </Properties>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.AddressUsage"
+                  BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                  id="addAddressUsage" ReturnNodeName="AddressUsage">
+    <ParameterInfo id="addressUsage"
+                   Type="oracle.fodemo.supplier.model.AddressUsage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.AddressUsage"
+                  BeanClass="oracle.fodemo.supplier.model.AddressUsage"
+                  id="removeAddressUsage" ReturnNodeName="AddressUsage">
+    <ParameterInfo id="addressUsage"
+                   Type="oracle.fodemo.supplier.model.AddressUsage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Person"
+                  BeanClass="oracle.fodemo.supplier.model.Person" id="addPerson"
+                  ReturnNodeName="Person">
+    <ParameterInfo id="person" Type="oracle.fodemo.supplier.model.Person"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="oracle.fodemo.supplier.model.Person"
+                  BeanClass="oracle.fodemo.supplier.model.Person"
+                  id="removePerson" ReturnNodeName="Person">
+    <ParameterInfo id="person" Type="oracle.fodemo.supplier.model.Person"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.Addresses"
+                     BeanClass="oracle.fodemo.supplier.model.Addresses"
+                     id="Addresses">
+    <ParameterInfo id="address1" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="address2" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="addressId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="city" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="countryId" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="createdBy" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="creationDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdateDate" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="lastUpdatedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="latitude" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="longitude" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="objectVersionId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="postalCode" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="stateProvince" Type="java.lang.String"
+                   isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.fodemo.supplier.model.Addresses"
+                     BeanClass="oracle.fodemo.supplier.model.Addresses"
+                     id="Addresses"/>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="oracle.fodemo.supplier.model.ModelBundle"/>
+  </ResourceBundle>
+</JavaBean>

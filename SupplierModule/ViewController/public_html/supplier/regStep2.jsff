@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['oracle.fodemo.supplier.view.ViewControllerBundle']}"/>
+  <af:panelBorderLayout id="pbl1">
+    <f:facet name="bottom"></f:facet>
+    <f:facet name="top">
+      <af:train var="node"
+                shortDesc="#{viewcontrollerBundle['supplierinfo.step2.title']}"
+                id="train"
+                value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}">
+        <f:facet name="nodeStamp">
+          <af:commandNavigationItem text="#{node.textAndAccessKey}"
+                                    visited="#{node.visited}"
+                                    action="#{node.action}" disabled="true"
+                                    immediate="#{node.immediate}"
+                                    id="commandNavigationItem1"/>
+        </f:facet>
+      </af:train>
+    </f:facet>
+    <af:messages id="m1"/>
+    <f:facet name="innerTop">
+      <af:panelHeader text="#{viewcontrollerBundle['personalInfo.header']}"
+                      id="ph1">
+        <f:facet name="toolbar"></f:facet>
+        <af:panelFormLayout id="pfl1">
+          <af:panelFormLayout id="pfl2">
+            <af:selectOneChoice value="#{bindings.title.inputValue}"
+                                label="#{bindings.title.hints.label}"
+                                required="#{bindings.title.hints.mandatory}"
+                                showRequired="#{bindings.title.hints.mandatory}"
+                                shortDesc="#{bindings.title.hints.label}}"
+                                id="soc1" valuePassThru="true">
+              <af:forEach items="#{bindings.TitleLookupCode.iteratorBinding.allRowsInRange}"
+                          var="li1">
+                <af:selectItem id="si2" label="#{li1.dataProvider.meaning}"
+                               value="#{li1.dataProvider.lookupCode}"/>
+              </af:forEach>
+            </af:selectOneChoice>
+            <af:inputText value="#{bindings.principalName.inputValue}"
+                          label="#{bindings.principalName.hints.label}"
+                          required="#{bindings.principalName.hints.mandatory}"
+                          showRequired="#{bindings.principalName.hints.mandatory}"
+                          columns="#{bindings.principalName.hints.displayWidth}"
+                          maximumLength="#{bindings.principalName.hints.precision}"
+                          shortDesc="#{bindings.principalName.hints.tooltip}"
+                          id="it7">
+              <f:validator binding="#{bindings.principalName.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.firstName.inputValue}"
+                          label="#{bindings.firstName.hints.label}"
+                          required="#{bindings.firstName.hints.mandatory}"
+                          showRequired="#{bindings.firstName.hints.mandatory}"
+                          columns="#{bindings.firstName.hints.displayWidth}"
+                          maximumLength="#{bindings.firstName.hints.precision}"
+                          shortDesc="#{bindings.firstName.hints.tooltip}"
+                          id="it2">
+              <f:validator binding="#{bindings.firstName.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.lastName.inputValue}"
+                          label="#{bindings.lastName.hints.label}"
+                          required="#{bindings.lastName.hints.mandatory}"
+                          showRequired="#{bindings.lastName.hints.mandatory}"
+                          columns="#{bindings.lastName.hints.displayWidth}"
+                          maximumLength="#{bindings.lastName.hints.precision}"
+                          shortDesc="#{bindings.lastName.hints.tooltip}"
+                          id="it1">
+              <f:validator binding="#{bindings.lastName.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.email.inputValue}"
+                          label="#{bindings.email.hints.label}"
+                          required="#{bindings.email.hints.mandatory}"
+                          showRequired="#{bindings.email.hints.mandatory}"
+                          columns="#{bindings.email.hints.displayWidth}"
+                          maximumLength="#{bindings.email.hints.precision}"
+                          shortDesc="#{bindings.email.hints.tooltip}" id="it8"
+                          autoSubmit="true">
+              <f:validator binding="#{bindings.email.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.confirmedEmail.inputValue}"
+                          label="#{bindings.confirmedEmail.hints.label}"
+                          required="#{bindings.confirmedEmail.hints.mandatory}"
+                          showRequired="#{bindings.confirmedEmail.hints.mandatory}"
+                          columns="#{bindings.confirmedEmail.hints.displayWidth}"
+                          maximumLength="#{bindings.confirmedEmail.hints.precision}"
+                          shortDesc="#{bindings.confirmedEmail.hints.tooltip}"
+                          validator="#{pageFlowScope.SupplierRegistrationBean.validateConfirmedEmail}"
+                          id="it9" autoSubmit="true">
+              <f:validator binding="#{bindings.confirmedEmail.validator}"/>
+            </af:inputText>
+            <af:inputDate value="#{bindings.dateOfBirth.inputValue}"
+                          label="#{bindings.dateOfBirth.hints.label}"
+                          required="#{bindings.dateOfBirth.hints.mandatory}"
+                          showRequired="#{bindings.dateOfBirth.hints.mandatory}"
+                          shortDesc="#{bindings.dateOfBirth.hints.tooltip}"
+                          id="id1">
+              <f:validator binding="#{bindings.dateOfBirth.validator}"/>
+              <af:convertDateTime pattern="#{bindings.dateOfBirth.format}"/>
+            </af:inputDate>
+            <af:selectOneRadio label="#{bindings.gender.hints.label}" id="sol2"
+                               shortDesc="#{bindings.gender.hints.tooltip}"
+                               value="#{bindings.gender.inputValue}"
+                               showRequired="#{bindings.gender.hints.mandatory}"
+                               required="#{bindings.gender.hints.mandatory}">
+              <af:selectItem label="Male" value="M" id="si6"/>
+              <af:selectItem label="Female" value="F" id="it10"/>
+            </af:selectOneRadio>
+            <af:selectOneChoice label="#{bindings.maritalStatusCode.hints.label}"
+                                id="it3"
+                                value="#{bindings.maritalStatusCode.inputValue}"
+                                required="#{bindings.maritalStatusCode.hints.mandatory}"
+                                showRequired="#{bindings.maritalStatusCode.hints.mandatory}"
+                                valuePassThru="true">
+              <af:forEach items="#{bindings.MaritalLookupCode.iteratorBinding.allRowsInRange}"
+                          var="li">
+                <af:selectItem id="si" label="#{li.dataProvider.meaning}"
+                               value="#{li.dataProvider.lookupCode}"/>
+              </af:forEach>
+            </af:selectOneChoice>
+            <af:inputText value="#{bindings.phoneNumber.inputValue}"
+                          label="#{bindings.phoneNumber.hints.label}"
+                          required="#{bindings.phoneNumber.hints.mandatory}"
+                          showRequired="#{bindings.phoneNumber.hints.mandatory}"
+                          columns="#{bindings.phoneNumber.hints.displayWidth}"
+                          maximumLength="#{bindings.phoneNumber.hints.precision}"
+                          shortDesc="#{bindings.phoneNumber.hints.tooltip}"
+                          id="it6">
+              <f:validator binding="#{bindings.phoneNumber.validator}"/>
+            </af:inputText>
+          </af:panelFormLayout>
+          <f:facet name="footer">
+            <af:panelGroupLayout id="pgl2" layout="horizontal">
+              <af:commandButton text="#{viewcontrollerBundle['global.button.Cancel']}"
+                                id="cb5" action="exitRegistration"
+                                immediate="true" icon="/images/undo.png"/>
+              <af:spacer width="5" height="10" id="s1"/>
+              <af:commandButton text="#{viewcontrollerBundle['global.button.Next']}"
+                                id="cb6" action="next" icon="/images/next.gif">
+                <af:setPropertyListener from="#{bindings.personIterator.currentRow.dataProvider}"
+                                        to="#{pageFlowScope.SupplierRegistrationBean.person}"
+                                        type="action"/>
+              </af:commandButton>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelFormLayout>
+      </af:panelHeader>
+    </f:facet>
+  </af:panelBorderLayout>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:SupplierRegistrationBean-->
+</jsp:root>

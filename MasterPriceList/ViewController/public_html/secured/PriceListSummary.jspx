@@ -1,0 +1,453 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1" title="Price List Summary">
+    <f:facet name="metaContainer">
+          <af:resource type="javascript">
+          function showHoverDescription(e)
+        {
+            var im = e.getSource();
+            var popup = AdfPage.PAGE.findComponent("productDescriptionPopup");
+            var description = popup.findComponent("plDescription");
+            description.setValue(im.getProperty("hoverDescription"));            
+            var hints = {};
+            hints[AdfRichPopup.HINT_ALIGN] = AdfRichPopup.ALIGN_AFTER_END;
+            hints[AdfRichPopup.HINT_ALIGN_ID] = im.getClientId();
+            popup.show(hints); 
+        } 
+          
+        function hideHoverDescription(e)     
+        {
+            var popup = AdfPage.PAGE.findComponent("productDescriptionPopup");
+            popup.hide(); 
+        }
+          </af:resource>
+        </f:facet>
+      <af:messages id="m2"/>
+      <af:form id="f1">
+      <af:popup id="productDescriptionPopup" contentDelivery="immediate">
+          <af:panelGroupLayout inlineStyle="width:400px;" layout="scroll"
+                               clientComponent="true" id="pgl1">
+            <af:outputFormatted id="plDescription" clientComponent="true"
+                                value="Item description here"/>
+          </af:panelGroupLayout>
+        </af:popup>
+        <af:pageTemplate viewId="/template/MasterPriceListTemplate.jspx" id="pt1">
+          <f:facet name="content">
+            <af:panelSplitter id="detailSpliter" orientation="vertical"
+                              splitterPosition="350">
+              <f:facet name="first">
+                <af:panelSplitter id="searchSplitter" splitterPosition="240">
+                  <f:facet name="first">
+                    <af:panelAccordion id="leftsideAccordion"
+                                       discloseMany="true">
+                      <af:showDetailItem id="searchPanel" disclosed="true"
+                                         inflexibleHeight="150"
+                                         text="#{res['pls.productSearch.header']}">
+                        <af:panelTabbed id="searchTabCollection">
+                          <af:showDetailItem id="simpleSearchTab"
+                                             textAndAccessKey="#{res['pls.tab.simpleSearchTab.header']}">
+                            <af:panelFormLayout id="pfl1" labelAlignment="top">
+                              <af:inputText value="#{bindings.searchTerm.inputValue}"
+                                            label="#{res['pls.productSearch.simpleSearch.label']}"
+                                            required="#{bindings.searchTerm.hints.mandatory}"
+                                            columns="#{bindings.searchTerm.hints.displayWidth}"
+                                            maximumLength="#{bindings.searchTerm.hints.precision}"
+                                            id="simpleSearchInput"
+                                            shortDesc="#{res['pls.productSearch.simpleSearch.label']}"
+                                            binding="#{backingBeanScope.priceListSummaryBacking.searchInput}">                            
+                              </af:inputText>
+                              <af:commandButton actionListener="#{bindings.executeSimpleProductQuery.execute}"
+                                                text="#{res['pls.productSearch.searchButton.label']}"
+                                                disabled="#{!bindings.executeSimpleProductQuery.enabled}"
+                                                id="simpleSearchButton"
+                                                action="#{backingBeanScope.priceListSummaryBacking.search_coaction}"/>
+                            </af:panelFormLayout>
+                          </af:showDetailItem>
+                          <af:showDetailItem
+                                             id="advancedSearchTab"
+                                             textAndAccessKey="#{res['pls.tab.advancedSearchTab.header']}">
+                            <af:panelFormLayout id="avSearchForm"
+                                                labelAlignment="top">
+                              <af:inputText value="#{bindings.searchTerm.inputValue}"
+                                            label="#{res['pls.productSearch.simpleSearch.label']}"
+                                            required="#{bindings.searchTerm.hints.mandatory}"
+                                            columns="#{bindings.searchTerm.hints.displayWidth}"
+                                            maximumLength="#{bindings.searchTerm.hints.precision}"
+                                            shortDesc="#{res['pls.productSearch.simpleSearch.hint']}"
+                                            id="it3"/>
+                              <af:panelLabelAndMessage label="#{res['pls.productSearch.categoryId.label']}"
+                                                       id="categorySelector">
+                                <af:selectOneChoice label="#{res['pls.productSearch.categoryId.label']}"
+                                                    id="soc1"
+                                                    value="#{bindings.categoryId.inputValue}"
+                                                    simple="true">
+                                  <f:selectItems value="#{bindings.categoryId.items}"
+                                                 id="si1"/>
+                                </af:selectOneChoice>
+                              </af:panelLabelAndMessage>
+                              <af:selectBooleanCheckbox id="sbc1"
+                                                        value="#{sessionUIFlags.ShowDiscontinuedProducts}"
+                                                        textAndAccessKey="#{res['pls.productSearch.incDiscontinued.label']}"
+                                                        shortDesc="#{res['pls.productSearch.incDiscontinued.hint']}"/>
+                              <af:commandButton actionListener="#{bindings.executeAdvancedProductQuery.execute}"
+                                                text="#{res['pls.productSearch.searchButton.label']}"
+                                                disabled="#{!bindings.executeAdvancedProductQuery.enabled}"
+                                                id="cb1"/>
+                            </af:panelFormLayout>
+                          </af:showDetailItem>
+                        </af:panelTabbed>
+                      </af:showDetailItem>
+                      <af:showDetailItem id="activeDiscountPanel"
+                                         text="#{res['pls.activeDiscounts.header']}"
+                                         disclosed="true"
+                                         inflexibleHeight="180">
+                        <af:table value="#{bindings.ActiveDiscounts.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.ActiveDiscounts.rangeSize}"
+                                  emptyText="#{res['pls.activeDiscounts.table.noRows']}"
+                                  fetchSize="#{bindings.ActiveDiscounts.rangeSize}"
+                                  id="t1"
+                                  filterModel="#{bindings.ActiveDiscountsQuery.queryDescriptor}"
+                                  queryListener="#{bindings.ActiveDiscountsQuery.processQuery}"
+                                  filterVisible="false" varStatus="vs"
+                                  summary="#{res['pls.productList.table.summary']}">
+                          <f:facet name="detailStamp">
+                            <af:outputText value="#{row.Description}" id="ot1"/>
+                          </f:facet>
+                          <af:column sortProperty="EasyCode" sortable="true"
+                                     headerText="#{bindings.ActiveDiscounts.hints.EasyCode.label}"
+                                     id="c1">
+                            <af:outputText value="#{row.EasyCode}" id="ot2"/>
+                          </af:column>
+                          <af:column id="c2"
+                                     headerText="#{bindings.ActiveDiscounts.hints.DiscountAmount.label}"
+                                     filterable="false" sortable="true"
+                                     sortProperty="DiscountAmount">
+                            <af:panelBorderLayout id="pbl1">
+                              <af:outputText value="#{row.DiscountAmount}"
+                                             id="ot3">
+                                <af:convertNumber groupingUsed="true"
+                                                  pattern="#{row.AppyAsPercentageFlag=='Y'?'##.00':'$ ###0.00'}"
+                                                  type="number"/>
+                              </af:outputText>
+                              <af:outputText value="%" id="ot4"
+                                             rendered="#{row.ApplyAsPercentageFlag=='Y'}"/>
+                              <f:facet name="end">
+                                <af:image source="/images/package_ena.png"
+                                          shortDesc="#{res['pls.activeDiscounts.shipping.hint']}"
+                                          id="i1"
+                                          rendered="#{row.AddFreeShippingFlag=='Y'}"/>
+                              </f:facet>
+                            </af:panelBorderLayout>
+                          </af:column>
+                        </af:table>
+                      </af:showDetailItem>
+                    </af:panelAccordion>
+                  </f:facet>
+                  <f:facet name="second">
+                    <af:panelStretchLayout id="psl1" topHeight="25">
+                      <f:facet name="center">
+                      
+                        <af:panelCollection id="priceListCollection">
+                          <f:facet name="menus">
+                              <af:menu id="m1"
+                                       textAndAccessKey="#{res['pls.productList.menu.label']}">
+                                <af:commandMenuItem id="cmi1"
+                                                    textAndAccessKey="#{res['pls.productList.menu.ros.label']}">
+                                  <af:exportCollectionActionListener exportedId="PriceListTable"
+                                                                     type="excelHTML"
+                                                                     filename="read_only_pricelist.xls"/>
+                                </af:commandMenuItem>
+                                <af:group id="g1">
+                                <af:goMenuItem id="goEditable"
+                                           textAndAccessKey="#{res['pls.productList.menu.lse.label']}"
+                                           destination="/excel/published/EditPriceList.xlsx"
+                                           rendered="#{securityContext.userInRole['fod-admin']}"/>
+                                <af:goMenuItem id="goAdvanced"
+                                           rendered="#{securityContext.userInRole['fod-admin']}"
+                                           textAndAccessKey="#{res['pls.productList.menu.adv.label']}"
+                                           destination="/excel/published/AdvEditPriceList.xlsx"/>
+                                <af:goMenuItem id="goReadOnly"
+                                           textAndAccessKey="#{res['pls.productList.menu.lsr.label']}"
+                                           destination="/excel/published/ReadOnlyPriceList.xlsx"/>
+                              </af:group>
+                              </af:menu>
+                          </f:facet>
+                          <f:facet name="statusbar">
+                            <af:toolbar id="t3">
+                              <af:outputText value="#{res['pls.productList.status.message']}"
+                                             id="ot5"
+                                             rendered="#{!bindings.Commit.enabled}"/>
+                            </af:toolbar>
+                          </f:facet>
+                          <af:table value="#{bindings.ProductList.collectionModel}"
+                                    var="row"
+                                    rows="#{bindings.ProductList.rangeSize}"
+                                    emptyText="#{res['pls.productList.table.noRows']}"
+                                    fetchSize="#{bindings.ProductList.rangeSize}"
+                                    filterModel="#{bindings.ProductListQuery.queryDescriptor}"
+                                    queryListener="#{bindings.ProductListQuery.processQuery}"
+                                    filterVisible="false" varStatus="vs"
+                                    selectedRowKeys="#{bindings.ProductList.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.ProductList.collectionModel.makeCurrent}"
+                                    rowSelection="single"
+                                    verticalGridVisible="false"
+                                    columnStretching="column:nameColumn"
+                                    summary="[A table for updating list prices for our products]"
+                                    shortDesc="#{res['pls.productList.table.hint']}"
+                                    id="PriceListTable"
+                                    contentDelivery="immediate"
+                                    columnSelection="multiple">
+                            <af:column sortProperty="ProductId"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ProductList.hints.ProductId.label}"
+                                       align="end" noWrap="false" width="80"
+                                       id="c3">
+                              <af:panelGroupLayout layout="horizontal"
+                                                   id="pgl2">
+                                <af:outputText value="#{row.ProductId}"
+                                               id="ot6">
+                                  <af:convertNumber groupingUsed="false"
+                                                    pattern="#{bindings.ProductList.hints.ProductId.format}"/>
+                                </af:outputText>
+                                <af:spacer width="4" height="1" id="s1"/>
+                              </af:panelGroupLayout>
+                            </af:column>
+                            <af:column sortProperty="ProductName"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ProductList.hints.ProductName.label}"
+                                       id="nameColumn">
+                              <af:panelBorderLayout id="productNameAndDescription"
+                                                    inlineStyle="width:inherit;">
+                                <af:outputText value="#{row.ProductName}"
+                                               id="ot7"/>
+                                <f:facet name="end">
+                                  <af:image source="/images/details_ena.png"
+                                            shortDesc="#{res['pls.productList.table.details.hint']}"
+                                            id="hoverForDescription"
+                                            clientComponent="true">
+                                    <af:clientAttribute name="hoverDescription"
+                                                        value="#{row.Description}"/>
+                                    <af:clientListener method="showHoverDescription"
+                                                       type="mouseOver"/>
+                                    <af:clientListener method="hideHoverDescription"
+                                                       type="mouseOut"/>
+                                  </af:image>
+                                </f:facet>
+                              </af:panelBorderLayout>
+                            </af:column>
+                            <af:column sortProperty="SupplierName"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.ProductList.hints.SupplierName.label}"
+                                       id="c4">
+                              <af:outputText value="#{row.SupplierName}"
+                                             id="ot8"/>
+                            </af:column>
+                            <af:column headerText="#{res['pls.productList.table.pricingCol.label']}"
+                                       id="c5">
+                              <af:column sortProperty="CostPrice"
+                                         filterable="true" sortable="true"
+                                         headerText="#{bindings.ProductList.hints.CostPrice.label}"
+                                         align="end" width="80" id="c6">
+                                <af:outputText value="#{row.CostPrice}"
+                                               id="ot9">
+                                  <af:convertNumber groupingUsed="false"
+                                                    pattern="#{bindings.ProductList.hints.CostPrice.format}"/>
+                                </af:outputText>
+                              </af:column>
+                              <af:column sortProperty="MinPrice"
+                                         filterable="true" sortable="true"
+                                         headerText="#{bindings.ProductList.hints.MinPrice.label}"
+                                         align="end" width="80" id="c7">
+                                <af:outputText value="#{row.MinPrice}"
+                                               id="ot10">
+                                  <af:convertNumber groupingUsed="false"
+                                                    pattern="#{bindings.ProductList.hints.MinPrice.format}"/>
+                                </af:outputText>
+                              </af:column>
+                              <af:column sortProperty="ListPrice"
+                                         filterable="true" sortable="true"
+                                         headerText="#{bindings.ProductList.hints.ListPrice.label}"
+                                         align="end" width="80" id="c8">
+                                <af:inputText value="#{row.ListPrice}"
+                                              required="#{bindings.ProductList.hints.ListPrice.mandatory}"
+                                              columns="#{bindings.ProductList.hints.ListPrice.displayWidth}"
+                                              maximumLength="#{bindings.ProductList.hints.ListPrice.precision}"
+                                              label="#{bindings.ProductList.hints.ListPrice.label}"
+                                              simple="true" id="tablePriceEdit"
+                                              autoSubmit="true"
+                                              readOnly="#{row.ProductStatus == 'DISCONTINUED' || !securityContext.userInRole['fod-admin']}"                                              >
+                                  <af:convertNumber groupingUsed="false"
+                                                    pattern="#{bindings.ProductList.hints.ListPrice.format}"/>
+                                </af:inputText>
+                              </af:column>
+                              <af:column align="start" width="20" id="c9"
+                                         partialTriggers="tablePriceEdit">
+                                <af:image source="/images/price_warning.png"
+                                          rendered="#{row.Margin.value &lt;= 0.0}"
+                                          shortDesc="#{res['pls.productList.table.warningCol.hint']}"
+                                          id="i2" />
+                              </af:column>
+                            </af:column>
+                          </af:table>
+                          <f:facet name="viewMenu">
+                            <af:group id="g2">
+                              <af:commandMenuItem id="discontinuedSelectorMenu"
+                                                  textAndAccessKey="#{res['pls.productList.menu.viewDiscontinued.label']}"
+                                                  selected="#{sessionUIFlags.showDiscontinuedProducts}"
+                                                  type="check">
+                                <af:setActionListener from="#{!sessionUIFlags.ShowDiscontinuedProducts}"
+                                                      to="#{sessionUIFlags.ShowDiscontinuedProducts}"/>
+                              </af:commandMenuItem>                              
+                            </af:group>
+                          </f:facet>
+                          <f:facet name="toolbar">
+                            <af:toolbar id="t2">
+                              <af:commandToolbarButton
+                                                       id="ctb1"
+                                                       actionListener="#{bindings.Commit.execute}"
+                                                       disabled="#{!bindings.Commit.enabled}"
+                                                       text="#{res['pls.save']}"
+                                                       partialTriggers="PriceListTable:tablePriceEdit"
+                                                       icon="/images/save_ena.png"
+                                                       disabledIcon="/images/save_dis.png"/>
+                            </af:toolbar>
+                          </f:facet>
+                        </af:panelCollection>
+                      </f:facet>
+                      <f:facet name="top">
+                        <af:panelHeader text="#{res['pls.productList.header']}"
+                                        id="ph1">
+                        </af:panelHeader>
+                      </f:facet>
+                    </af:panelStretchLayout>
+                  </f:facet>
+                </af:panelSplitter>
+              </f:facet>
+              <f:facet name="second">
+                <af:panelGroupLayout id="pgl3">
+                  <af:spacer height="4" id="s2"/>
+                  <af:panelTabbed id="pt2"
+                                  inlineStyle="height:400.0px;"
+                                  styleClass="AFStretchWidth">
+                    <af:showDetailItem id="productDetailTab"
+                                       text="#{res['pls.tab.productTab.header']}">
+                      <af:panelGroupLayout id="pgl4" layout="horizontal">
+                        <af:spacer height="10" id="s3"/>
+                        <af:panelFormLayout id="pfl2" maxColumns="5" rows="5"
+                                            partialTriggers="priceListCollection:PriceListTable">
+                          <af:panelLabelAndMessage label="#{bindings.ProductId.hints.label}"                                                   
+                                                   id="plam1">
+                            <af:outputText value="#{bindings.ProductId.inputValue}"
+                                           id="ot11"/>                            
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage id="plam2"
+                                                   label="#{bindings.ProductName.hints.label}">
+                            <af:outputText value="#{bindings.ProductName.inputValue}"
+                                           id="ot12"/>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage id="plam3"
+                                                   label="#{bindings.Description.hints.label}">
+                            <af:panelGroupLayout id="pgl5" layout="scroll"
+                                                 halign="left"
+                                                 inlineStyle="width:300.0px; height:80px;">
+                              <af:outputFormatted value="#{bindings.Description.inputValue}"
+                                                  id="of1"/>
+                            </af:panelGroupLayout>
+                          </af:panelLabelAndMessage>
+                          <af:selectOneChoice value="#{bindings.SupplierId.inputValue}"
+                                              label="#{bindings.SupplierName.hints.label}"
+                                              id="editSupplierName"
+                                              readOnly="#{!securityContext.userInRole['fod-admin']}">
+                            <f:selectItems value="#{bindings.SupplierId.items}"
+                                           id="si2"/>
+                          </af:selectOneChoice>
+                          <af:panelLabelAndMessage id="plam4"
+                                                   label="#{bindings.CostPrice.hints.label}">
+                            <af:outputText value="#{bindings.CostPrice.inputValue}"
+                                           id="ot13">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.CostPrice.format}"/>
+                            </af:outputText>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage id="plam5"
+                                                   label="#{bindings.MinPrice.hints.label}">
+                            <af:outputText value="#{bindings.MinPrice.inputValue}"
+                                           id="ot14">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.MinPrice.format}"/>
+                            </af:outputText>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="#{bindings.Margin.hints.label}" id="plam6">
+                            <af:panelGroupLayout id="pgl6" layout="vertical">
+                              <af:inputText value="#{bindings.ListPrice.inputValue}"
+                                            label="#{bindings.ListPrice.hints.label}"
+                                            required="#{bindings.ListPrice.hints.mandatory}"
+                                            columns="#{bindings.ListPrice.hints.displayWidth}"
+                                            maximumLength="#{bindings.ListPrice.hints.precision}"
+                                            shortDesc="#{bindings.ListPrice.hints.tooltip}"
+                                            id="editProductPrice" simple="true"
+                                            autoSubmit="true"
+                                            partialTriggers="priceListCollection:PriceListTable:tablePriceEdit"
+                                            readOnly="#{!securityContext.userInRole['fod-admin']}">
+                                <f:validator binding="#{bindings.ListPrice.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ListPrice.format}"/>
+                              </af:inputText>
+                              <af:separator id="s4" inlineStyle="width:80%;"/>
+                            </af:panelGroupLayout>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage id="plam7"
+                                                   label="#{bindings.Margin.hints.label}">
+                            <af:outputText value="#{bindings.Margin.inputValue}"
+                                           id="ot15"
+                                           partialTriggers="editProductPrice">
+                            </af:outputText>
+                          </af:panelLabelAndMessage>
+                          <af:selectOneRadio value="#{bindings.ProductStatus.inputValue}"
+                                             label="#{bindings.ProductStatus.label}"
+                                             id="editProductStatus"
+                                             autoSubmit="true"
+                                             readOnly="#{!securityContext.userInRole['fod-admin']}">
+                            <f:selectItems value="#{bindings.ProductStatus.items}"
+                                           id="si3"/>
+                          </af:selectOneRadio>
+                          <f:facet name="footer">
+                            <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                              id="saveEdits"
+                                              text="#{res['pls.save']}"
+                                              disabled="#{!securityContext.userInRole['fod-admin']}"/>
+                          </f:facet>
+                        </af:panelFormLayout>
+                        <af:spacer width="20" id="s5"/>
+                        <af:panelGroupLayout id="pgl7" layout="vertical">
+                          <af:spacer height="10" id="s6"/>
+                          <dvt:barGraph id="salesChart"
+                                        value="#{bindings.ProductSalesByMonth.graphModel}"
+                                        shortDesc="#{res['pls.graph.hint']}"
+                                        imageFormat="FLASH"
+                                        dynamicResize="DYNAMIC_SIZE"
+                                        partialTriggers="::priceListCollection:PriceListTable"                                
+                                        style="April">
+                            <dvt:legendArea rendered="false"/>
+                          </dvt:barGraph>
+                        </af:panelGroupLayout>
+                      </af:panelGroupLayout>
+                    </af:showDetailItem>
+                  </af:panelTabbed>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

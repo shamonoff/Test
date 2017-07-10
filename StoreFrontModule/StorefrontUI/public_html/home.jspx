@@ -1,0 +1,1090 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document title="#{res['global.shopping.title']}" id="d2">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:popup id="productDetail" contentDelivery="immediate">
+          <af:panelWindow id="pw1">
+            <af:panelGroupLayout inlineStyle="width:500px;height:500px"
+                                 layout="vertical" id="pgl8">
+              <af:panelGroupLayout inlineStyle="width:100%; background-color:#0D4988;"
+                                   layout="horizontal" id="pgl9">
+                <af:spacer width="8" height="4" id="s3"/>
+                <af:outputText id="hoverProductName" value="title"
+                               clientComponent="true"
+                               inlineStyle="font-size:medium; font-weight:bold;color:white;"/>
+                <af:spacer width="8" height="4" id="s4"/>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout layout="scroll"
+                                   inlineStyle="width:100%; height:100%;"
+                                   id="pgl10">
+                <af:panelFormLayout rows="3" id="pfl2">
+                  <af:showDetail clientComponent="true" disclosed="true"
+                                 id="sd2">
+                    <af:outputText id="hoverDescription" value="rating"
+                                   inlineStyle="vertical-align:middle;"
+                                   clientComponent="true"/>
+                  </af:showDetail>
+                  <af:showDetail clientComponent="true"
+                                 disclosedText="#{res['home.headers.additionalinfo']}"
+                                 undisclosedText="#{res['home.headers.additionalinfo']}"
+                                 disclosed="true" id="sd3">
+                    <af:outputText id="hoverAdditionalInfo" value="rating"
+                                   inlineStyle="vertical-align:middle;"
+                                   clientComponent="true"/>
+                  </af:showDetail>
+                </af:panelFormLayout>
+                <af:spacer width="8" height="8" id="s5"/>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </af:panelWindow>
+        </af:popup>
+        <af:popup id="productsByCategorySeeFullProductDetailsPopup"
+                  contentDelivery="lazyUncached">
+          <af:dialog inlineStyle="width:500px;height:500px;" modal="true"
+                     type="ok" id="d3">
+            <af:panelTabbed position="below"
+                            inlineStyle="width:500px;height:500px;" id="pt1">
+              <af:showDetailItem text="#{res['home.headers.productoverview']}"
+                                 id="sdi1">
+                <af:panelGroupLayout layout="scroll" inlineStyle="width:500px;"
+                                     id="pgl11">
+                  <af:panelGroupLayout layout="horizontal" id="pgl12">
+                    <af:image source="/imageservlet?detail=#{bindings.PBCPopupProductId}"
+                              id="i5"
+                              shortDesc="#{bindings.PBCPopupProductId}"/>
+                    <af:spacer width="20px" id="s6"/>
+                    <af:showDetail disclosed="true"
+                                   disclosedText="#{bindings.PBCPopupProductName}"
+                                   undisclosedText="#{bindings.PBCPopupProductName}"
+                                   id="sd4">
+                      <af:panelFormLayout id="pfl3">
+                        <af:panelLabelAndMessage inlineStyle="color:blue;"
+                                                 label="Product Id:" id="plam5">
+                          <af:outputText value="#{bindings.PBCPopupProductId}"
+                                         id="ot13"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="Category:" id="plam6">
+                          <af:outputText value="#{bindings.PBCPopupCategoryName}"
+                                         id="ot14"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="List Price:" id="plam7">
+                          <af:outputText value="#{bindings.PBCPopupListPrice}"
+                                         id="ot16"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="Availablity:"
+                                                 id="plam8">
+                          <af:outputText value="#{res['home.products.instock']}"
+                                         rendered="#{bindings.PBCPopupInStock.value gt 0}"
+                                         id="ot17"/>
+                          <af:outputText value="#{res['home.products.soldout']}"
+                                         rendered="#{bindings.PBCPopupInStock.value eq 0}"
+                                         id="ot18"/>
+                        </af:panelLabelAndMessage>
+                      </af:panelFormLayout>
+                    </af:showDetail>
+                  </af:panelGroupLayout>
+                  <af:showDetail disclosed="true"
+                                 disclosedText="#{res['home.headers.description']}"
+                                 undisclosedText="#{res['home.headers.description']}"
+                                 inlineStyle="text-align:justify" id="sd5">
+                    <af:outputText value="#{bindings.PBCPopupDescription}"
+                                   id="ot19"/>
+                  </af:showDetail>
+                  <af:showDetail disclosed="true"
+                                 disclosedText="#{res['home.headers.additionalinfo']}"
+                                 undisclosedText="#{res['home.headers.additionalinfo']}"
+                                 inlineStyle="text-align:justify"
+                                 rendered="#{bindings.PBCPopupAdditionalInfo ne null}"
+                                 id="sd6">
+                    <af:outputText value="#{bindings.PBCPopupAdditionalInfo}"
+                                   id="ot20"/>
+                  </af:showDetail>
+                </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="#{res['home.headers.stocklevel']}"
+                                 id="sdi2">
+                <dvt:barGraph id="barGraph1"
+                              value="#{bindings.ProductsByCategoriesToWarehouseStockLevels.graphModel}"
+                              subType="BAR_VERT_CLUST" threeDEffect="true"
+                              imageHeight="450" imageWidth="500">
+                  <dvt:background>
+                    <dvt:specialEffects/>
+                  </dvt:background>
+                  <dvt:graphPlotArea/>
+                  <dvt:seriesSet>
+                    <dvt:series/>
+                  </dvt:seriesSet>
+                  <dvt:o1Axis/>
+                  <dvt:y1Axis/>
+                  <dvt:legendArea automaticPlacement="AP_NEVER"
+                                  position="LAP_BOTTOM"/>
+                </dvt:barGraph>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:dialog>
+        </af:popup>
+        <af:popup id="searchProductsSeeFullProductDetailsPopup"
+                  contentDelivery="lazyUncached">
+          <af:dialog inlineStyle="width:500px;height:500px;" modal="true"
+                     type="ok" id="d4">
+            <af:panelTabbed position="below"
+                            inlineStyle="width:500px;height:500px;" id="pt2">
+              <af:showDetailItem text="#{res['home.headers.productoverview']}"
+                                 id="sdi3">
+                <af:panelGroupLayout layout="scroll" inlineStyle="width:500px;"
+                                     id="pgl13">
+                  <af:panelGroupLayout layout="horizontal" id="pgl14">
+                    <af:image source="/imageservlet?detail=#{bindings.SPPopupProductId}"
+                              id="i6" shortDesc="#{bindings.SPPopupProductId}"/>
+                    <af:spacer width="20px" id="s7"/>
+                    <af:showDetail disclosed="true"
+                                   disclosedText="#{bindings.SPPopupProductName}"
+                                   undisclosedText="#{bindings.SPPopupProductName}"
+                                   id="sd7">
+                      <af:panelFormLayout id="pfl4">
+                        <af:panelLabelAndMessage inlineStyle="color:blue;"
+                                                 label="Product Id:" id="plam9">
+                          <af:outputText value="#{bindings.SPPopupProductId}"
+                                         id="ot21"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="Category:" id="plam10">
+                          <af:outputText value="#{bindings.SPPopupCategoryName}"
+                                         id="ot22"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="List Price:"
+                                                 id="plam11">
+                          <af:outputText value="#{bindings.SPPopupListPrice}"
+                                         id="ot23"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="Availablity:"
+                                                 id="plam12">
+                          <af:outputText value="#{res['home.products.instock']}"
+                                         rendered="#{bindings.SPPopupInStock.value gt 0}"
+                                         id="ot24"/>
+                          <af:outputText value="#{res['home.products.soldout']}"
+                                         rendered="#{bindings.SPPopupInStock.value eq 0}"
+                                         id="ot25"/>
+                        </af:panelLabelAndMessage>
+                      </af:panelFormLayout>
+                    </af:showDetail>
+                  </af:panelGroupLayout>
+                  <af:showDetail disclosed="true"
+                                 disclosedText="#{res['home.headers.description']}"
+                                 undisclosedText="#{res['home.headers.description']}"
+                                 inlineStyle="text-align:justify" id="sd8">
+                    <af:outputText value="#{bindings.SPPopupDescription}"
+                                   id="ot26"/>
+                  </af:showDetail>
+                  <af:showDetail disclosed="true"
+                                 disclosedText="#{res['home.headers.additionalinfo']}"
+                                 undisclosedText="#{res['home.headers.additionalinfo']}"
+                                 inlineStyle="text-align:justify"
+                                 rendered="#{bindings.SPPopupAdditionalInfo ne null}"
+                                 id="sd9">
+                    <af:outputText value="#{bindings.SPPopupAdditionalInfo}"
+                                   id="ot27"/>
+                  </af:showDetail>
+                </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="#{res['home.headers.stocklevel']}"
+                                 id="sdi4">
+                <dvt:barGraph id="barGraph2"
+                              value="#{bindings.WarehouseStockLevels.graphModel}"
+                              subType="BAR_VERT_CLUST" threeDEffect="true"
+                              imageHeight="450" imageWidth="500">
+                  <dvt:background>
+                    <dvt:specialEffects/>
+                  </dvt:background>
+                  <dvt:graphPlotArea/>
+                  <dvt:seriesSet>
+                    <dvt:series/>
+                  </dvt:seriesSet>
+                  <dvt:o1Axis/>
+                  <dvt:y1Axis/>
+                  <dvt:legendArea automaticPlacement="AP_NEVER"
+                                  position="LAP_BOTTOM"/>
+                </dvt:barGraph>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:dialog>
+        </af:popup>
+        <af:popup id="shoppingCartPopup" contentDelivery="lazyUncached">
+          <af:dialog id="shoppingCartDialog" modal="true"
+                     inlineStyle="width:550px;height:500px;"
+                     titleIconSource="/images/cart.gif"
+                     title="#{res['global.cart.header']}" type="ok">
+            <af:panelStretchLayout bottomHeight="20" id="psl1">
+              <f:facet name="center">
+                  <af:panelStretchLayout topHeight="20" id="psl2">
+                    <f:facet name="center">
+                      <af:panelHeader text="#{res['global.cart.items']}"
+                                      id="ph1">
+                        <af:table id="cartTab"
+                                  value="#{bindings.MyShoppingCart.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.MyShoppingCart.rangeSize}"
+                                  fetchSize="#{bindings.MyShoppingCart.rangeSize}"
+                                  first="#{bindings.MyShoppingCart.rangeStart}"
+                                  emptyText="#{bindings.MyShoppingCart.viewable ? 'Your Cart is Empty' : 'Access Denied.'}"
+                                  inlineStyle="height:200px;"
+                                  rowSelection="single"
+                                  verticalGridVisible="false"
+                                  partialTriggers="::removeFromCart ::removeAll"
+                                  varStatus="rowStat"
+                                  width="500" columnStretching="last"
+                                  binding="#{shoppingCartBean.table}"
+                                  selectionListener="#{bindings.MyShoppingCart.collectionModel.makeCurrent}">
+                          <af:column id="c4">
+                            <af:panelGroupLayout layout="horizontal"
+                                                 halign="center"
+                                                 valign="middle" id="pgl15">
+                              <af:image source="/imageservlet?thumbnail=#{row.ProductId}"
+                                        id="i7" shortDesc="#{row.ProductId}"/>
+                            </af:panelGroupLayout>
+                          </af:column>
+                          <af:column noWrap="false" width="200" id="c5">
+                            <af:showDetail inlineStyle="text-align:justify"
+                                           disclosedText="#{row.ProductName}"
+                                           undisclosedText="#{row.ProductName}"
+                                           disclosed="true" id="sd10">
+                              <af:panelLabelAndMessage label="#{res['global.cart.price']}"
+                                                       id="plam13">
+                                <af:outputText inlineStyle="font-weight:bold;color:#96171a;"
+                                               value="#{row.ListPrice}"
+                                               id="ot28"/>
+                              </af:panelLabelAndMessage>
+                            </af:showDetail>
+                          </af:column>
+                          <af:column width="150" id="c6">
+                            <af:panelFormLayout id="pfl5">
+                              <af:panelLabelAndMessage label="#{res['global.cart.quantity']}"
+                                                       id="plam14">
+                                <af:inputNumberSpinbox autoSubmit="true"
+                                                       id="quantity" columns="3"
+                                                       value="#{row.Quantity}"
+                                                       readOnly="#{row != shoppingCartBean.selectedRow}"
+                                                       valueChangeListener="#{shoppingCartBean.quanityValueChangeListener}"
+                                                       minimum="1">
+                                  <f:validator binding="#{row.bindings.Quantity.validator}"/>
+                                  <af:convertNumber groupingUsed="false"
+                                                    pattern="#{bindings.MyShoppingCart.hints.Quantity.format}"/>
+                                </af:inputNumberSpinbox>
+                              </af:panelLabelAndMessage>
+                            </af:panelFormLayout>
+                          </af:column>
+                        </af:table>
+                      </af:panelHeader>
+                    </f:facet>
+                    <f:facet name="bottom">
+                      <af:panelGroupLayout layout="horizontal" halign="right"
+                                           id="pgl16">
+                        <af:outputText inlineStyle="font-weight:bold;white-space:nowrap;"
+                                       value="#{res['home.cart.subtotal']}="
+                                       id="ot29"/>
+                        <af:spacer width="5px" id="s8"/>
+                        <af:outputText id="estimatedTotalInPopup"
+                                       inlineStyle="color:#96171a;font-weight:bold;"
+                                       partialTriggers="cartTab:quantity removeFromCart removeAll"
+                                       value="#{bindings.LineItemsSubtotal}"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="top">
+                      <af:panelGroupLayout layout="horizontal" halign="right"
+                                           id="pgl17">
+                        <af:commandButton id="removeFromCart"
+                                          text="#{res['global.cart.remove']}"
+                                          partialSubmit="true"
+                                          actionListener="#{shoppingCartBean.removeItemFromShoppingCart}"
+                                          disabled="#{shoppingCartBean.noRowIsSelected}"
+                                          partialTriggers="cartTab"/>
+                        <af:commandButton id="removeAll"
+                                          text="#{res['global.cart.removeall']}"
+                                          partialTriggers="cartTab"
+                                          partialSubmit="true"
+                                          actionListener="#{shoppingCartBean.removeAllItems}"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelStretchLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </af:dialog>
+        </af:popup>
+        <af:resource type="javascript">
+        function showPopup(e) { 
+                    var im = e.getSource(); 
+                    var popup = AdfPage.PAGE.findComponent(im.getProperty("PopupId"));
+                    popup.show(); 
+                    } 
+                    
+                    function showDetails(e) { 
+                    var im = e.getSource(); 
+                    var popup = AdfPage.PAGE.findComponent("productDetail"); 
+                    var title = popup.findComponent("hoverProductName");
+                    if (title){
+                    title.setValue(im.getProperty("ProductName")); 
+                    }
+                    var desc =
+                    popup.findComponent("hoverDescription");
+                    if (desc) {
+                    desc.setValue(im.getProperty("Description"));
+                    }
+                    var addInfo = popup.findComponent("hoverAdditionalInfo");
+                    if (addInfo) {
+                    addInfo.setValue(im.getProperty("AdditionalInfo"));
+                    }
+                    popup.show(); 
+                    }
+                    
+                    function hidePopup(popupId){
+                    var popup = AdfPage.PAGE.findComponent(popupId);
+                    popup.hide();
+                    }
+        </af:resource>
+        <af:pageTemplate id="ptemp"
+                         viewId="/templates/StoreFrontTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}">
+          <f:facet name="center">
+            <af:panelTabbed id="productsTabbed"
+                            partialTriggers="searchProductsShowDetailItem categoriesTreeShowDetailItem searchProductsSearchArea"
+                            position="above">
+              <af:showDetailItem binding="#{homePageBean.showMostPopularProducts}"
+                                 partialTriggers="CatTree"
+                                 text="#{res['home.hotitems']}"
+                                 disclosureListener="#{homePageBean.hotProductsDisclosureListener}"
+                                 id="sdi5">
+                <af:panelStretchLayout inlineStyle="width:100%;height:100%;"
+                                       id="psl3">
+                  <f:facet name="center">
+                    <af:panelTabbed position="below"
+                                    inlineStyle="width:100%;height:100%;"
+                                    id="pt3">
+                      <af:showDetailItem text="#{res['home.hotitems.products']}"
+                                         id="sdi6">
+                        <af:panelGroupLayout layout="scroll" id="pgl18">
+                          <af:panelGroupLayout layout="horizontal"
+                                               halign="center" valign="middle"
+                                               id="pgl19">
+                            <h:panelGrid columns="4" cellpadding="10"
+                                         cellspacing="5"
+                                         style="text-align: center;"
+                                         rowClasses="bottomAlign">
+                              <af:forEach varStatus="stat" begin="0" end="19">
+                                <af:panelGroupLayout layout="vertical"
+                                                     halign="center" id="pgl20">
+                                  <af:commandLink partialSubmit="true"
+                                                  clientComponent="true"
+                                                  text="#{bindings.MostPopularProductsByCategories.children[stat.index].ProductName}"
+                                                  id="cl2">
+                                    <af:clientAttribute name="ProductId"
+                                                        value="#{bindings.MostPopularProductsByCategories.children[stat.index].ProductId}"/>
+                                    <af:clientAttribute name="Description"
+                                                        value="#{bindings.MostPopularProductsByCategories.children[stat.index].Description}"/>
+                                    <af:clientAttribute name="ProductName"
+                                                        value="#{bindings.MostPopularProductsByCategories.children[stat.index].ProductName}"/>
+                                    <af:clientAttribute name="AdditionalInfo"
+                                                        value="#{bindings.MostPopularProductsByCategories.children[stat.index].AdditionalInfo}"/>
+                                    <af:clientListener method="showDetails"
+                                                       type="action"/>
+                                  </af:commandLink>
+                                  <af:image clientComponent="true"
+                                            source="/imageservlet?thumbnail=#{bindings.MostPopularProductsByCategories.children[stat.index].ProductId}"
+                                            id="prodimage">
+                                    <af:clientAttribute name="DragId"
+                                                        value="#{bindings.MostPopularProductsByCategories.children[stat.index].DragId}"/>
+                                    <af:attributeDragSource attribute="DragId"/>
+                                  </af:image>
+                                  <af:panelLabelAndMessage label="Price"
+                                                           id="plam15">
+                                    <af:outputFormatted value="#{bindings.MostPopularProductsByCategories.children[stat.index].ListPrice}"
+                                                        id="ot30" />
+                                  </af:panelLabelAndMessage>
+                                  <af:outputText value="#{bindings.MostPopularProductsByCategories.children[stat.index].CategoryName}"
+                                                 id="ot31"/>
+                                  <af:commandLink partialSubmit="true"
+                                                  actionListener="#{shoppingCartBean.addItemToCart}"
+                                                  id="cl3">
+                                    <f:attribute name="ProductId"
+                                                 value="#{bindings.MostPopularProductsByCategories.children[stat.index].ProductId}"/>
+                                    <f:attribute name="ProductName"
+                                                 value="#{bindings.MostPopularProductsByCategories.children[stat.index].ProductName}"/>
+                                    <f:attribute name="CategoryName"
+                                                 value="#{bindings.MostPopularProductsByCategories.children[stat.index].CategoryName}"/>
+                                    <f:attribute name="ListPrice"
+                                                 value="#{bindings.MostPopularProductsByCategories.children[stat.index].ListPrice}"/>
+                                    <af:image inlineStyle="border:none;"
+                                              source="/images/addbutton.gif"
+                                              id="i8"/>
+                                    <f:actionListener binding="#{homePageBean.updateShoppingCart}"/>
+                                  </af:commandLink>
+                                </af:panelGroupLayout>
+                              </af:forEach>
+                            </h:panelGrid>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </af:showDetailItem>
+                      <af:showDetailItem text="#{res['home.statistics']}"
+                                         id="sdi7">
+    <!--                    <af:panelGroupLayout halign="center" valign="middle"
+                                             layout="scroll" id="pgl22">
+                          <dvt:barGraph id="horizontalBarGraph1"
+                                        value="#{bindings.ProductOrdersCount.graphModel}"
+                                        subType="BAR_HORIZ_CLUST"
+                                        imageWidth="600" imageHeight="700"
+                                        threeDEffect="true" style="Comet">
+                            <dvt:background>
+                              <dvt:specialEffects/>
+                            </dvt:background>
+                            <dvt:graphPlotArea/>
+                            <dvt:seriesSet>
+                              <dvt:series/>
+                            </dvt:seriesSet>
+                            <dvt:o1Axis/>
+                            <dvt:y1Axis/>
+                            <dvt:legendArea position="LAP_TOP"
+                                            automaticPlacement="AP_NEVER"/>
+                          </dvt:barGraph>
+                        </af:panelGroupLayout> -->
+                              <af:panelStretchLayout inlineStyle="width:100%;height:100%;"
+                                       id="psl6">
+                  <f:facet name="center">
+                              <af:panelTabbed id="pt4"
+                                              position="above">
+                                <af:showDetailItem text="#{res['home.statistics.totalorders']}"
+                                                   id="sdi10">
+                                  <dvt:barGraph id="horizontalBarGraph1"
+                                                value="#{bindings.ProductOrdersCount.graphModel}"
+                                                subType="BAR_HORIZ_CLUST"
+                                                imageWidth="600"
+                                                imageHeight="575"
+                                                threeDEffect="true"
+                                                style="Comet">
+                                    <dvt:background>
+                                      <dvt:specialEffects/>
+                                    </dvt:background>
+                                    <dvt:graphPlotArea/>
+                                    <dvt:seriesSet>
+                                      <dvt:series/>
+                                    </dvt:seriesSet>
+                                    <dvt:o1Axis/>
+                                    <dvt:y1Axis/>
+                                    <dvt:legendArea position="LAP_TOP"
+                                                    automaticPlacement="AP_NEVER"/>
+                                  </dvt:barGraph>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="#{res['home.statistics.maxquantityinorder']}"
+                                                   id="sdi11">
+                                  <dvt:barGraph id="horizontalBarGraph2"
+                                                value="#{bindings.ProductOrdersMaxQuantity.graphModel}"
+                                                subType="BAR_HORIZ_CLUST"
+                                                imageWidth="600"
+                                                imageHeight="575"
+                                                threeDEffect="true"
+                                                style="Comet">
+                                    <dvt:background>
+                                      <dvt:specialEffects/>
+                                    </dvt:background>
+                                    <dvt:graphPlotArea/>
+                                    <dvt:seriesSet>
+                                      <dvt:series/>
+                                    </dvt:seriesSet>
+                                    <dvt:o1Axis/>
+                                    <dvt:y1Axis/>
+                                    <dvt:legendArea position="LAP_TOP"
+                                                    automaticPlacement="AP_NEVER"/>
+                                  </dvt:barGraph>
+                                </af:showDetailItem>
+                              </af:panelTabbed>
+                          </f:facet>
+                          </af:panelStretchLayout>
+                      </af:showDetailItem>
+                    </af:panelTabbed>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </af:showDetailItem>
+              <af:showDetailItem partialTriggers="CatTree"
+                                 binding="#{homePageBean.showStartShoppingProducts}"
+                                 id="startShoppingShowDetailItem"
+                                 text="#{res['home.startshopping']}"
+                                 disclosureListener="#{homePageBean.startShoppingProductsDisclosureListener}">
+                <af:panelStretchLayout topHeight="20"
+                                       inlineStyle="width:100%;height:100%;"
+                                       id="psl4">
+                  <f:facet name="top">
+                    <af:panelHeader text="#{homePageBean.selectedCategory}"
+                                    id="ph2"/>
+                  </f:facet>
+                  <f:facet name="center">
+                    <af:panelCollection id="pc1">
+                      <af:table id="CatTab"
+                                partialTriggers=":::CatTree"
+                                value="#{bindings.ProductsByCategories.collectionModel}"
+                                var="row" varStatus="rowStat"
+                                rows="#{bindings.ProductsByCategories.rangeSize}"
+                                first="#{bindings.ProductsByCategories.rangeStart}"
+                                emptyText="#{bindings.ProductsByCategories.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                                fetchSize="#{bindings.ProductsByCategories.rangeSize}"
+                                selectedRowKeys="#{bindings.ProductsByCategories.collectionModel.selectedRow}"
+                                selectionListener="#{bindings.ProductsByCategories.collectionModel.makeCurrent}"
+                                rowSelection="single" columnStretching="last"
+                                verticalGridVisible="false"
+                                columnSelection="multiple">
+                        <af:column width="150" id="c3" headerText="Item Image">
+                          <af:panelGroupLayout layout="horizontal" valign="top"
+                                               id="pgl7">
+                            <af:outputText inlineStyle="color:#FFFFFF;font-size: 16px;padding: 2px 5px;background-color:#0D4988;font-weight: bold;"
+                                           value="#{rowStat.index+1}" id="ot3"/>
+                            <af:spacer width="20px;" id="s1"/>
+                            <af:panelGroupLayout valign="middle"
+                                                 layout="vertical" id="pgl2">
+                              <af:image clientComponent="true"
+                                        source="/imageservlet?thumbnail=#{row.ProductId}"
+                                        id="i3" shortDesc="#{row.ProductId}"/>
+                              <af:commandLink text="#{res['home.links.imagelink']}"
+                                              partialSubmit="true" id="cl1">
+                                <af:image source="/images/zoom.gif"
+                                          inlineStyle="border:none" id="i1"/>
+                                <af:showPopupBehavior popupId="ProductsByCategoryLargerImagePopup"/>
+                              </af:commandLink>
+                              <af:commandLink id="productTableAddToCart1"
+                                              partialSubmit="true"
+                                              actionListener="#{shoppingCartBean.addItemToCart}">
+                                <f:attribute name="ProductId"
+                                             value="#{row.ProductId}"/>
+                                <f:attribute name="ProductName"
+                                             value="#{row.ProductName}"/>
+                                <f:attribute name="CategoryName"
+                                             value="#{row.CategoryName}"/>
+                                <f:attribute name="ListPrice"
+                                             value="#{row.ListPrice}"/>
+                                <af:image inlineStyle="border:none;"
+                                          source="/images/addbutton.gif"
+                                          id="i2"/>
+                                <f:actionListener binding="#{homePageBean.updateShoppingCart}"/>
+                              </af:commandLink>
+                              <af:popup id="ProductsByCategoryLargerImagePopup">
+                                <af:dialog type="ok" id="d1">
+                                  <af:panelGroupLayout id="pgl1">
+                                    <af:image source="/imageservlet?detail=#{row.ProductId}"
+                                              id="i4"
+                                              shortDesc="#{row.ProductId}"/>
+                                  </af:panelGroupLayout>
+                                </af:dialog>
+                              </af:popup>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                        </af:column>
+                        <af:column noWrap="false" width="500" id="c1"
+                                   headerText="Description">
+                          <af:showDetail inlineStyle="text-align:justify"
+                                         disclosedText="#{row.ProductName}"
+                                         undisclosedText="#{row.ProductName}"
+                                         disclosed="true" id="sd1">
+                            <af:outputText inlineStyle="text-align:justify"
+                                           value="#{row.Description}"
+                                           truncateAt="435" id="ot4"/>
+                          </af:showDetail>
+                          <af:panelGroupLayout halign="right"
+                                               layout="horizontal" id="pgl4">
+                            <af:commandLink clientComponent="true"
+                                            inlineStyle="white-space: nowrap;"
+                                            id="productsByCategoryQuickDetailsLink"
+                                            text="#{res['home.quickdetail']}"
+                                            partialSubmit="true">
+                              <af:showPopupBehavior popupId="productsByCategorySeeQuickProductDetailsPopup"
+                                                    alignId="productsByCategoryQuickDetailsLink"
+                                                    align="afterEnd"/>
+                            </af:commandLink>
+                            <af:commandLink id="productsByCategoryFullDetailsLink"
+                                            inlineStyle="white-space: nowrap;"
+                                            text="#{res['home.fulldetail']}"
+                                            partialSubmit="true">
+                              <af:clientAttribute name="PopupId"
+                                                  value="productsByCategorySeeFullProductDetailsPopup"/>
+                              <af:clientListener method="showPopup"
+                                                 type="action"/>
+                            </af:commandLink>
+                            <f:facet name="separator">
+                              <af:outputText value="|" id="ot1"/>
+                            </f:facet>
+                          </af:panelGroupLayout>
+                          <af:popup id="productsByCategorySeeQuickProductDetailsPopup">
+                            <af:panelGroupLayout layout="vertical"
+                                                 inlineStyle="width:150px;"
+                                                 id="pgl6">
+                              <af:panelFormLayout id="pfl1">
+                                <af:panelLabelAndMessage label="Product Id:"
+                                                         id="plam2">
+                                  <af:outputText value="#{row.ProductId}"
+                                                 id="ot7"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="Category:"
+                                                         id="plam3">
+                                  <af:outputText value="#{row.CategoryName}"
+                                                 id="ot12"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="List Price:"
+                                                         id="plam4">
+                                  <af:outputText value="#{row.ListPrice}"
+                                                 id="ot6"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="Availablity:"
+                                                         id="plam1">
+                                  <af:outputText value="#{res['home.products.instock']}"
+                                                 rendered="#{row.InStock gt 0}"
+                                                 id="ot10"/>
+                                  <af:outputText value="#{res['home.products.soldout']}"
+                                                 rendered="#{row.InStock eq 0}"
+                                                 id="ot5"/>
+                                </af:panelLabelAndMessage>
+                              </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                          </af:popup>
+                        </af:column>
+                        <af:column minimumWidth="60" width="150" id="c2"
+                                   headerText="Details">
+                          <af:panelGroupLayout layout="horizontal" id="pgl3">
+                            <af:spacer width="15" id="s2"/>
+                            <af:panelGroupLayout layout="vertical" id="pgl5">
+                              <af:outputText inlineStyle="font-weight:bold;color:#96171a;"
+                                             value="#{row.ListPrice}"
+                                             rendered="#{row.InStock gt 0}"
+                                             id="ot9">
+                                <af:convertNumber currencySymbol="$"
+                                                  currencyCode="840"
+                                                  groupingUsed="false"
+                                                  pattern="#{bindings.ProductsByCategories.formats.ListPrice}"/>
+                              </af:outputText>
+                              <af:outputText value="#{res['home.products.instock']}"
+                                             rendered="#{row.InStock gt 0}"
+                                             id="ot11"/>
+                              <af:outputText inlineStyle="font-weight:bold;color:#96171a;text-decoration:line-through;"
+                                             value="#{row.ListPrice}"
+                                             rendered="#{row.InStock eq 0}"
+                                             id="ot2">
+                                <af:convertNumber currencySymbol="$"
+                                                  currencyCode="840"
+                                                  groupingUsed="false"
+                                                  pattern="#{bindings.ProductsByCategories.formats.ListPrice}"/>
+                              </af:outputText>
+                              <af:outputText value="#{res['home.products.soldout']}"
+                                             rendered="#{row.InStock eq 0}"
+                                             id="ot8"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                        </af:column>
+                      </af:table>
+                    </af:panelCollection>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </af:showDetailItem>
+              <af:showDetailItem id="searchProductsShowDetailItem"
+                                 binding="#{homePageBean.showSearchProducts}"
+                                 disclosureListener="#{homePageBean.searchProductsDisclosureListener}"
+                                 text="#{res['home.search.header']}">
+                <af:panelStretchLayout topHeight="20"
+                                       inlineStyle="width:100%;height:100%;"
+                                       id="psl5">
+                  <f:facet name="top">
+                    <af:panelHeader text="#{res['home.search.results']}"
+                                    id="ph3"/>
+                  </f:facet>
+                  <f:facet name="center">
+                    <af:table id="searchT"
+                              partialTriggers="::CatTree ::ProdQQ ::ProdQQ:ProdAQ ::ProdQQ:showAdvancedSearchDialog"
+                              value="#{bindings.SearchProducts.collectionModel}"
+                              var="row" varStatus="rowStat"
+                              rows="#{bindings.SearchProducts.rangeSize}"
+                              first="#{bindings.SearchProducts.rangeStart}"
+                              emptyText="#{bindings.SearchProducts.viewable ? 'No Matching Products' : 'Access Denied.'}"
+                              fetchSize="#{bindings.SearchProducts.rangeSize}"
+                              selectedRowKeys="#{bindings.SearchProducts.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.SearchProducts.collectionModel.makeCurrent}"
+                              rowSelection="single" columnStretching="last"
+                              verticalGridVisible="false"
+                              displayRow="selected" rowBandingInterval="0">
+                      <af:column width="150" id="c7">
+                        <af:panelGroupLayout layout="horizontal" valign="top"
+                                             id="pgl23">
+                          <af:outputText inlineStyle="color:#FFFFFF;font-size: 16px;padding: 2px 5px;background-color:#0D4988;font-weight: bold;"
+                                         value="#{rowStat.index+1}" id="ot32"/>
+                          <af:spacer width="20px;" id="s9"/>
+                          <af:panelGroupLayout valign="middle"
+                                               layout="vertical" id="pgl24">
+                            <af:image clientComponent="true"
+                                      source="/imageservlet?thumbnail=#{row.ProductId}"
+                                      id="i9" shortDesc="#{row.ProductId}"/>
+                            <af:commandLink text="#{res['home.links.imagelink']}"
+                                            partialSubmit="true" id="cl4">
+                              <af:image source="/images/zoom.gif"
+                                        inlineStyle="border:none" id="i10"/>
+                              <af:showPopupBehavior popupId="SearchProductsLargerImagePopup"/>
+                            </af:commandLink>
+                            <af:commandLink id="productTableAddToCart2"
+                                            partialSubmit="true"
+                                            actionListener="#{shoppingCartBean.addItemToCart}">
+                              <f:attribute name="ProductId"
+                                           value="#{row.ProductId}"/>
+                              <f:attribute name="ProductName"
+                                           value="#{row.ProductName}"/>
+                              <f:attribute name="CategoryName"
+                                           value="#{row.CategoryName}"/>
+                              <f:attribute name="ListPrice"
+                                           value="#{row.ListPrice}"/>
+                              <af:image inlineStyle="border:none;"
+                                        source="/images/addbutton.gif"
+                                        id="i11"/>
+                              <f:actionListener binding="#{homePageBean.updateShoppingCart}"/>
+                            </af:commandLink>
+                            <af:popup id="SearchProductsLargerImagePopup">
+                              <af:dialog type="ok" id="d5">
+                                <af:panelGroupLayout id="pgl25">
+                                  <af:image source="/imageservlet?detail=#{row.ProductId}"
+                                            id="i12"
+                                            shortDesc="#{row.ProductId}"/>
+                                </af:panelGroupLayout>
+                              </af:dialog>
+                            </af:popup>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </af:column>
+                      <af:column noWrap="false" width="500" id="c8">
+                        <af:showDetail inlineStyle="text-align:justify"
+                                       disclosedText="#{row.ProductName}"
+                                       undisclosedText="#{row.ProductName}"
+                                       disclosed="true" id="sd11">
+                          <af:outputText inlineStyle="text-align:justify"
+                                         value="#{row.Description}"
+                                         truncateAt="435" id="ot33"/>
+                        </af:showDetail>
+                        <af:panelGroupLayout halign="right" layout="horizontal"
+                                             id="pgl26">
+                          <af:commandLink clientComponent="true"
+                                          inlineStyle="white-space: nowrap;"
+                                          id="searchProductsQuickDetailsLink"
+                                          text="#{res['home.quickdetail']}"
+                                          partialSubmit="true">
+                            <af:showPopupBehavior popupId="searchProductsSeeQuickProductDetailsPopup"
+                                                  alignId="searchProductsQuickDetailsLink"
+                                                  align="afterEnd"/>
+                          </af:commandLink>
+                          <af:commandLink id="searchProductsFullDetailsLink"
+                                          inlineStyle="white-space: nowrap;"
+                                          text="#{res['home.fulldetail']}"
+                                          partialSubmit="true">
+                            <af:clientAttribute name="PopupId"
+                                                value="searchProductsSeeFullProductDetailsPopup"/>
+                            <af:clientListener method="showPopup"
+                                               type="action"/>
+                          </af:commandLink>
+                          <f:facet name="separator">
+                            <af:outputText value="|" id="ot34"/>
+                          </f:facet>
+                        </af:panelGroupLayout>
+                        <af:popup id="searchProductsSeeQuickProductDetailsPopup">
+                          <af:panelGroupLayout layout="vertical"
+                                               inlineStyle="width:150px;"
+                                               id="pgl27">
+                            <af:panelFormLayout id="pfl6">
+                              <af:panelLabelAndMessage label="Product Id:"
+                                                       id="plam16">
+                                <af:outputText value="#{row.ProductId}"
+                                               id="ot35"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Category:"
+                                                       id="plam17">
+                                <af:outputText value="#{row.CategoryName}"
+                                               id="ot36"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="List Price:"
+                                                       id="plam18">
+                                <af:outputText value="#{row.ListPrice}"
+                                               id="ot37"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Availablity:"
+                                                       id="plam19">
+                                <af:outputText value="#{res['home.products.instock']}"
+                                               rendered="#{row.InStock gt 0}"
+                                               id="ot38"/>
+                                <af:outputText value="#{res['home.products.soldout']}"
+                                               rendered="#{row.InStock eq 0}"
+                                               id="ot39"/>
+                              </af:panelLabelAndMessage>
+                            </af:panelFormLayout>
+                          </af:panelGroupLayout>
+                        </af:popup>
+                      </af:column>
+                      <af:column minimumWidth="60" width="150" id="c9">
+                        <af:panelGroupLayout layout="horizontal" id="pgl28">
+                          <af:spacer width="15" id="s10"/>
+                          <af:panelGroupLayout layout="vertical" id="pgl29">
+                            <af:outputText inlineStyle="font-weight:bold;color:#96171a;"
+                                           value="#{row.ListPrice}"
+                                           rendered="#{row.InStock gt 0}"
+                                           id="ot42">
+                              <af:convertNumber currencySymbol="$"
+                                                currencyCode="840"
+                                                groupingUsed="false"
+                                                pattern="#{bindings.SearchProducts.formats.ListPrice}"/>
+                            </af:outputText>
+                            <af:outputText value="#{res['home.products.instock']}"
+                                           rendered="#{row.InStock gt 0}"
+                                           id="ot43"/>
+                            <af:outputText inlineStyle="font-weight:bold;color:#96171a;text-decoration:line-through;"
+                                           value="#{row.ListPrice}"
+                                           rendered="#{row.InStock eq 0}"
+                                           id="ot54">
+                              <af:convertNumber currencySymbol="$"
+                                                currencyCode="840"
+                                                groupingUsed="false"
+                                                pattern="#{bindings.SearchProducts.formats.ListPrice}"/>
+                            </af:outputText>
+                            <af:outputText value="#{res['home.products.soldout']}"
+                                           rendered="#{row.InStock eq 0}"
+                                           id="ot56"/>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </af:column>
+                    </af:table>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </f:facet>
+          <f:facet name="header">
+              <af:panelGroupLayout layout="horizontal" halign="center"
+                                   inlineStyle="height:15px;" id="pgl30">
+                <af:navigationPane hint="buttons" id="np1">
+                  <af:commandNavigationItem icon="/images/home.gif"
+                                            text="#{res['global.nav.home']}"
+                                            action="globalHome"
+                                            disabled="true" id="cni1"/>
+                  <af:commandNavigationItem text="#{res['global.nav.myorders']}"
+                                            action="globalMyOrders" id="cni2"/>
+                  <af:commandNavigationItem text="#{res['global.nav.checkout']}"
+                                            action="globalCheckout"
+                                            id="cni3"/>
+                  <af:commandNavigationItem text="#{res['global.nav.profile']}"
+                                            action="globalUpdateUserInfo"
+                                            rendered="#{userInfoBean.loggedIn}"
+                                            id="cni4"/>
+                  <af:commandNavigationItem text="#{res['global.nav.register']}"
+                                            action="globalRegisterUser"
+                                            id="cni5"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="end">
+            <af:panelAccordion id="pa1">
+              <af:showDetailItem binding="#{homePageBean.shoppingCartItem}"
+                                 text="#{res['home.cart.header']}" id="sdi8"
+                                 clientComponent="true" stretchChildren="first">
+                <af:panelGroupLayout id="pgl31">
+                  <af:panelBorderLayout id="pbl1">
+                    <f:facet name="bottom">
+                      <af:panelGroupLayout inlineStyle="width:100%;text-align:center;"
+                                           layout="vertical" halign="center"
+                                           valign="middle" id="pgl32">
+                        <af:spacer height="5px" id="s11"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="top">
+                      <af:panelGroupLayout layout="horizontal" halign="center"
+                                           id="pgl33">
+                        <af:commandLink partialSubmit="true" id="cl5">
+                          <af:image source="/images/cart.gif"
+                                    inlineStyle="border:none" id="i13"/>
+                          <af:showPopupBehavior popupId="::shoppingCartPopup"/>
+                        </af:commandLink>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="innerTop">
+                        <af:panelGroupLayout layout="vertical"
+                                             id="summarylayout">
+                          <af:separator id="s12"/>
+                          <af:table id="CartTab"
+                                    partialTriggers=":::removeFromCart :::removeAll ::prodimage ::pc1:CatTab ::searchT:productTableAddToCart2"
+                                    rows="#{bindings.MyShoppingCart.rangeSize}"
+                                    fetchSize="#{bindings.MyShoppingCart.rangeSize}"
+                                    first="#{bindings.MyShoppingCart.rangeStart}"
+                                    emptyText="#{bindings.MyShoppingCart.viewable ? 'Your Cart is Empty' : 'Access Denied.'}"
+                                    value="#{bindings.MyShoppingCart.collectionModel}"
+                                    var="row" contentDelivery="immediate"
+                                    disableColumnReordering="true" width="100%"
+                                    columnStretching="column:c10">
+                            <af:dropTarget dropListener="#{shoppingCartBean.handlePkDrop}">
+                              <af:dataFlavor flavorClass="java.lang.String"/>
+                            </af:dropTarget><af:column id="c10">
+                              <trh:tableLayout id="summarytab">
+                                <trh:rowLayout id="rl2">
+                                  <trh:cellFormat inlineStyle="padding-left:5px;"
+                                                  halign="left" valign="top"
+                                                  id="cf1">
+                                    <af:outputText inlineStyle="font-weight:bold;color:#36648B;"
+                                                   value="#{row.ProductName}"
+                                                   id="ot44"/>
+                                  </trh:cellFormat>
+                                </trh:rowLayout>
+                                <trh:rowLayout id="rl3">
+                                  <trh:cellFormat inlineStyle="padding-left:10px;"
+                                                  halign="left" valign="top"
+                                                  id="cf3">
+                                    <af:outputText inlineStyle="font-weight:bold;"
+                                                   value="#{row.CategoryName}"
+                                                   id="ot45"/>
+                                  </trh:cellFormat>
+                                </trh:rowLayout>
+                                <trh:rowLayout id="rl1">
+                                  <trh:cellFormat inlineStyle="padding-left:10px;"
+                                                  halign="left" valign="top"
+                                                  id="cf2">
+                                    <af:panelGroupLayout layout="horizontal"
+                                                         halign="left"
+                                                         id="pgl34">
+                                      <af:outputText inlineStyle="font-weight:bold;color:#96171a;"
+                                                     value="#{row.ListPrice}"
+                                                     id="ot46"/>
+                                      <af:spacer width="5px" id="s13"/>
+                                      <af:outputText value="- #{res['global.cart.inlinequantity']}: #{row.Quantity}"
+                                                     id="ot47"/>
+                                    </af:panelGroupLayout>
+                                  </trh:cellFormat>
+                                </trh:rowLayout>
+                              </trh:tableLayout>
+                            </af:column>
+                          </af:table>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="innerBottom">
+                      <af:panelGroupLayout layout="vertical" id="pgl35">
+                        <af:separator id="s14"/>
+                        <af:panelGroupLayout layout="horizontal" id="pgl36">
+                          <af:outputText inlineStyle="font-weight:bold;"
+                                         value="#{res['home.cart.subtotal']}="
+                                         id="ot48"/>
+                          <af:spacer width="5px" id="s15"/>
+                          <af:outputText inlineStyle="color:#96171a;font-weight:bold;"
+                                         partialTriggers="CartTab"
+                                         value="#{bindings.LineItemsSubtotal}"
+                                         id="ot15" clientComponent="true"/>
+                        </af:panelGroupLayout>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelBorderLayout>
+                </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelAccordion>
+          </f:facet>
+          <f:facet name="start">
+            <af:panelAccordion partialTriggers="startShoppingShowDetailItem searchProductsShowDetailItem"
+                               id="pa2">
+              <af:showDetailItem text="#{res['home.featured.header']}"
+                                 binding="#{homePageBean.showFeaturedItem}"
+                                 disclosureListener="#{homePageBean.featuredProductsDisclosureListener}"
+                                 id="sdi9">
+                <af:panelGroupLayout layout="vertical" halign="center"
+                                     id="pgl37">
+                  <af:spacer width="10" height="10" id="s16"/>
+                  <af:panelBox text="#{bindings.ProductName.inputValue}"
+                               background="light" ramp="core"
+                               titleHalign="center" id="pb1">
+                    <af:panelGroupLayout layout="vertical" halign="center"
+                                         id="pgl38">
+                      <af:spacer width="10" height="10" id="s17"/>
+                      <af:image source="/imageservlet?thumbnail=#{bindings.ProductId}"
+                                id="i14" shortDesc="#{bindings.ProductId}">
+                        <af:clientAttribute name="DragId"
+                                            value="#{bindings.DragId.inputValue}"/>
+                        <af:attributeDragSource attribute="DragId"/>
+                      </af:image>
+                      <af:spacer width="10" height="10" id="s18"/>
+                      <af:panelLabelAndMessage label="Price" id="plam20">
+                        <af:outputText value="#{bindings.ListPrice.inputValue}"
+                                       id="ot49">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.ListPrice.format}"/>
+                        </af:outputText>
+                      </af:panelLabelAndMessage>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem id="categoriesTreeShowDetailItem"
+                                 text="#{res['home.browse']}"
+                                 binding="#{homePageBean.showCategoriesTree}"
+                                 disclosureListener="#{homePageBean.browseProductsDisclosureListener}">
+                <af:tree id="CatTree" contentDelivery="immediate"
+                         selectionListener="#{homePageBean.productCategoriesTreeSelectionListener}"
+                         rowSelection="single"
+                         value="#{bindings.ParentProductCategories.treeModel}"
+                         var="node" initiallyExpanded="true">
+                  <f:facet name="nodeStamp">
+                    <af:panelGroupLayout id="pgl39">
+                      <af:outputText rendered="#{node.ParentCategoryId eq null}"
+                                     value="#{node.CategoryName}"
+                                     inlineStyle="color:#FF8000;font-weight:bold;"
+                                     id="ot57"/>
+                      <af:outputText rendered="#{node.ParentCategoryId ne null}"
+                                     value="#{node.CategoryName}" id="ot58"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:tree>
+              </af:showDetailItem>
+              <af:showDetailItem text="#{res['home.search.header2']}"
+                                 id="searchProductsSearchArea"
+                                 binding="#{homePageBean.showSearchFields}"
+                                 disclosureListener="#{homePageBean.searchFieldsDisclosureListener}">
+               <af:quickQuery id="ProdQQ"
+                               label="#{res['home.search.header2']}"
+                               layout="vertical"
+                               value="#{bindings.FindByProductNameCriteriaQuery1.quickQueryDescriptor}"
+                               queryListener="#{bindings.FindByProductNameCriteriaQuery1.processQuery}"
+                               model="#{bindings.FindByProductNameCriteriaQuery1.queryModel}">
+                  <f:facet name="end">
+                    <h:panelGroup>
+                      <af:commandLink text="#{res['home.search.advanced']}"
+                                      id="cl6">
+                        <af:showPopupBehavior popupId="AdvP"/>
+                      </af:commandLink>
+                      <af:popup id="AdvP"
+                                binding="#{homePageBean.popup}"
+                               popupFetchListener="#{homePageBean.searchPopupListener}">
+                      <af:dialog id="showAdvancedSearchDialog" modal="true"
+                                   inlineStyle="width:600px;height:300px;"
+                                   title="#{res['home.search.advancedsearch']}"
+                                 type="none"> 
+                          <af:panelHeader text="#{res['home.search.productsearch']}"
+                                          id="ph4">
+                            <af:query id="ProdAQ"
+                                      headerText="#{res['home.search.header2']}"
+                                      disclosed="true"
+                                      resultComponentId=":::searchT"
+                                      value="#{bindings.FindByProductNameCriteriaQuery.queryDescriptor}"
+                                      model="#{bindings.FindByProductNameCriteriaQuery.queryModel}"
+                                      queryOperationListener="#{bindings.FindByProductNameCriteriaQuery.processQueryOperation}"
+                                      queryListener="#{homePageBean.processQuery}">
+                            </af:query>
+                          </af:panelHeader>
+                        </af:dialog>
+                      </af:popup>
+                    </h:panelGroup>
+                  </f:facet>
+                </af:quickQuery>
+              </af:showDetailItem>
+            </af:panelAccordion>
+          </f:facet>
+          <f:attribute name="WelcomeMessage"
+                       value="#{sessionScope['WelcomeMessage']}"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:homePageBean-->
+</jsp:root>

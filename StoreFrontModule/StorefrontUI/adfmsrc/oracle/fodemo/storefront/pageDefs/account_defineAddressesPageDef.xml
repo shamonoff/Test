@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.52.34" id="account_defineAddressesPageDef"
+                Package="oracle.fodemo.storefront.pageDefs">
+  <parameters/>
+  <executables>
+    <page path="oracle.fodemo.storefront.pageDefs.templates_StoreFrontTemplatePageDef"
+          id="pageTemplateBinding"/>
+    <iterator Binds="CustomerAddress" RangeSize="25"
+              DataControl="StoreServiceAMDataControl"
+              id="CustomerAddressIterator" Refresh="ifNeeded"/>
+    <invokeAction Binds="setHelpId" id="invokeSetHelpId" Refresh="ifNeeded"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomerAddressIterator" id="CustomerAddress">
+      <nodeDefinition DefName="oracle.fodemo.storefront.account.queries.CustomerAddressVO"
+                      Name="CustomerAddress">
+        <AttrNames>
+          <Item Value="AddressId"/>
+          <Item Value="Address1"/>
+          <Item Value="City"/>
+          <Item Value="PostalCode"/>
+          <Item Value="StateProvince"/>
+          <Item Value="AddressLabel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CustomerAddressIterator" id="AddressLabel">
+      <AttrNames>
+        <Item Value="AddressLabel"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction IterBinding="CustomerAddressIterator"
+                  id="discardAddressChanges" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="refreshRemoveNewCurrentRow"
+                  IsViewObjectMethod="true"
+                  DataControl="StoreServiceAMDataControl"
+                  InstanceName="StoreServiceAMDataControl.CustomerAddress"/>
+    <methodAction id="setHelpId"
+                  InstanceName="LookupServiceAMDataControl.dataProvider"
+                  DataControl="LookupServiceAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="setHelpId" IsViewObjectMethod="false"
+                  ReturnName="LookupServiceAMDataControl.methodResults.setHelpId_LookupServiceAMDataControl_dataProvider_setHelpId_result">
+      <NamedData NDName="usage" NDValue="CREATE_ADDRESS"
+                 NDType="java.lang.String"/>
+      <events xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+        <event name="queueHelpTopic"/>
+      </events>
+    </methodAction>
+  </bindings>
+</pageDefinition>

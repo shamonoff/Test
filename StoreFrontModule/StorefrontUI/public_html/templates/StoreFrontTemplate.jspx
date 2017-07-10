@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich" version="1.2">
+  <jsp:directive.page contentType="text/html;charset=utf-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>threeColumnTemplate</display-name>
+        <facet>
+          <description>center</description>
+          <facet-name>center</facet-name>
+        </facet>
+        <facet>
+          <description>header</description>
+          <facet-name>header</facet-name>
+        </facet>
+        <facet>
+          <description>end</description>
+          <facet-name>end</facet-name>
+        </facet>
+        <facet>
+          <description>start</description>
+          <facet-name>start</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>WelcomeMessage</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+          <default-value></default-value>
+        </attribute>
+      </component>
+    </af:xmlContent>
+    <![CDATA[
+      <style type="text/css">
+      .NavigationGlobal {
+        text-align: right;
+        padding-left: 0px;
+        padding-right: 10px;
+        white-space: normal;
+      }
+      HTML[dir=rtl] .NavigationGlobal {
+        text-align: left;
+        padding-left: 10px;
+        padding-right: 0px;
+      }
+      </style>
+    ]]>
+    <af:decorativeBox theme="dark" inlineStyle="width:100%; height:800px;"
+                      id="tdb1">
+      <f:facet name="center">
+        <af:panelSplitter orientation="vertical" splitterPosition="38" id="tps1">
+          <f:facet name="first">
+            <af:panelGroupLayout layout="vertical" id="tpgl1">
+              <af:panelBorderLayout id="tpbl1">
+                <f:facet name="start">
+                  <af:panelGroupLayout layout="vertical"
+                                       styleClass="AFBranding" id="tpgl2">                    
+                    <af:spacer width="10" height="10" id="ts0"/>
+                    <af:panelGroupLayout id="pt_pgl1" layout="horizontal">
+                      <af:selectOneChoice value="#{SkinHelper.currentSkin}"
+                                          immediate="true" id="pt_soc1">
+                        <f:selectItem itemLabel="BlafPlus L&amp;F" itemValue="fod_skin" id="pt_si2"/>
+                        <f:selectItem itemLabel="Fusion L&amp;F"
+                                      itemValue="fod_fusion_skin" id="pt_si1"/>
+                        <f:selectItem itemLabel="Simple L&amp;F"
+                                      itemValue="simple" id="pt_si0"/>
+                        <f:selectItem itemLabel="Skyros L&amp;F"
+                                      itemValue="Skyros" id="pt_si3"/>
+                      </af:selectOneChoice>
+                     <af:commandButton text="Select"
+                                       action="#{SkinHelper.switchSkin}" />
+                    </af:panelGroupLayout>
+                    <af:spacer width="10" height="10" id="ts1"/>
+                    <af:image source="/images/brandingImage.gif" id="ti1"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <af:panelBorderLayout id="tpbl2">
+                  <af:panelGroupLayout halign="center" layout="horizontal"
+                                       id="tpgl3">
+                    <af:facetRef facetName="header"/>
+                  </af:panelGroupLayout>
+                </af:panelBorderLayout>
+                <f:facet name="end">
+                  <af:panelGroupLayout layout="horizontal"
+                                       styleClass="NavigationGlobal" id="tpgl4">
+                    <af:panelGroupLayout halign="right" layout="horizontal"
+                                         id="tpgl5">
+                      <af:image source="/images/glbl_login_msg.gif"
+                                visible="#{userInfoBean.loggedIn}" id="ti2"/>
+                      <af:outputText value="Welcome #{securityContext.userName}"
+                                     noWrap="true"
+                                     visible="#{userInfoBean.loggedIn}"
+                                     id="tot1"/>
+                    </af:panelGroupLayout>
+                    <af:spacer width="5" id="ts2"/>
+                    <af:navigationPane hint="buttons" id="tnp1">
+                      <af:commandNavigationItem icon="/images/glbl_logout.gif"
+                                                text="#{res['template.logout']}"
+                                                action="#{userInfoBean.logout}"
+                                                rendered="#{userInfoBean.loggedIn}"
+                                                id="tcni1"/>
+                    </af:navigationPane>
+                    <af:spacer width="5" id="ts3"/>
+                    <af:statusIndicator id="tsi1"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelBorderLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="second">
+            <af:panelSplitter orientation="vertical" splitterPosition="29"
+                              positionedFromEnd="true" id="tps2">
+              <f:facet name="first">
+                <!-- start of secondary decoration -->
+                <af:decorativeBox theme="medium" id="tdb2">
+                  <f:facet name="center">
+                    <af:panelSplitter orientation="horizontal"
+                                      splitterPosition="200" id="tps3">
+                      <f:facet name="first">
+                        <af:facetRef facetName="start"/>
+                      </f:facet>
+                      <f:facet name="second">
+                        <af:panelSplitter orientation="horizontal"
+                                          splitterPosition="170"
+                                          positionedFromEnd="true" id="tps4">
+                          <f:facet name="first">
+                            <!-- start of main decoration -->
+                            <af:decorativeBox theme="light" id="tdb3">
+                              <f:facet name="center">
+                                <af:facetRef facetName="center"/>
+                              </f:facet>
+                            </af:decorativeBox>
+                            <!-- end of main decoration -->
+                          </f:facet>
+                          <f:facet name="second">
+                            <af:facetRef facetName="end"/>
+                          </f:facet>
+                        </af:panelSplitter>
+                      </f:facet>
+                    </af:panelSplitter>
+                  </f:facet>
+                </af:decorativeBox>
+                <!-- end of secondary decoration -->
+              </f:facet>
+              <f:facet name="second">
+                <af:panelGroupLayout layout="vertical" id="tpgl6">
+                  <af:panelBorderLayout inlineStyle="width: 100%;" id="tpbl3">
+                    <af:outputText value=" " id="tot2"/>
+                    <f:facet name="end">
+                      <af:panelGroupLayout id="tpgl7">
+                        <af:outputFormatted value="#{res['template.copyright']}"
+                                            inlineStyle="white-space: nowrap;"
+                                            id="tof1"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelBorderLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+        </af:panelSplitter>
+      </f:facet>
+    </af:decorativeBox>
+  </af:pageTemplateDef>
+</jsp:root>

@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['oracle.fodemo.supplier.view.ViewControllerBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1"
+                 title="#{viewcontrollerBundle['productDetails.title']}">
+      <af:messages id="m1"/>
+      <af:form id="f1" usesUpload="true">
+        <af:pageTemplate viewId="/templates/StoreFrontTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+            <af:panelHeader text="#{viewcontrollerBundle['productDetails.title']}" id="ph1">
+              <f:facet name="context"/>
+              <f:facet name="menuBar"/>
+              <f:facet name="toolbar"/>
+              <f:facet name="legend"/>
+              <f:facet name="info"/>
+              <af:panelFormLayout id="pfl1">
+                <af:inputText value="#{bindings.productId.inputValue}"
+                              label="#{bindings.productId.hints.label}"
+                              required="#{bindings.productId.hints.mandatory}"
+                              columns="#{bindings.productId.hints.displayWidth}"
+                              maximumLength="#{bindings.productId.hints.precision}"
+                              shortDesc="#{bindings.productId.hints.tooltip}"
+                              id="it1"
+                              readOnly="#{bindings.productId.hints.updateable}">
+                  <f:validator binding="#{bindings.productId.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.productId.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.productName.inputValue}"
+                              label="#{bindings.productName.hints.label}"
+                              required="#{bindings.productName.hints.mandatory}"
+                              columns="#{bindings.productName.hints.displayWidth}"
+                              maximumLength="#{bindings.productName.hints.precision}"
+                              shortDesc="#{bindings.productName.hints.tooltip}"
+                              id="it2">
+                  <f:validator binding="#{bindings.productName.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.costPrice.inputValue}"
+                              label="#{bindings.costPrice.hints.label}"
+                              required="#{bindings.costPrice.hints.mandatory}"
+                              columns="#{bindings.costPrice.hints.displayWidth}"
+                              maximumLength="#{bindings.costPrice.hints.precision}"
+                              shortDesc="#{bindings.costPrice.hints.tooltip}"
+                              id="it3">
+                  <f:validator binding="#{bindings.costPrice.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.costPrice.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.listPrice.inputValue}"
+                              label="#{bindings.listPrice.hints.label}"
+                              required="#{bindings.listPrice.hints.mandatory}"
+                              columns="#{bindings.listPrice.hints.displayWidth}"
+                              maximumLength="#{bindings.listPrice.hints.precision}"
+                              shortDesc="#{bindings.listPrice.hints.tooltip}"
+                              id="it6">
+                  <f:validator binding="#{bindings.listPrice.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.listPrice.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.minPrice.inputValue}"
+                              label="#{bindings.minPrice.hints.label}"
+                              required="#{bindings.minPrice.hints.mandatory}"
+                              columns="#{bindings.minPrice.hints.displayWidth}"
+                              maximumLength="#{bindings.minPrice.hints.precision}"
+                              shortDesc="#{bindings.minPrice.hints.tooltip}"
+                              id="it5">
+                  <f:validator binding="#{bindings.minPrice.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.minPrice.format}"/>
+                </af:inputText>
+                <af:selectOneChoice label="#{bindings.productStatus.hints.label}"
+                                    id="it67"
+                                    value="#{bindings.productStatus.inputValue}"
+                                    required="#{bindings.productStatus.hints.mandatory}"
+                                    showRequired="#{bindings.productStatus.hints.mandatory}"
+                                    valuePassThru="true">
+                  <af:forEach items="#{bindings.ProductStatusCode.iteratorBinding.allRowsInRange}"
+                              var="li">
+                    <af:selectItem id="si" label="#{li.dataProvider.meaning}"
+                                   value="#{li.dataProvider.lookupCode}"/>
+                  </af:forEach>
+                </af:selectOneChoice>
+                <af:inputFile label="#{viewcontrollerBundle['product.uploadimage.label']}"
+                              id="if1" autoSubmit="true"
+                              valueChangeListener="#{backingBeanScope.ProductDetailsBean.fileUploadListener}"/>
+                <af:separator id="s1"/>
+                <af:image source="/imageservlet?detail=#{pageFlowScope.ProductId}"
+                          id="i1"/>
+                <f:facet name="footer">
+                  <af:panelGroupLayout id="pgl0">
+                    <af:commandButton actionListener="#{bindings.mergeProduct.execute}"
+                                      text="#{viewcontrollerBundle['global.button.Save']}"
+                                      disabled="#{!bindings.mergeProduct.enabled}"
+                                      id="cb1" action="success"/>
+                    <af:spacer width="10" height="10" id="s2"/>
+                    <af:commandButton text="#{viewcontrollerBundle['global.button.Cancel']}" id="cb2" action="cancel"
+                                      immediate="true"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelFormLayout>
+            </af:panelHeader>
+          </f:facet>
+          <f:facet name="header"/>
+          <f:facet name="end"/>
+          <f:facet name="start"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
